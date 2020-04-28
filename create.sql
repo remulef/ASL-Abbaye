@@ -9,7 +9,7 @@ DROP TABLE NODE;
 
 
 CREATE TABLE NODE(
-id_node int PRIMARY KEY AUTO_INCREMENT ,
+id_node int PRIMARY KEY ,
 name varchar(40),
 parent_node_id INTEGER,
 FOREIGN KEY(parent_node_id) REFERENCES NODE (id_node)
