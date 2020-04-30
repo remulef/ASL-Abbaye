@@ -10,7 +10,7 @@ CREATE TABLE DOCUMENT(
   id_doc int PRIMARY KEY ,
   datepublication date,
   typedoc varchar(40) NOT NULL,
-  nom varchar(40) NOT NULL,
+  nom TEXT NOT NULL,
   chemin TEXT NOT NULL,
   descri TEXT
 );

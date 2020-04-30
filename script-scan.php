@@ -19,7 +19,7 @@ function add_document(string $path,$id_doc):string{
   $datepublication = $datepublication->format('Y-m-d');
 
   echo 'insert into DOCUMENT (id_doc,datepublication, typedoc, nom, chemin) values('.$id_doc.',\''.$datepublication.'\',\''.$type.'\',\''.$nom.'\',\''.$path.'\')<br>';
-  return 'insert into DOCUMENT (id_doc,datepublication, typedoc, nom, chemin) values('.$id_doc.',\''.$datepublication.'\',\''.$type.'\',\''.$nom.'\',\''.$path.'\')\n';
+  return 'insert into DOCUMENT (id_doc,datepublication, typedoc, nom, chemin) values('.$id_doc.',\''.$datepublication.'\',\''.$type.'\',\''.$nom.'\',\''.$path.'\');';
 }
 
 
@@ -29,31 +29,36 @@ function add_node(string $path,int $parent,int $num):string{
   $nom =  $path_info['filename'] ;     //nom du dossier
   echo'insert into NODE (id_node,name, parent_node_id) values ('.$num.',\''.$nom.'\','.$parent.');  <br> ';
   $numnode_courant++;
-  return 'insert into NODE (id_node,name, parent_node_id) values ('.$numnode_courant.',\''.$nom.'\','.$parent.');  \n ';
+  return 'insert into NODE (id_node,name, parent_node_id) values ('.$numnode_courant.',\''.$nom.'\','.$parent.');   ';
 }
 
 
 function add_node_document(int $id_node,int $id_doc):string{
   echo 'insert into NODE_DOCUMENT (NODE_id_node, DOCUMENT_id_doc) values ('.$id_node.','.$id_doc.'); <br>';
-  return  'insert into NODE_DOCUMENT (NODE_id_node, DOCUMENT_id_doc) values ('.$id_node.','.$id_doc.'); \n';
+  return  'insert into NODE_DOCUMENT (NODE_id_node, DOCUMENT_id_doc) values ('.$id_node.','.$id_doc.'); ';
 }
 
 $numnode_courant =1;
 $numdoc_courant = 1;
 
-$nodesql = fopen("node.sql", "x+");
-$docsql = fopen("document.sql", "x+");
-$docnodesql = fopen("node_document.sql", "x+");
 
-function recup_worker(string $path,int $node_parent_courant){
-  global $nodesql;
-  global $docsql,
-  global $docnodesql;
+
+
+
+function recup_worker(string $path,int $node_parent_courant,$firstline=false){
+
+  $nodesql = fopen("sql/insert_NODE.sql", "a");
+  $docsql = fopen("sql/insert_DOCUMENT.sql", "a");
+  $docnodesql = fopen("sql/insert_NODE_DOCUMENT.sql", "a");
   global $numdoc_courant;
   global $numnode_courant;
   global $listedossier_courant;
   $ignore = array( 'cgi-bin', '.', '..',);
   //$node_parent_courant++;
+
+  if($firstline){
+    fwrite($nodesql,'insert into NODE (id_node,name, parent_node_id) values (0,\''.$path.'\',NULL);'.PHP_EOL);
+  }
 
 
   $dossier_courant =  scandir($path,1);
@@ -65,13 +70,13 @@ function recup_worker(string $path,int $node_parent_courant){
       $chemin = $path.'/'.$value;
       if(is_dir($chemin)){
         $requeteSQL_node = add_node($value,$node_parent_courant,$numnode_courant);
-        fwrite($nodesql,$requeteSQL_node);
+        fwrite($nodesql,$requeteSQL_node.PHP_EOL);
         $listedossier_courant[$numnode_courant]=$value;
       }else{
         $requeteSQL_doc = add_document($chemin,$numdoc_courant);
-        fwrite($docsql,$requeteSQL_doc);
+        fwrite($docsql,$requeteSQL_doc.PHP_EOL);
         $requeteSQL_docnode = add_node_document($node_parent_courant,$numdoc_courant);
-        fwrite($docnodesql,$requeteSQL_docnode);
+        fwrite($docnodesql,$requeteSQL_docnode.PHP_EOL);
         $numdoc_courant++;
       }}
     }
@@ -103,7 +108,11 @@ function recup_worker(string $path,int $node_parent_courant){
   //       echo '----------------------------- <br>';
   //   }
   // }
+  unlink('sql/insert_NODE.sql');
+  unlink('sql/insert_NODE_DOCUMENT.sql');
+  unlink('sql/insert_DOCUMENT.sql');
+
   echo'insert into NODE (id_node,name, parent_node_id) values (0,\''.dirname('.').'\',NULL);  <br> ';
-  recup_worker('.',0);
-  close()
+  recup_worker('../Ressourcepeda',0,true);
+
   ?>
