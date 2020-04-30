@@ -23,12 +23,13 @@ function add_document(string $path,$id_doc):string{
 }
 
 
-function add_node(string $path,int $parent):string{
+function add_node(string $path,int $parent,int $num):string{
+  global $numnode_courant;
   $path_info = pathinfo($path);
   $nom =  $path_info['filename'] ;     //nom du dossier
-  $num = $parent+1;
  echo'insert into NODE (id_node,name, parent_node_id) values ('.$num.',\''.$nom.'\','.$parent.');  <br> ';
-  return 'insert into NODE (id_node,name, parent_node_id) values ('.$num.',\''.$nom.'\','.$parent.');  \n ';
+ $numnode_courant++;
+  return 'insert into NODE (id_node,name, parent_node_id) values ('.$numnode_courant.',\''.$nom.'\','.$parent.');  \n ';
 }
 
 
@@ -37,26 +38,29 @@ function add_node_document(int $id_node,int $id_doc):string{
   return  'insert into NODE_DOCUMENT (NODE_id_node, DOCUMENT_id_doc) values ('.$id_node.','.$id_doc.'); \n';
 }
 
-
+  $numnode_courant =2;
   $numdoc_courant = 1;
   function recup_worker(string $path,int $node_parent_courant){
     $nodesql = fopen("node.sql", "w");
     $docsql = fopen("document.sql", "w");
     $docnodesql = fopen("node_document.sql", "w");
     global $numdoc_courant;
-    $ignore = array( 'cgi-bin', '.', '..', );
+    global $numnode_courant;
+    $ignore = array( 'cgi-bin', '.', '..','.git','.env','.gitignore' );
+    $node_parent_courant++;
 
 
-    $dossier_courant =  scandir($path);
+    $dossier_courant =  scandir($path,1);
     foreach ($dossier_courant as $value) {
 
       if(!in_array($value,$ignore)){
 
           $chemin = $path.'/'.$value;
         if(is_dir($chemin)){
-          $requeteSQL_node = add_node($value,$node_parent_courant);
+          $requeteSQL_node = add_node($value,$node_parent_courant,$numnode_courant);
           fwrite($nodesql,$requeteSQL_node);//ecrit dans NODE
-          recup_worker($chemin,$node_parent_courant++);
+          //$node_parent_courant++;
+          recup_worker($chemin,$node_parent_courant);
         }else{
           $requeteSQL_doc = add_document($chemin,$numdoc_courant);
           fwrite($nodesql,$requeteSQL_doc);//ecrit dans DOCUMENT
@@ -66,6 +70,8 @@ function add_node_document(int $id_node,int $id_doc):string{
         }}
 
       }
+
+      //$numnode_courant++;
     }
 
 //   $ignore = array( 'cgi-bin', '.', '..','.git' );
@@ -83,5 +89,5 @@ function add_node_document(int $id_node,int $id_doc):string{
 //   }
 // }
 
-recup_worker('.',1);
+recup_worker('.',0);
 ?>
