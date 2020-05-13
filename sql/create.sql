@@ -7,7 +7,7 @@ FOREIGN KEY(parent_node_id) REFERENCES NODE (id_node)
 
 
 CREATE TABLE DOCUMENT(
-  id_doc int PRIMARY KEY ,
+  id_doc int PRIMARY KEY auto_increment,
   datepublication date,
   typedoc varchar(40) NOT NULL,
   nom TEXT NOT NULL,
@@ -25,6 +25,21 @@ FOREIGN KEY(DOCUMENT_id_doc) REFERENCES DOCUMENT(id_doc)
 
 
 
+CREATE TABLE COMPTERENDU(
+id_cr int PRIMARY KEY auto_increment  ,
+content MEDIUMTEXT,
+datepub date,
+auteur varchar(40)
+);
+
+
+CREATE TABLE COMPTERENDU_DOCUMENT(
+COMPTERENDU_id_cr int ,
+DOCUMENT_id_doc int  ,
+primary key(COMPTERENDU_id_cr,DOCUMENT_id_doc),
+FOREIGN KEY(COMPTERENDU_id_cr) REFERENCES COMPTERENDU(id_cr),
+FOREIGN KEY(DOCUMENT_id_doc) REFERENCES DOCUMENT(id_doc)
+);
 
 
 
