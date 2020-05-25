@@ -5,10 +5,8 @@
 //if(isset( $_POST['id_doc'])){
 if(true){
 
-    //$id_doc = $_POST['data'];
-    //$id_doc = random_int(1,1813);
-    $id_doc = 960;
-   
+    $id_doc = $_POST['data'];
+
 
     //On ouvre la base de donnée
   $database = 'localhost';
@@ -25,26 +23,12 @@ if(true){
   }
 
 
-  $sth= $db->prepare('Select * FROM DOCUMENT WHERE id_doc = ?');
+  $sth= $db->prepare('DELETE  FROM DOCUMENT WHERE id_doc = ?');
   $sth->bindParam(1,$id_doc);
     
-  $sth->execute();
-  $res = $sth->fetch();
+  echo $sth->execute();
+  //$res = $sth->fetch();
   
-
-  $doc = array(
-    "id"=>$res["id_doc"],
-    "typedoc" =>  $res["typedoc"],
-    "nom" => $res["nom"],
-    "date" => $res["datepublication"],
-    "lien" => $res["chemin"],
-    "descrip" => $res["descri"]
-  );
-
-
-$json = json_encode($doc);
-echo $json;
-
 $db=null;
   
 
