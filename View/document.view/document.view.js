@@ -11,6 +11,8 @@ function init(id_doc) {
         error();
     }
 
+
+
 }
 
 function error() {
@@ -20,7 +22,7 @@ function error() {
 
 function affiche(json) {
     //alert("success");
-    console.log(json);
+    //console.log(json);
 
     let doc = JSON.parse(json);
     id_doc = doc.id;
@@ -140,6 +142,7 @@ function affiche(json) {
 
     document.getElementById("telecharger").setAttribute("href", "http://localhost/" + lien);
     document.getElementById("titreh1").innerHTML = title;
+    recup_all_comment();
 
 
 
@@ -190,6 +193,7 @@ function ajax_post_request(callback, url, async, data) {
 }
 
 function modifier() {
+    delete_comment();
     //ajouter des infos bull avec des span https://www.alsacreations.com/astuce/lire/1-comment-personnaliser-une-infobulle.html
     var button_modifier = document.getElementById("modifier");
     var div_description = document.getElementById("description");
@@ -344,11 +348,11 @@ function add() {
     today = mm + '/' + dd + '/' + yyyy;
     var commentaire = document.getElementById("entry_comment").value;
     commentaire = commentaire.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-   
-    
+
+
     var nom = (document.getElementById("entry_name").value === "" ? "Anonyme" : document.getElementById("entry_name").value); //Operateur ternaire Condition? action_si_vrai: action_si_faux
     nom = nom.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-
+    /*
     document.getElementById("chat_s").innerHTML +=
         '<div class="chat chat_other"><div class="chat_message">' +
         commentaire +
@@ -359,16 +363,17 @@ function add() {
     document.getElementById("chat_s").scrollTop = document.getElementById(
         "chat_s"
     ).scrollHeight;
-
+*/
 
     var comment = ({
+        id_doc: id_doc,
         comment: commentaire,
         nom: nom
     })
     try {
         uri = JSON.stringify(comment);
-        let url = "http://localhost/ASL-Abbaye/controler/script-addcomment.php?";
-        ajax_post_request(null, url, false, encodeURIComponent(uri));
+        let url = "http://localhost/ASL-Abbaye/controler/script-add-comment.php?";
+        ajax_post_request(recup_all_comment, url, false, encodeURIComponent(uri));
     } catch (error) {
         alert(error);
     }
@@ -376,20 +381,30 @@ function add() {
 //Fait un appel AJAX pour recuperer les commentaires 
 function recup_all_comment() {
     try {
-        let url = "http://localhost/ASL-Abbaye/controler/script-addcomment.php?";
-        ajax_post_request(recup_comment, url, false, encodeURIComponent(id_doc));
+        let url = "http://localhost/ASL-Abbaye/controler/script-recup-comment.php?";
+        ajax_post_request(display_all_comment, url, false, encodeURIComponent(id_doc));
     } catch (error) {
         alert(error);
     }
 }
 
-function add_one_comment(commentaire, nom, date) {
+function add_one_comment(commentaire, nom, date, id) {
+
+    var today = new Date(date);
+    var yyyy = today.getFullYear();
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var dd = String(today.getDate()).padStart(2, '0');
+    today = yyyy + '/' + mm + '/' + dd;
+
+
+    commentaire = commentaire.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    nom = nom.replace(/</g, "&lt;").replace(/>/g, "&gt;");
     date = convertDate(date);
     document.getElementById("chat_s").innerHTML +=
-        '<div class="chat chat_other"><div class="chat_message">' +
+        '<div class="chat chat_other" id="' + id + '"><div class="chat_message">' +
         commentaire +
         '</div><div class="chat_name">' + "de " + nom +
-        ' posté le ' + date + '</div></div>';
+        ' posté le ' + today + '</div></div>';
 
     document.querySelector("#chat input").value = "";
     document.getElementById("chat_s").scrollTop = document.getElementById(
@@ -397,12 +412,13 @@ function add_one_comment(commentaire, nom, date) {
     ).scrollHeight;
 }
 
-function display_all_comment(json){
-    var all_comment= JSON.parse(json);
+function display_all_comment(json) {
+    clear_comment();
+    var all_comment = JSON.parse(json);
 
     for (let index = 0; index < all_comment.length; index++) {
         var current = all_comment[index];
-        add_one_comment(current.commentaire,current.nom,current.date);
+        add_one_comment(current.commentaire, current.auteur, current.datepub, current.id_comment);
     }
 
 }
@@ -411,7 +427,7 @@ function display_all_comment(json){
 
 function convertDate(dateString) {
     var date = new Date(dateString);
-    return date.getDate()+"/"+date.getMonth()+"/"+date.getFullYear();
+    return date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear();
 }
 
 
@@ -426,6 +442,7 @@ function convertDate(dateString) {
 function check() {
     var x;
     x = document.getElementById("entry_comment").value;
+    var nom = document.getElementById("entry_name").value;
     if (!x.replace(/\s/g, "").length) {
         alert(
             "Votre commentaire est vide"
@@ -433,15 +450,42 @@ function check() {
         return false;
     }
     //Si le commentaire contient du contenue injurieux
-    if (false) {
+    if (x.length > 600) {
         alert(
-            "L'espace commentaire doit rester un lieu de respect"
+            "Les commentaires sont limités à 600 caracteres "
+        );
+        return false;
+    }
+
+    if (nom.length > 40) {
+        alert(
+            "Le pseudonyme est limités à 50 caracteres"
         );
         return false;
     }
 }
 
+function clear_comment() {
+    var chat = document.getElementById("chat_s");
+    while (chat.firstChild) {
+        chat.removeChild(chat.firstChild);
+    }
+}
 
-function load_comment() { }
-function save_comment() { }
-function delete_comment() { }
+
+function addicondelete() {
+    //on ajoute un petit bouton poubelle 
+    var listcomment = document.getElementsByClassName("chat_other");
+    var i = 0;
+    while (i < document.getElementsByClassName("chat_name").length) {
+        current = document.getElementsByClassName("chat_name")[i];
+        current.innerHTML +=
+            '<div class="tooltip"><button type="button" class="supprimer_comm" onclick="">' +
+            '<svg class="bi bi-trash" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">' +
+            '<path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />' +
+            '<path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />' +
+            '</svg></button><span class="tooltiptext">Supprimer le commentaire</span></div>';
+        i++;
+    }
+
+}

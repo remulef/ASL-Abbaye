@@ -27,7 +27,10 @@ if (true) {
     $id_doc = $data->id_doc;
     $nom = $data->nom;
     $commentaire = $data->comment;
-    $today = date("Y-m-d H:i:s");                     // 2001-03-10 17:16:18 (le format DATETIME de MySQL)
+    $today = getdate();
+    $mon = $today['mon'];
+    $mon +=1;
+    $date = $today['year']."/".$mon."/".$today['mday'];
 
 
 
@@ -35,7 +38,7 @@ if (true) {
     $sth->bindParam(1, $id_doc);
     $sth->bindParam(2, $nom);
     $sth->bindParam(3, $commentaire);
-    $sth->bindParam(3, $today);
+    $sth->bindParam(4, $date);
 
    
 

@@ -7,7 +7,7 @@ if(true){
 
     //$id_doc = $_POST['data'];
     $id_doc = random_int(1,1813);
-
+    //$id_doc = 238;
     //il faudra checker l'identhitifcation 
     
    

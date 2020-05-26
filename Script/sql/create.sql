@@ -50,5 +50,7 @@ id_comment int auto_increment  ,
 id_doc int ,
 commentaire TEXT NOT NULL,
 datepub date,
-auteur varchar(40)
+auteur varchar(40),
+primary key(id_comment,id_doc),
+FOREIGN KEY(id_doc) REFERENCES DOCUMENT(id_doc)
 );

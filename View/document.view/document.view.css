@@ -33,6 +33,22 @@ text-transform: none;
   
 }
 
+#chat_s button {
+  background-color: white; 
+  border: none;
+  color: #785964;
+  padding: 7px 7px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  margin-left: 1em;
+}
+
+#chat_s svg {
+ fill: red;
+}
 audio{
     width : 200px;
   }
@@ -109,7 +125,7 @@ main{
 
 .grid-container {
   display: grid;
-  grid-template-columns: ;
+  grid-template-columns:min-content ;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 1px 1px;
   grid-template-areas: "commentaire1" "commentaire2" "." "." "." ".";
@@ -228,7 +244,7 @@ main{
 }
 #chat_s {
   overflow-y: scroll;
-  max-height: 360px;
+  max-height: 480px;
 }
 ::-webkit-scrollbar {
   width: 13px;
