@@ -45,3 +45,10 @@ FOREIGN KEY(DOCUMENT_id_doc) REFERENCES DOCUMENT(id_doc)
 
 
 
+CREATE TABLE COMMENTAIRE(
+id_comment int auto_increment  ,
+id_doc int ,
+commentaire TEXT NOT NULL,
+datepub date,
+auteur varchar(40)
+);
