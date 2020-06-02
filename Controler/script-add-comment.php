@@ -10,10 +10,10 @@ if (true) {
 
     //On ouvre la base de donnée
     $database = 'localhost';
-    $user = 'root';
-    $password = 'OUI';
-    try {
-        $db = new PDO("mysql:host=127.0.0.1:3308;dbname=asl", $user);
+  $user = 'root';
+  $password = 'OUI';
+  try{
+    $db = new PDO("mysql:host=127.0.0.1:3308;dbname=asl", $user);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         //echo "Connected successfully"; 
     } catch (Exception $e) {
@@ -39,18 +39,9 @@ if (true) {
     $sth->bindParam(2, $nom);
     $sth->bindParam(3, $commentaire);
     $sth->bindParam(4, $date);
-
+    $sth->execute();
    
 
-    if($sth->execute()){
-        $sth = $db->prepare('SELECT *  FROM DOCUMENT WHERE id_doc = ? ');
-        $sth->bindParam(1, $id_doc);
-        $sth->execute();
-        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-        $json = json_encode($results);
-        echo $json;
-    }
-    //$res = $sth->fetch();
 
     $db = null;
 }

@@ -9,11 +9,11 @@ if(true){
 
 
     //On ouvre la base de donnée
-  $database = 'localhost';
-  $user = 'root';
-  $password = 'OUI';
-  try{
-    $db = new PDO("mysql:host=127.0.0.1:3308;dbname=asl", $user);
+    $database = 'localhost';
+    $user = 'root';
+    $password = 'OUI';
+    try{
+      $db = new PDO("mysql:host=127.0.0.1:3308;dbname=asl", $user);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     //echo "Connected successfully"; 
   }

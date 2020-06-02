@@ -1,5 +1,9 @@
+
 let id_doc;
 let lien;
+let commentaire_to_delete = [];
+let old_title;
+let old_description;
 function init(id_doc) {
     //document.getElementById("myInput").style.display = "none";
     let url = "http://localhost/ASL-Abbaye/controler/script-document.php";
@@ -27,6 +31,7 @@ function affiche(json) {
     let doc = JSON.parse(json);
     id_doc = doc.id;
     let title = doc.nom;
+    let description = doc.descrip;
     let date = doc.datepublication;
     lien = doc.lien;
     lien = "/" + lien;
@@ -139,9 +144,12 @@ function affiche(json) {
             break;
     }
 
-
+    console.log(date==null);
     document.getElementById("telecharger").setAttribute("href", "http://localhost/" + lien);
     document.getElementById("titreh1").innerHTML = title;
+    document.getElementById("titre").innerHTML += "<h4>"+(date==null?"":date)+"</h4>";
+
+    document.getElementById("description").getElementsByTagName("p")[0].innerHTML += description;
     recup_all_comment();
 
 
@@ -193,7 +201,8 @@ function ajax_post_request(callback, url, async, data) {
 }
 
 function modifier() {
-    delete_comment();
+    add_button_delete_all();
+    addicondelete();
     //ajouter des infos bull avec des span https://www.alsacreations.com/astuce/lire/1-comment-personnaliser-une-infobulle.html
     var button_modifier = document.getElementById("modifier");
     var div_description = document.getElementById("description");
@@ -224,12 +233,18 @@ function modifier() {
     div_titre.append(input_title);
 
 
+
     button_modifier.setAttribute("onclick", "valider()");
+    old_title = titre;
+    old_description = description;
 
 }
 
 
 function valider() {
+    removecondelete();
+    remove_button_delete_all();
+    delete_selected_comment();
     var button_modifier = document.getElementById("modifier");
     var div_description = document.getElementById("description");
     var div_titre = document.getElementById("titre");
@@ -250,22 +265,29 @@ function valider() {
     div_description.append(p);
 
     button_modifier.setAttribute("onclick", "modifier()");
+    // si on ne modifie pas le titre ou la description, inutile de faire l'appel ajax d'update
+    if (title != old_title || description != old_description) {
+        var newdoc = ({
+            id_doc: id_doc,
+            title: title,
+            descr: description
+        })
 
-    var newdoc = ({
-        id_doc: id_doc,
-        title: title,
-        descr: description
-    })
+        console.log(newdoc);
 
-    console.log(newdoc);
-
-    try {
-        uri = JSON.stringify(newdoc);
-        let url = "http://localhost/ASL-Abbaye/controler/script-modify.php?";
-        ajax_post_request(null, url, false, encodeURIComponent(uri));
-    } catch (error) {
-        alert(error);
+        try {
+            uri = JSON.stringify(newdoc);
+            let url = "http://localhost/ASL-Abbaye/controler/script-modify.php?";
+            ajax_post_request(null, url, false, encodeURIComponent(uri));
+        } catch (error) {
+            alert(error);
+        }
     }
+
+    commentaire_to_delete = [];
+
+
+
 
 }
 
@@ -475,12 +497,11 @@ function clear_comment() {
 
 function addicondelete() {
     //on ajoute un petit bouton poubelle 
-    var listcomment = document.getElementsByClassName("chat_other");
     var i = 0;
     while (i < document.getElementsByClassName("chat_name").length) {
         current = document.getElementsByClassName("chat_name")[i];
         current.innerHTML +=
-            '<div class="tooltip"><button type="button" class="supprimer_comm" onclick="">' +
+            '<div class="tooltip"><button type="button" class="supprimer_comm" onclick="selectcomment(' + i + ')">' +
             '<svg class="bi bi-trash" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">' +
             '<path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />' +
             '<path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />' +
@@ -489,3 +510,128 @@ function addicondelete() {
     }
 
 }
+
+
+function removecondelete() {
+
+    var i = 0;
+    while (i < document.getElementsByClassName("chat_name").length) {
+        current = document.getElementsByClassName("chat_name")[i];
+        current.removeChild(current.getElementsByClassName("tooltip")[0]);
+        current.parentElement.style.backgroundColor = "white";
+
+        i++;
+    }
+
+}
+
+function selectcomment(id_com) {
+    var x = document.getElementsByClassName("chat_name")[id_com];
+    var parent = x.parentElement;
+    var id = parent.id;
+
+    var button = x.getElementsByTagName("button")[0];
+    button.setAttribute("onclick", "diselect(" + id_com + ")");
+    document.getElementById(id).style.backgroundColor = "tomato";
+    commentaire_to_delete.push(id);
+
+
+}
+
+function delete_selected_comment() {
+    if (commentaire_to_delete.length > 0) {
+        try {
+
+            var json = ({
+                id_doc: id_doc,
+                id_com: commentaire_to_delete
+            })
+            json = JSON.stringify(json);
+
+
+            console.log(json);
+            let url = "http://localhost/ASL-Abbaye/controler/script-delete-comment.php?";
+            ajax_post_request(recup_all_comment, url, false, encodeURIComponent(json));
+        } catch (error) {
+            alert(error);
+        }
+    }
+
+
+
+}
+
+
+function delete_all() {
+    var i = 0;
+    while (i < document.getElementsByClassName("chat_name").length) {
+        current = document.getElementsByClassName("chat_name")[i];
+        commentaire_to_delete.push(current.parentElement.id);
+
+        i++;
+    }
+
+    try {
+
+        var json = ({
+            id_doc: id_doc,
+            id_com: commentaire_to_delete
+        })
+        json = JSON.stringify(json);
+
+
+        console.log(json);
+        let url = "http://localhost/ASL-Abbaye/controler/script-delete-comment.php?";
+        ajax_post_request(recup_all_comment, url, false, encodeURIComponent(json));
+    } catch (error) {
+        alert(error);
+    }
+    commentaire_to_delete = [];
+
+
+
+}
+
+function add_button_delete_all() {
+    var header = document.getElementsByClassName("chat_header")[0];
+    header.innerHTML += '<div id="deleteall" class="tooltip"><button type="button" class="supprimer_all_comm" onclick="delete_all()">' +
+        'supprimer tous les commentaires' +
+        '</svg></button><span class="tooltiptext">Supprimer le commentaire</span></div>';
+}
+
+function remove_button_delete_all() {
+    var elm = document.getElementById("deleteall");
+    elm.parentNode.removeChild(elm);
+
+
+}
+
+function diselect(i) {
+    //il faut aussi enlever de la liste 
+    current = document.getElementsByClassName("chat_name")[i];
+    current.parentElement.style.backgroundColor = "white";
+
+
+    var button = current.getElementsByTagName("button")[0];
+    button.setAttribute("onclick", "selectcomment(" + i + ")");
+
+    var x = document.getElementsByClassName("chat_name")[i];
+    var parent = x.parentElement;
+    var id = parent.id;
+    
+    commentaire_to_delete=arrayRemove(commentaire_to_delete,id);
+
+}
+
+function arrayRemove(arr, value)
+ { 
+    recopie = [];
+    var i = 0;
+     while( i < arr.length){
+         if(arr[i]!=value){
+            recopie.push(arr[i]);
+         }
+         i++;
+     }
+     return recopie;
+} 

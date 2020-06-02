@@ -28,7 +28,7 @@ if (!empty($_POST['id_doc'])) {
     $id_doc = $_POST['id_doc'];
     echo "<body onload=\"init(" . $id_doc . ")\">";
 } else {
-    echo "<body onload=\"init(11)\"*>";
+    echo "<body onload=\"init(11)\">";
 }
 ?>
 <main>
@@ -97,8 +97,7 @@ if (!empty($_POST['id_doc'])) {
 
         <div id="description">
 
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, cum facere. Sed illum dolore reprehenderit autem placeat, inventore nostrum libero, quos unde illo numquam doloremque. Dolor amet quis ducimus inventore.</p>
-
+            <p></p>
 
         </div>
     </div>
@@ -111,16 +110,16 @@ if (!empty($_POST['id_doc'])) {
         </script>
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){add()}"></iframe>
         <form id="ss-form" onsubmit="submitted=true" action="https://docs.google.com/forms/d/1-PRLoHTtgldV5cNTvmVyjf-rf1p1kLhzKGXn2i1XGhQ/formResponse" method="POST" target="hidden_iframe">
-            <input name="Nom" type="text" value=""  id="entry_name"require placeholder="Votre nom">
+            <input name="Nom" type="text" value="" id="entry_name" require placeholder="Votre nom">
             <input name="entry.1732478127" title="" class="ss-q-short" id="entry_comment" dir="auto" aria-label="Message  " type="text" value="" placeholder="Votre commentaire">
             <input name="draftResponse" type="hidden" value='[,,"-2195881827543510175"]&#10;'>
             <input name="pageHistory" type="hidden" value="0">
             <input name="fvv" type="hidden" value="0">
             <input name="fbzx" type="hidden" value="-2195881827543510175">
-            
-            <input name="submit" class="jfk-button jfk-button-action " id="ss-submit" type="submit" value="Commenter" onClick="return check()" >
+
+            <input name="submit" class="jfk-button jfk-button-action " id="ss-submit" type="submit" value="Commenter" onClick="return check()">
         </form>
-       
+
     </div>
 
 
