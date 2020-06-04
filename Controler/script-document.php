@@ -36,25 +36,17 @@ if(true){
   $res = $sth->fetch(PDO::FETCH_ASSOC);
 
 
-  $doc = array(
-    "id"=>$res["id_doc"],
-    "typedoc" =>  $res["typedoc"],
-    "nom" => $res["nom"],
-    "date" => $res["datepublication"],
-    "lien" => $res["chemin"],
-    "descrip" => $res["descri"]
-  );
+
+
+
+$json = json_encode($res);
 
 
 
 
-$json = json_encode($doc);
-
-
+var_dump($res);
 
 echo $json;
-echo $doc;
-var_dump($res);
 $db=null;
 
 
