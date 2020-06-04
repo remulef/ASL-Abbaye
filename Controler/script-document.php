@@ -35,17 +35,7 @@ if(true){
   $sth->execute();
   $res = $sth->fetch(FETCH_ASSOC);
 
-  $res["nom"] = utf8_encode($res["nom"]);
-  $res["chemin"] = utf8_encode($res["chemin"]);
-  
-
-
-
-
 $json = json_encode($doc);
-
-
-
 
 var_dump($res);
 echo $json;
