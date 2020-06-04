@@ -40,7 +40,7 @@ if (true) {
 
 
 
-  $json = json_encode($doc);
+  $json = json_encode($res);
 
 
 
