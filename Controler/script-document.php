@@ -39,14 +39,20 @@ if(true){
 
 
 
-$json = json_encode($res);
+
 
 
 
 
 var_dump($res);
 
+try {
+  $json = json_encode($res);
 echo $json;
+
+} catch (Exception $e) {
+  echo ('Erreur : ' . $e->getMessage());
+}
 $db=null;
 
 
