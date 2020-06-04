@@ -33,7 +33,7 @@ if(true){
   $sth->bindParam(1,$id_doc);
 
   $sth->execute();
-  $res = $sth->fetch();
+  $res = $sth->fetch(FETCH_ASSOC);
 
 
   $doc = array(
@@ -53,7 +53,7 @@ $json = json_encode($doc);
 
 
 echo $json;
-
+echo $doc;
 $db=null;
 
 
