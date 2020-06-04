@@ -27,12 +27,13 @@ if(true){
   }
 
 
-  $sth= $db->prepare('Select * FROM `DOCUMENT` WHERE id_doc = ?');
-  $sth->bindParam(1,$id_doc);
-  echo $sth;
+  
 
  
 try {
+  $sth= $db->prepare('Select * FROM `DOCUMENT` WHERE id_doc = ?');
+  $sth->bindParam(1,$id_doc);
+  echo $sth;
   $sth->execute();
   $res = $sth->fetch();
 
@@ -47,7 +48,7 @@ try {
   );
 $json = json_encode($doc);
 var_dump($json) ;
-} catch (\Throwable $th) {
+} catch (Throwable $th) {
   echo $th;
 }
  
