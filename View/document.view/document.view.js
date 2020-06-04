@@ -6,7 +6,7 @@ let old_title;
 let old_description;
 function init(id_doc) {
     //document.getElementById("myInput").style.display = "none";
-    let url = "http://www.les-asl-abbaye.ovh/Controler/script-document.php";
+    let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/script-document.php";
 
     try {
         ajax_post_request(affiche, url, true, encodeURIComponent(id_doc));
@@ -164,7 +164,7 @@ function supprimer() {
 
         console.log(id_doc);
         id_doc = 1816;
-        let url = "http://www.les-asl-abbaye.ovh/Controler/script-delete-sql.php?";
+        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/script-delete-sql.php?";
 
         try {
             ajax_post_request(null, url, true, encodeURIComponent(id_doc));
@@ -283,7 +283,7 @@ function valider() {
 
         try {
             uri = JSON.stringify(newdoc);
-            let url = "http://www.les-asl-abbaye.ovh/Controler/script-modify.php?";
+            let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/script-modify.php?";
             ajax_post_request(null, url, false, encodeURIComponent(uri));
         } catch (error) {
             alert(error);
@@ -376,7 +376,7 @@ function add() {
     })
     try {
         uri = JSON.stringify(comment);
-        let url = "http://www.les-asl-abbaye.ovh/Controler/script-add-comment.php?";
+        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/script-add-comment.php?";
         ajax_post_request(recup_all_comment, url, false, encodeURIComponent(uri));
     } catch (error) {
         alert(error);
@@ -385,7 +385,7 @@ function add() {
 //Fait un appel AJAX pour recuperer les commentaires
 function recup_all_comment() {
     try {
-        let url = "http://www.les-asl-abbaye.ovh/Controler/script-recup-comment.php?";
+        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/script-recup-comment.php?";
         ajax_post_request(display_all_comment, url, false, encodeURIComponent(id_doc));
     } catch (error) {
         alert(error);
@@ -532,7 +532,7 @@ function delete_selected_comment() {
 
 
             console.log(json);
-            let url = "http://www.les-asl-abbaye.ovh/Controler/script-delete-comment.php?";
+            let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/script-delete-comment.php?";
             ajax_post_request(recup_all_comment, url, false, encodeURIComponent(json));
         } catch (error) {
             alert(error);
@@ -563,7 +563,7 @@ function delete_all() {
 
 
         console.log(json);
-        let url = "http://www.les-asl-abbaye.ovh/Controler/script-delete-comment.php?";
+        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/script-delete-comment.php?";
         ajax_post_request(recup_all_comment, url, false, encodeURIComponent(json));
     } catch (error) {
         alert(error);
