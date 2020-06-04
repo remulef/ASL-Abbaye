@@ -35,9 +35,10 @@ if(true){
   $sth->execute();
   $res = $sth->fetch(FETCH_ASSOC);
 
-$json = json_encode($doc);
+
 
 var_dump($res);
+$json = json_encode($doc);
 echo $json;
 $db=null;
 
