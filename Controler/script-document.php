@@ -33,30 +33,22 @@ if(true){
   $sth->bindParam(1,$id_doc);
 
   $sth->execute();
-  $res = $sth->fetch(PDO::FETCH_ASSOC);
+  $res = $sth->fetch(FETCH_ASSOC);
+
+  $res["nom"] = utf8_encode($res["nom"]);
+  $res["chemin"] = utf8_encode($res["chemin"]);
+  
 
 
 
 
-
-
+$json = json_encode($doc);
 
 
 
 
 var_dump($res);
-
-$show_json = json_encode($res , JSON_FORCE_OBJECT);
-if ( json_last_error_msg()=="Malformed UTF-8 characters, possibly incorrectly encoded" ) {
-    $show_json = json_encode($API_array, JSON_PARTIAL_OUTPUT_ON_ERROR );
-}
-if ( $show_json !== false ) {
-    echo($show_json);
-} else {
-    die("json_encode fail: " . json_last_error_msg());
-}
-
-
+echo $json;
 $db=null;
 
 
