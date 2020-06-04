@@ -15,33 +15,33 @@ text-transform: none;
   width: 100%;
   background-color: #e0e0e0;
   color: black;
-  resize: vertical; 
+  resize: vertical;
 }
 
 #input_title{
   width: 100%;
   background-color: #e0e0e0;
   color: black;
-  resize: vertical; 
-  
+  resize: vertical;
+
   display: block;
   font-size: 2em;
   margin-top: 0.67em;
   margin-bottom: 0.67em;
   margin-left: 0;
   margin-right: 0;
-  
+
 }
 
 .chat_header button {
   margin-left: 1em;
   padding: 7px 7px;
   font-size: 16px;
-  background-color: tomato; 
+  background-color: tomato;
 }
 
 #chat_s button {
-  background-color: white; 
+  background-color: white;
   border: none;
   color: #785964;
   padding: 7px 7px;
@@ -67,9 +67,9 @@ audio{
 
 .controlimage{
     display: grid;
- 
+
     grid-template-areas: "imagegrid" "audiogrid";
-    
+
 }
 
 .audiogrid { grid-area: audiogrid;
@@ -79,7 +79,7 @@ height: min-content; }
     height: min-content;  }
 
 button {
-    background-color: #9ed0e6; 
+    background-color: #9ed0e6;
     border: none;
     color: #785964;
     padding: 15px 32px;
@@ -105,7 +105,7 @@ header{
     max-height:33%;
     width: auto;
     height: auto;
- 
+
 }
 #description {
     margin-top: 50px;
@@ -123,7 +123,7 @@ main{
 
 #Content {
     margin: 100px;
-    
+
 }
 
 
@@ -186,11 +186,11 @@ main{
 }
 
 #chat {
-  
+
   height: 720px;
-  
+
   border: 1px solid silver;
- 
+
   font-family: "Montserrat", sans-serif;
   position: relative;
   background: white;
@@ -243,7 +243,7 @@ main{
   border: 1px solid grey;
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
-  
+
 }
 #chat input[type="submit"]:hover {
   background: grey;

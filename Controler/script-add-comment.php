@@ -9,13 +9,13 @@ if (true) {
 
 
     //On ouvre la base de donnée
-    $database = 'localhost';
-  $user = 'root';
-  $password = 'OUI';
-  try{
-    $db = new PDO("mysql:host=127.0.0.1:3308;dbname=asl", $user);
+    $database = 'gsjrnmiasl.mysql.db';
+    $user = 'gsjrnmiasl';
+    $password = 'MJCAbbaye38';
+    try {
+        $db = new PDO("mysql:host=gsjrnmiasl.mysql.db;dbname=gsjrnmiasl", $user,$password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        //echo "Connected successfully"; 
+        //echo "Connected successfully";
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
     }
@@ -40,7 +40,6 @@ if (true) {
     $sth->bindParam(3, $commentaire);
     $sth->bindParam(4, $date);
     $sth->execute();
-   
 
 
     $db = null;

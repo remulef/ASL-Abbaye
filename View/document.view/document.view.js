@@ -6,7 +6,7 @@ let old_title;
 let old_description;
 function init(id_doc) {
     //document.getElementById("myInput").style.display = "none";
-    let url = "http://localhost/ASL-Abbaye/controler/script-document.php";
+    let url = "http://www.les-asl-abbaye.ovh/Controler/script-document.php";
 
     try {
         ajax_post_request(affiche, url, true, encodeURIComponent(id_doc));
@@ -145,7 +145,7 @@ function affiche(json) {
     }
 
     console.log(date==null);
-    document.getElementById("telecharger").setAttribute("href", "http://localhost/" + lien);
+    document.getElementById("telecharger").setAttribute("href", "http://www.les-asl-abbaye.ovh" + lien);
     document.getElementById("titreh1").innerHTML = title;
     document.getElementById("titre").innerHTML += "<h4>"+(date==null?"":date)+"</h4>";
 
@@ -164,7 +164,7 @@ function supprimer() {
 
         console.log(id_doc);
         id_doc = 1816;
-        let url = "http://localhost/ASL-Abbaye/controler/script-delete-sql.php?";
+        let url = "http://www.les-asl-abbaye.ovh/Controler/script-delete-sql.php?";
 
         try {
             ajax_post_request(null, url, true, encodeURIComponent(id_doc));
@@ -218,6 +218,8 @@ function modifier() {
     input_description.setAttribute("id", "input_description");
     input_description.setAttribute("name", "nouvelle description ");
     input_description.setAttribute("rows", "4");
+
+
     //input_description.setAttribute("cols","95");
     input_description.innerHTML = description;
 
@@ -281,7 +283,7 @@ function valider() {
 
         try {
             uri = JSON.stringify(newdoc);
-            let url = "http://localhost/ASL-Abbaye/controler/script-modify.php?";
+            let url = "http://www.les-asl-abbaye.ovh/Controler/script-modify.php?";
             ajax_post_request(null, url, false, encodeURIComponent(uri));
         } catch (error) {
             alert(error);
@@ -306,7 +308,7 @@ function myFunction() {
     */
 
     var copy = document.createElement("a");
-    copy.innerHTML = "http://localhost" + lien;
+    copy.innerHTML = "http://www.les-asl-abbaye.ovh" + lien;
     var range = document.createRange();
     document.getElementById("telecharger").append(copy);
     range.selectNode(copy);
@@ -318,7 +320,7 @@ function myFunction() {
         var msg = successful ? 'successful' : 'unsuccessful';
         console.log('Copy email command was ' + msg);
         var tooltip = document.getElementById("myTooltip");
-        tooltip.innerHTML = "Copied: " + "http://localhost" + lien;;
+        tooltip.innerHTML = "Copied: " + "http://www.les-asl-abbaye.ovh" + lien;;
 
     } catch (error) {
         console.log('Oops, unable to copy');
@@ -339,7 +341,8 @@ function outFunc() {
 
 
 
-//Ajoute un commentaire 
+
+//Ajoute un commentaire
 function add() {
 
     var today = new Date();
@@ -373,16 +376,16 @@ function add() {
     })
     try {
         uri = JSON.stringify(comment);
-        let url = "http://localhost/ASL-Abbaye/controler/script-add-comment.php?";
+        let url = "http://www.les-asl-abbaye.ovh/Controler/script-add-comment.php?";
         ajax_post_request(recup_all_comment, url, false, encodeURIComponent(uri));
     } catch (error) {
         alert(error);
     }
 }
-//Fait un appel AJAX pour recuperer les commentaires 
+//Fait un appel AJAX pour recuperer les commentaires
 function recup_all_comment() {
     try {
-        let url = "http://localhost/ASL-Abbaye/controler/script-recup-comment.php?";
+        let url = "http://www.les-asl-abbaye.ovh/Controler/script-recup-comment.php?";
         ajax_post_request(display_all_comment, url, false, encodeURIComponent(id_doc));
     } catch (error) {
         alert(error);
@@ -475,7 +478,7 @@ function clear_comment() {
 
 
 function addicondelete() {
-    //on ajoute un petit bouton poubelle 
+    //on ajoute un petit bouton poubelle
     var i = 0;
     while (i < document.getElementsByClassName("chat_name").length) {
         current = document.getElementsByClassName("chat_name")[i];
@@ -529,7 +532,7 @@ function delete_selected_comment() {
 
 
             console.log(json);
-            let url = "http://localhost/ASL-Abbaye/controler/script-delete-comment.php?";
+            let url = "http://www.les-asl-abbaye.ovh/Controler/script-delete-comment.php?";
             ajax_post_request(recup_all_comment, url, false, encodeURIComponent(json));
         } catch (error) {
             alert(error);
@@ -560,7 +563,7 @@ function delete_all() {
 
 
         console.log(json);
-        let url = "http://localhost/ASL-Abbaye/controler/script-delete-comment.php?";
+        let url = "http://www.les-asl-abbaye.ovh/Controler/script-delete-comment.php?";
         ajax_post_request(recup_all_comment, url, false, encodeURIComponent(json));
     } catch (error) {
         alert(error);
@@ -586,7 +589,7 @@ function remove_button_delete_all() {
 }
 
 function diselect(i) {
-    //il faut aussi enlever de la liste 
+    //il faut aussi enlever de la liste
     current = document.getElementsByClassName("chat_name")[i];
     current.parentElement.style.backgroundColor = "white";
 
@@ -597,13 +600,13 @@ function diselect(i) {
     var x = document.getElementsByClassName("chat_name")[i];
     var parent = x.parentElement;
     var id = parent.id;
-    
+
     commentaire_to_delete=arrayRemove(commentaire_to_delete,id);
 
 }
 
 function arrayRemove(arr, value)
- { 
+ {
     recopie = [];
     var i = 0;
      while( i < arr.length){
@@ -613,4 +616,4 @@ function arrayRemove(arr, value)
          i++;
      }
      return recopie;
-} 
+}

@@ -47,7 +47,7 @@ if (!empty($_POST['id_doc'])) {
             <div id="icon">
 
                 <div class="tooltip">
-                    <button type="button" id="supprimer" onclick="supprimer()">
+                    <button type="button" id="supprimer" onclick="supprimer() disable">
                         <svg class="bi bi-trash" width="1.33em" height="1.33em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z" />
                             <path fill-rule="evenodd" d="M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" clip-rule="evenodd" />
@@ -99,6 +99,7 @@ if (!empty($_POST['id_doc'])) {
 
             <p></p>
 
+
         </div>
     </div>
     <!-- Insipirée de https://codepen.io/leenalavanya/pen/YqGeoz et modifier pour convenir a nos besoin -->
@@ -110,14 +111,14 @@ if (!empty($_POST['id_doc'])) {
         </script>
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){add()}"></iframe>
         <form id="ss-form" onsubmit="submitted=true" action="https://docs.google.com/forms/d/1-PRLoHTtgldV5cNTvmVyjf-rf1p1kLhzKGXn2i1XGhQ/formResponse" method="POST" target="hidden_iframe">
-            <input name="Nom" type="text" value="" id="entry_name" require placeholder="Votre nom">
+            <input name="Nom" type="text" value=""  id="entry_name"require placeholder="Votre nom">
             <input name="entry.1732478127" title="" class="ss-q-short" id="entry_comment" dir="auto" aria-label="Message  " type="text" value="" placeholder="Votre commentaire">
             <input name="draftResponse" type="hidden" value='[,,"-2195881827543510175"]&#10;'>
             <input name="pageHistory" type="hidden" value="0">
             <input name="fvv" type="hidden" value="0">
             <input name="fbzx" type="hidden" value="-2195881827543510175">
 
-            <input name="submit" class="jfk-button jfk-button-action " id="ss-submit" type="submit" value="Commenter" onClick="return check()">
+            <input name="submit" class="jfk-button jfk-button-action " id="ss-submit" type="submit" value="Commenter" onClick="return check()" >
         </form>
 
     </div>
