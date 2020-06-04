@@ -32,8 +32,19 @@ if (true) {
 
   $sth->execute();
   $res = $sth->fetch(PDO::FETCH_ASSOC);
-  var_dump($res);
+
+  $res["nom"] = utf8_encode($res["nom"]);
+  $res["chemin"] = utf8_encode($res["chemin"]);
+
+
+
+
+
   $json = json_encode($doc);
+
+
+
   echo $json;
+  var_dump($res);
   $db = null;
 }
