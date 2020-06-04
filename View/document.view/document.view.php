@@ -26,6 +26,7 @@
 <?php
 if (!empty($_POST['id_doc'])) {
     $id_doc = $_POST['id_doc'];
+    $id_doc = random_int(1,1000);
     echo "<body onload=\"init(" . $id_doc . ")\">";
 } else {
     echo "<body onload=\"init(11)\">";
