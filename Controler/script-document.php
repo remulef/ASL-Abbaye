@@ -5,9 +5,11 @@
 //if(isset( $_POST['id_doc'])){
 if(true){
 
-    $id_doc = $_POST['data'];
+    //$id_doc = $_POST['data'];
     $id_doc = 238;
-    $id_doc = random_int (1,1100);
+    $id_doc = random_int(2,1000);
+    echo $id_doc.PHP_EOL;
+
     //il faudra checker l'identhitifcation
 
 
@@ -27,13 +29,9 @@ if(true){
   }
 
 
-  
-
- 
-try {
   $sth= $db->prepare('Select * FROM `DOCUMENT` WHERE id_doc = ?');
   $sth->bindParam(1,$id_doc);
-  echo $sth;
+
   $sth->execute();
   $res = $sth->fetch();
 
@@ -46,12 +44,15 @@ try {
     "lien" => $res["chemin"],
     "descrip" => $res["descri"]
   );
+
+
+
+
 $json = json_encode($doc);
-var_dump($json) ;
-} catch (Throwable $th) {
-  echo $th;
-}
- 
+
+
+
+echo $json;
 
 $db=null;
 
