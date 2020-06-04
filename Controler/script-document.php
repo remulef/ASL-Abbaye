@@ -33,18 +33,17 @@ if (true) {
   $sth->execute();
   $res = $sth->fetch(PDO::FETCH_ASSOC);
 
+
+  //Passage en UTF8 pour corriger les erreurs de création du json
   $res["nom"] = utf8_encode($res["nom"]);
   $res["chemin"] = utf8_encode($res["chemin"]);
+  $res["descri"] = utf8_encode($res["descri"]);
 
-
-
-
-
+  //Encodage en Json pour envoie XHR
   $json = json_encode($res);
-
-
-
   echo $json;
-  var_dump($res);
+  //var_dump($res);
+
+  //Deconnexion
   $db = null;
 }
