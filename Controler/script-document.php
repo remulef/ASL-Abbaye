@@ -33,7 +33,7 @@ if(true){
   $sth->bindParam(1,$id_doc);
 
   $sth->execute();
-  $res = $sth->fetch(FETCH_ASSOC);
+  $res = $sth->fetch(PDO::FETCH_ASSOC);
 
 
   $doc = array(
