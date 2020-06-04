@@ -26,7 +26,8 @@ function error() {
 
 function affiche(json) {
     //alert("success");
-    //console.log(json);
+    console.log("le json");
+    console.log(json);
 
     let doc = JSON.parse(json);
     id_doc = doc.id;
