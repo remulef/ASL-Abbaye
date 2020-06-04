@@ -153,10 +153,6 @@ function affiche(json) {
     document.getElementById("description").getElementsByTagName("p")[0].innerHTML += description;
     recup_all_comment();
 
-
-
-
-
 }
 
 function supprimer() {

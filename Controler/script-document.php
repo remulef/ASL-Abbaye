@@ -6,8 +6,8 @@
 if(true){
 
     $id_doc = $_POST['data'];
-    //$id_doc = 238;
-    //$id_doc = random_int (1,1100);
+    $id_doc = 238;
+    $id_doc = random_int (1,1100);
     //il faudra checker l'identhitifcation
 
 
