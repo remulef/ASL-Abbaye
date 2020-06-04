@@ -46,7 +46,7 @@ try {
     "descrip" => $res["descri"]
   );
 $json = json_encode($doc);
-var_dump $json;
+var_dump($json) ;
 } catch (\Throwable $th) {
   echo $th;
 }
