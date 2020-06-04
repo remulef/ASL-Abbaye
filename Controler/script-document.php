@@ -54,6 +54,7 @@ $json = json_encode($doc);
 
 echo $json;
 echo $doc;
+var_dump($doc;)
 $db=null;
 
 
