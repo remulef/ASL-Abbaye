@@ -5,11 +5,8 @@
 //if(isset( $_POST['id_doc'])){
 if (true) {
 
-  //$id_doc = $_POST['data'];
-  $id_doc = 238;
-  $id_doc = random_int(2, 1000);
-  echo $id_doc . PHP_EOL;
-
+  $id_doc = $_POST['data'];
+  
   //il faudra checker l'identhitifcation
 
 
