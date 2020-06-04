@@ -46,15 +46,17 @@ if(true){
 
 var_dump($res);
 
-try {
-  $json = json_encode($res);
-  echo $json;
-
-} catch (Exception $e) {
-  //echo ('Erreur : ' . $e->getMessage());
-  $jsonError = json_last_error();
-  echo $jsonError;
+$show_json = json_encode($res , JSON_FORCE_OBJECT);
+if ( json_last_error_msg()=="Malformed UTF-8 characters, possibly incorrectly encoded" ) {
+    $show_json = json_encode($API_array, JSON_PARTIAL_OUTPUT_ON_ERROR );
 }
+if ( $show_json !== false ) {
+    echo($show_json);
+} else {
+    die("json_encode fail: " . json_last_error_msg());
+}
+
+
 $db=null;
 
 
