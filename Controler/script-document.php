@@ -1,5 +1,3 @@
-<header>Access-Control-Allow-Origin: https://les-asl-abbaye.ovh</header>
-
 <?php
 
 
