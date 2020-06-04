@@ -31,8 +31,9 @@ if(true){
   $sth->bindParam(1,$id_doc);
   echo $sth;
 
-  $sth->execute();
+ 
 try {
+  $sth->execute();
   $res = $sth->fetch();
 
 
