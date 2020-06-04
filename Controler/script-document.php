@@ -48,10 +48,12 @@ var_dump($res);
 
 try {
   $json = json_encode($res);
-echo $json;
+  echo $json;
 
 } catch (Exception $e) {
-  echo ('Erreur : ' . $e->getMessage());
+  //echo ('Erreur : ' . $e->getMessage());
+  $jsonError = json_last_error();
+  echo $jsonError;
 }
 $db=null;
 
