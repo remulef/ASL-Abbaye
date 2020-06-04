@@ -1,3 +1,3 @@
 git add .
-git commit -m "up"
-git push origin distant
+git commit -m "automatic push"
+git push 
