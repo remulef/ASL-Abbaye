@@ -207,6 +207,8 @@ function modifier() {
     var button_modifier = document.getElementById("modifier");
     var div_description = document.getElementById("description");
     var description = div_description.getElementsByTagName("p")[0].innerHTML;
+    const regex = /<br>/gi;
+    description = description.replace(regex,'\n');
     var div_titre = document.getElementById("titre");
     var titre = document.getElementsByTagName("h1")[0].innerHTML;
 
@@ -251,6 +253,8 @@ function valider() {
 
     var title = document.getElementsByTagName("textarea")[0].value;
     var description = document.getElementsByTagName("textarea")[1].value;
+    const regex = /\n/gi;
+    description = description.replace(regex,'<br>');  //On enleve le "\n" dans les titres
 
 
     div_titre.removeChild(div_titre.getElementsByTagName("textarea")[0]);
@@ -335,31 +339,6 @@ function outFunc() {
 
 
 
-$.getJSON(
-    "https://spreadsheets.google.com/feeds/list/1bGgvgvlumPjv1NrL8-EpFPQpgv2zObV_02M6NvzgyRM/od6/public/values?alt=json",
-    function (data) {
-        console.log(data);
-        for (var i = 0; i < data.feed.entry.length; i++) {
-            var entry = data.feed.entry[i];
-            var a, b;
-            if (entry.gsx$name.$t == "Ariana") {
-                a = "Ariana";
-                b = "";
-            } else {
-                a = entry.gsx$message.$t;
-                b = " chat_other";
-            }
-            document.getElementById("chat_s").innerHTML +=
-                '<div class="chat' +
-                b +
-                '"><div class="chat_message">' +
-                entry.gsx$_cpzh4.$t +
-                '</div><div class="chat_name">' +
-                a +
-                "</div></div>";
-        }
-    }
-);
 //Ajoute un commentaire 
 function add() {
 
