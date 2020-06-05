@@ -643,11 +643,3 @@ function arrayRemove(arr, value) {
     }
     return recopie;
 }
-
-
-var jsontag = JSON.parse('["crimson","green","indigo","maroon","maroon","mauv","orange","pink","purple","turquoise"]')
-
-new Taggle('example1', {
-    tags: jsontag,
-    duplicateTagClass: 'bounce'
-});

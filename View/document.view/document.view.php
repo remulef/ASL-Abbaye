@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="document.view.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Document</title>
 </head>
 
@@ -107,19 +108,65 @@ if (empty($_GET['id_doc'])) {
 
 
 
-        <div class="container" style="margin-top:50px;">
-            <div class="" id="example1"></div>
+        <main role="main" class="container">
 
-            <div class="form-group">
-                <label for="tag">Add Tags</label>
+            <section class="wrappers">
 
-            </div>
+                <div class="tags">
+                    <span class="title">Please write tag here and click on button to show your tags!</span>
+                    <div class="wrapper-tags focus">
+                        <div class="view-tags">
+                            <span class="tag" data-tag="javascript">javascript<i class="fa fa-close"></i></span>
+                            <span class="tag" data-tag="jQuery">jQuery<i class="fa fa-close"></i></span>
+                            <input type="text" class="input-tag">
+                        </div>
+                    </div>
 
-            <div class="form-group">
-                ["crimson","green","indigo","maroon","maroon","mauv","orange","pink","purple","turquoise"]
-            </div>
+                    <div class="show-error length">Please write tag bettwen 1 to 20 chracters.</div>
+                    <div class="show-error lengthTags">You can&#39;t add more than 10 tags.</div>
+                    <div class="show-error validChar">Please type &#91;A - z&#93; or &#91; أ - ي &#93; chracters.</div>
+                    <div class="show-error already">Sorry this tag in already exist.</div>
+                    <div class="show-error startChar">You must start tag with an alphabet.</div>
+                    <div class="show-count-all">
+                        <div class="count-character-tag">
+                            <span>5</span>
+                            characters left.
+                        </div>
+                        <div class="count-tags">
+                            <span>12</span>
+                            tags left.
+                        </div>
+                    </div>
+                    <button class="btn btn-info btn-block add-tags">Add Tags</button>
+                </div>
 
-        </div>
+                <div class="show-all-tags">
+                    <div class="alert alert-danger text-center hide">Please write tag and press add tag.</div>
+                    <div class="show-tags hide">
+                        <h3 class="title">This result can be stored in your database with ease</h3>
+                        <div class="wrapper-view-tags">
+                            <i class="fa fa-close hide-array"></i>
+                            <div class="tags">
+                                array &#91;
+                                <div class="tag">
+                                    <span class="index">0</span>
+                                    <span class="value">javascript</span>
+                                </div>
+                                <div class="tag">
+                                    <span class="index">1</span>
+                                    <span class="value">html</span>
+                                </div>
+                                <div class="tag">
+                                    <span class="index">2</span>
+                                    <span class="value">css</span>
+                                </div>
+                                &#93;
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
 
 
     </div>
@@ -151,8 +198,7 @@ if (empty($_GET['id_doc'])) {
 </main>
 
 <script src="document.view.js"></script>
-<script src="taggle.js"></script>
-
+<script src="tag.js"></script>
 
 
 
