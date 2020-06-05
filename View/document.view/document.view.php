@@ -121,7 +121,7 @@ if (empty($_GET['id_doc'])) {
 
         </div>
 
-        
+
     </div>
     <!-- Insipirée de https://codepen.io/leenalavanya/pen/YqGeoz et modifier pour convenir a nos besoin -->
     <div id="chat">
@@ -151,7 +151,7 @@ if (empty($_GET['id_doc'])) {
 </main>
 
 <script src="document.view.js"></script>
-
+<script src="taggle.js"></script>
 
 
 
