@@ -222,7 +222,7 @@ function modifier() {
     input_description.setAttribute("id", "input_description");
     input_description.setAttribute("name", "nouvelle description ");
     input_description.setAttribute("rows", "4");
-    inpute_description.setAttribute("style","background-color:tomato;")
+    input_description.setAttribute("style","background-color:tomato;")
 
 
     //input_description.setAttribute("cols","95");
