@@ -222,6 +222,7 @@ function modifier() {
     input_description.setAttribute("id", "input_description");
     input_description.setAttribute("name", "nouvelle description ");
     input_description.setAttribute("rows", "4");
+    inpute_description.setAttribute("style","background-color:tomato;")
 
 
     //input_description.setAttribute("cols","95");
@@ -235,6 +236,7 @@ function modifier() {
     input_title.setAttribute("spellcheck", "false");
     input_title.setAttribute("name", "nouveau titre ");
     input_title.setAttribute("rows", "1");
+    input_title.setAttribute("style","background-color:tomato;")
 
     input_title.innerHTML = titre;
 
