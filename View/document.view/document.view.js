@@ -330,7 +330,7 @@ function myFunction() {
     */
 
     var copy = document.createElement("a");
-    copy.innerHTML = "http://www.les-asl-abbaye.ovh" + lien;
+    copy.innerHTML = "http://www.les-asl-abbaye.ovh" + window.location.href;
     var range = document.createRange();
     document.getElementById("telecharger").append(copy);
     range.selectNode(copy);
@@ -342,7 +342,7 @@ function myFunction() {
         var msg = successful ? 'successful' : 'unsuccessful';
         console.log('Copy email command was ' + msg);
         var tooltip = document.getElementById("myTooltip");
-        tooltip.innerHTML = "Copied: " + "http://www.les-asl-abbaye.ovh" + lien;;
+        tooltip.innerHTML = "Copied: " + "http://www.les-asl-abbaye.ovh" + window.location.href;
 
     } catch (error) {
         console.log('Oops, unable to copy');
