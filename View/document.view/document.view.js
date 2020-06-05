@@ -1,9 +1,9 @@
-
 let id_doc;
 let lien;
 let commentaire_to_delete = [];
 let old_title;
 let old_description;
+
 function init(id) {
     id_doc = id;
     //document.getElementById("myInput").style.display = "none";
@@ -184,7 +184,7 @@ function ajax_post_request(callback, url, async, data) {
     // Instanciation d'un objet XHR
     var xhr = new XMLHttpRequest();
 
-    xhr.onreadystatechange = function () {
+    xhr.onreadystatechange = function() {
         if (callback && xhr.readyState == 4 && xhr.status == 200) {
             callback(xhr.responseText);
         }
@@ -205,7 +205,7 @@ function ajax_post_request(callback, url, async, data) {
 }
 
 function modifier() {
-    document.getElementById("ss-submit").disabled=true;
+    document.getElementById("ss-submit").disabled = true;
     add_button_delete_all();
     addicondelete();
     //ajouter des infos bull avec des span https://www.alsacreations.com/astuce/lire/1-comment-personnaliser-une-infobulle.html
@@ -223,8 +223,8 @@ function modifier() {
     input_description.setAttribute("id", "input_description");
     input_description.setAttribute("name", "nouvelle description ");
     input_description.setAttribute("rows", "4");
-    input_description.setAttribute("style","background-color:white;")
-    input_description.setAttribute("placeholder","Saisir description..");
+    input_description.setAttribute("style", "background-color:white;")
+    input_description.setAttribute("placeholder", "Saisir description..");
 
     //input_description.setAttribute("cols","95");
     input_description.innerHTML = description;
@@ -237,8 +237,8 @@ function modifier() {
     input_title.setAttribute("spellcheck", "false");
     input_title.setAttribute("name", "nouveau titre ");
     input_title.setAttribute("rows", "1");
-    input_title.setAttribute("style","background-color:white;");
-    input_title.setAttribute("placeholder","Saisir titre..");
+    input_title.setAttribute("style", "background-color:white;");
+    input_title.setAttribute("placeholder", "Saisir titre..");
 
     input_title.innerHTML = titre;
 
@@ -251,22 +251,22 @@ function modifier() {
     old_description = description;
 
     var icon = document.getElementById("icon");
-    icon.innerHTML += 
-     '<div class="tooltip" id="-6">'+
-        '<button type="button" id="buttonmodif" onclick="valider()">'+
-            '<svg class="bi bi-check-square" width="1.33em" height="1.33em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">'+
-                '<path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />'+
-                '<path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z" />'+
-            '</svg>'+
-        '<span class="tooltiptext" id="myTooltip">Valider les modifications</span>'+
-    '</button>'+
-'</div>'; 
+    icon.innerHTML +=
+        '<div class="tooltip" id="-6">' +
+        '<button type="button" id="buttonmodif" onclick="valider()">' +
+        '<svg class="bi bi-check-square" width="1.33em" height="1.33em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">' +
+        '<path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />' +
+        '<path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z" />' +
+        '</svg>' +
+        '<span class="tooltiptext" id="myTooltip">Valider les modifications</span>' +
+        '</button>' +
+        '</div>';
 
 }
 
 
 function valider() {
-    document.getElementById("ss-submit").disabled=false;
+    document.getElementById("ss-submit").disabled = false;
     remove_button_modif();
     removecondelete();
     remove_button_delete_all();
@@ -278,7 +278,7 @@ function valider() {
     var title = document.getElementsByTagName("textarea")[0].value;
     var description = document.getElementsByTagName("textarea")[1].value;
     const regex = /\n/gi;
-    description = description.replace(regex, '<br>');  //On enleve le "\n" dans les titres
+    description = description.replace(regex, '<br>'); //On enleve le "\n" dans les titres
 
 
     div_titre.removeChild(div_titre.getElementsByTagName("textarea")[0]);
@@ -643,3 +643,11 @@ function arrayRemove(arr, value) {
     }
     return recopie;
 }
+
+
+var jsontag = JSON.parse('["crimson","green","indigo","maroon","maroon","mauv","orange","pink","purple","turquoise"]')
+
+new Taggle('example1', {
+    tags: jsontag,
+    duplicateTagClass: 'bounce'
+});
