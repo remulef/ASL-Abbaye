@@ -154,9 +154,9 @@ function affiche(json) {
     var yyyy = today.getFullYear();
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var dd = String(today.getDate()).padStart(2, '0');
-    today = dd + '/' + mm + '/' + yyyy ;
-    
-    document.getElementById("titre").innerHTML += "<h4>"+(date==null?"":today)+"</h4>";
+    today = dd + '/' + mm + '/' + yyyy;
+
+    document.getElementById("titre").innerHTML += "<h4>" + (date == null ? "" : today) + "</h4>";
 
     document.getElementById("description").getElementsByTagName("p")[0].innerHTML += description;
     recup_all_comment();
@@ -212,7 +212,7 @@ function modifier() {
     var div_description = document.getElementById("description");
     var description = div_description.getElementsByTagName("p")[0].innerHTML;
     const regex = /<br>/gi;
-    description = description.replace(regex,'\n');
+    description = description.replace(regex, '\n');
     var div_titre = document.getElementById("titre");
     var titre = document.getElementsByTagName("h1")[0].innerHTML;
 
@@ -246,6 +246,9 @@ function modifier() {
     old_title = titre;
     old_description = description;
 
+    var icon = document.getElementById("icon");
+    icon.innerHTML +="&lt;div class=&quot;tooltip&quot;&gt;&lt; button type = &quot;button&quot; id =&quot;supprimerquot; onclick = &quot;supprimer()&quot; disable &gt;&lt;svg class=&quot;bi bi-check-square&quot; width=&quot;1.33em&quot; height=&quot;1.33em&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;currentColor&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z&quot; /&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z&quot; /&gt;&lt;/svg&gt;&lt;span class=&quot;tooltiptext&quot; id=&quot;myTooltip&quot;&gt;Valider les modifications&lt;/span&gt;&lt;/button &gt;&lt;/div&gt; ";
+
 }
 
 
@@ -260,7 +263,7 @@ function valider() {
     var title = document.getElementsByTagName("textarea")[0].value;
     var description = document.getElementsByTagName("textarea")[1].value;
     const regex = /\n/gi;
-    description = description.replace(regex,'<br>');  //On enleve le "\n" dans les titres
+    description = description.replace(regex, '<br>');  //On enleve le "\n" dans les titres
 
 
     div_titre.removeChild(div_titre.getElementsByTagName("textarea")[0]);
@@ -402,7 +405,7 @@ function add_one_comment(commentaire, nom, date, id) {
     var yyyy = today.getFullYear();
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var dd = String(today.getDate()).padStart(2, '0');
-    today = dd + '/' + mm + '/' + yyyy ; 
+    today = dd + '/' + mm + '/' + yyyy;
 
 
     commentaire = commentaire.replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -605,19 +608,18 @@ function diselect(i) {
     var parent = x.parentElement;
     var id = parent.id;
 
-    commentaire_to_delete=arrayRemove(commentaire_to_delete,id);
+    commentaire_to_delete = arrayRemove(commentaire_to_delete, id);
 
 }
 
-function arrayRemove(arr, value)
- {
+function arrayRemove(arr, value) {
     recopie = [];
     var i = 0;
-     while( i < arr.length){
-         if(arr[i]!=value){
+    while (i < arr.length) {
+        if (arr[i] != value) {
             recopie.push(arr[i]);
-         }
-         i++;
-     }
-     return recopie;
+        }
+        i++;
+    }
+    return recopie;
 }
