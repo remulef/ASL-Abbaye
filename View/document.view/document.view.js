@@ -247,7 +247,16 @@ function modifier() {
     old_description = description;
 
     var icon = document.getElementById("icon");
-    icon.innerHTML +="&lt;div class=&quot;tooltip&quot;&gt;&lt; button type = &quot;button&quot; id =&quot;supprimerquot; onclick = &quot;supprimer()&quot; disable &gt;&lt;svg class=&quot;bi bi-check-square&quot; width=&quot;1.33em&quot; height=&quot;1.33em&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;currentColor&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z&quot; /&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z&quot; /&gt;&lt;/svg&gt;&lt;span class=&quot;tooltiptext&quot; id=&quot;myTooltip&quot;&gt;Valider les modifications&lt;/span&gt;&lt;/button &gt;&lt;/div&gt; ";
+    icon.innerHTML = +
+     '<div class="tooltip">'+
+        '< button type = "button" id = "supprimer" onclick = "valider()">'+
+            '<svg class="bi bi-check-square" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">'+
+                '<path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />'+
+                '<path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z" />'+
+            '</svg>'+
+        '<span class="tooltiptext" id="myTooltip">Valider les modifications</span>'+
+    '</button>'+
+'</div>'; 
 
 }
 
