@@ -247,7 +247,7 @@ function modifier() {
     old_description = description;
 
     var icon = document.getElementById("icon");
-    icon.innerHTML = +
+    icon.innerHTML += 
      '<div class="tooltip">'+
         '< button type = "button" id = "supprimer" onclick = "valider()">'+
             '<svg class="bi bi-check-square" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">'+
