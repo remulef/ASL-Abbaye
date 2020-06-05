@@ -40,10 +40,7 @@ text-transform: none;
   background-color: tomato;
 }
 
- #icon button {
-  margin-left: 1em;
-  padding: 7px 7px;
-  font-size: 16px;
+ #icon #buttonmodif {
   background-color: tomato;
  }
 
