@@ -110,9 +110,9 @@ if (empty($_GET['id_doc'])) {
             <div class="input--container">
                 <input type="text" value="hello" id="inputag" />
             </div>
-            <button onclick="" id="tag">Add Tag</button>
+           
         </div>
-
+        <button onclick="" id="tag">Add Tag</button>
         
 
 
