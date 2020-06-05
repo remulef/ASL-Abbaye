@@ -8,6 +8,14 @@
 
 // @todo remove bower from next major version
 
+var jsontag = JSON.parse('["crimson","green","indigo","maroon","maroon","mauv","orange","pink","purple","turquoise"]')
+
+
+new Taggle('example1', {
+    tags: jsontag,
+    duplicateTagClass: 'bounce'
+});
+
 (function(root, factory) {
     'use strict';
     var libName = 'Taggle';
@@ -19,11 +27,9 @@
             root[libName] = module;
             return module;
         });
-    }
-    else if (typeof module === 'object' && module.exports) {
+    } else if (typeof module === 'object' && module.exports) {
         module.exports = root[libName] = factory();
-    }
-    else {
+    } else {
         root[libName] = factory();
     }
 }(this, function() {
@@ -244,11 +250,9 @@
     function _on(element, eventName, handler) {
         if (element.addEventListener) {
             element.addEventListener(eventName, handler, false);
-        }
-        else if (element.attachEvent) {
+        } else if (element.attachEvent) {
             element.attachEvent('on' + eventName, handler);
-        }
-        else {
+        } else {
             element['on' + eventName] = handler;
         }
     }
@@ -256,11 +260,9 @@
     function _off(element, eventName, handler) {
         if (element.removeEventListener) {
             element.removeEventListener(eventName, handler, false);
-        }
-        else if (element.detachEvent) {
+        } else if (element.detachEvent) {
             element.detachEvent('on' + eventName, handler);
-        }
-        else {
+        } else {
             element['on' + eventName] = null;
         }
     }
@@ -272,8 +274,7 @@
     function _setText(el, text) {
         if (window.attachEvent && !window.addEventListener) { // <= IE8
             el.innerText = text;
-        }
-        else {
+        } else {
             el.textContent = text;
         }
     }
@@ -599,12 +600,10 @@
                 this._remove(targetTaggle, e);
                 this._fixInputWidth();
                 this._setFocusStateForContainer();
-            }
-            else {
+            } else {
                 targetTaggle.classList.add(hotClass);
             }
-        }
-        else if (targetTaggle.classList.contains(hotClass)) {
+        } else if (targetTaggle.classList.contains(hotClass)) {
             targetTaggle.classList.remove(hotClass);
         }
     };
@@ -704,8 +703,7 @@
             if (this.tag.values.length) {
                 this._checkPrevOrNextTag(e);
             }
-        }
-        else if (this.settings.clearOnBlur) {
+        } else if (this.settings.clearOnBlur) {
             this.input.value = '';
             this._setInputWidth();
         }
@@ -774,31 +772,33 @@
         var currentIndex = this._inputPosition;
 
         switch (direction) {
-            case ARROW_LEFT: {
-                var leftNewIndex = _clamp(this._inputPosition - 1, 0, this.tag.values.length);
-                var leftIndexChanged = currentIndex !== leftNewIndex;
+            case ARROW_LEFT:
+                {
+                    var leftNewIndex = _clamp(this._inputPosition - 1, 0, this.tag.values.length);
+                    var leftIndexChanged = currentIndex !== leftNewIndex;
 
-                this._inputPosition = leftNewIndex;
+                    this._inputPosition = leftNewIndex;
 
-                if (leftIndexChanged) {
-                    this.list.insertBefore(this.inputLi, this.list.childNodes[leftNewIndex] || null);
-                    this.input.focus();
+                    if (leftIndexChanged) {
+                        this.list.insertBefore(this.inputLi, this.list.childNodes[leftNewIndex] || null);
+                        this.input.focus();
+                    }
+                    break;
                 }
-                break;
-            }
 
-            case ARROW_RIGHT: {
-                var rightNewIndex = _clamp(this._inputPosition + 1, 0, this.tag.values.length);
-                var rightIndexChanged = currentIndex !== rightNewIndex;
+            case ARROW_RIGHT:
+                {
+                    var rightNewIndex = _clamp(this._inputPosition + 1, 0, this.tag.values.length);
+                    var rightIndexChanged = currentIndex !== rightNewIndex;
 
-                this._inputPosition = rightNewIndex;
+                    this._inputPosition = rightNewIndex;
 
-                if (rightIndexChanged) {
-                    this.list.insertBefore(this.inputLi, this.list.childNodes[rightNewIndex + 1] || null);
-                    this.input.focus();
+                    if (rightIndexChanged) {
+                        this.list.insertBefore(this.inputLi, this.list.childNodes[rightNewIndex + 1] || null);
+                        this.input.focus();
+                    }
+                    break;
                 }
-                break;
-            }
 
             default:
                 break;
@@ -815,8 +815,7 @@
         // prevents from jumping out of textarea
         if (e.preventDefault) {
             e.preventDefault();
-        }
-        else {
+        } else {
             e.returnValue = false;
         }
 
@@ -1007,8 +1006,7 @@
                     }
                 }
             }
-        }
-        else {
+        } else {
             this._add(null, text, index);
         }
 
@@ -1032,8 +1030,7 @@
 
         if (typeof textValue === 'string') {
             this.tag.values[index] = text;
-        }
-        else {
+        } else {
             this.tag.values[index].text = text;
         }
 
