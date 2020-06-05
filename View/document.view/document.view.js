@@ -205,6 +205,7 @@ function ajax_post_request(callback, url, async, data) {
 }
 
 function modifier() {
+    document.getElementById("ss-submit").disabled=true;
     add_button_delete_all();
     addicondelete();
     //ajouter des infos bull avec des span https://www.alsacreations.com/astuce/lire/1-comment-personnaliser-une-infobulle.html
@@ -264,6 +265,7 @@ function modifier() {
 
 
 function valider() {
+    document.getElementById("ss-submit").disabled=false;
     remove_button_modif();
     removecondelete();
     remove_button_delete_all();
