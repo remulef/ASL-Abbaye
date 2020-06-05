@@ -31,12 +31,12 @@ function affiche(json) {
     console.log(json);
 
     let doc = JSON.parse(json);
-    id_doc = doc.id;
+    id_doc = doc.id_doc;
     console.log(id_doc);
     let title = doc.nom;
-    let description = doc.descrip;
+    let description = doc.descri;
     let date = doc.datepublication;
-    lien = doc.lien;
+    lien = doc.chemin;
     lien = "/" + lien;
 
     let type = doc.typedoc;
@@ -162,11 +162,10 @@ function supprimer() {
     if (confirm("Voulez vous vraiment supprimer ce document ")) {
 
         console.log(id_doc);
-        id_doc = 1816;
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/script-delete-sql.php?";
 
         try {
-            ajax_post_request(null, url, true, encodeURIComponent(id_doc));
+            //ajax_post_request(null, url, true, encodeURIComponent(id_doc));
 
         } catch (error) {
             alert("La suppresion n'a pas aboutie");
