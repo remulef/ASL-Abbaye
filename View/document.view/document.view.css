@@ -286,3 +286,54 @@ input[type="submit"]:disabled {
     background-color: rgb(139, 139, 139);
     cursor: not-allowed;
 }
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+input {
+    font: normal 16px arial;
+}
+
+.input {
+    border: 1px solid #999;
+    border-radius: 5px;
+    width: 600px;
+}
+
+.tag {
+    height: 26px;
+    background-color: #666;
+    float: left;
+    margin: 7px 3px;
+    padding: 5px;
+    color: #eee;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.tag:first-child {
+    margin-left: 6px;
+}
+
+.input--container {
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+}
+
+.input--container input {
+    position: absolute;
+    left: 0;
+    width: 98%;
+    height: 40px;
+    border: none;
+    padding: 5px;
+    margin: 0 5px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 6px;
+}

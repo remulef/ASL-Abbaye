@@ -103,6 +103,18 @@ if (empty($_GET['id_doc'])) {
 
         </div>
 
+        <div class="input">
+            <!--
+        <span class="tag">Tag1</span>
+        <span class="tag">Tag1</span> -->
+            <div class="input--container">
+                <input type="text" value="hello" id="inputag" />
+            </div>
+            <button onclick="" id="tag">Add Tag</button>
+        </div>
+
+        
+
 
 
     </div>
