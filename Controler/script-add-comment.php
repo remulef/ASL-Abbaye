@@ -29,9 +29,8 @@ if (true) {
     $commentaire = $data->comment;
     $today = getdate();
     $mon = $today['mon'];
-    $mon +=1;
     $date = $today['year']."/".$mon."/".$today['mday'];
-
+    
 
 
     $sth = $db->prepare('INSERT INTO  COMMENTAIRE (id_doc,auteur,commentaire,datepub)VALUES(?,?,?,?)');

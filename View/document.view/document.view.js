@@ -4,12 +4,13 @@ let lien;
 let commentaire_to_delete = [];
 let old_title;
 let old_description;
-function init(id_doc) {
+function init(id) {
+    id_doc = id;
     //document.getElementById("myInput").style.display = "none";
     let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/script-document.php";
 
     try {
-        ajax_post_request(affiche, url, true, encodeURIComponent(id_doc));
+        ajax_post_request(affiche, url, true, encodeURIComponent(id));
 
     } catch (error) {
         error();
@@ -395,7 +396,7 @@ function add_one_comment(commentaire, nom, date, id) {
     var yyyy = today.getFullYear();
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var dd = String(today.getDate()).padStart(2, '0');
-    today = yyyy + '/' + mm + '/' + dd;
+    today = dd + '/' + mm + '/' + yyyy ; 
 
 
     commentaire = commentaire.replace(/</g, "&lt;").replace(/>/g, "&gt;");
