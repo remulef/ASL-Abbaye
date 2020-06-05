@@ -147,10 +147,16 @@ function affiche(json) {
             break;
     }
 
-    console.log(date==null);
     document.getElementById("telecharger").setAttribute("href", "http://www.les-asl-abbaye.ovh" + lien);
     document.getElementById("titreh1").innerHTML = title;
-    document.getElementById("titre").innerHTML += "<h4>"+(date==null?"":date)+"</h4>";
+
+    var today = new Date(date);
+    var yyyy = today.getFullYear();
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var dd = String(today.getDate()).padStart(2, '0');
+    today = dd + '/' + mm + '/' + yyyy ;
+    
+    document.getElementById("titre").innerHTML += "<h4>"+(date==null?"":today)+"</h4>";
 
     document.getElementById("description").getElementsByTagName("p")[0].innerHTML += description;
     recup_all_comment();
