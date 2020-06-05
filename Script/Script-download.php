@@ -247,7 +247,7 @@
 
       uri = JSON.stringify(Crendu);
       let url = "http://localhost/ASL-Abbaye/Script/Telechargement/Script-AJAX.php";
-      ajax_post_request(null, url, false, encodeURIComponent(uri));
+      //ajax_post_request(null, url, false, encodeURIComponent(uri));
 
 
       Compterendu.push(Crendu); //On ajoute la structure à la liste des comptes rendu 

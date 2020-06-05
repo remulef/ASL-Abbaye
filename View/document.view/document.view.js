@@ -32,6 +32,7 @@ function affiche(json) {
 
     let doc = JSON.parse(json);
     id_doc = doc.id;
+    console.log(id_doc);
     let title = doc.nom;
     let description = doc.descrip;
     let date = doc.datepublication;
