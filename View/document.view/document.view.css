@@ -246,7 +246,7 @@ main{
   margin-left: -1px;
   border: 1px solid grey;
   font-family: "Montserrat", sans-serif;
-  cursor: pointer;
+  
 
 }
 #chat input[type="submit"]:hover {
@@ -283,7 +283,7 @@ main{
     cursor: not-allowed;
     margin-bottom: 20px;
     text-decoration: none;
-    background-color: rgb(92, 92, 92);
+    background-color: rgb(139, 139, 139);
 }
 
 :disabled svg { 
@@ -291,7 +291,7 @@ main{
 }
 
 input[type="submit"]:disabled { 
-  background-color: rgb(92, 92, 92);
+  background-color: rgb(139, 139, 139);
   cursor: not-allowed;
 }
 
