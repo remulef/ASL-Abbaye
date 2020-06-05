@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -24,11 +24,11 @@
 
 
 <?php
-if (!empty($_POST['id_doc'])) {
-    $id_doc = $_POST['id_doc'];
+if (empty($_GET['id_doc'])) {
+    $id_doc = random_int(1,1000);
     echo "<body onload=\"init(" . $id_doc . ")\">";
 } else {
-    $id_doc = random_int(1,1000);
+    $id_doc = $_GET['id_doc'];
     echo "<body onload=\"init(" . $id_doc . ")\">";
 }
 ?>
@@ -105,7 +105,7 @@ if (!empty($_POST['id_doc'])) {
     </div>
     <!-- Insipirée de https://codepen.io/leenalavanya/pen/YqGeoz et modifier pour convenir a nos besoin -->
     <div id="chat">
-        <div class="chat_header">Commentaire</div>
+        <div class="chat_header">Commentaires</div>
         <div id="chat_s"></div>
         <script type="text/javascript">
             var submitted = false;
