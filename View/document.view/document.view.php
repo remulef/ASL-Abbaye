@@ -105,8 +105,12 @@ if (empty($_GET['id_doc'])) {
 
 
         <div id="divtag">
-            <input type="text" name="tag" id="inputtag" placeholder="insert tag">
-            <button onclick=addtag()>Add</button>
+            
+            <div class="form__group field">
+                <input type="input" class="form__field" placeholder="Etiquette" name="tag" id='inputtag' required />
+                <label for="name" class="form__label">Ajouter Etiquettes</label>
+            </div>
+            <a href="something" class="button4" style="background-color:#f14e4e" onclick=addtag()>Ajouter</a>
             <h2>Etiquettes du document</h2>
             <ul class="tags" id="tags">
             </ul>
