@@ -291,11 +291,6 @@ input[type="submit"]:disabled {
     box-sizing: border-box;
 }
 
-body,
-input {
-    font: normal 16px arial;
-}
-
 .input {
     border: 1px solid #999;
     border-radius: 5px;
@@ -331,9 +326,4 @@ input {
     border: none;
     padding: 5px;
     margin: 0 5px;
-}
-
-button {
-    margin-top: 10px;
-    padding: 6px;
 }
