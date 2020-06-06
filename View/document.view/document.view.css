@@ -287,11 +287,6 @@ input[type="submit"]:disabled {
     cursor: not-allowed;
 }
 
-body {
-    font: 12px/1.5 'PT Sans', serif;
-    margin: 25px;
-}
-
 .tags {
     list-style: none;
     margin: 0;
