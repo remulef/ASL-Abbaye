@@ -385,7 +385,7 @@ a.button4:hover {
     border-bottom: 2px solid #9b9b9b;
     outline: 0;
     font-size: 1.3rem;
-    color: #fff;
+    color: rgb(77, 77, 77);
     padding: 7px 0;
     background: transparent;
     transition: border-color 0.2s;
