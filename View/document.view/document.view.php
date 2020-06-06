@@ -111,7 +111,7 @@ if (empty($_GET['id_doc'])) {
                 <label for="tag" class="form__label">Ajouter Etiquette</label>
             </div>
 
-            <a href="" class="button4" style="background-color:#f14e4e" onclick=addtag()>Ajouter</a>
+            <a  class="button4" style="background-color:#f14e4e" onclick=addtag()>Ajouter</a>
             <h2>Etiquettes du document</h2>
             <ul class="tags" id="tags">
             </ul>
