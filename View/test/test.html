@@ -10,19 +10,22 @@
 
 <body>
 
-
-
-    <div class="input">
-        <!--
-        <span class="tag">Tag1</span>
-        <span class="tag">Tag1</span> -->
-        <div class="input--container">
-            <input type="text" value="hello" id="inputag" />
-        </div>
-
+    <h1>Tags</h1>
+    <div id="divtag">
+        <input type="text" name="tag" id="inputtag" placeholder="insert tag">
+        <button onclick=addtag()>Add</button>
+        <h2>Example 2</h2>
+        <ul class="tags" id="tags">
+            <li>
+                <a href="#" class="tag">
+                    HTML
+                </a>
+            </li>
+            <li><a href="#" class="tag">CSS</a></li>
+            <li><a href="#" class="tag">JavaScript</a></li>
+        </ul>
     </div>
 
-    <button onclick="" id="tag">Add Tag</button>
 
     <script src="test.js"></script>
 
