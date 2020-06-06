@@ -345,6 +345,7 @@ input[type="submit"]:disabled {
 }
 
 a.button4 {
+    margin-top: 5px;
     display: inline-block;
     padding: 0.3em 1.2em;
     padding-top: 5px;
