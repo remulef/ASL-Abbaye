@@ -669,3 +669,12 @@ function addtag() {
         } else alert("Les tags sont limités à 30 caracteres");
     } else alert("Le nombre de tags est limité à 20");
 }
+
+
+function ChangeUrl(formulaire) {
+    if (formulaire.ListeUrl.selectedIndex != 0) {
+        var url;
+        url = formulaire.ListeUrl.options[formulaire.ListeUrl.selectedIndex].value;
+        window.location.href = url;
+    }
+}

@@ -18,6 +18,18 @@
             <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
             <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z" clip-rule="evenodd" />
         </svg></a>
+
+
+        <FORM >
+        <h3>Liste des PDF </h3>
+        <SELECT NAME="ListeUrl" SIZE=1 onChange="ChangeUrl(this.form)"  >
+          <OPTION SELECTED VALUE="">-Type d'utilisateur-</option>
+          <OPTION SELECTED VALUE="">-Administrateur-</option>
+          <OPTION SELECTED VALUE="">-Modérateur-</option>
+          <OPTION SELECTED VALUE="">-Appreneur-</option>
+          <OPTION SELECTED VALUE="">-Visiteur-</option>
+          </SELECT>
+        </FORM>
 </header>
 
 
