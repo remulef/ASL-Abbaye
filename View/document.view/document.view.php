@@ -24,10 +24,10 @@
         <h3>Liste des PDF </h3>
         <SELECT NAME="ListeUrl" SIZE=1 onChange="ChangeUrl(this.form)"  >
           <OPTION SELECTED VALUE="">-Type d'utilisateur-</option>
-          <OPTION SELECTED VALUE="">-Administrateur-</option>
-          <OPTION SELECTED VALUE="">-Modérateur-</option>
-          <OPTION SELECTED VALUE="">-Appreneur-</option>
-          <OPTION SELECTED VALUE="">-Visiteur-</option>
+          <OPTION SELECTED VALUE="&mode=admin">-Administrateur-</option>
+          <OPTION SELECTED VALUE="&mode=modo">-Modérateur-</option>
+          <OPTION SELECTED VALUE="&mode=appreneur">-Appreneur-</option>
+          <OPTION SELECTED VALUE="&mode=visiteur">-Visiteur-</option>
           </SELECT>
         </FORM>
 </header>
