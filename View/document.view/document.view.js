@@ -205,6 +205,7 @@ function ajax_post_request(callback, url, async, data) {
 }
 
 function modifier() {
+    affiche_button_del_tag();
     document.getElementById("ss-submit").disabled = true;
     add_button_delete_all();
     addicondelete();
@@ -691,6 +692,16 @@ function affiche_button_del_tag() {
             '<path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />' +
             '</svg></button><span class="tooltiptext">Supprimer le tag</span></div>';
         i++;
+    }
+}
+
+function supprimer_button_del_tag() {
+    var ul = document.getElementById("tags");
+    var list = ul.getElementsByTagName("li");
+    var i = 0;
+    while (i < list.length) {
+        var current = list[i];
+        current.remove(current.getElementsByClassName("tooltip"));
     }
 }
 
