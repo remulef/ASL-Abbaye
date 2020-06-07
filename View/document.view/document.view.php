@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="document.view.css">
-    <title>Document</title>
+    <title>Document ASL Abbaye</title>
 </head>
 
 <header>
@@ -44,6 +44,7 @@ if (empty($_GET['id_doc'])) {
     echo "<body onload=\"init(" . $id_doc . ")\">";
 }
 ?>
+
 <main>
 
     <div id="Content">
@@ -126,6 +127,11 @@ if (empty($_GET['id_doc'])) {
             <a  class="button4" style="background-color:#9ed0e6" onclick=addtag()>Ajouter</a>
             <h2>Etiquettes du document</h2>
             <ul class="tags" id="tags">
+
+            <li> <a class="tag">Etiquette 1</a></li>
+            <li> <a class="tag">Etiquette 2</a></li>
+            <li> <a class="tag">Etiquette 3</a></li>
+
             </ul>
         </div>
 
