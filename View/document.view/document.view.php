@@ -24,10 +24,10 @@
         <h3>Liste des PDF </h3>
         <SELECT NAME="ListeUrl" SIZE=1 onChange="ChangeUrl(this.form)"  >
           <OPTION SELECTED VALUE="">-Type d'utilisateur-</option>
-          <OPTION SELECTED VALUE="&mode=admin">-Administrateur-</option>
-          <OPTION SELECTED VALUE="&mode=modo">-Modérateur-</option>
-          <OPTION SELECTED VALUE="&mode=appreneur">-Appreneur-</option>
-          <OPTION SELECTED VALUE="&mode=visiteur">-Visiteur-</option>
+          <OPTION  VALUE="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php $_GET["id_doc"] ?>&mode=admin">-Administrateur-</option>
+          <OPTION  VALUE="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php $_GET["id_doc"] ?>&mode=modo">-Moderateur-</option>
+          <OPTION  VALUE="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php $_GET["id_doc"] ?>&mode=appr">-Appreneur-</option>
+          <OPTION  VALUE="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php $_GET["id_doc"] ?>&mode=visit">-Visiteur-</option>
           </SELECT>
         </FORM>
 </header>
