@@ -437,3 +437,16 @@ a.button4:hover {
 .form__field:invalid {
     box-shadow: none;
 }
+
+#tag button {
+    background-color: white;
+    border: none;
+    color: #785964;
+    padding: 7px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    margin-left: 1em;
+}
