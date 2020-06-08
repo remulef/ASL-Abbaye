@@ -1,5 +1,6 @@
 <?php
 
+header('Access-Control-Allow-Origin: *');
 
 
 //if(isset( $_POST['id_doc'])){
