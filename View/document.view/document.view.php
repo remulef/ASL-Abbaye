@@ -20,27 +20,30 @@
         </svg></a>
 
 
-        <FORM >
+    <FORM>
         <h3>Site en fonction des roles</h3>
-        <SELECT NAME="ListeUrl" SIZE=1 onChange="ChangeUrl(this.form)"  >
-          <OPTION SELECTED VALUE="">-Type d'utilisateur-</option>
-          <OPTION  VALUE="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"] ?>&mode=admin">-Administrateur-</option>
-          <OPTION  VALUE="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"] ?>&mode=visit">-Visiteur-</option>
-          </SELECT>
-        </FORM>
+        <SELECT NAME="ListeUrl" SIZE=1 onChange="ChangeUrl(this.form)">
+            <OPTION SELECTED VALUE="">-Type d'utilisateur-</option>
+            <OPTION VALUE="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"] ?>&mode=admin">-Administrateur-</option>
+            <OPTION VALUE="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"] ?>&mode=visit">-Visiteur-</option>
+        </SELECT>
+    </FORM>
+
+    <div>
+        <h3>Changer de documen</h3>
+        <a href="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"] - 1 ?>" class="previous round"><svg class="bi bi-arrow-left-circle" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <path fill-rule="evenodd" d="M8.354 11.354a.5.5 0 0 0 0-.708L5.707 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z" />
+                <path fill-rule="evenodd" d="M11.5 8a.5.5 0 0 0-.5-.5H6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5z" />
+            </svg></a>
+        <a href="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"] + 1 ?>" class="next round"><svg class="bi bi-arrow-right-circle" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <path fill-rule="evenodd" d="M7.646 11.354a.5.5 0 0 1 0-.708L10.293 8 7.646 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0z" />
+                <path fill-rule="evenodd" d="M4.5 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z" />
+            </svg></a>
+    </div>
 
 
-
-        <a href="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"]-1 ?>" class="previous round"><svg class="bi bi-arrow-left-circle" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-  <path fill-rule="evenodd" d="M8.354 11.354a.5.5 0 0 0 0-.708L5.707 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z"/>
-  <path fill-rule="evenodd" d="M11.5 8a.5.5 0 0 0-.5-.5H6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5z"/>
-</svg></a>
-        <a href="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"]+1 ?>" class="next round"><svg class="bi bi-arrow-right-circle" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-  <path fill-rule="evenodd" d="M7.646 11.354a.5.5 0 0 1 0-.708L10.293 8 7.646 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0z"/>
-  <path fill-rule="evenodd" d="M4.5 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/>
-</svg></a>
 
 </header>
 
@@ -71,8 +74,8 @@ if (empty($_GET['id_doc'])) {
                 <h1 id="titreh1"> TITRE </h1>
             </div>
             <div id="icon">
-                
-            <?php if($_GET["mode"]=="modo") echo '
+
+                <?php if ($_GET["mode"] == "modo") echo '
                 <div class="tooltip">
                     <button type="button" id="supprimer" onclick="supprimer()" disabled>
                         <svg class="bi bi-trash" width="1.33em" height="1.33em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -91,7 +94,7 @@ if (empty($_GET['id_doc'])) {
                     </button>
                     <span class="tooltiptext">Modifier le document</span>
                 </div>' ?>
-                
+
                 <div class="tooltip">
                     <a id="telecharger" href="">
                         <button type="button">
@@ -132,20 +135,20 @@ if (empty($_GET['id_doc'])) {
 
 
         <div id="divtag">
-            <?php if($_GET["mode"]=="modo") echo ' <div class="form__group field">
+            <?php if ($_GET["mode"] == "modo") echo ' <div class="form__group field">
                 <input type="input" class="form__field" placeholder="Etiquette" name="tag" id="inputtag" required />
                 <label for="tag" class="form__label">Ajouter Etiquette</label>
             </div>
             <a  class="button4" style="background-color:#9ed0e6" onclick=addtag()>Ajouter</a>' ?>
-           
 
-            
+
+
             <h2>Etiquettes du document</h2>
             <ul class="tags" id="tags">
 
-            <li> <a class="tag">Etiquette 1</a></li>
-            <li> <a class="tag">Etiquette 2</a></li>
-            <li> <a class="tag">Etiquette 3</a></li>
+                <li> <a class="tag">Etiquette 1</a></li>
+                <li> <a class="tag">Etiquette 2</a></li>
+                <li> <a class="tag">Etiquette 3</a></li>
 
             </ul>
         </div>
