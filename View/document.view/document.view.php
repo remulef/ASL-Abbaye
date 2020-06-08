@@ -75,7 +75,7 @@ if (empty($_GET['id_doc'])) {
             </div>
             <div id="icon">
 
-                <?php if ($_GET["mode"] == "modo") echo '
+                <?php if ($_GET["mode"] == "admin") echo '
                 <div class="tooltip">
                     <button type="button" id="supprimer" onclick="supprimer()" disabled>
                         <svg class="bi bi-trash" width="1.33em" height="1.33em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -135,7 +135,7 @@ if (empty($_GET['id_doc'])) {
 
 
         <div id="divtag">
-            <?php if ($_GET["mode"] == "modo") echo ' <div class="form__group field">
+            <?php if ($_GET["mode"] == "admin") echo ' <div class="form__group field">
                 <input type="input" class="form__field" placeholder="Etiquette" name="tag" id="inputtag" required />
                 <label for="tag" class="form__label">Ajouter Etiquette</label>
             </div>
