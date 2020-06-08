@@ -60,7 +60,8 @@ if (empty($_GET['id_doc'])) {
             </div>
             <div id="icon">
                 
-            <?php if($_GET["mode"]=="modo") echo '<div class="tooltip">
+            <?php if($_GET["mode"]=="modo") echo '
+                <div class="tooltip">
                     <button type="button" id="supprimer" onclick="supprimer()" disabled>
                         <svg class="bi bi-trash" width="1.33em" height="1.33em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z" />
