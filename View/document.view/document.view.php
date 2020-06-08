@@ -118,7 +118,7 @@ if (empty($_GET['id_doc'])) {
 
 
         <div id="divtag">
-            <?php if($_GET("mode")=="modo") echo ' <div class="form__group field">
+            <?php if($_GET["mode"]=="modo") echo ' <div class="form__group field">
                 <input type="input" class="form__field" placeholder="Etiquette" name="tag" id="inputtag" required />
                 <label for="tag" class="form__label">Ajouter Etiquette</label>
             </div>
