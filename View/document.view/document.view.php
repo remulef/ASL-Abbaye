@@ -59,8 +59,8 @@ if (empty($_GET['id_doc'])) {
                 <h1 id="titreh1"> TITRE </h1>
             </div>
             <div id="icon">
-
-                <div class="tooltip">
+                
+            <?php if($_GET["mode"]=="modo") echo '<div class="tooltip">
                     <button type="button" id="supprimer" onclick="supprimer()" disabled>
                         <svg class="bi bi-trash" width="1.33em" height="1.33em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z" />
@@ -68,8 +68,9 @@ if (empty($_GET['id_doc'])) {
                         </svg>
                         <span class="tooltiptext">Supprimer le document</span>
                     </button>
-                </div>
-                <div class="tooltip">
+                </div>' ?>
+                
+                <?php if($_GET["mode"]=="modo") echo'<div class="tooltip">
                     <button type="button" id="modifier" onclick="modifier()">
                         <svg class="bi bi-pencil-square" width="1.33em" height="1.33em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z" />
@@ -77,7 +78,8 @@ if (empty($_GET['id_doc'])) {
                         </svg>
                     </button>
                     <span class="tooltiptext">Modifier le document</span>
-                </div>
+                </div>' ?>
+                
                 <div class="tooltip">
                     <a id="telecharger" href="">
                         <button type="button">
@@ -118,13 +120,14 @@ if (empty($_GET['id_doc'])) {
 
 
         <div id="divtag">
-            
-            <div class="form__group field">
-                <input type="input" class="form__field" placeholder="Etiquette" name="tag" id='inputtag' required />
+            <?php if($_GET("mode")=="modo") echo ' <div class="form__group field">
+                <input type="input" class="form__field" placeholder="Etiquette" name="tag" id="inputtag" required />
                 <label for="tag" class="form__label">Ajouter Etiquette</label>
             </div>
+            <a  class="button4" style="background-color:#9ed0e6" onclick=addtag()>Ajouter</a>' ?>
+           
 
-            <a  class="button4" style="background-color:#9ed0e6" onclick=addtag()>Ajouter</a>
+            
             <h2>Etiquettes du document</h2>
             <ul class="tags" id="tags">
 
