@@ -32,7 +32,7 @@
 
 
         <a href="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"]+-1 ?>" class="previous round">Document precedent</a>
-        <a href="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"]+1 ?>" class="previousround">Document suivant</a>
+        <a href="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"]+1 ?>" class="next round">Document suivant</a>
 
 </header>
 
