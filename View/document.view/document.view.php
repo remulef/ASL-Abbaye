@@ -25,8 +25,6 @@
         <SELECT NAME="ListeUrl" SIZE=1 onChange="ChangeUrl(this.form)"  >
           <OPTION SELECTED VALUE="">-Type d'utilisateur-</option>
           <OPTION  VALUE="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"] ?>&mode=admin">-Administrateur-</option>
-          <OPTION  VALUE="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"] ?>&mode=modo">-Moderateur-</option>
-          <OPTION  VALUE="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"] ?>&mode=appr">-Appreneur-</option>
           <OPTION  VALUE="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"] ?>&mode=visit">-Visiteur-</option>
           </SELECT>
         </FORM>
