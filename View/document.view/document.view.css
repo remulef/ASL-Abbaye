@@ -439,8 +439,6 @@ a.button4:hover {
 }
 
 #tags button {
-    background-color: #eeeeee;
-    border: none;
     color: #785964;
     padding: 0px;
     text-align: center;
@@ -449,4 +447,10 @@ a.button4:hover {
     font-size: 16px;
     transition-duration: 0.4s;
     margin-left: 1em;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
 }
