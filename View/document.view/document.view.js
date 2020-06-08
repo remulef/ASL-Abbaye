@@ -268,6 +268,7 @@ function modifier() {
 
 function valider() {
     document.getElementById("ss-submit").disabled = false;
+    supprimer_button_del_tag();
     remove_button_modif();
     removecondelete();
     remove_button_delete_all();
@@ -707,5 +708,5 @@ function supprimer_button_del_tag() {
 
 function deletetag(i) {
     var ul = document.getElementById("tags");
-    vul.removeChild(ul.getElementsByTagName("li")[i]);
+    ul.removeChild(ul.getElementsByTagName("li")[i]);
 }
