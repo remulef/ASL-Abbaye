@@ -702,7 +702,7 @@ function supprimer_button_del_tag() {
     var i = 0;
     while (i < list.length) {
         var current = list[i];
-        current.remove(current.getElementsByClassName("tooltip")[0]);
+        current.removeChild(current.getElementsByClassName("tooltip")[0]);
     }
 }
 
