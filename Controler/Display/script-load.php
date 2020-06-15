@@ -65,7 +65,7 @@ if (!isset($_POST['data'])) {
 //Ici on charge un dossier spécifique avec son id
 else {*/
     //$id_node = $data->id_node;
-    $id_node = "12";
+    $id_node = "13";
     $sth = $db->prepare('SELECT * 
     FROM DOCUMENT 
     WHERE id_doc IN (SELECT DOCUMENT_id_doc 
