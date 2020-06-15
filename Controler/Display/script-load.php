@@ -65,7 +65,7 @@ if (!isset($_POST['data'])) {
 else {
     $data = $_POST['data'];
     //$id_node = $data->id_node;
-    $id_node = "13";
+    $id_node = $data;
     $sth = $db->prepare('SELECT * 
     FROM DOCUMENT 
     WHERE id_doc IN (SELECT DOCUMENT_id_doc 
