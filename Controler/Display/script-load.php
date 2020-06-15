@@ -50,7 +50,7 @@ if (empty($data)) {
     $sth->execute();
     $node = $sth->fetchAll(PDO::FETCH_ASSOC);
     foreach ($node as $key => $value) {
-        var_dump($value);
+        echo $value["name"];
     }
 
     //var_dump($node);
