@@ -14,7 +14,7 @@ function load(json) {
     var ul = document.getElementById("docbar");
     for (let index = 0; index < data.length; index++) {
         var current = data[index];
-        if(!current.id_node===""){
+        if(current.id_node!==""){
             var id= current.id_node;
             var li = document.createElement("li");
             var a = document.createElement("a");
