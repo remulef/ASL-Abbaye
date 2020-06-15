@@ -50,11 +50,11 @@ if (empty($data)) {
     $sth->execute();
     $node = $sth->fetchAll(PDO::FETCH_ASSOC);
     foreach ($node as $key => $value) {
-        $value["name"]= utf8_encode($value["name"]);;
+        $value["name"]= "modified";
     }
 
     var_dump($node);
-    
+
     $array = array_merge($node,$document);
     //var_dump($array);
     $json = json_encode($node);
