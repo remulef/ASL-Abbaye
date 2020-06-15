@@ -56,7 +56,7 @@ if (empty($data)) {
     
     $array = array_merge($node,$document);
     var_dump($array);
-    $json = json_encode($array);
+    $json = json_encode($node);
     echo $json;
 }
 //Si data n'est pas vide 
