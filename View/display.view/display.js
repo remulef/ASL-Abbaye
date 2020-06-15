@@ -90,6 +90,7 @@ function ajax_post_request(callback, url, async, data) {
 function getback(){ 
     
     if (history.length > 1) {
+        history.pop();
         changedoc(history.pop());
     }
     else init();
