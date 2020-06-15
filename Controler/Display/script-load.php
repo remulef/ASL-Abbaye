@@ -17,6 +17,7 @@ try {
 $data = $_POST['data'];
 //$data = json_decode($data);
 //Si data est vide alors on initialise à la racine
+$data = "11";
 if (isset($data)) {
     $node_name = "Ressourcepeda";
     $sth = $db->prepare('SELECT * 
