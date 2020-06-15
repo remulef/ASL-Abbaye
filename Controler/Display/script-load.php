@@ -50,7 +50,7 @@ if (empty($data)) {
     $sth->execute();
     $node = $sth->fetchAll(PDO::FETCH_ASSOC);
     foreach ($node as $key => $value) {
-         $value["name"] = utf8_encode($value["name"]);    
+         $value["name"] = "bouffons";    
          echo $value["name"].PHP_EOL;
     }   
     
