@@ -44,6 +44,7 @@ function load(json) {
 }
 
 function changedoc(id) {
+    console.log(history);
     clearul();
     history.push(id);
     try {
@@ -91,5 +92,6 @@ function getback() {
         id = history.pop();
         changedoc(id);
     }
+    else init();
 
 }
