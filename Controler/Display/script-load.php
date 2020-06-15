@@ -13,17 +13,18 @@ try {
 
 
 $data = $_POST['data'];
+$data = json_decode($data);
 if (empty($data)) {
-    echo "vide";
+    $node_name = "%RessourcePeda%";
 }
 else {
-    echo "pas vide";
+    $node_name = $data->node;
 }
 
 echo PHP_EOL;    
 
 
-$node_name = "%jeux%";
+
     $sth = $db->prepare('SELECT * 
     FROM DOCUMENT 
     WHERE id_doc IN (SELECT DOCUMENT_id_doc 
@@ -51,7 +52,9 @@ $node_name = "%jeux%";
     $node = $sth->fetchAll(PDO::FETCH_ASSOC);
     var_dump($node);
 
-
+    $json = array_merge($node,$document);
+    $json = json_encode($json);
+    echo $json;
     
     
     
