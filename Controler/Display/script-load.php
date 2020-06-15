@@ -53,10 +53,12 @@ if (empty($data)) {
 
     foreach ($node as $key => $value) {
          foreach ($value as $key2 => $value2) {
-             echo $key2."     ".$value2.PHP_EOL;
+            if($value[$key2]=="name"){
+                $value[$key2]= utf8_encode($value2);
+            }
          }
     }
-    //var_dump($node);   
+    var_dump($node);   
     
 
     $array = array_merge($node,$document);
