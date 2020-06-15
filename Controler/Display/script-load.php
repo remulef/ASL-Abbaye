@@ -50,7 +50,7 @@ if (empty($data)) {
     $sth->execute();
     $node = $sth->fetchAll(PDO::FETCH_ASSOC);
     foreach ($node as $key => $value) {
-        $value["name"][0]= "modified";
+        var_dump($value);
     }
 
     var_dump($node);
