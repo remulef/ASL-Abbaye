@@ -34,6 +34,7 @@ $node_name = "%jeux%";
                                      WHERE name LIKE ? ))');
 
     $sth->bindParam(1, $node_name);
+    $sth->execute();
     $document = $sth->fetchAll(PDO::FETCH_ASSOC);
     var_dump($document);
     echo PHP_EOL;    
@@ -46,6 +47,7 @@ $node_name = "%jeux%";
                             WHERE name LIKE ? )');
 
     $sth->bindParam(1, $node_name);
+    $sth->execute();
     $node = $sth->fetchAll(PDO::FETCH_ASSOC);
     var_dump($node);
 
