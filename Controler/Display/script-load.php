@@ -76,7 +76,7 @@ else {
     $sth->execute();
     $document = $sth->fetchAll(PDO::FETCH_ASSOC);
     var_dump($document);
-    echo PHP_EOL;
+    var_dump($document);
 
     $sth = $db->prepare(
         'SELECT * 
@@ -87,6 +87,7 @@ else {
     $sth->bindParam(1, $id_node);
     $sth->execute();
     $node = $sth->fetchAll(PDO::FETCH_ASSOC);
+    var_dump($node);
     
     
     foreach ($node as $key => $value) {
