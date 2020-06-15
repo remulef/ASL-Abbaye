@@ -54,9 +54,9 @@ if (empty($data)) {
     $node["name"] = utf8_encode($node["name"]);
     
     
-    $json = array_merge($node,$document);
+    $array = array_merge($node,$document);
     //var_dump($json);
-    $json = json_encode($json);
+    $json = json_encode($array);
     echo $json;
 }
 //Si data n'est pas vide 
