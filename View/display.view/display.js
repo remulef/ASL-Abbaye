@@ -89,8 +89,7 @@ function ajax_post_request(callback, url, async, data) {
 
 function getback() {
     if (history.length > 0) {
-        id = history.pop();
-        changedoc(id);
+        changedoc(history.pop());
     }
     else init();
 
