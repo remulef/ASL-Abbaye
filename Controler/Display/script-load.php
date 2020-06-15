@@ -76,8 +76,6 @@ else {
     $sth->execute();
     $document = $sth->fetchAll(PDO::FETCH_ASSOC);
     var_dump($document);
-    var_dump($document);
-
     $sth = $db->prepare(
         'SELECT * 
     FROM NODE 
