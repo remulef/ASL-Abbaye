@@ -26,7 +26,8 @@
 
 
     <main class="main">
-        <h2>Content</h2>
+        <h2>Contenue de la thématique : <strong>Ressource Pedagogique</strong></h2>
+        <div id="content">
         <div id="listdoss">
             <H3>Listes des dossiers</H3>
             <ul id="dossbar">
@@ -37,6 +38,7 @@
             <H3>Listes des documents</H3>
             <ul id="docbar">
             </ul>
+        </div>
         </div>
     </main>
 
