@@ -30,6 +30,12 @@ if (empty($data)) {
     $sth->bindParam(1, $node_name);
     $sth->execute();
     $document = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+    $document["nom"] = utf8_encode($document["nom"]);
+    $document["chemin"] = utf8_encode($document["chemin"]);
+    $document["descri"] = utf8_encode($document["descri"]);
+
+
     //var_dump($document);
     //echo PHP_EOL;    
 
@@ -44,7 +50,10 @@ if (empty($data)) {
     $sth->execute();
     $node = $sth->fetchAll(PDO::FETCH_ASSOC);
     //var_dump($node);
-
+    
+    $node["name"] = utf8_encode($node["name"]);
+    
+    
     $json = array_merge($node,$document);
     var_dump($json);
     $json = json_encode($json);
