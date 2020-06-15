@@ -1,12 +1,11 @@
 <?php
-header('Access-Control-Allow-Origin: *');
 $database = 'gsjrnmiasl.mysql.db';
 $user = 'gsjrnmiasl';
 $password = 'MJCAbbaye38';
 try {
     $db = new PDO("mysql:host=gsjrnmiasl.mysql.db;dbname=gsjrnmiasl", $user, $password);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    //echo "Connected successfully";
+    echo "Connected successfully";
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
