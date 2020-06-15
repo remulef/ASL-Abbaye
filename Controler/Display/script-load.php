@@ -49,11 +49,14 @@ if (empty($data)) {
     $sth->bindParam(1, $node_name);
     $sth->execute();
     $node = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+
     foreach ($node as $key => $value) {
-         $value["name"] = "bouffons";    
-         echo $value["name"].PHP_EOL;
+         foreach ($value as $key2 => $value2) {
+             echo $key2."     ".$value2.PHP_EOL;
+         }
     }
-    var_dump($node);   
+    //var_dump($node);   
     
 
     $array = array_merge($node,$document);
