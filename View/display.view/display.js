@@ -36,6 +36,17 @@ function load(json) {
 
 }
 
+function changedoc(id) {
+    
+    try {
+        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-load.php";
+        ajax_post_request(load,url,true,id);
+    } catch (error) {
+        
+    }
+    
+}
+
 
 function ajax_post_request(callback, url, async, data) {
     // Instanciation d'un objet XHR
