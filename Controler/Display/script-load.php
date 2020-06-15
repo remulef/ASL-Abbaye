@@ -34,7 +34,8 @@ $node_name = "Ressourcepeda";
 
     $sth->bindParam(1, $node_name);
     $document = $sth->fetchAll(PDO::FETCH_ASSOC);
-    
+    var_dump($document);
+    echo PHP_EOL;    
 
     $sth = $db->prepare(
     'SELECT * 
@@ -45,13 +46,11 @@ $node_name = "Ressourcepeda";
 
     $sth->bindParam(1, $node_name);
     $node = $sth->fetchAll(PDO::FETCH_ASSOC);
-    
+    var_dump($node);
 
 
     
     
     
-    $json = json_encode($results);
-    echo $json;
-
+    
 $db = null;
