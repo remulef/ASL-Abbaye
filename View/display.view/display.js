@@ -11,6 +11,7 @@ function init(){
 
 function load(json) {
     //clearul();
+    var count_doc =0;
     var data = JSON.parse(json);
     var uldoc = document.getElementById("docbar");
     var uldoss = document.getElementById("dossbar");
@@ -25,6 +26,7 @@ function load(json) {
             a.innerHTML=current.name;
             li.appendChild(a);
             uldoss.appendChild(li);
+            count_doc++;
         }else {
             var li = document.createElement("li");
             var a = document.createElement("a");
@@ -34,6 +36,7 @@ function load(json) {
             uldoc.appendChild(li);
         }
     }
+    if(count_doc===0) cleardocbar();
 
 }
 
@@ -50,10 +53,12 @@ function changedoc(id) {
 }
 
 function clearul() {
-    document.getElementById("dossbar").innerHTML = "";
-    document.getElementById("docbar").innerHTML = "";
+    cleardocbar();
+    cleardossbar();
+    
 }
-
+function cleardossbar(){document.getElementById("dossbar").innerHTML = "";}
+function cleardocbar() {document.getElementById("docbar").innerHTML = "";}
 
 function ajax_post_request(callback, url, async, data) {
     // Instanciation d'un objet XHR
