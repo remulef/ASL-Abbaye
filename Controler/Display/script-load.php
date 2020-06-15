@@ -21,8 +21,10 @@ else {
     echo "pas vide";
 }
 
+echo PHP_EOL;    
 
-$node_name = "jeux";
+
+$node_name = "%jeux%";
     $sth = $db->prepare('SELECT * 
     FROM DOCUMENT 
     WHERE id_doc IN (SELECT DOCUMENT_id_doc 
@@ -30,7 +32,7 @@ $node_name = "jeux";
                      WHERE NODE_id_node IN 
                                      (SELECT id_node 
                                      FROM NODE 
-                                     WHERE name = ? ))');
+                                     WHERE name LIKE ? ))');
 
     $sth->bindParam(1, $node_name);
     $document = $sth->fetchAll(PDO::FETCH_ASSOC);
@@ -42,7 +44,7 @@ $node_name = "jeux";
     FROM NODE 
     WHERE parent_node_id IN (SELECT id_node 
                             FROM NODE 
-                            WHERE name = ? )');
+                            WHERE name LIKE ? )');
 
     $sth->bindParam(1, $node_name);
     $node = $sth->fetchAll(PDO::FETCH_ASSOC);
