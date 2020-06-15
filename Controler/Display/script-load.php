@@ -15,10 +15,10 @@ try {
 
 $data = $_POST['data'];
 if (empty($data)) {
-    $node_name="Ressourcepeda";
+    echo "vide";
 }
 else {
-    $node_name="Ressourcepeda";
+    echo "pas vide";
 }
 
 
