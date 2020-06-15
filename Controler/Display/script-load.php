@@ -1,4 +1,6 @@
 <?php
+header('Access-Control-Allow-Origin: *');
+
 $database = 'gsjrnmiasl.mysql.db';
 $user = 'gsjrnmiasl';
 $password = 'MJCAbbaye38';

@@ -16,12 +16,13 @@ function load(json) {
         var current = data[index];
         if(current.id_node!==""){
             var id= current.id_node;
+            var li = document.createElement("li");
             var a = document.createElement("a");
             a.setAttribute("onclick","changedoc("+id+')');
             a.setAttribute("href","");
             a.innerHTML=current.name;
-
-            ul.appendChild(a);
+            li.appendChild(a);
+            ul.appendChild(li);
         }
     }
 
