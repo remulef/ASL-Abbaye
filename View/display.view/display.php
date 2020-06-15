@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,23 +10,31 @@
 
 
 <body onload="init()">
-<nav class="sidenav">
-<div class="tri">
-<input type="text" placeholder="nom du document" onchange="search()">
-
-</div>
-  
-  <a href="">Deplacer document/dossier</a>
-  <a href="">Crée dossier</a>
-  <a href="">Ajouter document</a>
-</nav>
+    <nav class="sidenav">
+        <div class="tri">
+            <p>Chercher un document</p>
+            <input type="text" placeholder="nom du document" onchange="search()">
 
 
 
-<main class="main">
-<h2>Content</h2>
-</main>
+        </div>
+        <a href="">Deplacer</a>
+        <a href="">Créer dossier</a>
+        <a href="">Proposer document</a>
+    </nav>
+
+
+
+    <main class="main">
+        <h2>Content</h2>
+        <div id="listdocs">
+            <H3>Listes des dossiers</H3>
+            <ul id="docbar">
+            </ul>
+        </div>
+    </main>
 
 </body>
 <script src="display.js"></script>
+
 </html>

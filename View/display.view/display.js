@@ -11,7 +11,20 @@ function init(){
 
 function load(json) {
     var data = JSON.parse(json);
-    console.log(data);
+    var ul = document.getElementById("docbar");
+    for (let index = 0; index < data.length; index++) {
+        var current = data[index];
+        if(current.id_node!==""){
+            var id= current.id_node;
+            var a = document.createElement("a");
+            a.setAttribute("onclick","changedoc("+id+')');
+            a.setAttribute("href","");
+            a.innerHTML=current.name;
+
+            ul.appendChild(a);
+        }
+    }
+
 }
 
 
