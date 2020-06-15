@@ -52,11 +52,15 @@ if (empty($data)) {
 
 
     foreach ($node as $key => $value) {
-         foreach ($value as $key2 => $value2) {
-            if($value[$key2]=="name"){
-                $value[$key2]= utf8_encode($value2);
-            }
-         }
+         $save = $value;
+
+        $value = array(
+            "id_node"=> $save["id_node"],
+            "name" => utf8_encode($save["name"]),
+            "parent_node_id" => $save["parent_node_id"]
+        );
+        
+        $node[$key] = $value;
     }
     var_dump($node);   
     
