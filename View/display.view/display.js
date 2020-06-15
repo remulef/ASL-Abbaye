@@ -1,37 +1,41 @@
-function init(){
+//FAIRE UNE PILE POUR REMONTER LES DOCS 
+
+let history = [];
+
+function init() {
 
     try {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-load.php";
-        ajax_post_request(load,url,true,null);
+        ajax_post_request(load, url, true, null);
     } catch (error) {
-        
+
     }
 }
 
 
 function load(json) {
     //clearul();
-    var count_doc =0;
+
     var data = JSON.parse(json);
     var uldoc = document.getElementById("docbar");
     var uldoss = document.getElementById("dossbar");
     for (let index = 0; index < data.length; index++) {
         var current = data[index];
-        if(current.id_node!==undefined){
-            var id= current.id_node;
+        if (current.id_node !== undefined) {
+            var id = current.id_node;
             var li = document.createElement("li");
             var a = document.createElement("a");
-            a.setAttribute("onclick","changedoc("+id+')');
-            a.setAttribute("class","button1");
-            a.innerHTML=current.name;
+            a.setAttribute("onclick", "changedoc(" + id + ')');
+            a.setAttribute("class", "button1");
+            a.innerHTML = current.name;
             li.appendChild(a);
             uldoss.appendChild(li);
             count_doc++;
-        }else {
+        } else {
             var li = document.createElement("li");
             var a = document.createElement("a");
-            a.setAttribute("href","http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc="+current.id_doc);
-            a.innerHTML=current.nom;
+            a.setAttribute("href", "http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=" + current.id_doc);
+            a.innerHTML = current.nom;
             li.appendChild(a);
             uldoc.appendChild(li);
         }
@@ -41,14 +45,15 @@ function load(json) {
 
 function changedoc(id) {
     clearul();
+    history.push(id);
     try {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-load.php";
         console.log(id);
-        ajax_post_request(load,url,true,encodeURIComponent(id));
+        ajax_post_request(load, url, true, encodeURIComponent(id));
     } catch (error) {
         alert(error);
     }
-    
+
 }
 
 function clearul() {
@@ -61,7 +66,7 @@ function ajax_post_request(callback, url, async, data) {
     // Instanciation d'un objet XHR
     var xhr = new XMLHttpRequest();
 
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (callback && xhr.readyState == 4 && xhr.status == 200) {
             callback(xhr.responseText);
         }
@@ -79,4 +84,12 @@ function ajax_post_request(callback, url, async, data) {
     } else {
         xhr.send("data=" + data);
     }
+}
+
+function getback() {
+    if (history.length > 0) {
+        id = history.pop();
+        changedoc(id);
+    }
+
 }
