@@ -30,7 +30,7 @@ function load(json) {
             a.innerHTML = current.name;
             li.appendChild(a);
             uldoss.appendChild(li);
-            count_doc++;
+            
         } else {
             var li = document.createElement("li");
             var a = document.createElement("a");
