@@ -1,6 +1,6 @@
 //FAIRE UNE PILE POUR REMONTER LES DOCS 
 
-let history = [];
+let history = ["0"];
 
 function init() {
 
@@ -88,7 +88,7 @@ function ajax_post_request(callback, url, async, data) {
 }
 
 function getback(){ 
-    alert("oaize");
+    
     if (history.length > 1) {
         changedoc(history.pop());
     }
