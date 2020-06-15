@@ -19,6 +19,10 @@ body {
 #content {
     display: inline-block;
 }
+
+.content {
+    display: inline-block;
+}
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
