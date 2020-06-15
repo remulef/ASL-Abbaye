@@ -30,7 +30,7 @@ $node_name = "Ressourcepeda";
                      WHERE NODE_id_node IN 
                                      (SELECT id_node 
                                      FROM NODE 
-                                     WHERE name = %?% ));');
+                                     WHERE name = ? ));');
 
     $sth->bindParam(1, $node_name);
     $document = $sth->fetchAll(PDO::FETCH_ASSOC);
@@ -42,7 +42,7 @@ $node_name = "Ressourcepeda";
     FROM NODE 
     WHERE parent_node_id IN(SELECT id_node 
                             FROM NODE 
-                            WHERE name = %?% )');
+                            WHERE name = ? )');
 
     $sth->bindParam(1, $node_name);
     $node = $sth->fetchAll(PDO::FETCH_ASSOC);
