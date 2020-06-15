@@ -5,7 +5,7 @@ $password = 'MJCAbbaye38';
 try {
     $db = new PDO("mysql:host=gsjrnmiasl.mysql.db;dbname=gsjrnmiasl", $user, $password);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
+    //echo "Connected successfully";
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
@@ -77,6 +77,7 @@ else {
     var_dump($node);
 
     $json = array_merge($node,$document);
+    var_dump($json);
     $json = json_encode($json);
     echo $json;
 }
