@@ -16,9 +16,8 @@ try {
 
 //$data = json_decode($data);
 //Si data est vide alors on initialise à la racine
-/*
+
 if (!isset($_POST['data'])) {
-    $data = $_POST['data'];
     $node_name = "Ressourcepeda";
     $sth = $db->prepare('SELECT * 
     FROM DOCUMENT 
@@ -63,7 +62,8 @@ if (!isset($_POST['data'])) {
 //Si data n'est pas vide 
 //alors il s'agit des parametres de tri 
 //Ici on charge un dossier spécifique avec son id
-else {*/
+else {
+    $data = $_POST['data'];
     //$id_node = $data->id_node;
     $id_node = "13";
     $sth = $db->prepare('SELECT * 
@@ -75,8 +75,6 @@ else {*/
     $sth->bindParam(1, $id_node);
     $sth->execute();
     $document = $sth->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($document);
-    echo PHP_EOL;
 
     $sth = $db->prepare(
         'SELECT * 
@@ -102,5 +100,5 @@ else {*/
     $array = array_merge($node, $document);
     $json = json_encode($array);
     echo $json;
-//}
+}
 $db = null;
