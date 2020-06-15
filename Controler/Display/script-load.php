@@ -15,7 +15,7 @@ try {
 
 
 $data = $_POST['data'];
-$data = json_decode($data);
+//$data = json_decode($data);
 
 //Si data est vide alors on initialise à la racine
 if (empty($data)) {
@@ -64,7 +64,8 @@ if (empty($data)) {
 //alors il s'agit des parametres de tri 
 //Ici on charge un dossier spécifique avec son id
 else {
-    $id_node = $data->id_node;
+    //$id_node = $data->id_node;
+    $id_node = $data;
     $sth = $db->prepare('SELECT * 
     FROM DOCUMENT 
     WHERE id_doc IN (SELECT DOCUMENT_id_doc 
