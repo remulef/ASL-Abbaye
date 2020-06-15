@@ -47,6 +47,11 @@ function changedoc(id) {
     
 }
 
+function clearul() {
+    document.getElementById("listdoc").innerHTML = "";
+    document.getElementById("listdoss").innerHTML = "";
+}
+
 
 function ajax_post_request(callback, url, async, data) {
     // Instanciation d'un objet XHR

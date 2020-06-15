@@ -34,7 +34,7 @@
                 </ul>
             </div>
 
-            <div id="listdoss">
+            <div id="listdoc">
                 <H3>Listes des documents</H3>
                 <ul id="docbar">
                 </ul>
