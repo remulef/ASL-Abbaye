@@ -25,7 +25,7 @@ function load(json) {
             var id = current.id_node;
             var li = document.createElement("li");
             var a = document.createElement("a");
-            a.setAttribute("onclick", "changedoc(" + id + ')');
+            a.setAttribute("onclick", "changedoc(" + id + ','+ current.name +')');
             a.setAttribute("class", "button1");
             a.innerHTML = current.name;
             li.appendChild(a);
@@ -43,9 +43,10 @@ function load(json) {
 
 }
 
-function changedoc(id) {
+function changedoc(id,title) {
     console.log(history);
     clearul();
+    changetitle(title);
     history.push(id);
     try {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-load.php";
@@ -95,4 +96,8 @@ function getback(){
     }
     else init();
 
+}
+
+function changetitle(title){
+    document.getElementById("pos").innerHTML="Contenue de la thématique : <strong>"+title+"</strong>";
 }

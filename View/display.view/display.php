@@ -32,7 +32,7 @@
                 <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 0-.5.5v6.5A2.5 2.5 0 0 0 8 13h5.5a.5.5 0 0 0 0-1H8a1.5 1.5 0 0 1-1.5-1.5V4a.5.5 0 0 0-.5-.5z" />
             </svg>
         </a>
-        <h2>Contenue de la thématique : <strong>Ressource Pedagogique</strong></h2>
+        <h2 id="pos">Contenue de la thématique : <strong>Ressource Pedagogique</strong></h2>
         <span id="content" class="content">
             <div id="listdoss">
                 <H3>Listes des dossiers (fonctionne) </H3>
