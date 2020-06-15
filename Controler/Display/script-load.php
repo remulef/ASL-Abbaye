@@ -14,11 +14,11 @@ try {
 
 
 
-$data = $_POST['data'];
 //$data = json_decode($data);
 //Si data est vide alors on initialise à la racine
-$data = "11";
-if (!isset($data)) {
+
+if (!isset($_POST['data'])) {
+    $data = $_POST['data'];
     $node_name = "Ressourcepeda";
     $sth = $db->prepare('SELECT * 
     FROM DOCUMENT 
@@ -49,7 +49,7 @@ if (!isset($data)) {
     foreach ($node as $key => $value) {
         $node[$key]["name"] = utf8_encode($value["name"]);
     }
-    
+
     foreach ($document as $key => $value) {
         $document[$key]["nom"] = utf8_encode($value["nom"]);
         $document[$key]["chemin"] = utf8_encode($value["chemin"]);
@@ -65,7 +65,7 @@ if (!isset($data)) {
 //Ici on charge un dossier spécifique avec son id
 else {
     //$id_node = $data->id_node;
-    $id_node = $data;
+    $id_node = "12";
     $sth = $db->prepare('SELECT * 
     FROM DOCUMENT 
     WHERE id_doc IN (SELECT DOCUMENT_id_doc 
@@ -87,12 +87,12 @@ else {
     $sth->bindParam(1, $id_node);
     $sth->execute();
     $node = $sth->fetchAll(PDO::FETCH_ASSOC);
-    
-    
+
+
     foreach ($node as $key => $value) {
         $node[$key]["name"] = utf8_encode($value["name"]);
     }
-    
+
     foreach ($document as $key => $value) {
         $document[$key]["nom"] = utf8_encode($value["nom"]);
         $document[$key]["chemin"] = utf8_encode($value["chemin"]);
