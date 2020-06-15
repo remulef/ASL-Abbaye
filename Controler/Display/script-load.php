@@ -62,8 +62,12 @@ if (empty($data)) {
         */
         $node[$key]["name"] = utf8_encode($value["name"]);
     }
-    var_dump($node);
-
+    
+    foreach ($document as $key => $value) {
+        $document[$key]["nom"] = utf8_encode($value["nom"]);
+        $document[$key]["chemin"] = utf8_encode($value["chemin"]);
+        $document[$key]["descri"] = utf8_encode($value["descri"]);
+    }
 
     $array = array_merge($node, $document);
     //var_dump($array);
