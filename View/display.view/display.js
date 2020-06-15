@@ -38,7 +38,7 @@ function load(json) {
 }
 
 function changedoc(id) {
-    
+    clearul();
     try {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-load.php";
         console.log(id);

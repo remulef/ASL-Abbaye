@@ -26,16 +26,19 @@
 
 
     <main class="main">
+        TODO: 
+        -Faire le systeme de tri 
+        - Afficher en mode product flex box 
         <h2>Contenue de la thématique : <strong>Ressource Pedagogique</strong></h2>
         <span id="content" class="content">
             <div id="listdoss">
-                <H3>Listes des dossiers</H3>
+                <H3>Listes des dossiers (fonctionne) </H3>
                 <ul id="dossbar">
                 </ul>
             </div>
 
             <div id="listdoc">
-                <H3>Listes des documents</H3>
+                <H3>Listes des documents(fonctionne)</H3>
                 <ul id="docbar">
                 </ul>
             </div>
