@@ -22,7 +22,7 @@ else {
 }
 
 
-$node_name = "Ressourcepeda";
+$node_name = "jeux";
     $sth = $db->prepare('SELECT * 
     FROM DOCUMENT 
     WHERE id_doc IN (SELECT DOCUMENT_id_doc 
@@ -30,7 +30,7 @@ $node_name = "Ressourcepeda";
                      WHERE NODE_id_node IN 
                                      (SELECT id_node 
                                      FROM NODE 
-                                     WHERE name = ? ));');
+                                     WHERE name = ? ))');
 
     $sth->bindParam(1, $node_name);
     $document = $sth->fetchAll(PDO::FETCH_ASSOC);
@@ -40,7 +40,7 @@ $node_name = "Ressourcepeda";
     $sth = $db->prepare(
     'SELECT * 
     FROM NODE 
-    WHERE parent_node_id IN(SELECT id_node 
+    WHERE parent_node_id IN (SELECT id_node 
                             FROM NODE 
                             WHERE name = ? )');
 
