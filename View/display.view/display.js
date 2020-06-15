@@ -41,7 +41,8 @@ function changedoc(id) {
     
     try {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-load.php";
-        ajax_post_request(load,url,true,null);
+        console.log(id);
+        //ajax_post_request(load,url,true,encodeURIComponent(id));
     } catch (error) {
         alert(error);
     }
