@@ -70,7 +70,7 @@ else {*/
     FROM DOCUMENT 
     WHERE id_doc IN (SELECT DOCUMENT_id_doc 
                      FROM NODE_DOCUMENT 
-                     WHERE NODE_id_node = ?');
+                     WHERE NODE_id_node = ?)');
 
     $sth->bindParam(1, $id_node);
     $sth->execute();
