@@ -60,7 +60,7 @@ if (empty($data)) {
             "parent_node_id" => $save["parent_node_id"]
         );*/
         $node[$key]["name"]=utf8_encode($value["name"]);
-        $node[$key] = $value;
+        //$node[$key] = $value;
     }
     var_dump($node);   
     
