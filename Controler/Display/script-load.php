@@ -49,13 +49,11 @@ if (empty($data)) {
     $sth->bindParam(1, $node_name);
     $sth->execute();
     $node = $sth->fetchAll(PDO::FETCH_ASSOC);
-    //var_dump($node);
-    
     $node["name"] = utf8_encode($node["name"]);
-    
+    var_dump($node);
     
     $array = array_merge($node,$document);
-    var_dump($array);
+    //var_dump($array);
     $json = json_encode($node);
     echo $json;
 }
