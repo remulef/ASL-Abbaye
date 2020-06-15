@@ -52,6 +52,9 @@ if (empty($data)) {
     $node["name"] = utf8_encode($node["name"]);
     var_dump($node);
     
+    foreach ($node as $key => $value) {
+        echo $value;
+    }
     $array = array_merge($node,$document);
     //var_dump($array);
     $json = json_encode($node);
