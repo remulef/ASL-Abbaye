@@ -53,13 +53,13 @@ if (empty($data)) {
 
     foreach ($node as $key => $value) {
          $save = $value;
-
+        /*
         $value = array(
             "id_node"=> $save["id_node"],
             "name" => utf8_encode($save["name"]),
             "parent_node_id" => $save["parent_node_id"]
-        );
-        
+        );*/
+        $node[$key]["name"]=utf8_encode($value["name"]);
         $node[$key] = $value;
     }
     var_dump($node);   
