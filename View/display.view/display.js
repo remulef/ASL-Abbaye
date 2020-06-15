@@ -10,7 +10,7 @@ function init(){
 
 
 function load(json) {
-    clearul();
+    //clearul();
     var data = JSON.parse(json);
     var uldoc = document.getElementById("docbar");
     var uldoss = document.getElementById("dossbar");
