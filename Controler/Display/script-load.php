@@ -34,17 +34,16 @@ if (empty($data)) {
     $document["nom"] = utf8_encode($document["nom"]);
     $document["chemin"] = utf8_encode($document["chemin"]);
     $document["descri"] = utf8_encode($document["descri"]);
-
-
-    //var_dump($document);
+    var_dump($document);
     //echo PHP_EOL;    
 
     $sth = $db->prepare(
-    'SELECT * 
+        'SELECT * 
     FROM NODE 
     WHERE parent_node_id IN (SELECT id_node 
                             FROM NODE 
-                            WHERE name = ? )');
+                            WHERE name = ? )'
+    );
 
     $sth->bindParam(1, $node_name);
     $sth->execute();
@@ -52,22 +51,23 @@ if (empty($data)) {
 
 
     foreach ($node as $key => $value) {
-         $save = $value;
-        /*
+        /* Methode 1
+         $save = $value; 
         $value = array(
             "id_node"=> $save["id_node"],
             "name" => utf8_encode($save["name"]),
             "parent_node_id" => $save["parent_node_id"]
-        );*/
-        $node[$key]["name"]=utf8_encode($value["name"]);
+        );
         //$node[$key] = $value;
+        */
+        $node[$key]["name"] = utf8_encode($value["name"]);
     }
-    var_dump($node);   
-    
+    var_dump($node);
 
-    $array = array_merge($node,$document);
+
+    $array = array_merge($node, $document);
     //var_dump($array);
-    $json = json_encode($node);
+    $json = json_encode($document);
     echo $json;
 }
 //Si data n'est pas vide 
@@ -81,23 +81,24 @@ else {
                      FROM NODE_DOCUMENT 
                      WHERE NODE_id_node = ?');
 
-    $sth->bindParam(1,$id_node);
+    $sth->bindParam(1, $id_node);
     $sth->execute();
     $document = $sth->fetchAll(PDO::FETCH_ASSOC);
     var_dump($document);
-    echo PHP_EOL;    
+    echo PHP_EOL;
 
     $sth = $db->prepare(
-    'SELECT * 
+        'SELECT * 
     FROM NODE 
-    WHERE parent_node_id = ? ');
+    WHERE parent_node_id = ? '
+    );
 
-    $sth->bindParam(1,$id_node);
+    $sth->bindParam(1, $id_node);
     $sth->execute();
     $node = $sth->fetchAll(PDO::FETCH_ASSOC);
     var_dump($node);
 
-    $json = array_merge($node,$document);
+    $json = array_merge($node, $document);
     $json = json_encode($json);
     echo $json;
 }
