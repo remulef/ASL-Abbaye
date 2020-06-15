@@ -50,7 +50,7 @@ if (empty($data)) {
     $sth->execute();
     $node = $sth->fetchAll(PDO::FETCH_ASSOC);
     foreach ($node as $key => $value) {
-        echo $value["name"];
+         $value["name"]= utf8_encode($value["name"]);;
     }
 
     //var_dump($node);
