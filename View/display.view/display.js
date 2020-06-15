@@ -89,7 +89,7 @@ function ajax_post_request(callback, url, async, data) {
 
 function getback(){ 
     alert("oaize");
-    if (history.length > 0) {
+    if (history.length > 1) {
         changedoc(history.pop());
     }
     else init();
