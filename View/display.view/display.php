@@ -26,9 +26,6 @@
 
 
     <main class="main">
-        TODO: 
-        -Faire le systeme de tri 
-        - Afficher en mode product flex box 
         <h2>Contenue de la thématique : <strong>Ressource Pedagogique</strong></h2>
         <span id="content" class="content">
             <div id="listdoss">

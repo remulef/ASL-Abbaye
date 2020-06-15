@@ -50,13 +50,8 @@ function changedoc(id) {
 }
 
 function clearul() {
-   var list_li = document.getElementsByTagName("li");
-   for (let index = 0; index < list_li.length; index++) {
-        list_li[index].parentElement.removeChild(list_li[index]);
-        //je prend un enfant 
-        //je lui demande d'appeler ses parents 
-        //j'ordonne aux parents de tuer leur enfants       
-   }
+    document.getElementById("dossbar").innerHTML = "";
+    document.getElementById("docbar").innerHTML = "";
 }
 
 
