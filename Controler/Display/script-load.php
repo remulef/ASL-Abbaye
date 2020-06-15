@@ -53,7 +53,7 @@ if (empty($data)) {
         var_dump($value);
     }
 
-    var_dump($node);
+    //var_dump($node);
 
     $array = array_merge($node,$document);
     //var_dump($array);
