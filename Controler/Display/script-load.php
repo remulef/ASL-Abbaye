@@ -30,8 +30,8 @@ if (empty($data)) {
     $sth->bindParam(1, $node_name);
     $sth->execute();
     $document = $sth->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($document);
-    echo PHP_EOL;    
+    //var_dump($document);
+    //echo PHP_EOL;    
 
     $sth = $db->prepare(
     'SELECT * 
@@ -43,7 +43,7 @@ if (empty($data)) {
     $sth->bindParam(1, $node_name);
     $sth->execute();
     $node = $sth->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($node);
+    //var_dump($node);
 
     $json = array_merge($node,$document);
     $json = json_encode($json);
