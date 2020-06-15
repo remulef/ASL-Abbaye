@@ -31,12 +31,6 @@ if (empty($data)) {
     $sth->execute();
     $document = $sth->fetchAll(PDO::FETCH_ASSOC);
 
-    $document["nom"] = utf8_encode($document["nom"]);
-    $document["chemin"] = utf8_encode($document["chemin"]);
-    $document["descri"] = utf8_encode($document["descri"]);
-    var_dump($document);
-    //echo PHP_EOL;    
-
     $sth = $db->prepare(
         'SELECT * 
     FROM NODE 
@@ -49,17 +43,8 @@ if (empty($data)) {
     $sth->execute();
     $node = $sth->fetchAll(PDO::FETCH_ASSOC);
 
-
+    //Conversion en UTF8 pour compatibilité JSON 
     foreach ($node as $key => $value) {
-        /* Methode 1
-         $save = $value; 
-        $value = array(
-            "id_node"=> $save["id_node"],
-            "name" => utf8_encode($save["name"]),
-            "parent_node_id" => $save["parent_node_id"]
-        );
-        //$node[$key] = $value;
-        */
         $node[$key]["name"] = utf8_encode($value["name"]);
     }
     
@@ -70,8 +55,7 @@ if (empty($data)) {
     }
 
     $array = array_merge($node, $document);
-    //var_dump($array);
-    $json = json_encode($document);
+    $json = json_encode($array);
     echo $json;
 }
 //Si data n'est pas vide 
@@ -100,10 +84,20 @@ else {
     $sth->bindParam(1, $id_node);
     $sth->execute();
     $node = $sth->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($node);
+    
+    
+    foreach ($node as $key => $value) {
+        $node[$key]["name"] = utf8_encode($value["name"]);
+    }
+    
+    foreach ($document as $key => $value) {
+        $document[$key]["nom"] = utf8_encode($value["nom"]);
+        $document[$key]["chemin"] = utf8_encode($value["chemin"]);
+        $document[$key]["descri"] = utf8_encode($value["descri"]);
+    }
 
-    $json = array_merge($node, $document);
-    $json = json_encode($json);
+    $array = array_merge($node, $document);
+    $json = json_encode($array);
     echo $json;
 }
 $db = null;

@@ -2,7 +2,7 @@ function init(){
 
     try {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-load.php";
-        ajax_post_request(load,url,true,".");
+        ajax_post_request(load,url,true,null);
     } catch (error) {
         
     }
@@ -11,7 +11,7 @@ function init(){
 
 function load(json) {
     var data = JSON.parse(json);
-    
+    console.log(data);
 }
 
 
