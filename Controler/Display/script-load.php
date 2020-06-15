@@ -49,12 +49,12 @@ if (empty($data)) {
     $sth->bindParam(1, $node_name);
     $sth->execute();
     $node = $sth->fetchAll(PDO::FETCH_ASSOC);
-    $node["name"] = utf8_encode($node["name"]);
+    foreach ($node as $key => $value) {
+        $value["name"]= utf8_encode($value["name"]);;
+    }
+
     var_dump($node);
     
-    foreach ($node as $key => $value) {
-        echo $value;
-    }
     $array = array_merge($node,$document);
     //var_dump($array);
     $json = json_encode($node);
