@@ -87,7 +87,7 @@ function ajax_post_request(callback, url, async, data) {
     }
 }
 
-function getback() 
+function getback(){ 
     alert("oaize");
     if (history.length > 0) {
         changedoc(history.pop());
