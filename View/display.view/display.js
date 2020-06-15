@@ -36,7 +36,6 @@ function load(json) {
             uldoc.appendChild(li);
         }
     }
-    if(count_doc===0) cleardocbar();
 
 }
 
@@ -53,12 +52,10 @@ function changedoc(id) {
 }
 
 function clearul() {
-    cleardocbar();
-    cleardossbar();
-    
+    document.getElementById("dossbar").innerHTML = "";
+    document.getElementById("docbar").innerHTML = "";
 }
-function cleardossbar(){document.getElementById("dossbar").innerHTML = "";}
-function cleardocbar() {document.getElementById("docbar").innerHTML = "";}
+
 
 function ajax_post_request(callback, url, async, data) {
     // Instanciation d'un objet XHR
