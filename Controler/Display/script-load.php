@@ -52,7 +52,8 @@ if (empty($data)) {
     foreach ($node as $key => $value) {
          $value["name"] = "bouffons";    
          echo $value["name"].PHP_EOL;
-    }   
+    }
+    var_dump($node);   
     
 
     $array = array_merge($node,$document);
