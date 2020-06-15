@@ -42,7 +42,7 @@ function changedoc(id) {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-load.php";
         ajax_post_request(load,url,true,id);
     } catch (error) {
-        
+        alert(error);
     }
     
 }
