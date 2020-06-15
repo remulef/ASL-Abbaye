@@ -27,7 +27,13 @@
 
     <main class="main">
         <h2>Content</h2>
-        <div id="listdocs">
+        <div id="listdoss">
+            <H3>Listes des dossiers</H3>
+            <ul id="dossbar">
+            </ul>
+        </div>
+
+        <div id="listdoss">
             <H3>Listes des dossiers</H3>
             <ul id="docbar">
             </ul>

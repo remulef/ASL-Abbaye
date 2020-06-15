@@ -23,6 +23,13 @@ function load(json) {
             a.innerHTML=current.name;
             li.appendChild(a);
             ul.appendChild(li);
+        }else {
+            var li = document.createElement("li");
+            var a = document.createElement("a");
+            a.setAttribute("href","http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc="+current.id_doc);
+            a.innerHTML=current.nom;
+            li.appendChild(a);
+            ul.appendChild(li);
         }
     }
 
