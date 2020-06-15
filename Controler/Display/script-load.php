@@ -46,6 +46,7 @@ if (empty($data)) {
     //var_dump($node);
 
     $json = array_merge($node,$document);
+    var_dump($json);
     $json = json_encode($json);
     echo $json;
 }
@@ -77,7 +78,6 @@ else {
     var_dump($node);
 
     $json = array_merge($node,$document);
-    var_dump($json);
     $json = json_encode($json);
     echo $json;
 }
