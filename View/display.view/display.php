@@ -16,7 +16,7 @@
             <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 0-.5.5v6.5A2.5 2.5 0 0 0 8 13h5.5a.5.5 0 0 0 0-1H8a1.5 1.5 0 0 1-1.5-1.5V4a.5.5 0 0 0-.5-.5z" />
         </svg>
     </a>
-    <span>
+    <span class="parcours">
         <h3>Parcours</h3>
         <br>
         <ul id="parcours">
