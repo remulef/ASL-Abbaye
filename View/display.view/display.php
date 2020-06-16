@@ -38,10 +38,6 @@
 <body onload="init()">
     <div id="sortpanel">
         <form id="form_114662" class="appnitro" method="post" action="">
-            <div class="form_description">
-                <h2>Recherche</h2>
-                <p>Option pour rechercher un document</p>
-            </div>
             <ul>
 
                 <li id="li_2">
