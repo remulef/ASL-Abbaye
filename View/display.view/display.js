@@ -139,12 +139,9 @@ function updateparcours() {
 }
 
 function cleanhistory(id) {
-    var i = history.length;
-    console.log(history);
+    console.log(id);
+    var index = history.indexOf(id);
+    history.splice(index);
 
-    while( !(history[i-1].id === id)){
-        console.log(history[i-1].id);
-        history.pop();
-        var i = history.length;
-    }
+
 }
