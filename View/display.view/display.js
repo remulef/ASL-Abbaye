@@ -57,11 +57,11 @@ function changedoc(id, title, forward, pos) {
 
     //si on descend
     if (forward) {
-        var pos = ({
+        var add = ({
             id_node: id,
             name: title,
         });
-        history.push(pos);
+        history.push(add);
     }
     //si l'on viens du parcours
     if (pos!==-1) {
@@ -94,6 +94,38 @@ function clearul() {
 }
 
 
+
+function getback() {
+    if (history.length === 1) {
+        init();
+    }
+    else {
+        history.pop();
+        let node = history[history.length - 1];
+        //let node = history.pop();
+        changedoc(node.id_node, node.name, false,-1);
+    }
+
+}
+
+
+function updateparcours() {
+    document.getElementById("parcours").innerHTML = "";
+    var ul = document.getElementById("parcours");
+    for (let index = 0; index < history.length ; index++) {
+        current = history[index];
+        var id = current.id_node;
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        console.log(index);
+        a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",false,'+index+')');
+        a.setAttribute("class", "button1");
+        a.innerHTML = "/" + current.name;
+        li.appendChild(a);
+        ul.appendChild(li);
+    }
+}
+
 function ajax_post_request(callback, url, async, data) {
     // Instanciation d'un objet XHR
     var xhr = new XMLHttpRequest();
@@ -116,40 +148,4 @@ function ajax_post_request(callback, url, async, data) {
     } else {
         xhr.send("data=" + data);
     }
-}
-
-function getback() {
-    if (history.length === 1) {
-        init();
-    }
-    else {
-        history.pop();
-        let node = history[history.length - 1];
-        //let node = history.pop();
-        changedoc(node.id_node, node.name, false,false);
-    }
-
-}
-
-
-function updateparcours() {
-    document.getElementById("parcours").innerHTML = "";
-    var ul = document.getElementById("parcours");
-    for (let index = 0; index < history.length ; index++) {
-        current = history[index];
-        var id = current.id_node;
-        var li = document.createElement("li");
-        var a = document.createElement("a");
-        a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",false,'+index+')');
-        a.setAttribute("class", "button1");
-        a.innerHTML = "/" + current.name;
-        li.appendChild(a);
-        ul.appendChild(li);
-    }
-}
-
-function cleanhistory(id) {
-    console.log(id);
-    var index = history.indexOf(id);
-    history.splice(index);
 }
