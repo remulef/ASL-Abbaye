@@ -32,13 +32,13 @@ a.button1:hover {
     }
 }
 
-.parcours {
+#parcours {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
   }
   
-  .parcours li {
+  #parcours li {
     float: left;
   }
