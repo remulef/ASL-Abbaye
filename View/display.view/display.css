@@ -49,7 +49,7 @@ a.button1:hover {
     padding-right: 5px;
 }
 
-#parcours a:last-child {
+#parcours li:last-child a {
  background-color: #b796ac; 
  cursor: not-allowed;
   
