@@ -50,8 +50,8 @@ function load(json) {
 
 }
 
-function changedoc(id, title, forward,fromparcours) {
-    
+function changedoc(id, title, forward, fromparcours) {
+
     clearul();
     changetitle(title);
 
@@ -63,9 +63,11 @@ function changedoc(id, title, forward,fromparcours) {
         });
         history.push(pos);
     }
-    //si l'on du parcours
+    //si l'on viens du parcours
     if (fromparcours) {
-        cleanhistory(id);
+        //On efface toutes les noeuds aprés le document id
+        var index = history.indexOf(id);
+        history = history.splice(index);
     }
     updateparcours();
 
