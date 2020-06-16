@@ -140,6 +140,8 @@ function updateparcours() {
 
 function cleanhistory(id) {
     var i = history.length;
+    console.log(history);
+
     while( history[i-1].id !== id){
         history.pop();
         i--;
