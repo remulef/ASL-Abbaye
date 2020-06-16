@@ -130,7 +130,7 @@ function changetitle(title) {
 function updateparcours() {
     document.getElementById("parcours").innerHTML = "";
     var ul = document.getElementById("parcours");
-    for (let index = 0; index < history.length - 1 ; index++) {
+    for (let index = 0; index < history.length ; index++) {
         current = history[index];
         var id = current.id_node;
         var li = document.createElement("li");
