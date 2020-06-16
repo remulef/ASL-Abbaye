@@ -51,7 +51,7 @@ function load(json) {
 }
 
 function changedoc(id, title, forward,fromparcours) {
-    updateparcours();
+    
     clearul();
     changetitle(title);
 
@@ -67,6 +67,7 @@ function changedoc(id, title, forward,fromparcours) {
     if (fromparcours) {
         cleanhistory(id);
     }
+    updateparcours();
 
     try {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-load.php";
@@ -112,7 +113,7 @@ function getback() {
         init();
     }
     else {
-        //history.pop();
+        history.pop();
         //let node = history[history.length - 1];
         let node = history.pop();
         changedoc(node.id_node, node.name, false);
@@ -144,6 +145,4 @@ function cleanhistory(id) {
     console.log(id);
     var index = history.indexOf(id);
     history.splice(index);
-
-
 }
