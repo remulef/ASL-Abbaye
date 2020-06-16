@@ -49,10 +49,14 @@ a.button1:hover {
     padding-right: 5px;
 }
 
+#parcours li:last-child {
+ background-color: #b796ac;   
+}
+
+
 #parcours li {
     float: left;
 }
-
 #dossbar {
     list-style-type: none;
     margin: 0;
@@ -78,7 +82,7 @@ a.button3 {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     color: #FFFFFF;
-    background-color: #4eb5f1;
+    background-color: #9ed0e6;
     text-align: center;
     transition: all 0.2s;
 }
