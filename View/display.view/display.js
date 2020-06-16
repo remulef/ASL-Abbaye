@@ -1,7 +1,7 @@
 
 let history = [];
 var pos = ({
-    id_node: "0",
+    id_node: 0,
     name: "Ressource Pedagogique",
 })
 history.push(pos);
