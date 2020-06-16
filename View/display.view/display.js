@@ -10,7 +10,7 @@ function init() {
         name: "Ressource Pedagogique",
     })
     history.push(pos);
-
+    updateparcours();
     try {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-load.php";
         ajax_post_request(load, url, true, null);
@@ -47,6 +47,7 @@ function load(json) {
             uldoc.appendChild(li);
         }
     }
+    
 
 }
 
