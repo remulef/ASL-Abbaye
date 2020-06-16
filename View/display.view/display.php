@@ -25,34 +25,17 @@
 
 
 <body onload="init()">
-
-
-
-    <main class="main">
-        <nav class="sidenav">
-            <div class="tri">
-                <p>Chercher un document</p>
-                <input type="text" placeholder="nom du document" onchange="search()">
-
-
-
-            </div>
-            <a href="">Deplacer</a>
-            <a href="">Créer dossier</a>
-            <a href="">Proposer document</a>
-        </nav>
-
-
+<main class="main">
         <h2 id="pos">Contenue de la thématique : <strong>Ressource Pedagogique</strong></h2>
         <span id="content" class="content">
             <div id="listdoss">
-                <H3>Listes des dossiers (fonctionne) </H3>
+                <H3>Listes des dossiers </H3>
                 <ul id="dossbar">
                 </ul>
             </div>
 
             <div id="listdoc">
-                <H3>Listes des documents(fonctionne)</H3>
+                <H3>Listes des documents</H3>
                 <ul id="docbar">
                 </ul>
             </div>
