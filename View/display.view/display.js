@@ -31,7 +31,7 @@ function load(json) {
             var id = current.id_node;
             var li = document.createElement("li");
             var a = document.createElement("a");
-            a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",true)');
+            a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",true,false)');
             a.setAttribute("class", "button1");
             a.innerHTML = current.name;
             li.appendChild(a);
@@ -49,7 +49,7 @@ function load(json) {
 
 }
 
-function changedoc(id, title, forward) {
+function changedoc(id, title, forward,fromparcours) {
     updateparcours();
     clearul();
     changetitle(title);
@@ -61,6 +61,10 @@ function changedoc(id, title, forward) {
             name: title,
         });
         history.push(pos);
+    }
+    //si l'on du parcours
+    if (fromparcours) {
+        cleanhistory(id);
     }
 
     try {
@@ -126,10 +130,18 @@ function updateparcours() {
         var id = current.id_node;
         var li = document.createElement("li");
         var a = document.createElement("a");
-        a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",true)');
+        a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",true,true)');
         a.setAttribute("class", "button1");
         a.innerHTML = "/" + current.name;
         li.appendChild(a);
         ul.appendChild(li);
+    }
+}
+
+function cleanhistory(id) {
+    var i = history.length;
+    while( history[i-1].id !== id){
+        history.pop();
+        i--;
     }
 }
