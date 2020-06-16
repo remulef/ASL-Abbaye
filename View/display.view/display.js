@@ -53,7 +53,6 @@ function load(json) {
 function changedoc(id, title, forward, fromparcours) {
 
     clearul();
-    changetitle(title);
 
     //si on descend
     if (forward) {
@@ -123,9 +122,6 @@ function getback() {
 
 }
 
-function changetitle(title) {
-    document.getElementById("pos").innerHTML = "Contenue de la thématique : <strong>" + title + "</strong>";
-}
 
 function updateparcours() {
     document.getElementById("parcours").innerHTML = "";
