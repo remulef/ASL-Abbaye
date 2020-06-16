@@ -55,7 +55,6 @@ function changedoc(id, title, forward) {
     changetitle(title);
 
     //si on descend
-    console.log(forward);
     if (forward) {
         var pos = ({
             id_node: id,
@@ -66,7 +65,6 @@ function changedoc(id, title, forward) {
 
     try {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-load.php";
-        console.log(id);
         ajax_post_request(load, url, true, encodeURIComponent(id));
     } catch (error) {
         alert(error);
