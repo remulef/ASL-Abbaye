@@ -22,6 +22,12 @@
         <br>
         <ul id="parcours">
         </ul>
+        <div id="listdoss">
+            <H3>Listes des dossiers </H3>
+            <ul id="dossbar">
+            </ul>
+        </div>
+
     </div>
 </header>
 
@@ -29,11 +35,6 @@
 <body onload="init()">
     <main class="main">
         <span id="content" class="content">
-            <div id="listdoss">
-                <H3>Listes des dossiers </H3>
-                <ul id="dossbar">
-                </ul>
-            </div>
 
             <div id="listdoc">
                 <H3>Listes des documents</H3>
