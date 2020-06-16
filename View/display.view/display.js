@@ -1,6 +1,10 @@
-//FAIRE UNE PILE POUR REMONTER LES DOCS 
 
-let history = ["0"];
+let history = [];
+var pos = ({
+    id_node: "0",
+    name: "Ressource Pedagogique",
+})
+history.push(pos);
 
 function init() {
 
@@ -25,12 +29,12 @@ function load(json) {
             var id = current.id_node;
             var li = document.createElement("li");
             var a = document.createElement("a");
-            a.setAttribute("onclick", "changedoc(" + id + ',"'+ current.name +'")');
+            a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '")');
             a.setAttribute("class", "button1");
             a.innerHTML = current.name;
             li.appendChild(a);
             uldoss.appendChild(li);
-            
+
         } else {
             var li = document.createElement("li");
             var a = document.createElement("a");
@@ -43,11 +47,18 @@ function load(json) {
 
 }
 
-function changedoc(id,title) {
+function changedoc(id, title) {
     console.log(history);
     clearul();
     changetitle(title);
-    history.push(id);
+    
+    var pos = ({
+        id_node: id,
+        name: title,
+    })
+
+    history.push(pos);
+
     try {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-load.php";
         console.log(id);
@@ -88,16 +99,17 @@ function ajax_post_request(callback, url, async, data) {
     }
 }
 
-function getback(){ 
-    
+function getback() {
+
     if (history.length > 1) {
         history.pop();
-        changedoc(history.pop());
+        var doc = history.pop()
+        changedoc(doc.id_doc,doc.name);
     }
     else init();
 
 }
 
-function changetitle(title){
-    document.getElementById("pos").innerHTML="Contenue de la thématique : <strong>"+title+"</strong>";
+function changetitle(title) {
+    document.getElementById("pos").innerHTML = "Contenue de la thématique : <strong>" + title + "</strong>";
 }
