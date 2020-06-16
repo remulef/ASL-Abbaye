@@ -73,3 +73,26 @@ a.button1:hover {
         margin: 0.4em auto;
     }
 }
+
+.parcours li a {
+    display: block;
+    float: left;
+    width: 100px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.parcours {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.parcours li {
+    margin-left: 2px;   
+}
+
+.parcours li a:hover {
+    background-color:#D3D3D3;
+    border-color:#696969 #DCDCDC #DCDCDC #696969;
+    } 
