@@ -58,8 +58,16 @@ a.button1:hover {
 
 #listdoss {
     margin-left: 100px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
+
+#listdoss li {
+    float: left;
+}
 #listdoc {
     margin-left: 100px;
 }
