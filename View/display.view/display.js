@@ -102,7 +102,7 @@ function ajax_post_request(callback, url, async, data) {
 }
 
 function getback() {
-    if (history.length > 1) {
+    if (history.length === 1) {
         init();
     }
     else {
