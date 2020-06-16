@@ -54,9 +54,9 @@ function changedoc(id, title, forward) {
     console.log(history);
     changetitle(title);
 
-    //si on remonte
+    //si on descend
     console.log(forward);
-    if (!forward) {
+    if (forward) {
         var pos = ({
             id_node: id,
             name: title,
