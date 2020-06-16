@@ -98,3 +98,8 @@ a.button3:hover {
         margin: 0.2em auto;
     }
 }
+
+
+body {
+    display: inline-block;
+}
