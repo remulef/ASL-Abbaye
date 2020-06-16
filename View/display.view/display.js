@@ -108,7 +108,7 @@ function getback() {
 
     if (history.length > 1) {
         history.pop();
-        var doc = history.pop();
+        var doc = history[history.length-1];
         changedoc(doc.id_doc, doc.name,false);
     }
     else init();
