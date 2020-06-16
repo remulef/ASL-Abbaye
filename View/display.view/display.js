@@ -142,9 +142,9 @@ function cleanhistory(id) {
     var i = history.length;
     console.log(history);
 
-    while( history[i-1].id !== id){
+    while( !(history[i-1].id === id)){
+        console.log(history[i-1].id);
         history.pop();
-        i--;
-        console.log(history);
+        var i = history.length;
     }
 }
