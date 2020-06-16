@@ -105,8 +105,9 @@ function ajax_post_request(callback, url, async, data) {
 
 function getback() {
         history.pop();
-        var doc = history[history.length-1];
-        changedoc(doc.id_doc, doc.name,false);
+        let doc = history[history.length-1];
+        console.log(doc);
+        changedoc(doc.id_doc,doc.name,false);
 }
 
 function changetitle(title) {
