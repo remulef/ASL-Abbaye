@@ -1,7 +1,6 @@
 body {
     font-family: "Lato", sans-serif;
 }
-
 span {
     display: flex;
 }
@@ -38,40 +37,10 @@ a.button1:hover {
     margin: 0;
     padding: 0;
     overflow: hidden;
-}
-
-#parcours li {
+  }
+  
+  #parcours li {
     float: left;
-}
+  }
 
-a.button2 {
-    display: inline-block;
-    padding: 0.5em 3em;
-    border: 0.16em solid #FFFFFF;
-    margin: 0 0.3em 0.3em 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    color: #FFFFFF;
-    text-align: center;
-    transition: all 0.15s;
-}
-
-a.button2:hover {
-    color: #DDDDDD;
-    border-color: #DDDDDD;
-}
-
-a.button2:active {
-    color: #BBBBBB;
-    border-color: #BBBBBB;
-}
-
-@media all and (max-width:30em) {
-    a.button2 {
-        display: block;
-        margin: 0.4em auto;
-    }
-}
+  
