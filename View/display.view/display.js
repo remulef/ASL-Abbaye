@@ -9,7 +9,7 @@ function init() {
         name: "Ressource Pedagogique",
     })
     history.push(pos);
-    
+
     try {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-load.php";
         ajax_post_request(load, url, true, null);
@@ -51,9 +51,7 @@ function load(json) {
 
 function changedoc(id, title, forward) {
     clearul();
-    console.log(history);
     changetitle(title);
-    console.log("id :"+id);
 
     //si on descend
     if (forward) {
@@ -104,10 +102,15 @@ function ajax_post_request(callback, url, async, data) {
 }
 
 function getback() {
+    if (history.length > 1) {
+        init();
+    }
+    else {
         history.pop();
-        let doc = history[history.length-1];
-        console.log(doc);
-        changedoc(doc.id_doc,doc.name,false);
+        let node = history[history.length - 1];
+        changedoc(node.id_node, node.name, false);
+    }
+
 }
 
 function changetitle(title) {
