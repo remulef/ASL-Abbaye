@@ -135,7 +135,7 @@ function updateparcours() {
         var id = current.id_node;
         var li = document.createElement("li");
         var a = document.createElement("a");
-        a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",true,true)');
+        a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",false,true)');
         a.setAttribute("class", "button1");
         a.innerHTML = "/" + current.name;
         li.appendChild(a);
