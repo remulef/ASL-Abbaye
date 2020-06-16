@@ -28,7 +28,6 @@
 
 <body onload="init()">
     <main class="main">
-        <h2 id="pos">Contenue de la thématique : <strong>Ressource Pedagogique</strong></h2>
         <span id="content" class="content">
             <div id="listdoss">
                 <H3>Listes des dossiers </H3>

@@ -66,7 +66,7 @@ function changedoc(id, title, forward, fromparcours) {
     //si l'on viens du parcours
     if (fromparcours) {
         //On efface toutes les noeuds aprés le document id
-        var index = history.indexOf(id);
+        var index = history.indexOf(id)+1;
         history.splice(index);
     }
     updateparcours();
