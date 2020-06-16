@@ -33,7 +33,7 @@ function load(json) {
             var li = document.createElement("li");
             var a = document.createElement("a");
             a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",true,false)');
-            a.setAttribute("class", "button1");
+            a.setAttribute("class", "button3");
             a.innerHTML = current.name;
             li.appendChild(a);
             uldoss.appendChild(li);
