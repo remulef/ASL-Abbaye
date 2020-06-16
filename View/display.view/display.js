@@ -117,7 +117,6 @@ function updateparcours() {
         var id = current.id_node;
         var li = document.createElement("li");
         var a = document.createElement("a");
-        console.log(index);
         a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",false,'+index+')');
         a.setAttribute("class", "button1");
         a.innerHTML = "/" + current.name;
