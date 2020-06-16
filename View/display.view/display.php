@@ -37,11 +37,95 @@
 
 <body onload="init()">
     <div id="sortpanel">
-        <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
-            <i class="fas fa-search" aria-hidden="true"></i>
-            <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
-        </form>
+        <form id="form_114662" class="appnitro" method="post" action="">
+            <div class="form_description">
+                <h2>Recherche</h2>
+                <p>Option pour rechercher un document</p>
+            </div>
+            <ul>
 
+                <li id="li_2">
+                    <label class="description" for="element_2">Rechercher dans </label>
+                    <span>
+                        <input id="element_2_1" name="element_2" class="element radio" type="radio" value="1" />
+                        <label class="choice" for="element_2_1">Toute la base de données</label>
+                        <input id="element_2_2" name="element_2" class="element radio" type="radio" value="2" />
+                        <label class="choice" for="element_2_2">Dossier et sous dossier courant</label>
+
+                    </span>
+                </li>
+                <li id="li_1">
+                    <label class="description" for="element_1">Rechercher </label>
+                    <div>
+                        <input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value="" />
+                    </div>
+                    <p class="guidelines" id="guide_1"><small>Saisir nom du document</small></p>
+                </li>
+                <li id="li_5">
+                    <label class="description" for="element_5">Format du document </label>
+                    <span>
+                        <input id="element_5_1" name="element_5_1" class="element checkbox" type="checkbox" value="1" />
+                        <label class="choice" for="element_5_1">PDF</label>
+                        <input id="element_5_2" name="element_5_2" class="element checkbox" type="checkbox" value="1" />
+                        <label class="choice" for="element_5_2">Image (jpeg/png/gif/..)</label>
+                        <input id="element_5_3" name="element_5_3" class="element checkbox" type="checkbox" value="1" />
+                        <label class="choice" for="element_5_3">Audio (mp3/aac/..)</label>
+                        <input id="element_5_4" name="element_5_4" class="element checkbox" type="checkbox" value="1" />
+                        <label class="choice" for="element_5_4">Video (mp4/mpeg,..)</label>
+                        <input id="element_5_5" name="element_5_5" class="element checkbox" type="checkbox" value="1" />
+                        <label class="choice" for="element_5_5">Text (docx/doc/txt..)</label>
+                        <input id="element_5_6" name="element_5_6" class="element checkbox" type="checkbox" value="1" />
+                        <label class="choice" for="element_5_6">Diaporama (pptx,..)</label>
+                        <input id="element_5_7" name="element_5_7" class="element checkbox" type="checkbox" value="1" />
+                        <label class="choice" for="element_5_7">Autre</label>
+
+                    </span>
+                </li>
+                <li id="li_3">
+                    <label class="description" for="element_3">Niveau </label>
+                    <span>
+                        <input id="element_3_1" name="element_3_1" class="element checkbox" type="checkbox" value="1" />
+                        <label class="choice" for="element_3_1">ALPHA</label>
+                        <input id="element_3_2" name="element_3_2" class="element checkbox" type="checkbox" value="1" />
+                        <label class="choice" for="element_3_2">D</label>
+                        <input id="element_3_3" name="element_3_3" class="element checkbox" type="checkbox" value="1" />
+                        <label class="choice" for="element_3_3">E</label>
+                        <input id="element_3_4" name="element_3_4" class="element checkbox" type="checkbox" value="1" />
+                        <label class="choice" for="element_3_4">A</label>
+                        <input id="element_3_5" name="element_3_5" class="element checkbox" type="checkbox" value="1" />
+                        <label class="choice" for="element_3_5">Pas de niveau</label>
+
+                    </span>
+                </li>
+                <li id="li_4">
+                    <label class="description" for="element_4">Trier par </label>
+                    <span>
+                        <input id="element_4_1" name="element_4" class="element radio" type="radio" value="1" />
+                        <label class="choice" for="element_4_1">Alphabétique croissant</label>
+                        <input id="element_4_2" name="element_4" class="element radio" type="radio" value="2" />
+                        <label class="choice" for="element_4_2">Alphabétique décroissant</label>
+
+                    </span>
+                </li>
+                <li id="li_6">
+                    <label class="description" for="element_6">Option </label>
+                    <span>
+                        <input id="element_6_1" name="element_6_1" class="element checkbox" type="checkbox" value="1" />
+                        <label class="choice" for="element_6_1">TEF/ANF</label>
+
+                    </span>
+                </li>
+
+                <li class="buttons">
+                    <input type="hidden" name="form_id" value="114662" />
+
+                    <input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+                </li>
+            </ul>
+        </form>
+        <div id="footer">
+            Generated by <a href="http://www.phpform.org">pForm</a>
+        </div>
     </div>
     <main class="main">
         <span id="content" class="content">
