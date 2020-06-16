@@ -48,7 +48,6 @@ function load(json) {
 }
 
 function changedoc(id, title) {
-    console.log(history);
     clearul();
     changetitle(title);
     
@@ -103,7 +102,7 @@ function getback() {
 
     if (history.length > 1) {
         history.pop();
-        var doc = history.pop()
+        var doc = history.pop();
         changedoc(doc.id_doc,doc.name);
     }
     else init();
