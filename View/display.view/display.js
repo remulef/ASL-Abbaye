@@ -112,7 +112,7 @@ function getback() {
         init();
     }
     else {
-        history.pop();
+        //history.pop();
         //let node = history[history.length - 1];
         let node = history.pop();
         changedoc(node.id_node, node.name, false);
