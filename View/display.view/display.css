@@ -50,9 +50,10 @@ a.button1:hover {
 }
 
 #parcours li:last-child {
- background-color: #b796ac;   
+ background-color: #b796ac; 
+ cursor: not-allowed;
+  
 }
-
 
 #parcours li {
     float: left;
