@@ -32,7 +32,7 @@ function load(json) {
             var id = current.id_node;
             var li = document.createElement("li");
             var a = document.createElement("a");
-            a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",true,false)');
+            a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",true,-1)');
             a.setAttribute("class", "button3");
             a.innerHTML = current.name;
             li.appendChild(a);
