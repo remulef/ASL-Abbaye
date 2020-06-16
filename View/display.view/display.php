@@ -25,22 +25,22 @@
 
 
 <body onload="init()">
-    <nav class="sidenav">
-        <div class="tri">
-            <p>Chercher un document</p>
-            <input type="text" placeholder="nom du document" onchange="search()">
-
-
-
-        </div>
-        <a href="">Deplacer</a>
-        <a href="">Créer dossier</a>
-        <a href="">Proposer document</a>
-    </nav>
 
 
 
     <main class="main">
+        <nav class="sidenav">
+            <div class="tri">
+                <p>Chercher un document</p>
+                <input type="text" placeholder="nom du document" onchange="search()">
+
+
+
+            </div>
+            <a href="">Deplacer</a>
+            <a href="">Créer dossier</a>
+            <a href="">Proposer document</a>
+        </nav>
 
 
         <h2 id="pos">Contenue de la thématique : <strong>Ressource Pedagogique</strong></h2>
