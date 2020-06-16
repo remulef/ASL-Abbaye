@@ -143,5 +143,6 @@ function cleanhistory(id) {
     while( history[i-1].id !== id){
         history.pop();
         i--;
+        console.log(history);
     }
 }
