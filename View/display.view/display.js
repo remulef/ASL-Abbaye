@@ -53,6 +53,7 @@ function changedoc(id, title, forward) {
     clearul();
     console.log(history);
     changetitle(title);
+    console.log("id :"+id);
 
     //si on descend
     if (forward) {
