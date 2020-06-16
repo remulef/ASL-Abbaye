@@ -66,7 +66,12 @@ function changedoc(id, title, forward, fromparcours) {
     //si l'on viens du parcours
     if (fromparcours && history.length>1) {
         //On efface toutes les noeuds aprés le document id
-        var index = history.indexOf(id);
+        var pos = ({
+            id_node: id,
+            name: title,
+        });
+
+        var index = history.indexOf(pos);
         history.splice(index);
     }
     updateparcours();
@@ -118,7 +123,7 @@ function getback() {
         history.pop();
         let node = history[history.length - 1];
         //let node = history.pop();
-        changedoc(node.id_node, node.name, false);
+        changedoc(node.id_node, node.name, false,false);
     }
 
 }
