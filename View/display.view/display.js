@@ -51,7 +51,7 @@ function load(json) {
 
 }
 
-function changedoc(id, title, forward, index) {
+function changedoc(id, title, forward, pos) {
 
     clearul();
 
@@ -64,7 +64,7 @@ function changedoc(id, title, forward, index) {
         history.push(pos);
     }
     //si l'on viens du parcours
-    if (index>1) {
+    if (pos!==-1) {
         //On efface toutes les noeuds aprés le document id
         /*var pos = ({
             id_node: id,
@@ -73,8 +73,9 @@ function changedoc(id, title, forward, index) {
 
         var index = history.indexOf(pos);
         */
-        console.log(index);
-        history.splice(index);
+        console.log(pos);
+        history.splice(pos);
+
     }
     updateparcours();
 
