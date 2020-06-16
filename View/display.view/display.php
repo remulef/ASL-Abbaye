@@ -45,11 +45,13 @@
             <label class="choice" for="element_2_2">Dossier et sous dossier courant</label>
 
         </span>
+        <hr>
         <label class="description" for="element_1">Rechercher </label>
         <div>
             <input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value="" />
         </div>
         <p class="guidelines" id="guide_1"><small>Saisir nom du document</small></p>
+        <hr>
         <label class="description" for="element_5">Format du document </label>
         <span>
             <input id="element_5_1" name="element_5_1" class="element checkbox" type="checkbox" value="1" />
