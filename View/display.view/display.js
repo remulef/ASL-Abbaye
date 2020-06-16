@@ -74,7 +74,7 @@ function changedoc(id, title, forward, pos) {
         var index = history.indexOf(pos);
         */
         console.log(pos);
-        history.splice(pos);
+        history.splice(pos+1);
 
     }
     updateparcours();
