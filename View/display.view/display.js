@@ -72,6 +72,7 @@ function changedoc(id, title, forward, fromparcours) {
         });
 
         var index = history.indexOf(pos);
+        console.log(index);
         history.splice(index);
     }
     updateparcours();
