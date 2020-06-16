@@ -50,6 +50,7 @@ function load(json) {
 }
 
 function changedoc(id, title, forward) {
+    updateparcours();
     clearul();
     changetitle(title);
 
@@ -115,4 +116,20 @@ function getback() {
 
 function changetitle(title) {
     document.getElementById("pos").innerHTML = "Contenue de la thématique : <strong>" + title + "</strong>";
+}
+
+function updateparcours() {
+    document.getElementById("parcours").innerHTML = "";
+    var ul = document.getElementById("parcours");
+    for (let index = 0; index < history.length; index++) {
+        current = history[index];
+        var id = current.id_node;
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",true)');
+        a.setAttribute("class", "button1");
+        a.innerHTML = "/" + current.name;
+        li.appendChild(a);
+        ul.appendChild(li);
+    }
 }
