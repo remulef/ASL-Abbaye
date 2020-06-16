@@ -51,7 +51,7 @@ function load(json) {
 
 }
 
-function changedoc(id, title, forward, fromparcours) {
+function changedoc(id, title, forward, index) {
 
     clearul();
 
@@ -64,14 +64,15 @@ function changedoc(id, title, forward, fromparcours) {
         history.push(pos);
     }
     //si l'on viens du parcours
-    if (fromparcours && history.length>1) {
+    if (index>1) {
         //On efface toutes les noeuds aprés le document id
-        var pos = ({
+        /*var pos = ({
             id_node: id,
             name: title,
         });
 
         var index = history.indexOf(pos);
+        */
         console.log(index);
         history.splice(index);
     }
@@ -138,7 +139,7 @@ function updateparcours() {
         var id = current.id_node;
         var li = document.createElement("li");
         var a = document.createElement("a");
-        a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",false,true)');
+        a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",false,'+index+')');
         a.setAttribute("class", "button1");
         a.innerHTML = "/" + current.name;
         li.appendChild(a);
