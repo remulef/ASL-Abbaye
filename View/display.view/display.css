@@ -1,11 +1,11 @@
 body {
     font-family: "Lato", sans-serif;
 }
+
 span {
     display: flex;
     align-items: flex-start;
 }
-
 
 a.button1 {
     display: inline-block;
@@ -39,18 +39,27 @@ a.button1:hover {
     margin: 0;
     padding: 0;
     overflow: hidden;
-  }
-  
-  #parcours li {
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-left-width: 1px;
+    border-left-style: solid;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#parcours li {
     float: left;
-  }
+}
 
-  #listdoss{
-      margin-left: 100px;
-  }
-
-  
-  #listdoc{
+#listdoss {
     margin-left: 100px;
-      
-  }
+}
+
+#listdoc {
+    margin-left: 100px;
+}
