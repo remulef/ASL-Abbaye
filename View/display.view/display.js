@@ -105,14 +105,9 @@ function ajax_post_request(callback, url, async, data) {
 }
 
 function getback() {
-
-    if (history.length > 1) {
         history.pop();
         var doc = history[history.length-1];
         changedoc(doc.id_doc, doc.name,false);
-    }
-    else init();
-
 }
 
 function changetitle(title) {
