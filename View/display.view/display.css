@@ -3,6 +3,7 @@ body {
 }
 span {
     display: flex;
+    align-items: flex-start;
 }
 
 a.button1 {
@@ -33,7 +34,6 @@ a.button1:hover {
 }
 
 #parcours {
-    align-items: flex-start;
     list-style-type: none;
     margin: 0;
     padding: 0;
