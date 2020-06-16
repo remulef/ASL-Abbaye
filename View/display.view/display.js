@@ -1,13 +1,15 @@
 
 let history = [];
-var pos = ({
-    id_node: 0,
-    name: "Ressource Pedagogique",
-})
-history.push(pos);
 
 function init() {
-
+    clearul();
+    history = [];
+    var pos = ({
+        id_node: 0,
+        name: "Ressource Pedagogique",
+    })
+    history.push(pos);
+    
     try {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-load.php";
         ajax_post_request(load, url, true, null);
@@ -49,9 +51,11 @@ function load(json) {
 
 function changedoc(id, title, forward) {
     clearul();
+    console.log(history);
     changetitle(title);
 
     //si on remonte
+    console.log(forward);
     if (!forward) {
         var pos = ({
             id_node: id,
