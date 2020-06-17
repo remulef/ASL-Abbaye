@@ -151,8 +151,18 @@ function ajax_post_request(callback, url, async, data) {
 
 
 function search(elem) {
-    if (elem === true) {
-        var id = elem.id;
-        console.log(elem.value);
-    }
+    //il faut faire de l'anti-injection
+        var string = elem.value;
+
+        try {
+            let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-search.php";
+            ajax_post_request(displaysearch, url, true, encodeURIComponent(string));
+        } catch (error) {
+            
+        }
+    
+
+        function displaysearch(json) {
+            
+        }
 }
