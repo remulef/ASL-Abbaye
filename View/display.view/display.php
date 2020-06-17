@@ -45,7 +45,7 @@
             <label class="choice" for="element_2_2">Dossier et sous dossier courant</label>
 
         </span>
-        <hr>
+        <hr style="display: none;">
         <label class="description" for="element_1">Rechercher </label>
         <div style="float: left;">
             <input onblur="search(this)" id="element_1" name="docname" class="element text large" type="text" maxlength="255" value="" placeholder="Recherche doc" />
@@ -72,7 +72,7 @@
             <label class="choice" for="element_5_7">Tous</label>
             <label class="description" for="element_1">Format précis</label>
             <div>
-                <input list="format" id="element_1" name="element_1" oninput="search(this)" class="element text large" type="text" maxlength="255" value="" placeholder="&#128269;" />
+                <input list="format" id="element_1" name="element_1" onblur="search(this)" class="element text large" type="text" maxlength="255" value="" placeholder="&#128269;" />
                 <datalist id="format">
                     
                     <option value="jpeg">
@@ -110,7 +110,7 @@
 
         </span>
         <hr>
-        <label class="description" for="element_6">Option </label>
+        <label style="display: none;"  class="description" for="element_6">Option </label>
         <span style="display: none;">
             <input id="element_6_1" name="element_6_1" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
             <label class="choice" for="element_6_1">TEF/ANF</label>
@@ -131,11 +131,20 @@
     </main>
 
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
 <!-- Optional JavaScript -->
 <script src="display.js"></script>
+<script>
+
+$(document).keypress(function(e) {
+  if(e.which == 13) {
+    search();
+  }
+});
+
+</script>
 <!-- jQuery first, then Popper.js, then Bootstrap JS 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 -->
