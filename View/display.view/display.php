@@ -48,7 +48,7 @@
         <hr>
         <label class="description" for="element_1">Rechercher </label>
         <div>
-            <input oninput="search(this)"  id="element_1" name="searchdocname" class="element text large" type="text" maxlength="255" value="" placeholder="&#128269;" />
+            <input onblur="search(this)"  id="element_1" name="searchdocname" class="element text large" type="text" maxlength="255" value="" placeholder="&#128269;" />
         </div>
         <p class="guidelines" id="guide_1"><small>Saisir nom du document</small></p>
         <hr>
