@@ -171,7 +171,7 @@ function search(elem) {
         ajax_post_request(log, url, true, encodeURIComponent(param));
 
     } catch (error) {
-
+        console.log(error);
     }
 
 }
