@@ -153,14 +153,73 @@ function ajax_post_request(callback, url, async, data) {
 function search(elem) {
     //il faut faire de l'anti-injection
     var string = elem.value;
-
+    var inputs = document.getElementsByTagName("input");
+    
+    var param = ({
+        pos: (inputs[0].checked===true?history[0].id_node:history[history.length-1].id_node);
+        docname : inputs[2].value,
+        typedoc : recuptype(),
+        format:,
+        niveau:,
+        order:,
+        tefanf :,
+    })
+        
+    
     try {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-search.php";
-        ajax_post_request(displaysearch, url, true, encodeURIComponent(string));
+        ajax_post_request(displaysearch, url, true, encodeURIComponent(parametre));
     } catch (error) {
 
     }
 
+}
+
+function recuptype() {
+    var inputs = document.getElementsByTagName("input");
+    var type = [];
+    if(inputs[3].checked===true){
+        type.push("pdf");
+    }
+    if(inputs[4].checked===true){
+        type.push("jpeg");
+        type.push("jpg");
+        type.push("gif");
+        type.push("png");    
+    }
+    if(inputs[5].checked===true){
+        type.push("wma");
+        type.push("mp3");
+    }
+    if(inputs[6].checked===true){
+        type.push("docx");
+        type.push("odt");
+        type.push("pdf");
+        type.push("doc");
+        type.push("txt");
+        type.push("docx#");
+        type.push("pub");
+        type.push("rtf");
+        type.push("opd");
+        type.push("ods");
+        type.push("opd");
+    }
+    if(inputs[5].checked===true){
+        type.push("pptx");
+        type.push("ppt");
+    }
+    
+    if(inputs[5].checked===true){
+        type.push("xlqx");
+        type.push("xls");
+        type.push("zip");
+    }
+
+    if(inputs[6].checkd===true){
+        type = "";
+    }
+
+    return type;
 }
 
 

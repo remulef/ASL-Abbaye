@@ -48,7 +48,7 @@
         <hr>
         <label class="description" for="element_1">Rechercher </label>
         <div style="float: left;">
-            <input onblur="search(this)" id="element_1" name="searchdocname" class="element text large" type="text" maxlength="255" value="" placeholder="Recherche doc" />
+            <input onblur="search(this)" id="element_1" name="docname" class="element text large" type="text" maxlength="255" value="" placeholder="Recherche doc" />
         </div>
         <p class="guidelines" id="guide_1"><small>Saisir nom du document</small></p>
         <hr>
@@ -68,10 +68,13 @@
             <label class="choice" for="element_5_6">Diaporama (pptx,..)</label>
             <input id="element_5_7" name="element_5_7" class="element checkbox" type="checkbox" value="1" />
             <label class="choice" for="element_5_7">Autre</label>
+            <input id="element_5_8" name="element_5_8" class="element checkbox" type="checkbox" value="1" />
+            <label class="choice" for="element_5_7">Tous</label>
             <label class="description" for="element_1">Format précis</label>
             <div>
                 <input list="format" id="element_1" name="element_1" class="element text large" type="text" maxlength="255" value="" placeholder="&#128269;" />
                 <datalist id="format">
+                    
                     <option value="jpeg">
                     <option value="png">
                     <option value="gif">
@@ -95,7 +98,7 @@
             <label class="choice" for="element_3_4">A</label>
             <input id="element_3_5" name="element_3_5" class="element checkbox" type="checkbox" value="1" />
             <label class="choice" for="element_3_5">Pas de niveau</label>
-
+ 
         </span>
         <hr>
         <label class="description" for="element_4">Trier par </label>
