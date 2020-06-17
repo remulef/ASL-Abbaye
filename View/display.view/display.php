@@ -39,9 +39,9 @@
     <div id="sortpanel">
         <label class="description" for="element_2">Rechercher dans </label>
         <span>
-            <input id="element_2_1" name="element_2" class="element radio" type="radio" value="1" />
+            <input oninput="search(this)" id="element_2_1" name="element_2" class="element radio" type="radio" value="1" />
             <label class="choice" for="element_2_1">Toute la base de données</label>
-            <input id="element_2_2" name="element_2" class="element radio" type="radio" value="2" />
+            <input id="element_2_2" oninput="search(this)" name="element_2" class="element radio" type="radio" value="2" />
             <label class="choice" for="element_2_2">Dossier et sous dossier courant</label>
 
         </span>
@@ -54,25 +54,25 @@
         <hr>
         <label class="description" for="element_5">Type de document </label>
         <span>
-            <input id="element_5_1" name="element_5_1" class="element checkbox" type="checkbox" value="1" />
+            <input id="element_5_1" oninput="search(this)" name="element_5_1" class="element checkbox" type="checkbox" value="1" />
             <label class="choice" for="element_5_1">PDF</label>
-            <input id="element_5_2" name="element_5_2" class="element checkbox" type="checkbox" value="1" />
+            <input id="element_5_2" name="element_5_2" oninput="search(this)" class="element checkbox" type="checkbox" value="1" />
             <label class="choice" for="element_5_2">Image (jpeg/png/gif/..)</label>
-            <input id="element_5_3" name="element_5_3" class="element checkbox" type="checkbox" value="1" />
+            <input id="element_5_3" name="element_5_3" class="element checkbox" oninput="search(this)" type="checkbox" value="1" />
             <label class="choice" for="element_5_3">Audio (mp3/aac/..)</label>
-            <input id="element_5_4" name="element_5_4" class="element checkbox" type="checkbox" value="1" />
+            <input oninput="search(this)" id="element_5_4" name="element_5_4" class="element checkbox" type="checkbox" value="1" />
             <label class="choice" for="element_5_4">Video (mp4/mpeg,..)</label>
-            <input id="element_5_5" name="element_5_5" class="element checkbox" type="checkbox" value="1" />
+            <input id="element_5_5" oninput="search(this)" name="element_5_5" class="element checkbox" type="checkbox" value="1" />
             <label class="choice" for="element_5_5">Text (docx/doc/txt..)</label>
-            <input id="element_5_6" name="element_5_6" class="element checkbox" type="checkbox" value="1" />
+            <input id="element_5_6"  oninput="search(this)" name="element_5_6" class="element checkbox" type="checkbox" value="1" />
             <label class="choice" for="element_5_6">Diaporama (pptx,..)</label>
-            <input id="element_5_7" name="element_5_7" class="element checkbox" type="checkbox" value="1" />
+            <input id="element_5_7" name="element_5_7" oninput="search(this)" class="element checkbox" type="checkbox" value="1" />
             <label class="choice" for="element_5_7">Autre</label>
-            <input id="element_5_8" name="element_5_8" class="element checkbox" type="checkbox" value="1" />
+            <input id="element_5_8" name="element_5_8"  oninput="search(this)" class="element checkbox" type="checkbox" value="1" />
             <label class="choice" for="element_5_7">Tous</label>
             <label class="description" for="element_1">Format précis</label>
             <div>
-                <input list="format" id="element_1" name="element_1" class="element text large" type="text" maxlength="255" value="" placeholder="&#128269;" />
+                <input list="format" id="element_1" name="element_1" oninput="search(this)" class="element text large" type="text" maxlength="255" value="" placeholder="&#128269;" />
                 <datalist id="format">
                     
                     <option value="jpeg">
@@ -88,39 +88,36 @@
         <hr>
         <label class="description" for="element_3">Niveau </label>
         <span>
-            <input id="element_3_1" name="element_3_1" class="element checkbox" type="checkbox" value="1" />
+            <input id="element_3_1" name="element_3_1" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
             <label class="choice" for="element_3_1">ALPHA</label>
-            <input id="element_3_2" name="element_3_2" class="element checkbox" type="checkbox" value="1" />
+            <input id="element_3_2" name="element_3_2" class="element checkbox" type="checkbox" oninput="search(this)"value="1" />
             <label class="choice" for="element_3_2">D</label>
-            <input id="element_3_3" name="element_3_3" class="element checkbox" type="checkbox" value="1" />
+            <input id="element_3_3" name="element_3_3" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
             <label class="choice" for="element_3_3">E</label>
-            <input id="element_3_4" name="element_3_4" class="element checkbox" type="checkbox" value="1" />
+            <input id="element_3_4" name="element_3_4" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
             <label class="choice" for="element_3_4">A</label>
-            <input id="element_3_5" name="element_3_5" class="element checkbox" type="checkbox" value="1" />
+            <input id="element_3_5" name="element_3_5" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
             <label class="choice" for="element_3_5">Pas de niveau</label>
  
         </span>
         <hr>
         <label class="description" for="element_4">Trier par </label>
         <span>
-            <input id="element_4_1" name="element_4" class="element radio" type="radio" value="1" />
+            <input id="element_4_1" name="element_4" class="element radio" type="radio" oninput="search(this)" value="1" />
             <label class="choice" for="element_4_1">Alphabétique croissant</label>
-            <input id="element_4_2" name="element_4" class="element radio" type="radio" value="2" />
+            <input id="element_4_2" name="element_4" class="element radio" type="radio" oninput="search(this)" value="2" />
             <label class="choice" for="element_4_2">Alphabétique décroissant</label>
 
         </span>
         <hr>
         <label class="description" for="element_6">Option </label>
         <span>
-            <input id="element_6_1" name="element_6_1" class="element checkbox" type="checkbox" value="1" />
+            <input id="element_6_1" name="element_6_1" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
             <label class="choice" for="element_6_1">TEF/ANF</label>
 
         </span>
         <hr>
         <input type="hidden" name="form_id" value="114662" />
-
-        <input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
-
     </div>
     <main class="main">
         <span id="content" class="content">
