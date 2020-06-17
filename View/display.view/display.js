@@ -47,7 +47,7 @@ function load(json) {
             uldoc.appendChild(li);
         }
     }
-    
+
 
 }
 
@@ -64,7 +64,7 @@ function changedoc(id, title, forward, pos) {
         history.push(add);
     }
     //si l'on viens du parcours
-    if (pos!==-1) {
+    if (pos !== -1) {
         //On efface toutes les noeuds aprés le document id
         /*var pos = ({
             id_node: id,
@@ -74,7 +74,7 @@ function changedoc(id, title, forward, pos) {
         var index = history.indexOf(pos);
         */
         console.log(pos);
-        history.splice(pos+1);
+        history.splice(pos + 1);
 
     }
     updateparcours();
@@ -103,7 +103,7 @@ function getback() {
         history.pop();
         let node = history[history.length - 1];
         //let node = history.pop();
-        changedoc(node.id_node, node.name, false,-1);
+        changedoc(node.id_node, node.name, false, -1);
     }
 
 }
@@ -112,12 +112,12 @@ function getback() {
 function updateparcours() {
     document.getElementById("parcours").innerHTML = "";
     var ul = document.getElementById("parcours");
-    for (let index = 0; index < history.length ; index++) {
+    for (let index = 0; index < history.length; index++) {
         current = history[index];
         var id = current.id_node;
         var li = document.createElement("li");
         var a = document.createElement("a");
-        a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",false,'+index+')');
+        a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",false,' + index + ')');
         a.setAttribute("class", "button1");
         a.innerHTML = "/" + current.name;
         li.appendChild(a);
@@ -151,6 +151,8 @@ function ajax_post_request(callback, url, async, data) {
 
 
 function search(elem) {
-    var id = elem.id;
-    console.log(elem.value);
+    if (elem === true) {
+        var id = elem.id;
+        console.log(elem.value);
+    }
 }
