@@ -10,7 +10,7 @@ $search_format = $data->formats;
 $niveau = $data->niveau;
 $order =($data->order==true?"ASC":"DESC");
 $tefanf = $data->tefanf; 
-
+var_dump($typedoc);
 $typedoc_string = "(".implode(",",$typedoc).")";
 echo $typedoc_string;
 
