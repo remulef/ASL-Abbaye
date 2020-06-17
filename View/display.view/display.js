@@ -152,17 +152,34 @@ function ajax_post_request(callback, url, async, data) {
 
 function search(elem) {
     //il faut faire de l'anti-injection
-        var string = elem.value;
+    var string = elem.value;
 
-        try {
-            let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-search.php";
-            ajax_post_request(displaysearch, url, true, encodeURIComponent(string));
-        } catch (error) {
-            
-        }
-    
+    try {
+        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-search.php";
+        ajax_post_request(displaysearch, url, true, encodeURIComponent(string));
+    } catch (error) {
 
-        function displaysearch(json) {
-            
-        }
+    }
+
+}
+
+
+function displaysearch(json) {
+
+    $documents = JSON.parse(json);
+    var p = document.createElement("p");
+    p.innerHTML= "<strong>"+document.length+"<strong> resultats";
+    document.getElementById("content").appendChild(p);
+    var uldoc = document.getElementById("docbar");
+    for (let index = 0; index < data.length; index++) {
+        var current = data[index];
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        a.setAttribute("href", "http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=" + current.id_doc);
+        a.innerHTML = current.nom;
+        li.appendChild(a);
+        uldoc.appendChild(li);
+
+    }
+
 }
