@@ -168,8 +168,8 @@ function displaysearch(json) {
     document.getElementById("docbar").innerHTML = "";
 
     var data = JSON.parse(json);
-    var p = document.createElement("p");
-    p.innerHTML= "<strong>"+document.length+"<strong> resultats";
+    var h3 = document.getElementById("h3doc");
+    p.innerHTML += "(<strong>"+data.length+"<strong> resultats)";
     document.getElementById("content").appendChild(p);
     var uldoc = document.getElementById("docbar");
     for (let index = 0; index < data.length; index++) {
