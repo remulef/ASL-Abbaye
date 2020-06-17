@@ -166,9 +166,11 @@ function search(elem) {
 
 function displaysearch(json) {
     document.getElementById("docbar").innerHTML = "";
-
+    var query = document.getElementById("element_1").value;
+    query = query.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    
     var data = JSON.parse(json);
-    document.getElementById("h3doc").innerHTML = "(<strong>" + data.length + "<strong> resultats)";
+    document.getElementById("h3doc").innerHTML = "<strong>" + data.length + "</strong> resultats pour "+ query;
 
 
     var uldoc = document.getElementById("docbar");
