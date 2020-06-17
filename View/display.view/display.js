@@ -226,7 +226,7 @@ function recuptype() {
     return type;
 }
 
-function recupnvieau() {
+function recupniveau() {
     var inputs = document.getElementsByTagName("input");
     var niv = [];
 
