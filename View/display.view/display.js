@@ -152,23 +152,22 @@ function ajax_post_request(callback, url, async, data) {
 
 function search(elem) {
     //il faut faire de l'anti-injection
-    var string = elem.value;
     var inputs = document.getElementsByTagName("input");
-    
+
     var param = ({
-        pos: (inputs[0].checked===true?history[0].id_node:history[history.length-1].id_node);
-        docname : inputs[2].value,
-        typedoc : recuptype(),
-        format:,
-        niveau:,
-        order:,
-        tefanf :,
+        pos: (inputs[0].checked === true ? history[0].id_node : history[history.length - 1].id_node);
+        docname: inputs[2].value,
+        typedoc: recuptype(),
+        format: inputs[11].value,
+        niveau: recupniveau(),
+        order: (inputs[17].checked === true ? true : false), //Croissant ? 
+        tefanf: (inputs[19].checked === true ? true : false) // TEF ANF ?
     })
-        
-    
+
+    console.log(param);
     try {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-search.php";
-        ajax_post_request(displaysearch, url, true, encodeURIComponent(parametre));
+        //ajax_post_request(displaysearch, url, true, encodeURIComponent(parametre));
     } catch (error) {
 
     }
@@ -178,20 +177,25 @@ function search(elem) {
 function recuptype() {
     var inputs = document.getElementsByTagName("input");
     var type = [];
-    if(inputs[3].checked===true){
+    if (inputs[3].checked === true) {
         type.push("pdf");
     }
-    if(inputs[4].checked===true){
+    if (inputs[4].checked === true) {
         type.push("jpeg");
         type.push("jpg");
         type.push("gif");
-        type.push("png");    
+        type.push("png");
     }
-    if(inputs[5].checked===true){
+    if (inputs[5].checked === true) {
         type.push("wma");
         type.push("mp3");
     }
-    if(inputs[6].checked===true){
+
+    if (inputs[6].checked === true) {
+        type.push("MPG");
+    }
+
+    if (inputs[7].checked === true) {
         type.push("docx");
         type.push("odt");
         type.push("pdf");
@@ -204,22 +208,48 @@ function recuptype() {
         type.push("ods");
         type.push("opd");
     }
-    if(inputs[5].checked===true){
+    if (inputs[8].checked === true) {
         type.push("pptx");
         type.push("ppt");
     }
-    
-    if(inputs[5].checked===true){
+
+    if (inputs[9].checked === true) {
         type.push("xlqx");
         type.push("xls");
         type.push("zip");
     }
 
-    if(inputs[6].checkd===true){
+    if (inputs[10].checkd === true) {
         type = "";
     }
 
     return type;
+}
+
+function recupnvieau() {
+    var inputs = document.getElementsByTagName("input");
+    var niv = [];
+
+    if (inputs[12].checked === true) {
+        niv.push("ALPHA")
+    }
+
+    if (inputs[13].checked === true) {
+        niv.push("D")
+    }
+
+    if (inputs[14].checked === true) {
+        niv.push("E")
+    }
+
+    if (inputs[15].checked === true) {
+        niv.push("A")
+    }
+
+    if (inputs[15].checked === true) {
+        niv.push("")
+    }
+    return niv;
 }
 
 
@@ -227,9 +257,9 @@ function displaysearch(json) {
     document.getElementById("docbar").innerHTML = "";
     var query = document.getElementById("element_1").value;
     query = query.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    
+
     var data = JSON.parse(json);
-    document.getElementById("h3doc").innerHTML = "<strong>" + data.length + "</strong> resultats pour "+ query;
+    document.getElementById("h3doc").innerHTML = "<strong>" + data.length + "</strong> resultats pour " + query;
 
 
     var uldoc = document.getElementById("docbar");
