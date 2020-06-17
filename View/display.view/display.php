@@ -39,7 +39,7 @@
     <div id="sortpanel">
         <label class="description" for="element_2">Rechercher dans </label>
         <span>
-            <input id="element_2_1" name="element_2" class="element radio" type="radio" value="1"  />
+            <input id="element_2_1" name="element_2" class="element radio" type="radio" value="1" />
             <label class="choice" for="element_2_1">Toute la base de données</label>
             <input id="element_2_2" name="element_2" class="element radio" type="radio" value="2" />
             <label class="choice" for="element_2_2">Dossier et sous dossier courant</label>
@@ -48,7 +48,10 @@
         <hr>
         <label class="description" for="element_1">Rechercher </label>
         <div>
-            <input onblur="search(this)"  id="element_1" name="searchdocname" class="element text large" type="text" maxlength="255" value="" placeholder="&#128269;" />
+            <input onblur="search(this)" id="element_1" name="searchdocname" class="element text large" type="text" maxlength="255" value="" placeholder="Recherche doc" />
+            <a class="button1" onclick="search(this)">
+            &#128269;
+            </a>
         </div>
         <p class="guidelines" id="guide_1"><small>Saisir nom du document</small></p>
         <hr>
@@ -70,7 +73,7 @@
             <label class="choice" for="element_5_7">Autre</label>
             <label class="description" for="element_1">Format précis</label>
             <div>
-                <input  list="format" id="element_1" name="element_1" class="element text large" type="text" maxlength="255" value="" placeholder="&#128269;" />
+                <input list="format" id="element_1" name="element_1" class="element text large" type="text" maxlength="255" value="" placeholder="&#128269;" />
                 <datalist id="format">
                     <option value="jpeg">
                     <option value="png">
