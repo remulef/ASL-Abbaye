@@ -164,10 +164,12 @@ function search(elem) {
         tefanf: (inputs[19].checked === true ? true : false) // TEF ANF ?
     });
 
+    param = JSON.stringify(param);
+
     console.log(param);
     try {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/test.php";
-        //ajax_post_request(displaysearch, url, true, encodeURIComponent(parametre));
+        //ajax_post_request(displaysearch, url, true, encodeURIComponent(param));
         ajax_post_request(log, url, true, encodeURIComponent(param));
 
     } catch (error) {
