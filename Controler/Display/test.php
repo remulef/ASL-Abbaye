@@ -33,20 +33,18 @@ $query = $query.$search_format.$search_name.$typedoc.$niveau.$node.$order;
 
 $query = "    
 WITH cte AS 
- (
-  SELECT a.id_node, a.parent_node_id, a.name
+ (SELECT a.id_node, a.parent_node_id, a.name
   FROM NODE a
   WHERE id_node = 1
   UNION ALL
   SELECT a.id_node, a.parent_node_id, a.name
-  FROM NODE a JOIN cte c ON a.parent_node_id = c.id_node
-  )
+  FROM NODE a JOIN cte c ON a.parent_node_id = c.id_node)
   SELECT id_node, parent_node_id, name
   FROM cte";
 
 
   $sth = $db->prepare($query);
-     $sth->execute();
+    echo $sth->execute();
   $document = $sth->fetchAll(PDO::FETCH_ASSOC);
   $json = json_encode($document);
   echo $json;
