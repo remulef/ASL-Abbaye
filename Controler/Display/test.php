@@ -27,24 +27,10 @@ $node = " AND id_doc IN (SELECT DOCUMENT_id_doc FROM NODE_DOCUMENT WHERE NODE_id
 $query = 'SELECT * FROM DOCUMENT WHERE 1 ';
 $query = $query.$search_format.$search_name.$typedoc.$niveau.$node.$order;
 
-//echo $query;
-
-
-
-$query = "    
-WITH cte AS 
- (SELECT a.id_node, a.parent_node_id, a.name
-  FROM NODE a
-  WHERE id_node = 1
-  UNION ALL
-  SELECT a.id_node, a.parent_node_id, a.name
-  FROM NODE a JOIN cte c ON a.parent_node_id = c.id_node)
-  SELECT id_node, parent_node_id, name
-  FROM cte";
 
 
   $sth = $db->prepare($query);
-    echo $sth->execute();
+$sth->execute();
   $document = $sth->fetchAll(PDO::FETCH_ASSOC);
   $json = json_encode($document);
   echo $json;
