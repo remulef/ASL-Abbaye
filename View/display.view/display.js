@@ -148,3 +148,9 @@ function ajax_post_request(callback, url, async, data) {
         xhr.send("data=" + data);
     }
 }
+
+
+function search(elem) {
+    var id = elem.id;
+    console.log(elem.value);
+}
