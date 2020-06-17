@@ -68,7 +68,19 @@
             <label class="choice" for="element_5_6">Diaporama (pptx,..)</label>
             <input id="element_5_7" name="element_5_7" class="element checkbox" type="checkbox" value="1" />
             <label class="choice" for="element_5_7">Autre</label>
-
+            <label class="description" for="element_1">Format précis</label>
+            <div>
+                <input  list="format"id="element_1" name="element_1" class="element text large" type="text" maxlength="255" value="" placeholder="&#128269;" />
+                <datalist id="format">
+                    <option value="jpeg">
+                    <option value="png">
+                    <option value="gif">
+                    <option value="pdf">
+                    <option value="txt">
+                    <option value="docx">
+                    <option value="doc">
+                </datalist>
+            </div>
         </span>
         <hr>
         <label class="description" for="element_3">Niveau </label>
@@ -106,7 +118,6 @@
 
         <input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
 
-        Inspired by <a href="http://www.phpform.org">pForm</a> modified by remulef
     </div>
     <main class="main">
         <span id="content" class="content">
@@ -128,4 +139,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 -->
+
 </html>
