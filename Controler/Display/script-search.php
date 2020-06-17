@@ -14,16 +14,28 @@ try {
 
 
 
-//$data = json_decode($data);
-//Si data est vide alors on initialise à la racine
+$data = json_decode($data);
+
+$id_node = $data->pos;
+$search_name = "%".$data->docname."%";
+$typedoc = $data->typedoc;
+$search_format = $data->formats;
+$niveau = $data->niveau;
+$order =($data->order==true?"ASC":"DESC");
+$tefanf = $data->tefanf; 
+
+$typedoc = "(".implode(",",$typedoc).")";
+
+
 
 $string = $_POST['data'];
 $string = "%".$string."%";
 $sth = $db->prepare('SELECT * 
     FROM DOCUMENT 
-    WHERE nom LIKE ? ');
+    WHERE nom LIKE ? 
+    ORDER BY nom ?');
 
-$sth->bindParam(1, $string);
+$sth->bindParam(1, $search_name);
 $sth->execute();
 $document = $sth->fetchAll(PDO::FETCH_ASSOC);
 

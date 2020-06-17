@@ -166,12 +166,18 @@ function search(elem) {
 
     console.log(param);
     try {
-        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-search.php";
+        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/test.php";
         //ajax_post_request(displaysearch, url, true, encodeURIComponent(parametre));
+        ajax_post_request(log, url, true, encodeURIComponent(param));
+
     } catch (error) {
 
     }
 
+}
+
+function log(params) {
+    console.log(params);
 }
 
 function recuptype() {
