@@ -37,8 +37,8 @@
 
 <body onload="init()">
     <div id="sortpanel">
-        <label class="description" for="element_2">Rechercher dans </label>
-        <span>
+        <label style="display: none;" class="description" for="element_2">Rechercher dans </label>
+        <span style="display: none;">
             <input oninput="search(this)" id="element_2_1" name="element_2" class="element radio" type="radio" value="1" />
             <label class="choice" for="element_2_1">Toute la base de données</label>
             <input id="element_2_2" oninput="search(this)" name="element_2" class="element radio" type="radio" value="2" />
@@ -111,7 +111,7 @@
         </span>
         <hr>
         <label class="description" for="element_6">Option </label>
-        <span>
+        <span style="display: none;">
             <input id="element_6_1" name="element_6_1" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
             <label class="choice" for="element_6_1">TEF/ANF</label>
 
