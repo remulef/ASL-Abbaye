@@ -10,7 +10,7 @@ $data = json_decode($data);
 //((count($data->niveau)>0)?$niveau = " AND nom like %".implode("%",$data->niveau)."%":$niveau="");
 //$order =" ORDER BY nom "($data->order==true?"ASC":"DESC");
 //$node = " AND id_doc IN (SELECT DOCUMENT_id_doc FROM NODE_DOCUMENT WHERE NODE_id_node = ".$data->pos.")";
-//$query = 'SELECT * FROM DOCUMENT WHERE 1 ';
+$query = 'SELECT * FROM DOCUMENT WHERE 1 ';
 $query = $query.$search_format; //.$search_name.$typedoc.$niveau.$node.$order;
 
 echo $query;
