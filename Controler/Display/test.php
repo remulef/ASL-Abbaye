@@ -27,8 +27,6 @@ $node = " AND id_doc IN (SELECT DOCUMENT_id_doc FROM NODE_DOCUMENT WHERE NODE_id
 $query = 'SELECT * FROM DOCUMENT WHERE 1 ';
 $query = $query.$search_format.$search_name.$typedoc.$niveau.$order; //.$node
 
-echo $query;
-
   $sth = $db->prepare($query);
  $sth->execute();
   $document = $sth->fetchAll(PDO::FETCH_ASSOC);

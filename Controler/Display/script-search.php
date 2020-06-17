@@ -29,8 +29,7 @@ $query = 'SELECT * FROM DOCUMENT WHERE 1 ';
 $query = $query . $search_format . $search_name . $typedoc . $niveau . $order; //.$node
 
 
-$sth = $db->prepare($query);
-$sth->execute();
+$sth = $db->query($query);
 $document = $sth->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($document as $key => $value) {
