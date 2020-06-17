@@ -11,7 +11,7 @@ $data = json_decode($data);
 $order =" ORDER BY nom "($data->order==true?"ASC":"DESC");
 $node = " AND id_doc IN (SELECT DOCUMENT_id_doc FROM NODE_DOCUMENT WHERE NODE_id_node = ".$data->pos.")";
 $query = 'SELECT * FROM DOCUMENT WHERE 1 ';
-$query = $query.$search_format.$search_name;.$typedoc.$niveau.$node.$order;
+$query = $query.$search_format.$search_name.$typedoc.$niveau.$node.$order;
 
 echo $query;
 
