@@ -165,6 +165,7 @@ function search(elem) {
 
 
 function displaysearch(json) {
+    document.getElementById("docbar").innerHTML = "";
 
     $data = JSON.parse(json);
     var p = document.createElement("p");
