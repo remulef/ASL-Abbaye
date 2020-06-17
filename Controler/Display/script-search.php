@@ -28,7 +28,7 @@ $node = " AND id_doc IN (SELECT DOCUMENT_id_doc FROM NODE_DOCUMENT WHERE NODE_id
 $query = 'SELECT * FROM DOCUMENT WHERE 1 ';
 $query = $query . $search_format . $search_name . $typedoc . $niveau . $order; //.$node
 
-
+echo $query;
 $sth = $db->query($query);
 $document = $sth->fetchAll(PDO::FETCH_ASSOC);
 
@@ -39,6 +39,6 @@ foreach ($document as $key => $value) {
 }
 
 $json = json_encode($document);
-echo $json;
+//echo $json;
 
 $db = null;
