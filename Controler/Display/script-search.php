@@ -21,7 +21,7 @@ $string = $_POST['data'];
 $string = "%".$string."%";
 $sth = $db->prepare('SELECT * 
     FROM DOCUMENT 
-    WHERE name LIKE ? ');
+    WHERE nom LIKE ? ');
 
 $sth->bindParam(1, $string);
 $sth->execute();
