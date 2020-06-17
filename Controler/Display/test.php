@@ -30,7 +30,7 @@ $query = $query.$search_format.$search_name.$typedoc.$niveau.$node.$order;
 
 
   $sth = $db->prepare($query);
-$sth->execute();
+ $sth->execute();
   $document = $sth->fetchAll(PDO::FETCH_ASSOC);
   $json = json_encode($document);
   echo $json;
