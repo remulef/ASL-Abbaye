@@ -166,7 +166,7 @@ function search(elem) {
 
 function displaysearch(json) {
 
-    $documents = JSON.parse(json);
+    $data = JSON.parse(json);
     var p = document.createElement("p");
     p.innerHTML= "<strong>"+document.length+"<strong> resultats";
     document.getElementById("content").appendChild(p);
