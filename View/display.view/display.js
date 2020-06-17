@@ -246,7 +246,7 @@ function recupniveau() {
         niv.push("A")
     }
 
-    if (inputs[15].checked === true) {
+    if (inputs[16].checked === true) {
         niv.push("")
     }
     return niv;
