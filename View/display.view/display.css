@@ -365,9 +365,9 @@ select.medium
 
 input.large
 {
-	width:99%;
-	margin-left: 5px;
-	margin-right: 5px;
+	width:90%;
+	margin-left: 5%;
+	margin-right: 5%;
 }
 
 select.large
