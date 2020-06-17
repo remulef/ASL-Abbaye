@@ -155,14 +155,14 @@ function search(elem) {
     var inputs = document.getElementsByTagName("input");
 
     var param = ({
-        pos: (inputs[0].checked === true ? history[0].id_node : history[history.length - 1].id_node);
+        pos: (inputs[0].checked === true ? history[0].id_node : history[history.length - 1].id_node),
         docname: inputs[2].value,
         typedoc: recuptype(),
         format: inputs[11].value,
         niveau: recupniveau(),
         order: (inputs[17].checked === true ? true : false), //Croissant ? 
         tefanf: (inputs[19].checked === true ? true : false) // TEF ANF ?
-    })
+    });
 
     console.log(param);
     try {
