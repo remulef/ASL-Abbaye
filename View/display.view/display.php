@@ -52,6 +52,21 @@
                 <input onblur="search(this)" id="element_1" name="docname" class="element text large" type="text" maxlength="255" value="" placeholder="Recherche doc" />
             </div>
             <p class="guidelines" id="guide_1"><small>Saisir nom du document</small></p>
+
+            <hr>
+            <hr>
+            <label class="description" for="element_5">Type de ressource </label>
+            <span>
+                <input id="element_5_2" name="element_5_2" oninput="search(this)" class="element checkbox" type="checkbox" value="1" />
+                <label class="choice" for="element_5_2">Fiche pédagogique- fp</label>
+                <input id="element_5_3" name="element_5_3" class="element checkbox" oninput="search(this)" type="checkbox" value="1" />
+                <label class="choice" for="element_5_3">Jeux - j</label>
+                <input oninput="search(this)" id="element_5_4" name="element_5_4" class="element checkbox" type="checkbox" value="1" />
+                <label class="choice" for="element_5_4">Doc authentique - da</label>
+                <input id="element_5_5" oninput="search(this)" name="element_5_5" class="element checkbox" type="checkbox" value="1" />
+                <label class="choice" for="element_5_5">video/site authentique/mp3 - vsm</label>
+                </span>
+            
             <hr>
             <label class="description" for="element_5">Type de document </label>
             <span>
