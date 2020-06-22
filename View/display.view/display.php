@@ -37,6 +37,7 @@
 
 <body onload="init()">
     <div id="sortpanel">
+    <form>
         <label style="display: none;" class="description" for="element_2">Rechercher dans </label>
         <span style="display: none;">
             <input oninput="search(this)" id="element_2_1" name="element_2" class="element radio" type="radio" value="1" />
@@ -119,6 +120,8 @@
         <hr>
         <input type="hidden" name="form_id" value="114662" />
     </div>
+    <input type="reset" value="Vider le formulaire">
+    </form>
     <main class="main">
         <span id="content" class="content">
 
