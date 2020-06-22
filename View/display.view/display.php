@@ -44,7 +44,7 @@
                 <hr>
             </div>
 
-            
+
 
             <label class="description" for="element_7">Type de ressource </label>
             <span>
@@ -74,9 +74,10 @@
                 <input id="element_5_6" oninput="search(this)" name="element_5_6" class="element checkbox" type="checkbox" value="1" />
                 <label class="choice" for="element_5_6">Diaporama (pptx,..)</label>
                 <hr>
-                <label class="description" for="element_1">Recherge par tag</label>
+                <label class="description" for="element_1">Recherge par etiquette</label>
                 <div>
                     <input list="format" id="element_1" name="element_1" onblur="search(this)" class="element text large" type="text" maxlength="255" value="" placeholder="&#128269;" />
+                    <p>Séparez les étiquettes par des signes "+" si il y en a plusieurs</p>
                 </div>
             </span>
             <hr>
@@ -105,8 +106,8 @@
 
             </span>
             <hr>
-            <label  class="description" for="element_6">Option </label>
-            <span >
+            <label class="description" for="element_6">Option </label>
+            <span>
                 <input id="element_6_1" name="element_6_1" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
                 <label class="choice" for="element_6_1">TEF/ANF</label>
             </span>
