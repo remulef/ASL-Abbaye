@@ -168,7 +168,7 @@ function search(elem) {
 
     console.log(param);
     try {
-        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-search.php";
+        let url = "http://www.les-asl-ab3baye.ovh/ASL-Abbaye/Controler/Display/script-search.php";
         ajax_post_request(displaysearch, url, true, encodeURIComponent(param));
         //ajax_post_request(log, url, true, encodeURIComponent(param));
 
@@ -182,6 +182,10 @@ function log(params) {
     console.log(params);
 }
 
+function recupressource(){
+    var inputs = document.getElementsByTagName("input");
+    var type = [];
+}
 function recuptype() {
     var inputs = document.getElementsByTagName("input");
     var type = [];
