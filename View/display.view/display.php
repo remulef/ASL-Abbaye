@@ -37,91 +37,92 @@
 
 <body onload="init()">
     <div id="sortpanel">
-    <form>
-        <label style="display: none;" class="description" for="element_2">Rechercher dans </label>
-        <span style="display: none;">
-            <input oninput="search(this)" id="element_2_1" name="element_2" class="element radio" type="radio" value="1" />
-            <label class="choice" for="element_2_1">Toute la base de données</label>
-            <input id="element_2_2" oninput="search(this)" name="element_2" class="element radio" type="radio" value="2" />
-            <label class="choice" for="element_2_2">Dossier et sous dossier courant</label>
+        <form>
+            <label style="display: none;" class="description" for="element_2">Rechercher dans </label>
+            <span style="display: none;">
+                <input oninput="search(this)" id="element_2_1" name="element_2" class="element radio" type="radio" value="1" />
+                <label class="choice" for="element_2_1">Toute la base de données</label>
+                <input id="element_2_2" oninput="search(this)" name="element_2" class="element radio" type="radio" value="2" />
+                <label class="choice" for="element_2_2">Dossier et sous dossier courant</label>
 
-        </span>
-        <hr style="display: none;">
-        <label class="description" for="element_1">Rechercher </label>
-        <div style="float: left;">
-            <input onblur="search(this)" id="element_1" name="docname" class="element text large" type="text" maxlength="255" value="" placeholder="Recherche doc" />
-        </div>
-        <p class="guidelines" id="guide_1"><small>Saisir nom du document</small></p>
-        <hr>
-        <label class="description" for="element_5">Type de document </label>
-        <span>
-            <input id="element_5_1" oninput="search(this)" name="element_5_1" class="element checkbox" type="checkbox" value="1" />
-            <label class="choice" for="element_5_1">PDF</label>
-            <input id="element_5_2" name="element_5_2" oninput="search(this)" class="element checkbox" type="checkbox" value="1" />
-            <label class="choice" for="element_5_2">Image (jpeg/png/gif/..)</label>
-            <input id="element_5_3" name="element_5_3" class="element checkbox" oninput="search(this)" type="checkbox" value="1" />
-            <label class="choice" for="element_5_3">Audio (mp3/aac/..)</label>
-            <input oninput="search(this)" id="element_5_4" name="element_5_4" class="element checkbox" type="checkbox" value="1" />
-            <label class="choice" for="element_5_4">Video (mp4/mpeg,..)</label>
-            <input id="element_5_5" oninput="search(this)" name="element_5_5" class="element checkbox" type="checkbox" value="1" />
-            <label class="choice" for="element_5_5">Text (docx/doc/txt..)</label>
-            <input id="element_5_6"  oninput="search(this)" name="element_5_6" class="element checkbox" type="checkbox" value="1" />
-            <label class="choice" for="element_5_6">Diaporama (pptx,..)</label>
-            <input id="element_5_7" name="element_5_7" oninput="search(this)" class="element checkbox" type="checkbox" value="1" />
-            <label class="choice" for="element_5_7">Autre</label>
-            <input id="element_5_8" name="element_5_8"  oninput="search(this)" class="element checkbox" type="checkbox" value="1" />
-            <label class="choice" for="element_5_7">Tous</label>
-            <label class="description" for="element_1">Format précis</label>
-            <div>
-                <input list="format" id="element_1" name="element_1" onblur="search(this)" class="element text large" type="text" maxlength="255" value="" placeholder="&#128269;" />
-                <datalist id="format">
-                    
-                    <option value="jpeg">
-                    <option value="png">
-                    <option value="gif">
-                    <option value="pdf">
-                    <option value="txt">
-                    <option value="docx">
-                    <option value="doc">
-                </datalist>
+            </span>
+            <hr style="display: none;">
+            <label class="description" for="element_1">Rechercher </label>
+            <div style="float: left;">
+                <input onblur="search(this)" id="element_1" name="docname" class="element text large" type="text" maxlength="255" value="" placeholder="Recherche doc" />
             </div>
-        </span>
-        <hr>
-        <label class="description" for="element_3">Niveau </label>
-        <span>
-            <input id="element_3_1" name="element_3_1" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
-            <label class="choice" for="element_3_1">ALPHA</label>
-            <input id="element_3_2" name="element_3_2" class="element checkbox" type="checkbox" oninput="search(this)"value="1" />
-            <label class="choice" for="element_3_2">D</label>
-            <input id="element_3_3" name="element_3_3" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
-            <label class="choice" for="element_3_3">E</label>
-            <input id="element_3_4" name="element_3_4" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
-            <label class="choice" for="element_3_4">A</label>
-            <input id="element_3_5" name="element_3_5" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
-            <label class="choice" for="element_3_5">Pas de niveau</label>
- 
-        </span>
-        <hr>
-        <label class="description" for="element_4">Trier par </label>
-        <span>
-            <input id="element_4_1" name="element_4" class="element radio" type="radio" oninput="search(this)" value="1" />
-            <label class="choice" for="element_4_1">Alphabétique croissant</label>
-            <input id="element_4_2" name="element_4" class="element radio" type="radio" oninput="search(this)" value="2" />
-            <label class="choice" for="element_4_2">Alphabétique décroissant</label>
+            <p class="guidelines" id="guide_1"><small>Saisir nom du document</small></p>
+            <hr>
+            <label class="description" for="element_5">Type de document </label>
+            <span>
+                <input id="element_5_1" oninput="search(this)" name="element_5_1" class="element checkbox" type="checkbox" value="1" />
+                <label class="choice" for="element_5_1">PDF</label>
+                <input id="element_5_2" name="element_5_2" oninput="search(this)" class="element checkbox" type="checkbox" value="1" />
+                <label class="choice" for="element_5_2">Image (jpeg/png/gif/..)</label>
+                <input id="element_5_3" name="element_5_3" class="element checkbox" oninput="search(this)" type="checkbox" value="1" />
+                <label class="choice" for="element_5_3">Audio (mp3/aac/..)</label>
+                <input oninput="search(this)" id="element_5_4" name="element_5_4" class="element checkbox" type="checkbox" value="1" />
+                <label class="choice" for="element_5_4">Video (mp4/mpeg,..)</label>
+                <input id="element_5_5" oninput="search(this)" name="element_5_5" class="element checkbox" type="checkbox" value="1" />
+                <label class="choice" for="element_5_5">Text (docx/doc/txt..)</label>
+                <input id="element_5_6" oninput="search(this)" name="element_5_6" class="element checkbox" type="checkbox" value="1" />
+                <label class="choice" for="element_5_6">Diaporama (pptx,..)</label>
+                <input id="element_5_7" name="element_5_7" oninput="search(this)" class="element checkbox" type="checkbox" value="1" />
+                <label class="choice" for="element_5_7">Autre</label>
+                <input id="element_5_8" name="element_5_8" oninput="search(this)" class="element checkbox" type="checkbox" value="1" />
+                <label class="choice" for="element_5_7">Tous</label>
+                <label class="description" for="element_1">Format précis</label>
+                <div>
+                    <input list="format" id="element_1" name="element_1" onblur="search(this)" class="element text large" type="text" maxlength="255" value="" placeholder="&#128269;" />
+                    <datalist id="format">
 
-        </span>
-        <hr>
-        <label style="display: none;"  class="description" for="element_6">Option </label>
-        <span style="display: none;">
-            <input id="element_6_1" name="element_6_1" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
-            <label class="choice" for="element_6_1">TEF/ANF</label>
+                        <option value="jpeg">
+                        <option value="png">
+                        <option value="gif">
+                        <option value="pdf">
+                        <option value="txt">
+                        <option value="docx">
+                        <option value="doc">
+                    </datalist>
+                </div>
+            </span>
+            <hr>
+            <label class="description" for="element_3">Niveau </label>
+            <span>
+                <input id="element_3_1" name="element_3_1" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
+                <label class="choice" for="element_3_1">ALPHA</label>
+                <input id="element_3_2" name="element_3_2" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
+                <label class="choice" for="element_3_2">D</label>
+                <input id="element_3_3" name="element_3_3" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
+                <label class="choice" for="element_3_3">E</label>
+                <input id="element_3_4" name="element_3_4" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
+                <label class="choice" for="element_3_4">A</label>
+                <input id="element_3_5" name="element_3_5" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
+                <label class="choice" for="element_3_5">Pas de niveau</label>
 
-        </span>
-        <hr>
-        <input type="hidden" name="form_id" value="114662" />
+            </span>
+            <hr>
+            <label class="description" for="element_4">Trier par </label>
+            <span>
+                <input id="element_4_1" name="element_4" class="element radio" type="radio" oninput="search(this)" value="1" />
+                <label class="choice" for="element_4_1">Alphabétique croissant</label>
+                <input id="element_4_2" name="element_4" class="element radio" type="radio" oninput="search(this)" value="2" />
+                <label class="choice" for="element_4_2">Alphabétique décroissant</label>
+
+            </span>
+            <hr>
+            <label style="display: none;" class="description" for="element_6">Option </label>
+            <span style="display: none;">
+                <input id="element_6_1" name="element_6_1" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
+                <label class="choice" for="element_6_1">TEF/ANF</label>
+
+            </span>
+            <hr>
+            <input type="hidden" name="form_id" value="114662" />
+            <input type="reset" value="Vider le formulaire">
+        </form>
     </div>
-    <input type="reset" value="Vider le formulaire">
-    </form>
+
     <main class="main">
         <span id="content" class="content">
 
@@ -139,13 +140,11 @@
 <!-- Optional JavaScript -->
 <script src="display.js"></script>
 <script>
-
-$(document).keypress(function(e) {
-  if(e.which == 13) {
-    search();
-  }
-});
-
+    $(document).keypress(function(e) {
+        if (e.which == 13) {
+            search();
+        }
+    });
 </script>
 <!-- jQuery first, then Popper.js, then Bootstrap JS 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
