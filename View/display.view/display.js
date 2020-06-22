@@ -155,12 +155,12 @@ function search(elem) {
     var inputs = document.getElementsByTagName("input");
 
     var param = ({
-        pos: (inputs[0].checked === true ? history[0].id_node : history[history.length - 1].id_node),
-        docname: inputs[2].value,
+        docname: inputs[0].value,
+        typeressource: recupressource(),
         typedoc: recuptype(),
-        format: inputs[11].value,
+        tag: inputs[11].value,
         niveau: recupniveau(),
-        order: (inputs[17].checked === true ? true : false), //Croissant ? 
+        order: recuporderby(), //Croissant ? 
         tefanf: (inputs[19].checked === true ? true : false) // TEF ANF ?
     });
 
@@ -182,35 +182,48 @@ function log(params) {
     console.log(params);
 }
 
-function recupressource(){
+function recupressource() {
     var inputs = document.getElementsByTagName("input");
     var type = [];
+    if (inputs[1].checked === true) {
+        type.push("fp");
+    }
+    if (inputs[2].checked === true) {
+        type.push("j");
+    }
+    if (inputs[3].checked === true) {
+        type.push("da");
+    }
+
+    if (inputs[4].checked === true) {
+        type.push("vsm");
+    }
 }
+
 function recuptype() {
     var inputs = document.getElementsByTagName("input");
     var type = [];
-    if (inputs[3].checked === true) {
+    if (inputs[5].checked === true) {
         type.push("pdf");
     }
-    if (inputs[4].checked === true) {
+    if (inputs[6].checked === true) {
         type.push("jpeg");
         type.push("jpg");
         type.push("gif");
         type.push("png");
     }
-    if (inputs[5].checked === true) {
+    if (inputs[7].checked === true) {
         type.push("wma");
         type.push("mp3");
     }
 
-    if (inputs[6].checked === true) {
+    if (inputs[8].checked === true) {
         type.push("MPG");
     }
 
-    if (inputs[7].checked === true) {
+    if (inputs[9].checked === true) {
         type.push("docx");
         type.push("odt");
-        type.push("pdf");
         type.push("doc");
         type.push("txt");
         type.push("docx#");
@@ -220,21 +233,10 @@ function recuptype() {
         type.push("ods");
         type.push("opd");
     }
-    if (inputs[8].checked === true) {
+    if (inputs[10].checked === true) {
         type.push("pptx");
         type.push("ppt");
     }
-
-    if (inputs[9].checked === true) {
-        type.push("xlqx");
-        type.push("xls");
-        type.push("zip");
-    }
-
-    if (inputs[10].checkd === true) {
-        type = "";
-    }
-
     return type;
 }
 
@@ -256,10 +258,6 @@ function recupniveau() {
 
     if (inputs[15].checked === true) {
         niv.push("A")
-    }
-
-    if (inputs[16].checked === true) {
-        niv.push("")
     }
     return niv;
 }
@@ -286,4 +284,20 @@ function displaysearch(json) {
 
     }
 
+}
+
+function recuporderby() {
+
+    var inputs = document.getElementsByTagName("input");
+
+    if (inputs[16].checked === true) {
+        return "nom ASC";
+    } else if (inputs[17].checked === true) {
+        return "nom DESC";
+    }
+    else if (inputs[18].checked === true) {
+        return "dl ASC";
+    } else {
+        return "dl DESC";
+    }
 }

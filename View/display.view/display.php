@@ -102,8 +102,8 @@
 
             </span>
             <hr>
-            <label style="display: none;" class="description" for="element_6">Option </label>
-            <span style="display: none;">
+            <label  class="description" for="element_6"> </label>
+            <span >
                 <input id="element_6_1" name="element_6_1" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
                 <label class="choice" for="element_6_1">TEF/ANF</label>
             </span>
