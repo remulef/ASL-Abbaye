@@ -76,8 +76,8 @@
                 <hr>
                 <label class="description" for="element_1">Recherge par etiquette</label>
                 <div>
-                    <input list="format" id="element_1" name="element_1" onblur="search(this)" class="element text large" type="text" maxlength="255" value="" placeholder="&#128269;" />
-                    <p>Séparez les étiquettes par des signes "+" si il y en a plusieurs</p>
+                    <input data-tooltip="Séparez les étiquettes par des signes + si il y en a plusieurs" list="format" id="element_1" name="element_1" onblur="search(this)" class="element text large" type="text" maxlength="255" value="" placeholder="&#128269;" />
+                    
                 </div>
             </span>
             <hr>
