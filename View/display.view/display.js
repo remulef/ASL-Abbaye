@@ -168,10 +168,13 @@ function search(elem) {
 
     console.log(param);
     try {
-        //let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-search.php";
+        /* configuration pour effectuer des tests
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/test.php";
-        //ajax_post_request(displaysearch, url, true, encodeURIComponent(param));
         ajax_post_request(log, url, true, encodeURIComponent(param));
+        */
+       let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-search.php";
+        ajax_post_request(displaysearch, url, true, encodeURIComponent(param));
+        
 
     } catch (error) {
         console.log(error);
