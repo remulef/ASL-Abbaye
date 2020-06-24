@@ -413,3 +413,7 @@ function recuporderby() {
         return "dl DESC";
     }
 }
+
+function hide() {
+    if(==="none" ? "block":"none");
+}
