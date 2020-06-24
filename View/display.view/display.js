@@ -24,8 +24,7 @@ function load(json) {
     //clearul();
 
     var data = JSON.parse(json);
-    document.getElementById("h3doc").innerHTML = "Liste des fichiers ( <strong>"+data.length+"</strong>)";
-    
+    var nbdoc=0;
     var uldoc = document.getElementById("docbar");
     var uldoss = document.getElementById("dossbar");
     for (let index = 0; index < data.length; index++) {
@@ -42,6 +41,7 @@ function load(json) {
             uldoss.appendChild(li);
 
         } else {
+            nbdoc++;
             var li = document.createElement("li");
             var a = document.createElement("a");
             a.setAttribute("href", "http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=" + current.id_doc);
@@ -91,6 +91,7 @@ function load(json) {
             uldoc.appendChild(li);
         }
     }
+    document.getElementById("h3doc").innerHTML = "Liste des fichiers (<strong>"+nbdoc+"</strong>)";
 
 
 }
