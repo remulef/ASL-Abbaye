@@ -28,7 +28,7 @@ $data = json_decode($data);
 ($data->order ==""? $order="":$order = "ORDER BY".$data->order);
 
 $query = 'SELECT * FROM DOCUMENT WHERE 1 ';
-$query = $query.$name.$typedoc.$niveau.$ressource.$order; //.$node
+$query = $query.$name.$typedoc.$niveau.$ressource.$tags.$order; //.$node
 echo $query;
 
 /*

@@ -56,6 +56,10 @@
                 <label class="choice" for="element_7_4">Doc authentique - da</label>
                 <input id="element_7_5" oninput="search(this)" name="element_7_5" class="element checkbox" type="checkbox" value="1" />
                 <label class="choice" for="element_7_5">video/site internet/mp3 - vsm</label>
+                <input id="element_7_6" oninput="search(this)" name="element_7_6" class="element checkbox" type="checkbox" value="1" />
+                <label class="choice" for="element_7_5">doc authentique - da</label>
+                <input id="element_7_6" oninput="search(this)" name="element_7_6" class="element checkbox" type="checkbox" value="1" />
+                <label class="choice" for="element_7_5">exos/activité - ea</label>
             </span>
 
             <hr>
