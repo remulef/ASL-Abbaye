@@ -28,15 +28,18 @@ $data = json_decode($data);
 
 $query = 'SELECT * FROM DOCUMENT WHERE 1 ';
 $query = $query.$name.$typedoc.$niveau.$ressource.$tags.$order; //.$node
-//echo $query;
+$sth = $db->query($query);
+$document = $sth->fetchAll(PDO::FETCH_ASSOC);
 
+foreach ($document as $key => $value) {
+    $document[$key]["nom"] = utf8_encode($value["nom"]);
+    $document[$key]["chemin"] = utf8_encode($value["chemin"]);
+    $document[$key]["descri"] = utf8_encode($value["descri"]);
+}
 
-  $sth = $db->prepare($query);
-  $sth->execute();
-  $document = $sth->fetchAll(PDO::FETCH_ASSOC);
-  $json = json_encode($document);
-  echo $json;
-  
-  $db = null;
+$json = json_encode($document);
+echo $json;
+
+$db = null;
  
 ?>
