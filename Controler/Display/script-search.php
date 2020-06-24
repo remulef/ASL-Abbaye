@@ -36,9 +36,6 @@ $query = $query.$name.$typedoc.$niveau.$ressource.$tags.$order; //.$node
 //METTRE LES ICONES EN MODE ECOMMERCE 
 //CLIQUE FAIT UNE NOUVELLE ONGLET 
 //https://codepen.io/stephengreig/pen/ogoPLv
-$query = 'SELECT * FROM DOCUMENT WHERE 1 ';
-$query = $query.$search_format.$ressource.$search_name.$typedoc.$niveau.$TEFANF.$tags.$order; //. AJOUTER les tags
-
 $sth = $db->query($query);
 $document = $sth->fetchAll(PDO::FETCH_ASSOC);
 
