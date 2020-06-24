@@ -20,7 +20,7 @@ a.button1 {
 }
 
 a.button1:hover {
-background-color: lightcoral;
+background-color: #f9b9f2;
 }
 @media all and (max-width:30em) {
     a.button1 {
@@ -48,7 +48,8 @@ background-color: lightcoral;
 }
 
 #parcours li:last-child a {
- background-color: #b796ac; 
+ background-color: #6883ba; 
+ color: #dbdbdb;
  cursor: not-allowed;
   
 }
