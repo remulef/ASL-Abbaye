@@ -130,7 +130,7 @@
         <span id="content" class="content">
 
             <div id="listdoc">
-                <H3 id="h3doc">Listes des documents</H3>
+                <H3 id="h3doc">Liste des Thématiques</H3>
                 <ul id="docbar">
                 </ul>
             </div>

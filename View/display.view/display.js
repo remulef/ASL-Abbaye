@@ -43,7 +43,7 @@ function load(json) {
             var a = document.createElement("a");
             a.setAttribute("href", "http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=" + current.id_doc);
             a.setAttribute("target", "_blank");
-            a.innerHTML="ouvrir";
+            a.innerHTML = "ouvrir";
             //p 
             var p = document.createElement("p");
             p.class = "price";
@@ -260,9 +260,9 @@ function recuptype() {
         type.push("docx#");
         type.push("pub");
         type.push("rtf");
-        type.push("opd");
+        type.push("odp");
         type.push("ods");
-        type.push("opd");
+        
     }
     if (inputs[12].checked === true) {
         type.push("pptx");
@@ -321,9 +321,29 @@ function displaysearch(json) {
         var p = document.createElement("p");
         p.class = "price";
         p.innerHTML = current.typedoc;
-        //image
+        /*image
         var img = document.createElement("img");
         img.setAttribute("src", "http://placehold.it/200x120");
+        */
+        var lien = "/" + current.chemin;
+        var type = current.typedoc;
+        type = type.toLowerCase();
+        type = type.trim();
+
+
+        if (type === "png" || type === "jpeg" || type === "jpg" || type === "gif") {
+            var img = document.createElement("img");
+            img.setAttribute("src", lien);
+            img.setAttribute("width", "200");
+            img.setAttribute("height", "120");
+
+        } else {
+            var img = document.createElement("img");
+            var ressource = "../../data/icon/file/" + type + ".svg";
+            img.setAttribute("src", ressource);
+            img.setAttribute("width", "200");
+            img.setAttribute("height", "120");
+        }
 
         //h3
         var titre = document.createElement("p");
