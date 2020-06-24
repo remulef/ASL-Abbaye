@@ -35,15 +35,29 @@ function load(json) {
             a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",true,-1)');
             a.setAttribute("class", "button3");
             a.innerHTML = current.name;
-            li.appendChild(a);
+
             uldoss.appendChild(li);
 
         } else {
             var li = document.createElement("li");
             var a = document.createElement("a");
             a.setAttribute("href", "http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=" + current.id_doc);
-            a.setAttribute("target","_blank");
-            a.innerHTML = current.nom;
+            a.setAttribute("target", "_blank");
+            a.innerHTML="ouvrir";
+            //p 
+            var p = document.createElement("p");
+            p.class = "price";
+            p.innerHTML = current.typedoc;
+            //image
+            var img = document.createElement("img");
+            img.setAttribute("src", "http://placehold.it/200x120");
+            //h3
+            var titre = document.createElement("p");
+            titre.innerHTML = "<strong>" + current.nom + "</strong>";
+
+            li.appendChild(img);
+            li.appendChild(titre);
+            li.appendChild(p);
             li.appendChild(a);
             uldoc.appendChild(li);
         }
@@ -159,7 +173,7 @@ function search(elem) {
         docname: inputs[0].value,
         ressource: recupressource(),
         typedoc: recuptype(),
-        tags: (inputs[13].value.length>0?inputs[13].value.split("+"):[]),
+        tags: (inputs[13].value.length > 0 ? inputs[13].value.split("+") : []),
         niveau: recupniveau(),
         order: recuporderby(), //Croissant ? 
         tefanf: inputs[22].checked  // TEF ANF ?
@@ -174,9 +188,9 @@ function search(elem) {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/test.php";
         ajax_post_request(log, url, true, encodeURIComponent(param));
          */
-       let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-search.php";
+        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-search.php";
         ajax_post_request(displaysearch, url, false, encodeURIComponent(param));
-        
+
 
     } catch (error) {
         console.log(error);
@@ -205,12 +219,12 @@ function recupressource() {
         type.push("vsm");
     }
 
-    
+
     if (inputs[5].checked === true) {
         type.push("da");
     }
 
-    
+
     if (inputs[6].checked === true) {
         type.push("ea");
     }
@@ -296,24 +310,24 @@ function displaysearch(json) {
         //a
         var a = document.createElement("a");
         a.setAttribute("href", "http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=" + current.id_doc);
-        a.setAttribute("target","_blank");
+        a.setAttribute("target", "_blank");
         a.innerHTML = "ouvrir";
-        
+
 
 
         //add 24 June
 
         //p 
         var p = document.createElement("p");
-        p.class="price";
+        p.class = "price";
         p.innerHTML = current.typedoc;
         //image
         var img = document.createElement("img");
-        img.setAttribute("src","http://placehold.it/200x120");
+        img.setAttribute("src", "http://placehold.it/200x120");
 
         //h3
         var titre = document.createElement("p");
-        titre.innerHTML = "<strong>"+current.nom+"</strong>";
+        titre.innerHTML = "<strong>" + current.nom + "</strong>";
 
         li.appendChild(img);
         li.appendChild(titre);
@@ -332,14 +346,14 @@ function recuporderby() {
 
     if (inputs[18].checked === true) {
         return "nom ASC";
-    } 
-     if (inputs[19].checked === true) {
+    }
+    if (inputs[19].checked === true) {
         return "nom DESC";
     }
-     if (inputs[20].checked === true) {
+    if (inputs[20].checked === true) {
         return "dl ASC";
     }
     if (inputs[21].checked === true) {
         return "dl DESC";
-    } 
+    }
 }

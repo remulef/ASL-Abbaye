@@ -506,3 +506,7 @@ textarea.large
   main ul li .price {
 	margin: 0 0 10px;
   }
+
+  main p {
+	  margin-top: 1em;
+  }
