@@ -40,7 +40,7 @@
         <form>
             <label class="description" for="element_1">Rechercher par nom </label>
             <div style="float: left;">
-                <input onblur="search(this)" id="element_1" name="docname" class="element text large" type="text" maxlength="255" value="" placeholder="Recherche par nom" />
+                <input onblur="search(this)" id="element_1" name="docname" class="element text large" type="search" maxlength="255" value="" placeholder="Recherche par nom" />
                 <hr>
             </div>
 
@@ -80,7 +80,7 @@
                 <hr>
                 <label class="description" for="element_1">Recherche par etiquette</label>
                 <div>
-                    <input  list="format" id="element_1" name="element_1" onblur="search(this)" class="element text large" type="text" maxlength="255" value="" placeholder="&#128269; exemple : verbe+present" />
+                    <input  list="format" id="element_1" name="element_1" onblur="search(this)" class="element text large" type="search" maxlength="255" value="" placeholder="&#128269; exemple : verbe+present" />
                     <a data-tooltip="Séparez les étiquettes par des signes + si il y en a plusieurs" style="padding: 0;border: none;background: none; margin: 49%;">
                     <svg class="bi bi-question-circle" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -123,7 +123,7 @@
             </span>
             <hr>
             <input style="margin: 1%;width: 98%;" type="reset" value="Vider le formulaire">
-            <button style="margin: 1%;width: 98%;"  onclick="search(this)" >Chercher</button>
+            <input style="margin: 1%;width: 98%;" type="submit" onclick="search(this)" value="Chercher">
         </form>
     </div>
 
