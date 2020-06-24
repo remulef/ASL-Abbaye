@@ -316,7 +316,7 @@ function displaysearch(json) {
         h4.innerHTML = current.nom;
 
         li.appendChild(img);
-        li.appendChild(h3);
+        li.appendChild(h4);
         li.appendChild(p);
         li.appendChild(a);
 
