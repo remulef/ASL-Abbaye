@@ -20,19 +20,19 @@ $data = json_decode($data);
 //$tefanf = $data->tefanf; 
 
 
-($data->format ==""?$search_format="":$search_format=" AND typedoc like \"%".$data->format."%\"");
-($data->docname ==""?$search_name="":$search_name=" AND nom like \"%".$data->docname."%\"");
-($data->docname ==""?$search_name="":$search_name=" AND nom like \"%".$data->docname."%\"");
-((count($data->tags)>0)?$tags = " AND id_doc IN( SELECT id_doc FROM TAGS WHERE tags like\"%".implode("%\" OR tags like",$data->tags)."%\"":$tags="");
-((count($data->ressource)>0)?$niveau = " AND nom like \"%".implode("%",$data->ressource)."%\"":$ressource="");
+($data->docname ==""?$name="":$name=" AND nom like \"%".$data->docname."%\"");
+((count($data->tags)>0)?$tags = " AND id_doc IN (SELECT id_doc FROM TAGS WHERE tags like\"%".implode("%\" OR tags like \"%",$data->tags)."%\")":$tags="");
+((count($data->ressource)>0)?$ressource = "  AND nom like \"%-%".implode("%\" AND nom like \"%-%",$data->ressource)."%\"":$ressource="");
 ((count($data->typedoc)>0)?$typedoc =  " AND typedoc in (\"".implode("\",\"",$data->typedoc)."\")":$typedoc="");
 ($data->TEFANF == true?$TEFANF="AND nom like %tefanf%":$$TEFANF="");
-((count($data->niveau)>0)?$niveau = " AND nom like \"%".implode("%",$data->niveau)."%\"":$niveau="");
-($data->order ==""? $order="":$order = "ORDER BY".$data->order);
+((count($data->niveau)>0)?$niveau = " AND nom like \"%-%".implode("%\" AND nom like \"%-%",$data->niveau)."%\"":$niveau="");
+($data->order ==""? $order="":$order = " ORDER BY ".$data->order);
 
+$query = 'SELECT * FROM DOCUMENT WHERE 1 ';
+$query = $query.$name.$typedoc.$niveau.$ressource.$tags.$order; //.$node
 //AJOUTER TEF ANF 
-//TESTER 
-//DEPLOYER 
+//TESTER done
+//DEPLOYER done
 //METTRE LES ICONES EN MODE ECOMMERCE 
 //CLIQUE FAIT UNE NOUVELLE ONGLET 
 //https://codepen.io/stephengreig/pen/ogoPLv
