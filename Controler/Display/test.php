@@ -19,11 +19,11 @@ $data = json_decode($data);
 
 
 ($data->docname ==""?$name="":$name=" AND nom like \"%".$data->docname."%\"");
-((count($data->tags)>0)?$tags = " AND id_doc IN( SELECT id_doc FROM TAGS WHERE tags like\"%".implode("%\" OR tags like \"%",$data->tags)."%\"":$tags="");
+((count($data->tags)>0)?$tags = " AND id_doc IN( SELECT id_doc FROM TAGS WHERE tags like\"%".implode("%\" OR tags like \"% )",$data->tags)."%\"":$tags="");
 //Version 1 de ressource
 //((count($data->ressource)>0)?$ressource = " AND nom like \"%".implode("%",$data->ressource)."%\"":$ressource="");
 //Version 2 de ressource 
-((count($data->ressource)>0)?$ressource = "  AND nom like \"%-%".implode("%\" AND nom like \"%-%",$data->ressource)."%\")":$ressource="");
+((count($data->ressource)>0)?$ressource = "  AND nom like \"%-%".implode("%\" AND nom like \"%-%",$data->ressource)."%\"":$ressource="");
 
 ((count($data->typedoc)>0)?$typedoc =  " AND typedoc in (\"".implode("\",\"",$data->typedoc)."\")":$typedoc="");
 ($data->TEFANF == true?$TEFANF="AND nom like %tefanf%":$$TEFANF="");
