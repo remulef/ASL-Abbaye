@@ -312,8 +312,8 @@ function displaysearch(json) {
         img.setAttribute("src","http://placehold.it/200x120");
 
         //h3
-        var h4 = document.createElement("h4");
-        h4.innerHTML = current.nom;
+        var p = document.createElement("p");
+        p.innerHTML = "<strong>"+current.nom+"</strong>";
 
         li.appendChild(img);
         li.appendChild(h4);
