@@ -24,6 +24,8 @@ function load(json) {
     //clearul();
 
     var data = JSON.parse(json);
+    document.getElementById("h3doc").innerHTML = "Liste des fichiers ( <strong>"+data.length+"</strong>)";
+    
     var uldoc = document.getElementById("docbar");
     var uldoss = document.getElementById("dossbar");
     for (let index = 0; index < data.length; index++) {
@@ -94,9 +96,7 @@ function load(json) {
 }
 
 function changedoc(id, title, forward, pos) {
-
     clearul();
-
     //si on descend
     if (forward) {
         var add = ({
