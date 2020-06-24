@@ -161,7 +161,7 @@ function search(elem) {
         tag: inputs[11].value.split("+"),
         niveau: recupniveau(),
         order: recuporderby(), //Croissant ? 
-        tefanf: inputs[19].checked  // TEF ANF ?
+        tefanf: inputs[20].checked  // TEF ANF ?
     });
 
     param = JSON.stringify(param);
@@ -199,31 +199,41 @@ function recupressource() {
     if (inputs[4].checked === true) {
         type.push("vsm");
     }
+
+    
+    if (inputs[5].checked === true) {
+        type.push("da");
+    }
+
+    
+    if (inputs[6].checked === true) {
+        type.push("ea");
+    }
     return type;
 }
 
 function recuptype() {
     var inputs = document.getElementsByTagName("input");
     var type = [];
-    if (inputs[5].checked === true) {
+    if (inputs[7].checked === true) {
         type.push("pdf");
     }
-    if (inputs[6].checked === true) {
+    if (inputs[8].checked === true) {
         type.push("jpeg");
         type.push("jpg");
         type.push("gif");
         type.push("png");
     }
-    if (inputs[7].checked === true) {
+    if (inputs[9].checked === true) {
         type.push("wma");
         type.push("mp3");
     }
 
-    if (inputs[8].checked === true) {
+    if (inputs[10].checked === true) {
         type.push("MPG");
     }
 
-    if (inputs[9].checked === true) {
+    if (inputs[11].checked === true) {
         type.push("docx");
         type.push("odt");
         type.push("doc");
@@ -235,7 +245,7 @@ function recuptype() {
         type.push("ods");
         type.push("opd");
     }
-    if (inputs[10].checked === true) {
+    if (inputs[12].checked === true) {
         type.push("pptx");
         type.push("ppt");
     }
@@ -246,19 +256,19 @@ function recupniveau() {
     var inputs = document.getElementsByTagName("input");
     var niv = [];
 
-    if (inputs[12].checked === true) {
+    if (inputs[13].checked === true) {
         niv.push("ALPHA")
     }
 
-    if (inputs[13].checked === true) {
+    if (inputs[14].checked === true) {
         niv.push("D")
     }
 
-    if (inputs[14].checked === true) {
+    if (inputs[15].checked === true) {
         niv.push("E")
     }
 
-    if (inputs[15].checked === true) {
+    if (inputs[16].checked === true) {
         niv.push("A")
     }
     return niv;
@@ -292,12 +302,12 @@ function recuporderby() {
 
     var inputs = document.getElementsByTagName("input");
 
-    if (inputs[16].checked === true) {
+    if (inputs[17].checked === true) {
         return "nom ASC";
-    } else if (inputs[17].checked === true) {
+    } else if (inputs[18].checked === true) {
         return "nom DESC";
     }
-    else if (inputs[18].checked === true) {
+    else if (inputs[19].checked === true) {
         return "dl ASC";
     } else {
         return "dl DESC";
