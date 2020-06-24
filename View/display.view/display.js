@@ -293,11 +293,34 @@ function displaysearch(json) {
     for (let index = 0; index < data.length; index++) {
         var current = data[index];
         var li = document.createElement("li");
+        //a
         var a = document.createElement("a");
         a.setAttribute("href", "http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=" + current.id_doc);
         a.setAttribute("target","_blank");
-        a.innerHTML = current.nom;
+        a.innerHTML = "ouvrir";
+        
+
+
+        //add 24 June
+
+        //p 
+        var p = document.createElement("p");
+        p.class="price";
+        p.innerHTML = current.typedoc;
+        //image
+        var img = document.createElement("img");
+        img.setAttribute("src","http://placehold.it/200x120");
+
+        //h3
+        var h3 = document.createElement("h3");
+        h3.innerHTML = current.nom;
+
+
         li.appendChild(a);
+        li.appendChild(p);
+        li.appendChild(img);
+        li.appendChild(h3);
+
         uldoc.appendChild(li);
 
     }

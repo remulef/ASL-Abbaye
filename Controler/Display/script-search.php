@@ -32,7 +32,7 @@ $query = $query.$name.$typedoc.$niveau.$ressource.$tags.$order; //.$node
 //TESTER done
 //DEPLOYER done
 //METTRE LES ICONES EN MODE ECOMMERCE 
-//CLIQUE FAIT UNE NOUVELLE ONGLET 
+//CLIQUE FAIT UNE NOUVELLE ONGLET done
 //https://codepen.io/stephengreig/pen/ogoPLv
 $sth = $db->query($query);
 $document = $sth->fetchAll(PDO::FETCH_ASSOC);
