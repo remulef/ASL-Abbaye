@@ -158,7 +158,7 @@ function search(elem) {
         docname: inputs[0].value,
         ressource: recupressource(),
         typedoc: recuptype(),
-        tags: (inputs[13].value.length>0?inputs[13].value.split("+"):""),
+        tags: (inputs[13].value.length>0?inputs[13].value.split("+"):[]),
         niveau: recupniveau(),
         order: recuporderby(), //Croissant ? 
         tefanf: inputs[20].checked  // TEF ANF ?
