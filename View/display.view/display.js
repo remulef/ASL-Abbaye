@@ -161,7 +161,7 @@ function updateparcours() {
         var a = document.createElement("a");
         a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",false,' + index + ')');
         a.setAttribute("class", "button1");
-        a.innerHTML = "/" + current.name;
+        a.innerHTML = "<strong>"+current.name+"</strong>";
         li.appendChild(a);
         ul.appendChild(li);
     }
