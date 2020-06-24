@@ -402,6 +402,7 @@ function recuporderby() {
     if (inputs[19].checked === true) {
         return "nom DESC";
     }
+    
     if (inputs[20].checked === true) {
         return "dl ASC";
     }
