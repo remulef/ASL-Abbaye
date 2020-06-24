@@ -28,7 +28,7 @@ $data = json_decode($data);
 
 ((count($data->typedoc)>0)?$typedoc =  " AND typedoc in (\"".implode("\",\"",$data->typedoc)."\")":$typedoc="");
 ($data->TEFANF == true?$TEFANF="AND nom like %tefanf%":$$TEFANF="");
-((count($data->niveau)>0)?$niveau = " AND nom like \"%".implode("%\" AND nom like \"%",$data->niveau)."%\"":$niveau="");
+((count($data->niveau)>0)?$niveau = " AND nom like \"%-%".implode("%\" AND nom like \"%-%",$data->niveau)."%\"":$niveau="");
 ($data->order ==""? $order="":$order = " ORDER BY".$data->order);
 
 $query = 'SELECT * FROM DOCUMENT WHERE 1 ';
