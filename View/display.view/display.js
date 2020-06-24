@@ -158,7 +158,7 @@ function search(elem) {
         docname: inputs[0].value,
         typeressource: recupressource(),
         typedoc: recuptype(),
-        tag: inputs[11].value,
+        tag: inputs[11].value.split("+"),
         niveau: recupniveau(),
         order: recuporderby(), //Croissant ? 
         tefanf: (inputs[19].checked === true ? true : false) // TEF ANF ?
@@ -169,8 +169,9 @@ function search(elem) {
     console.log(param);
     try {
         let url = "http://www.les-asl-ab3baye.ovh/ASL-Abbaye/Controler/Display/script-search.php";
+        let url = "http://www.les-asl-ab3baye.ovh/ASL-Abbaye/Controler/Display/test.php";
         //ajax_post_request(displaysearch, url, true, encodeURIComponent(param));
-        //ajax_post_request(log, url, true, encodeURIComponent(param));
+        ajax_post_request(log, url, true, encodeURIComponent(param));
 
     } catch (error) {
         console.log(error);
