@@ -304,10 +304,11 @@ function recuporderby() {
 
     if (inputs[17].checked === true) {
         return "nom ASC";
-    } else if (inputs[18].checked === true) {
+    } 
+     if (inputs[18].checked === true) {
         return "nom DESC";
     }
-    else if (inputs[19].checked === true) {
+     if (inputs[19].checked === true) {
         return "dl ASC";
     } else {
         return "dl DESC";
