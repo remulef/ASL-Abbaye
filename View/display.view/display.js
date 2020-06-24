@@ -313,7 +313,8 @@ function recuporderby() {
     }
      if (inputs[20].checked === true) {
         return "dl ASC";
-    } else {
-        return "dl DESC";
     }
+    if (inputs[21].checked === true) {
+        return "dl DESC";
+    } 
 }

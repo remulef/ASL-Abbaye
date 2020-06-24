@@ -28,8 +28,8 @@ $data = json_decode($data);
 
 $query = 'SELECT * FROM DOCUMENT WHERE 1 ';
 $query = $query.$name.$typedoc.$niveau.$ressource.$tags.$order; //.$node
-echo $query;
-/*
+//echo $query;
+
 $sth = $db->query($query);
 $document = $sth->fetchAll(PDO::FETCH_ASSOC);
 
@@ -41,7 +41,7 @@ foreach ($document as $key => $value) {
 
 $json = json_encode($document);
 echo $json;
-*/
+
 $db = null;
  
 ?>
