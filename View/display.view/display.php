@@ -55,7 +55,7 @@
                 <input oninput="search(this)" id="element_7_4" name="element_7_4" class="element checkbox" type="checkbox" value="1" />
                 <label class="choice" for="element_7_4">Doc authentique - da</label>
                 <input id="element_7_5" oninput="search(this)" name="element_7_5" class="element checkbox" type="checkbox" value="1" />
-                <label class="choice" for="element_7_5">video/site authentique/mp3 - vsm</label>
+                <label class="choice" for="element_7_5">video/site internet/mp3 - vsm</label>
             </span>
 
             <hr>
@@ -106,9 +106,9 @@
                 <input id="element_4_2" name="element_4" class="element radio" type="radio" oninput="search(this)" value="2" />
                 <label class="choice" for="element_4_2">Alphabétique décroissant</label>
                 <input id="element_4_3" name="element_4" class="element radio" type="radio" oninput="search(this)" value="1" />
-                <label class="choice" for="element_4_3">Nombre de téléchargement croissant</label>
+                <label class="choice" for="element_4_3">Popularité croissant</label>
                 <input id="element_4_4" name="element_4" class="element radio" type="radio" oninput="search(this)" value="2" />
-                <label class="choice" for="element_4_4">Nombre de téléchargement décroissant</label>
+                <label class="choice" for="element_4_4">Popularité décroissant</label>
 
             </span>
             <hr>

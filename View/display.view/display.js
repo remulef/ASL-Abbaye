@@ -161,7 +161,7 @@ function search(elem) {
         tag: inputs[11].value.split("+"),
         niveau: recupniveau(),
         order: recuporderby(), //Croissant ? 
-        tefanf: (inputs[19].checked === true ? true : false) // TEF ANF ?
+        tefanf: inputs[19].checked  // TEF ANF ?
     });
 
     param = JSON.stringify(param);
@@ -199,6 +199,7 @@ function recupressource() {
     if (inputs[4].checked === true) {
         type.push("vsm");
     }
+    return type;
 }
 
 function recuptype() {
