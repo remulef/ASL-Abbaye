@@ -20,7 +20,8 @@ a.button1 {
 }
 
 a.button1:hover {
-background-color: #f9b9f2;
+background-color: #25283D;
+color: #FFFFFF;
 }
 @media all and (max-width:30em) {
     a.button1 {
