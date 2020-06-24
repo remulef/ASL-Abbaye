@@ -506,7 +506,10 @@ textarea.large
   main ul li .price {
 	margin: 0 0 10px;
   }
-
+/* ajouté main */
   main p {
 	  margin-top: 1em;
   }
+  main img {
+background-color: #FFFFFF;
+}
