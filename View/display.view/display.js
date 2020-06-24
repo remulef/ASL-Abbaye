@@ -327,7 +327,8 @@ function displaysearch(json) {
     query = query.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
     var data = JSON.parse(json);
-    document.getElementById("h3doc").innerHTML = "<strong>" + data.length + "</strong> resultats pour " + query;
+    document.getElementById("h3doc").innerHTML = "<strong>" + data.length + "</strong> resultats "+
+    (query.length !==0 ? "pour " + query:"");
 
 
     var uldoc = document.getElementById("docbar");
