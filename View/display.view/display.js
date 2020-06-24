@@ -168,7 +168,7 @@ function search(elem) {
 
     console.log(param);
     try {
-        let url = "http://www.les-asl-ab3baye.ovh/ASL-Abbaye/Controler/Display/script-search.php";
+        //let url = "http://www.les-asl-ab3baye.ovh/ASL-Abbaye/Controler/Display/script-search.php";
         let url = "http://www.les-asl-ab3baye.ovh/ASL-Abbaye/Controler/Display/test.php";
         //ajax_post_request(displaysearch, url, true, encodeURIComponent(param));
         ajax_post_request(log, url, true, encodeURIComponent(param));
