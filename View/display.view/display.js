@@ -161,20 +161,20 @@ function search(elem) {
         tags: (inputs[13].value.length>0?inputs[13].value.split("+"):[]),
         niveau: recupniveau(),
         order: recuporderby(), //Croissant ? 
-        tefanf: inputs[20].checked  // TEF ANF ?
+        tefanf: inputs[22].checked  // TEF ANF ?
     });
 
     param = JSON.stringify(param);
 
     console.log(param);
     try {
-        /* configuration pour effectuer des tests
+        // configuration pour effectuer des tests
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/test.php";
         ajax_post_request(log, url, true, encodeURIComponent(param));
-        */
+         /*
        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-search.php";
         ajax_post_request(displaysearch, url, false, encodeURIComponent(param));
-        
+        */
 
     } catch (error) {
         console.log(error);

@@ -16,10 +16,6 @@ try {
 
 $data = $_POST['data'];
 $data = json_decode($data);
-
-//$tefanf = $data->tefanf; 
-
-
 ($data->docname ==""?$name="":$name=" AND nom like \"%".$data->docname."%\"");
 ((count($data->tags)>0)?$tags = " AND id_doc IN (SELECT id_doc FROM TAGS WHERE tags like\"%".implode("%\" OR tags like \"%",$data->tags)."%\")":$tags="");
 ((count($data->ressource)>0)?$ressource = "  AND nom like \"%-%".implode("%\" AND nom like \"%-%",$data->ressource)."%\"":$ressource="");
