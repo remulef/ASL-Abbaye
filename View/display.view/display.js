@@ -256,19 +256,19 @@ function recupniveau() {
     var inputs = document.getElementsByTagName("input");
     var niv = [];
 
-    if (inputs[13].checked === true) {
+    if (inputs[14].checked === true) {
         niv.push("ALPHA")
     }
 
-    if (inputs[14].checked === true) {
+    if (inputs[15].checked === true) {
         niv.push("D")
     }
 
-    if (inputs[15].checked === true) {
+    if (inputs[16].checked === true) {
         niv.push("E")
     }
 
-    if (inputs[16].checked === true) {
+    if (inputs[17].checked === true) {
         niv.push("A")
     }
     return niv;
@@ -302,13 +302,13 @@ function recuporderby() {
 
     var inputs = document.getElementsByTagName("input");
 
-    if (inputs[17].checked === true) {
+    if (inputs[18].checked === true) {
         return "nom ASC";
     } 
-     if (inputs[18].checked === true) {
+     if (inputs[19].checked === true) {
         return "nom DESC";
     }
-     if (inputs[19].checked === true) {
+     if (inputs[20].checked === true) {
         return "dl ASC";
     } else {
         return "dl DESC";
