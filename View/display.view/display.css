@@ -20,7 +20,7 @@ a.button1 {
 }
 
 a.button1:hover {
-	border: 2px double rgba(28,110,164,0.94);
+background-color: lightcoral;
 }
 @media all and (max-width:30em) {
     a.button1 {
