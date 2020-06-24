@@ -24,7 +24,7 @@ function load(json) {
     //clearul();
 
     var data = JSON.parse(json);
-    var nbdoc=0;
+    var nbdoc = 0;
     var uldoc = document.getElementById("docbar");
     var uldoss = document.getElementById("dossbar");
     for (let index = 0; index < data.length; index++) {
@@ -91,7 +91,7 @@ function load(json) {
             uldoc.appendChild(li);
         }
     }
-    document.getElementById("h3doc").innerHTML = "Liste des fichiers (<strong>"+nbdoc+"</strong>)";
+    document.getElementById("h3doc").innerHTML = "Liste des fichiers (<strong>" + nbdoc + "</strong>)";
 
 
 }
@@ -162,7 +162,7 @@ function updateparcours() {
         var a = document.createElement("a");
         a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",false,' + index + ')');
         a.setAttribute("class", "button1");
-        a.innerHTML = "<strong>"+current.name+"</strong>";
+        a.innerHTML = "<strong>" + current.name + "</strong>";
         li.appendChild(a);
         ul.appendChild(li);
     }
@@ -328,8 +328,8 @@ function displaysearch(json) {
     query = query.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
     var data = JSON.parse(json);
-    document.getElementById("h3doc").innerHTML = "<strong>" + data.length + "</strong> resultats "+
-    (query.length !==0 ? "pour " + query:"");
+    document.getElementById("h3doc").innerHTML = "<strong>" + data.length + "</strong> resultats " +
+        (query.length !== 0 ? "pour " + query : "");
 
 
     var uldoc = document.getElementById("docbar");
@@ -405,7 +405,7 @@ function recuporderby() {
     if (inputs[19].checked === true) {
         return "nom DESC";
     }
-    
+
     if (inputs[20].checked === true) {
         return "dl ASC";
     }
@@ -415,5 +415,19 @@ function recuporderby() {
 }
 
 function hide() {
-    if(==="none" ? "block":"none");
+    var sortpanel = document.getElementById("sortpanel");
+    var hier = document.getElementById("hider");
+    if (sortpanel.style === "display: block;") {
+        sortpanel.style = "display: none;"
+        hider.innerHTML = "<svg class=\"bi bi-arrow-bar-right\" width=\"2em\" height=\"2em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">"
+        +"<path fill-rule=\"evenodd\" d=\"M10.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 8l-2.647-2.646a.5.5 0 0 1 0-.708z\"/>"+
+        "<path fill-rule=\"evenodd\" d=\"M6 8a.5.5 0 0 1 .5-.5H13a.5.5 0 0 1 0 1H6.5A.5.5 0 0 1 6 8zm-2.5 6a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 1 0v11a.5.5 0 0 1-.5.5z\"/></svg>"
+    } else {
+        sortpanel.style = "display: block;";
+        hider.innerHTML =
+            "<svg class=\"bi bi-arrow-bar-left\" width=\"2em\" height=\"2em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">"+
+                "<path fill-rule=\"evenodd\" d=\"M5.854 4.646a.5.5 0 0 0-.708 0l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L3.207 8l2.647-2.646a.5.5 0 0 0 0-.708z\" />"+
+                "<path fill-rule=\"evenodd\" d=\"M10 8a.5.5 0 0 0-.5-.5H3a.5.5 0 0 0 0 1h6.5A.5.5 0 0 0 10 8zm2.5 6a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 1 0v11a.5.5 0 0 1-.5.5z\" /></svg>";
+
+    };
 }
