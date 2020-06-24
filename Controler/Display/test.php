@@ -18,7 +18,6 @@ $data = $_POST['data'];
 $data = json_decode($data);
 
 
-
 ($data->docname ==""?$name="":$name=" AND nom like \"%".$data->docname."%\"");
 ((count($data->tags)>0)?$tags = " AND id_doc IN( SELECT id_doc FROM TAGS WHERE tags like\"%".implode("%",$data->tags)."%\"":$tags="");
 //Version 1 de ressource
@@ -29,7 +28,7 @@ $data = json_decode($data);
 ((count($data->typedoc)>0)?$typedoc =  " AND typedoc in (\"".implode("\",\"",$data->typedoc)."\")":$typedoc="");
 ($data->TEFANF == true?$TEFANF="AND nom like %tefanf%":$$TEFANF="");
 ((count($data->niveau)>0)?$niveau = " AND nom like \"%-%".implode("%\" AND nom like \"%-%",$data->niveau)."%\"":$niveau="");
-($data->order ==""? $order="":$order = " ORDER BY".$data->order);
+($data->order ==""? $order="":$order = " ORDER BY ".$data->order);
 
 $query = 'SELECT * FROM DOCUMENT WHERE 1 ';
 $query = $query.$name.$typedoc.$niveau.$ressource.$tags.$order; //.$node
