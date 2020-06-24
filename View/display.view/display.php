@@ -118,11 +118,12 @@
             <hr>
             <label class="description" for="element_6">Option </label>
             <span>
-                <input id="element_6_1" name="element_6_1" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
+                <input  id="element_6_1" name="element_6_1" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
                 <label class="choice" for="element_6_1">TEF/ANF</label>
             </span>
             <hr>
-            <input type="reset" value="Vider le formulaire">
+            <input style="margin: 1%;width: 98%;" type="reset" value="Vider le formulaire">
+            <input style="margin: 1%;width: 98%;" onclick="search(this)" value="Chercher">
         </form>
     </div>
 
