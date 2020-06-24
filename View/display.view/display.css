@@ -20,11 +20,8 @@ a.button1 {
 }
 
 a.button1:hover {
-    color: #b796ac;
-	background-color: #FFFFFF;
-	font-weight: bold;
+	border: 2px double rgba(28,110,164,0.94);
 }
-
 @media all and (max-width:30em) {
     a.button1 {
         display: block;
