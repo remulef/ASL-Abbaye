@@ -123,7 +123,7 @@
             </span>
             <hr>
             <input style="margin: 1%;width: 98%;" type="reset" value="Vider le formulaire">
-            <button style="margin: 1%;width: 98%;"  onclick="search(this)" value="Chercher"></button>
+            <button style="margin: 1%;width: 98%;"  onclick="search(this)" >Chercher</button>
         </form>
     </div>
 
