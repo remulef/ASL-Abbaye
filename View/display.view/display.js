@@ -315,11 +315,10 @@ function displaysearch(json) {
         var h3 = document.createElement("h3");
         h3.innerHTML = current.nom;
 
-
-        li.appendChild(a);
-        li.appendChild(p);
         li.appendChild(img);
         li.appendChild(h3);
+        li.appendChild(p);
+        li.appendChild(a);
 
         uldoc.appendChild(li);
 
