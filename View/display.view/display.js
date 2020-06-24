@@ -48,9 +48,35 @@ function load(json) {
             var p = document.createElement("p");
             p.class = "price";
             p.innerHTML = current.typedoc;
-            //image
-            var img = document.createElement("img");
-            img.setAttribute("src", "http://placehold.it/200x120");
+            /*image
+        var img = document.createElement("img");
+        img.setAttribute("src", "http://placehold.it/200x120");
+        */
+            var lien = "/" + current.chemin;
+            var type = current.typedoc;
+            type = type.toLowerCase();
+            type = type.trim();
+
+
+            if (type === "png" || type === "jpeg" || type === "jpg" || type === "gif") {
+                var img = document.createElement("img");
+                img.setAttribute("src", lien);
+                img.setAttribute("width", "200");
+                img.setAttribute("height", "120");
+
+            } else if (type === "doc" || type === "docx" || type === "mp3" || type === "mpg" ||
+                type === "odp" || type === "odt" || type === "osd" || type === "pdf" ||
+                type === "ppt" || type === "pptx" || type === "rtf" || type === "txt" || type === "wma") {
+                var img = document.createElement("img");
+                var ressource = "../../data/icon/file/" + type + ".svg";
+                img.setAttribute("src", ressource);
+                img.setAttribute("width", "200");
+                img.setAttribute("height", "120");
+            }
+            else {
+                var img = document.createElement("img");
+                img.setAttribute("src", "http://placehold.it/200x120");
+            }
             //h3
             var titre = document.createElement("p");
             titre.innerHTML = "<strong>" + current.nom + "</strong>";
@@ -262,7 +288,7 @@ function recuptype() {
         type.push("rtf");
         type.push("odp");
         type.push("ods");
-        
+
     }
     if (inputs[12].checked === true) {
         type.push("pptx");
@@ -337,12 +363,18 @@ function displaysearch(json) {
             img.setAttribute("width", "200");
             img.setAttribute("height", "120");
 
-        } else {
+        } else if (type === "doc" || type === "docx" || type === "mp3" || type === "mpg" ||
+            type === "odp" || type === "odt" || type === "osd" || type === "pdf" ||
+            type === "ppt" || type === "pptx" || type === "rtf" || type === "txt" || type === "wma") {
             var img = document.createElement("img");
             var ressource = "../../data/icon/file/" + type + ".svg";
             img.setAttribute("src", ressource);
             img.setAttribute("width", "200");
             img.setAttribute("height", "120");
+        }
+        else {
+            var img = document.createElement("img");
+            img.setAttribute("src", "http://placehold.it/200x120");
         }
 
         //h3
