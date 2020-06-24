@@ -24,12 +24,12 @@ $data = json_decode($data);
 //Version 1 de ressource
 //((count($data->ressource)>0)?$ressource = " AND nom like \"%".implode("%",$data->ressource)."%\"":$ressource="");
 //Version 2 de ressource 
-((count($data->ressource)>0)?$ressource = " AND nom like \"%".implode("%\" AND nom like \"%",$data->ressource)."%\"":$ressource="");
+((count($data->ressource)>0)?$ressource = "  AND nom like \"%-%".implode("%\" AND nom like \"%-%",$data->ressource)."%\"":$ressource="");
 
 ((count($data->typedoc)>0)?$typedoc =  " AND typedoc in (\"".implode("\",\"",$data->typedoc)."\")":$typedoc="");
 ($data->TEFANF == true?$TEFANF="AND nom like %tefanf%":$$TEFANF="");
-((count($data->niveau)>0)?$niveau = " AND nom like \"%".implode("%",$data->niveau)."%\"":$niveau="");
-($data->order ==""? $order="":$order = "ORDER BY".$data->order);
+((count($data->niveau)>0)?$niveau = " AND nom like \"%".implode("%\" AND nom like \"%",$data->niveau)."%\"":$niveau="");
+($data->order ==""? $order="":$order = " ORDER BY".$data->order);
 
 $query = 'SELECT * FROM DOCUMENT WHERE 1 ';
 $query = $query.$name.$typedoc.$niveau.$ressource.$tags.$order; //.$node
