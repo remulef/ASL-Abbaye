@@ -42,6 +42,7 @@ function load(json) {
             var li = document.createElement("li");
             var a = document.createElement("a");
             a.setAttribute("href", "http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=" + current.id_doc);
+            a.setAttribute("target","_blank");
             a.innerHTML = current.nom;
             li.appendChild(a);
             uldoc.appendChild(li);
@@ -294,6 +295,7 @@ function displaysearch(json) {
         var li = document.createElement("li");
         var a = document.createElement("a");
         a.setAttribute("href", "http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=" + current.id_doc);
+        a.setAttribute("target","_blank");
         a.innerHTML = current.nom;
         li.appendChild(a);
         uldoc.appendChild(li);
