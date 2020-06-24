@@ -36,6 +36,7 @@ function load(json) {
             a.setAttribute("class", "button3");
             a.innerHTML = current.name;
 
+            li.appendChild(a);
             uldoss.appendChild(li);
 
         } else {
