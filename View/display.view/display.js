@@ -173,7 +173,7 @@ function search(elem) {
         ajax_post_request(log, url, true, encodeURIComponent(param));
         */
        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-search.php";
-        ajax_post_request(displaysearch, url, true, encodeURIComponent(param));
+        ajax_post_request(displaysearch, url, false, encodeURIComponent(param));
         
 
     } catch (error) {
