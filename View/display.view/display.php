@@ -26,7 +26,7 @@
         <ul id="parcours">
         </ul>
         <div id="listdoss">
-            <H3>Listes des dossiers </H3>
+            <H3>Listes des thématiques </H3>
             <ul id="dossbar">
             </ul>
         </div>
