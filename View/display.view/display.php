@@ -63,7 +63,7 @@
             </span>
 
             <hr>
-            <label class="description" for="element_5">Type de document </label>
+            <label class="description" for="element_5">Format de document </label>
             <span>
                 <input id="element_5_1" oninput="search(this)" name="element_5_1" class="element checkbox" type="checkbox" value="1" />
                 <label class="choice" for="element_5_1">PDF</label>
@@ -78,7 +78,7 @@
                 <input id="element_5_6" oninput="search(this)" name="element_5_6" class="element checkbox" type="checkbox" value="1" />
                 <label class="choice" for="element_5_6">Diaporama (pptx,..)</label>
                 <hr>
-                <label class="description" for="element_1">Recherge par etiquette</label>
+                <label class="description" for="element_1">Recherche par etiquette</label>
                 <div>
                     <input  list="format" id="element_1" name="element_1" onblur="search(this)" class="element text large" type="text" maxlength="255" value="" placeholder="&#128269; exemple : verbe+present" />
                     <a data-tooltip="Séparez les étiquettes par des signes + si il y en a plusieurs" style="padding: 0;border: none;background: none; margin: 49%;">
