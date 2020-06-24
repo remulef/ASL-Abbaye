@@ -156,7 +156,7 @@ function search(elem) {
 
     var param = ({
         docname: inputs[0].value,
-        typeressource: recupressource(),
+        ressource: recupressource(),
         typedoc: recuptype(),
         tag: inputs[11].value.split("+"),
         niveau: recupniveau(),

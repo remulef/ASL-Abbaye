@@ -19,9 +19,7 @@ $data = json_decode($data);
 
 
 
-($data->format ==""?$search_format="":$search_format=" AND typedoc like \"%".$data->format."%\"");
-($data->docname ==""?$search_name="":$search_name=" AND nom like \"%".$data->docname."%\"");
-($data->docname ==""?$search_name="":$search_name=" AND nom like \"%".$data->docname."%\"");
+($data->docname ==""?$name="":$name=" AND nom like \"%".$data->docname."%\"");
 ((count($data->tags)>0)?$tags = " AND id_doc IN( SELECT id_doc FROM TAGS WHERE tags like\"%".implode("%",$data->tags)."%\"":$tags="");
 ((count($data->ressource)>0)?$niveau = " AND nom like \"%".implode("%",$data->ressource)."%\"":$ressource="");
 ((count($data->typedoc)>0)?$typedoc =  " AND typedoc in (\"".implode("\",\"",$data->typedoc)."\")":$typedoc="");
@@ -30,7 +28,7 @@ $data = json_decode($data);
 ($data->order ==""? $order="":$order = "ORDER BY".$data->order);
 
 $query = 'SELECT * FROM DOCUMENT WHERE 1 ';
-$query = $query.$search_format.$search_name.$typedoc.$niveau.$order; //.$node
+$query = $query.$name.$typedoc.$niveau.$ressource.$order; //.$node
 echo $query;
 
 /*
