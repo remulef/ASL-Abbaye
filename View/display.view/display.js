@@ -331,6 +331,7 @@ function displaysearch(json) {
     })
     history.push(pos);
     updateparcours();
+    document.getElementById("dossbar").innerHTML="";
     //============
     document.getElementById("docbar").innerHTML = "";
     var query = document.getElementById("element_1").value;
