@@ -97,6 +97,7 @@ function load(json) {
 }
 
 function changedoc(id, title, forward, pos) {
+    document.getElementsByTagName("h3")[0].innerHTML="Liste des thématiques";
     clearul();
     //si on descend
     if (forward) {
