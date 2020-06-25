@@ -323,7 +323,7 @@ function recupniveau() {
 
 
 function displaysearch(json) {
-    //Réinitialise la barre des documents
+    //Réinitialise la barre des documents et la liste des documents
     history = [];
     var pos = ({
         id_node: 0,
@@ -332,6 +332,7 @@ function displaysearch(json) {
     history.push(pos);
     updateparcours();
     document.getElementById("dossbar").innerHTML="";
+    document.getElementsByTagName("h3")[0].innerHTML="";
     //============
     document.getElementById("docbar").innerHTML = "";
     var query = document.getElementById("element_1").value;
