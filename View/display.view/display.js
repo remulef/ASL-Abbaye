@@ -323,6 +323,15 @@ function recupniveau() {
 
 
 function displaysearch(json) {
+    //Réinitialise la barre des documents
+    history = [];
+    var pos = ({
+        id_node: 0,
+        name: "Ressource Pedagogique",
+    })
+    history.push(pos);
+    updateparcours();
+    //============
     document.getElementById("docbar").innerHTML = "";
     var query = document.getElementById("element_1").value;
     query = query.replace(/</g, "&lt;").replace(/>/g, "&gt;");
