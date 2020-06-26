@@ -34,6 +34,7 @@ $pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8',
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Testeur 1');
+$pdf->SetSubject('Teste');
 $pdf->SetTitle($_POST["titre"]);
 
 // set default header data
