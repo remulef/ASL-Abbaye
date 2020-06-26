@@ -13,8 +13,10 @@
     <form action="test.php" method="post" enctype="multipart/form-data">
         <label for="">Titre du compte rendu :</label>
         <input type="text" name="title" value="Wesh le g" required="required"  /><br>
+        <!--
         <label for="">date du compte rendu :</label>
         <input type="date" name="date" value="" required="required"  /><br>
+        -->
         <label for="">Description :</label>
         <textarea name="editeur" id="editeur" value=" test" rows="8" cols="80"></textarea>
         <label for="">Fichier lié au compte rendu</label>
