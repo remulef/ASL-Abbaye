@@ -11,16 +11,19 @@
 <body>
     <h1>Redaction de compte rendu </h1>
     <form action="test.php" method="post" enctype="multipart/form-data">
-        <label for="">Titre du compte rendu :</label>
-        <input type="text" name="title" value="Wesh le g" required="required"  /><br>
-        <!--
-        <label for="">date du compte rendu :</label>
-        <input type="date" name="date" value="" required="required"  /><br>
-        -->
-        <label for="">Description :</label>
+        <label for="">Titre du compte-rendu :</label>
+        <input type="text" name="title" value="" required="required" /><br>
+        <label for="">Nom de l'auteur:</label>
+        <input type="text" name="title" value="" required="required" /><br>
+        <label for="">date du compte-rendu :</label>
+        <input type="date" name="date" value="" required="required" /><br>
+        <label for="">Saisit du compt-rendu  :</label>
         <textarea name="editeur" id="editeur" value=" test" rows="8" cols="80"></textarea>
         <label for="">Fichier lié au compte rendu</label>
-        <input type="file" name="files[]" multiple="multiple" name="submit" accept="image/*">
+        <!-- MAX_FILE_SIZE doit précéder le champ input de type file -->
+        <p>Format possible : image/audio/.doc/.docx/.pdf/.odt/.odp/.ppt/.pptx</p>
+        <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+        <input type="file" name="files[]" multiple="multiple" name="submit" accept="image/*,audio/*,.doc,.docx,.pdf,.odt,.odp,.ppt,.pptx">
         <p>
             <input type="submit" value="Ajouter" />
             <input type="reset" value="Annuler" />
