@@ -22,7 +22,7 @@
         <label for="">Fichier lié au compte rendu</label>
         <!-- MAX_FILE_SIZE doit précéder le champ input de type file -->
         <p>Format possible : image/audio/.doc/.docx/.pdf/.odt/.odp/.ppt/.pptx</p>
-        <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+        <input type="hidden" name="MAX_FILE_SIZE" value="10000" />
         <input type="file" name="files[]" multiple="multiple" name="submit" accept="image/*,audio/*,.doc,.docx,.pdf,.odt,.odp,.ppt,.pptx">
         <p>
             <input type="submit" value="Ajouter" />
