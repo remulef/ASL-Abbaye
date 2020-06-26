@@ -12,11 +12,11 @@
     <h1>Redaction de compte rendu </h1>
     <form action="test.php" method="post" enctype="multipart/form-data">
         <label for="">Titre du compte rendu :</label>
-        <input type="text" name="title" value="" required="required"  /><br>
+        <input type="text" name="title" value="Wesh le g" required="required"  /><br>
         <label for="">date du compte rendu :</label>
-        <input type="date" name="date" value="" required="required"  /><br>
+        <input type="date" name="date" value=" test" required="required"  /><br>
         <label for="">Description :</label>
-        <textarea name="editeur" id="editeur" rows="8" cols="80"></textarea>
+        <textarea name="editeur" id="editeur" value="" rows="8" cols="80"></textarea>
         <label for="">Fichier lié au compte rendu</label>
         <input type="file" name="files[]" multiple="multiple" name="submit" accept="image/*">
         <p>
