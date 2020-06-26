@@ -1,5 +1,5 @@
 <?php
-echo $_POST["editeur"];
+//echo $_POST["editeur"];
 
 
 // Include the main TCPDF library (search for installation path).
