@@ -1,35 +1,11 @@
-<?php ini_set('display_errors',1);
-//echo $_POST["editeur"];
+<?php
 
 
 // Include the main TCPDF library (search for installation path).
-require_once('TCPDF-master/tcpdf.php');
-class MYPDF extends TCPDF {
-
-    //Page header
-    public function Header() {
-        // Logo
-        $image_file = K_PATH_IMAGES.'logoasl.jpg';
-        $this->Image($image_file, 10, 10, 15, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false);
-        // Set font
-        $this->SetFont('helvetica', 'B', 20);
-        // Title
-        $this->Cell(0, 15, $_POST["titre"], 0, false, 'C', 0, '', 0, false, 'M', 'M');
-    }
-
-    // Page footer
-    public function Footer() {
-        // Position at 15 mm from bottom
-        $this->SetY(-15);
-        // Set font
-        $this->SetFont('helvetica', 'I', 8);
-        // Page number
-        $this->Cell(0, 10, 'Page '.$this->getAliasNumPage().'/'.$this->getAliasNbPages(), 0, false, 'C', 0, '', 0, false, 'T', 'M');
-    }
-}
+require_once('TCPDF-master/exemple/tcpdf_include.php');
 
 // create new PDF document
-$pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
@@ -37,7 +13,7 @@ $pdf->SetAuthor('Testeur 1');
 $pdf->SetTitle($_POST["titre"]);
 
 // set default header data
-$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 006', PDF_HEADER_STRING);
+$pdf->SetHeaderData('logoasl.jpg', PDF_HEADER_LOGO_WIDTH,$_POST["titre"], $_POST["titre"]);
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
@@ -63,10 +39,17 @@ $pdf->AddPage();
 $html = $_POST["editeur"];
  
 $pdf->writeHTML($html, true, false, true, false, '');
+// add a page
+$pdf->AddPage();
+
+$html = '<h1>Hey</h1>';
+// output the HTML content
+$pdf->writeHTML($html, true, false, true, false, '');
+
 // reset pointer to the last page
 $pdf->lastPage();
 //Close and output PDF document
-$pdf->Output('RES.pdf', 'I');
+$pdf->Output('example_006.pdf', 'I');
 
 
 ?>
