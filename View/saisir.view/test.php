@@ -13,7 +13,7 @@ $pdf->SetAuthor('Testeur 1');
 $pdf->SetTitle($_POST["title"]);
 
 // set default header data
-$pdf->SetHeaderData('logoasl.jpg','0',$_POST["title"], $_POST["title"]);
+$pdf->SetHeaderData('logoasl.jpg','10',$_POST["title"], $_POST["title"]);
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
