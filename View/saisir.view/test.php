@@ -10,10 +10,10 @@ $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8',
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Testeur 1');
-$pdf->SetTitle($_POST["titre"]);
+$pdf->SetTitle($_POST["title"]);
 
 // set default header data
-$pdf->SetHeaderData('logoasl.jpg', PDF_HEADER_LOGO_WIDTH,$_POST["titre"], $_POST["titre"]);
+$pdf->SetHeaderData('logoasl.jpg','30',$_POST["title"], $_POST["title"]);
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
@@ -49,7 +49,7 @@ $pdf->writeHTML($html, true, false, true, false, '');
 // reset pointer to the last page
 $pdf->lastPage();
 //Close and output PDF document
-$pdf->Output('example_006.pdf', 'I');
+$pdf->Output($_POST['title'], 'I');
 
 
 ?>
