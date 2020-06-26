@@ -53,6 +53,7 @@ $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 */
 var_export($_FILES["fileToUpload"]);
+echo PHP_EOL;
 // Vérifier si le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Vérifie si le fichier a été uploadé sans erreur.
@@ -76,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (file_exists("upload/" . $_FILES["fileToUpload"]["name"])) {
                 echo $_FILES["fileToUpload"]["name"] . " existe déjà.";
             } else {
-                move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], ".".$_FILES["fileToUpload"]["name"]);
+                echo move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], ".".$_FILES["fileToUpload"]["name"]).PHP_EOL;
                 echo "Votre fichier a été téléchargé avec succès.";
             }
         } else {
