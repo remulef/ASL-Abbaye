@@ -9,10 +9,10 @@ $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8',
 
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
-$pdf->SetAuthor($auteur);
+$pdf->SetAuthor($_POST["auteur"]);
 $pdf->SetTitle($_POST["titre"]);
 
-$string = "Publié par ".$POST["auteur"]." le ".$_POST["date"];
+$string = "Publié par ".$_POST["auteur"]." le ".$_POST["date"];
 // set default header data
 $pdf->SetHeaderData('logoasl.jpg','50',$_POST["titre"], $string);
 
