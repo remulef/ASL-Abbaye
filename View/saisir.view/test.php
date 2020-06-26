@@ -12,7 +12,7 @@ $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor($auteur);
 $pdf->SetTitle($_POST["titre"]);
 
-$string = "Publié par".$POST["auteur"]."le ".$_POST["date"];
+$string = "Publié par ".$POST["auteur"]."le ".$_POST["date"];
 // set default header data
 $pdf->SetHeaderData('logoasl.jpg','50',$_POST["titre"], $string);
 
