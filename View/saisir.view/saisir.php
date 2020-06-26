@@ -14,9 +14,9 @@
         <label for="">Titre du compte rendu :</label>
         <input type="text" name="title" value="Wesh le g" required="required"  /><br>
         <label for="">date du compte rendu :</label>
-        <input type="date" name="date" value=" test" required="required"  /><br>
+        <input type="date" name="date" value="" required="required"  /><br>
         <label for="">Description :</label>
-        <textarea name="editeur" id="editeur" value="" rows="8" cols="80"></textarea>
+        <textarea name="editeur" id="editeur" value=" test" rows="8" cols="80"></textarea>
         <label for="">Fichier lié au compte rendu</label>
         <input type="file" name="files[]" multiple="multiple" name="submit" accept="image/*">
         <p>
