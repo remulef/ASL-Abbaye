@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (file_exists("upload/" . $_FILES["fileToUpload"]["name"])) {
                 echo $_FILES["fileToUpload"]["name"] . " existe déjà.";
             } else {
-                move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], ".a");
+                move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], ".");
                 echo "Votre fichier a été téléchargé avec succès.";
             }
         } else {
