@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (file_exists("upload/" . $_FILES["fileToUpload"]["name"])) {
                 echo $_FILES["fileToUpload"]["name"] . " existe déjà.";
             } else {
-                move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "uploads");
+                move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "/uploads");
                 echo "Votre fichier a été téléchargé avec succès.";
             }
         } else {
@@ -87,3 +87,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+
+// Usage: uploadfile($_FILE['file']['name'],'temp/',$_FILE['file']['tmp_name'])
+function uploadfile($origin, $dest, $tmp_name)
+{
+  $origin = strtolower(basename($origin));
+  $fulldest = $dest.$origin;
+  $filename = $origin;
+  for ($i=1; file_exists($fulldest); $i++)
+  {
+    $fileext = (strpos($origin,'.')===false?'':'.'.substr(strrchr($origin, "."), 1));
+    $filename = substr($origin, 0, strlen($origin)-strlen($fileext)).'['.$i.']'.$fileext;
+    $fulldest = $dest.$newfilename;
+  }
+ 
+  if (move_uploaded_file($tmp_name, $fulldest))
+    return $filename;
+  return false;
+}
+?>
