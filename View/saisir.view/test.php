@@ -47,7 +47,6 @@ $pdf->Output($_POST['title'], 'F');
 
 
 */
-var_export($_FILES["fileToUpload"]);
 
 function reArrayFiles(&$file_post)
 {
@@ -70,6 +69,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($_FILES['fileToUpload']) {
         $file_ary = reArrayFiles($_FILES['fileToUpload']);
+        var_export($file_ary);
+
     
         $allowed = array('gif', 'jpg', 'jpe', 'jpeg', 'png', 'pdf', 'docx', 'doc', 'ppx', 'pptx', 'mp3', 'aac', 'txt', 'odt', 'mp4', 'odt');
     
