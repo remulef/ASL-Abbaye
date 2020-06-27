@@ -18,12 +18,12 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
 
     // set document information
     $pdf->SetCreator(PDF_CREATOR);
-    $pdf->SetAuthor($_POST["auteur"]);
-    $pdf->SetTitle($_POST["titre"]);
+    $pdf->SetAuthor(addslashes($_POST["auteur"]));
+    $pdf->SetTitle(addslashes($_POST["titre"]));
 
-    $string = "Publié par " . $_POST["auteur"] . " le " . $_POST["date"];
+    $string = "Publié par " . addslashes($_POST["auteur"]) . " le " . addslashes($_POST["date"]);
     // set default header data
-    $pdf->SetHeaderData('logoasl.jpg', '50', $_POST["titre"], $string);
+    $pdf->SetHeaderData('logoasl.jpg', '50',addslashes($_POST["titre"]), $string);
 
     // set header and footer fonts
     $pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
@@ -46,24 +46,14 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
     // add a page
     $pdf->AddPage();
 
-    //$html = $_POST["editeur"];
-    $html = "
-<h1>TEST</h1>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium neque asperiores hic dolorum itaque repudiandae sed nostrum. Vitae ratione fugiat amet voluptatibus? Perferendis nisi corporis consectetur dolore nesciunt necessitatibus amet!</p>
-<h2>list</h2>
-<ul>
-<li>elem 1</li>
-<li>elem 2</li>
-</ul>
-<a href=\"www.les-asl-abbaye.ovh\">lien vers une page </a>";
-
+    $html = $_POST["editeur"];
     $pdf->writeHTML($html, true, false, true, false, '');
     // reset pointer to the last page
     $pdf->lastPage();
     //Close and output PDF document
     //$pdf->Output(__DIR__."/tmp-CR/".$_POST["titre"].".pdf", 'F');
     $txt = $pdf->Output($_POST["titre"] . ".pdf", "S");
-    $fp = fopen("../../../tmp-CR/" . $_POST["titre"] . ".pdf", 'w');
+    $fp = fopen("../../../tmp-CR/" . addslashes($_POST["titre"]) . ".pdf", 'w');
     fwrite($fp, $txt);
     fclose($fp);
 
