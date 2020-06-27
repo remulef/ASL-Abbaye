@@ -54,3 +54,12 @@ auteur varchar(40),
 primary key(id_comment,id_doc),
 FOREIGN KEY(id_doc) REFERENCES DOCUMENT(id_doc)
 );
+
+CREATE TABLE TAGS(
+id_tags int auto_increment  ,
+id_doc int ,
+commentaire varchar(30) NOT NULL,
+primary key(id_tags,id_doc),
+FOREIGN KEY(id_doc) REFERENCES DOCUMENT(id_doc)
+);
+

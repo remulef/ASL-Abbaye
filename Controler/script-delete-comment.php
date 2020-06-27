@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: *');
 
 
 
@@ -9,13 +10,14 @@ if (true) {
 
 
 
-    $database = 'localhost';
-    $user = 'root';
-    $password = 'OUI';
-    try{
-      $db = new PDO("mysql:host=127.0.0.1:3308;dbname=asl", $user);
+    //On ouvre la base de donnée
+    $database = 'gsjrnmiasl.mysql.db';
+    $user = 'gsjrnmiasl';
+    $password = 'MJCAbbaye38';
+    try {
+        $db = new PDO("mysql:host=gsjrnmiasl.mysql.db;dbname=gsjrnmiasl", $user,$password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        //echo "Connected successfully"; 
+        //echo "Connected successfully";
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
     }
@@ -25,23 +27,12 @@ if (true) {
     $id_doc = $data->id_doc;
     $id_com = $data->id_com;
 
-    // File redirect var dump
-    ob_start();
-    var_dump($GLOBALS['id_com']);
-    $data = ob_get_clean();
-    $fp = fopen("textfile.txt", "w");
-    fwrite($fp, $data);
-    fclose($fp);
-   
     foreach ($id_com as $key => $value) {
         $sth = $db->prepare('DELETE  FROM COMMENTAIRE WHERE id_comment = ? AND id_doc = ?');
         $sth->bindParam(1, $value);
         $sth->bindParam(2, $id_doc);
-         $sth->execute();
-       
-        
+        $sth->execute();
     }
-
 
     $db = null;
 }

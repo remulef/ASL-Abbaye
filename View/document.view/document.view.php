@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="document.view.css">
-    <title>Document</title>
+    <title>Document ASL Abbaye</title>
 </head>
 
 <header>
@@ -18,19 +18,58 @@
             <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
             <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z" clip-rule="evenodd" />
         </svg></a>
+
+
+    <FORM>
+        <h3>Site en fonction des roles</h3>
+        <SELECT NAME="ListeUrl" SIZE=1 onChange="ChangeUrl(this.form)">
+            <OPTION SELECTED VALUE="">-Type d'utilisateur-</option>
+            <OPTION VALUE="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"] ?>&mode=admin">-Administrateur-</option>
+            <OPTION VALUE="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"] ?>&mode=visit">-Visiteur-</option>
+        </SELECT>
+    </FORM>
+
+    <div>
+        <h3>Changer de document</h3>
+        <a href="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"] - 1 ?>" class="previous round">
+        <svg class="bi bi-arrow-left-circle" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <path fill-rule="evenodd" d="M8.354 11.354a.5.5 0 0 0 0-.708L5.707 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z" />
+                <path fill-rule="evenodd" d="M11.5 8a.5.5 0 0 0-.5-.5H6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5z" />
+            </svg></a>
+        <a href="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"] + 1 ?>" class="next round">
+        <svg class="bi bi-arrow-right-circle" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <path fill-rule="evenodd" d="M7.646 11.354a.5.5 0 0 1 0-.708L10.293 8 7.646 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0z" />
+                <path fill-rule="evenodd" d="M4.5 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z" />
+            </svg></a>
+
+        <a href="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo random_int(1, 1000) ?>" class="next round">
+            <svg class="bi bi-shuffle" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12.646 1.146a.5.5 0 0 1 .708 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 0 1-.708-.708L14.793 4l-2.147-2.146a.5.5 0 0 1 0-.708zm0 8a.5.5 0 0 1 .708 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 0 1-.708-.708L14.793 12l-2.147-2.146a.5.5 0 0 1 0-.708z" />
+                <path fill-rule="evenodd" d="M0 4a.5.5 0 0 1 .5-.5h2c3.053 0 4.564 2.258 5.856 4.226l.08.123c.636.97 1.224 1.865 1.932 2.539.718.682 1.538 1.112 2.632 1.112h2a.5.5 0 0 1 0 1h-2c-1.406 0-2.461-.57-3.321-1.388-.795-.755-1.441-1.742-2.055-2.679l-.105-.159C6.186 6.242 4.947 4.5 2.5 4.5h-2A.5.5 0 0 1 0 4z" />
+                <path fill-rule="evenodd" d="M0 12a.5.5 0 0 0 .5.5h2c3.053 0 4.564-2.258 5.856-4.226l.08-.123c.636-.97 1.224-1.865 1.932-2.539C11.086 4.93 11.906 4.5 13 4.5h2a.5.5 0 0 0 0-1h-2c-1.406 0-2.461.57-3.321 1.388-.795.755-1.441 1.742-2.055 2.679l-.105.159C6.186 9.758 4.947 11.5 2.5 11.5h-2a.5.5 0 0 0-.5.5z" />
+            </svg>
+        </a>
+    </div>
+
+
+
 </header>
 
 
 
 
 <?php
-if (!empty($_POST['id_doc'])) {
-    $id_doc = $_POST['id_doc'];
+if (empty($_GET['id_doc'])) {
+    $id_doc = random_int(1, 1000);
     echo "<body onload=\"init(" . $id_doc . ")\">";
 } else {
-    echo "<body onload=\"init(11)\">";
+    $id_doc = $_GET['id_doc'];
+    echo "<body onload=\"init(" . $id_doc . ")\">";
 }
 ?>
+
 <main>
 
     <div id="Content">
@@ -46,13 +85,14 @@ if (!empty($_POST['id_doc'])) {
             </div>
             <div id="icon">
 
+                <?php if ($_GET["mode"] == "admin") echo '
                 <div class="tooltip">
-                    <button type="button" id="supprimer" onclick="supprimer()">
+                    <button type="button" id="supprimer" onclick="supprimer()" disabled>
                         <svg class="bi bi-trash" width="1.33em" height="1.33em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z" />
                             <path fill-rule="evenodd" d="M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" clip-rule="evenodd" />
                         </svg>
-                        <span class="tooltiptext" id="myTooltip">Supprimer le document</span>
+                        <span class="tooltiptext">Supprimer le document</span>
                     </button>
                 </div>
                 <div class="tooltip">
@@ -63,7 +103,8 @@ if (!empty($_POST['id_doc'])) {
                         </svg>
                     </button>
                     <span class="tooltiptext">Modifier le document</span>
-                </div>
+                </div>' ?>
+
                 <div class="tooltip">
                     <a id="telecharger" href="">
                         <button type="button">
@@ -99,18 +140,46 @@ if (!empty($_POST['id_doc'])) {
 
             <p></p>
 
+
         </div>
+
+
+        <div id="divtag">
+            <?php if ($_GET["mode"] == "admin") echo ' <div class="form__group field">
+                <input type="input" class="form__field" placeholder="Etiquette" name="tag" id="inputtag" required />
+                <label for="tag" class="form__label">Ajouter Etiquette</label>
+            </div>
+            <a  class="button4" style="background-color:#9ed0e6" onclick=addtag()>Ajouter</a>' ?>
+
+
+
+            <h2>Etiquettes du document</h2>
+            <ul class="tags" id="tags">
+
+                <li> <a class="tag">Etiquette 1</a></li>
+                <li> <a class="tag">Etiquette 2</a></li>
+                <li> <a class="tag">Etiquette 3</a></li>
+
+            </ul>
+        </div>
+
+        <script src="test.js"></script>
+
+
+
+
+
     </div>
     <!-- Insipirée de https://codepen.io/leenalavanya/pen/YqGeoz et modifier pour convenir a nos besoin -->
     <div id="chat">
-        <div class="chat_header">Commentaire</div>
+        <div class="chat_header">Commentaires</div>
         <div id="chat_s"></div>
         <script type="text/javascript">
             var submitted = false;
         </script>
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){add()}"></iframe>
         <form id="ss-form" onsubmit="submitted=true" action="https://docs.google.com/forms/d/1-PRLoHTtgldV5cNTvmVyjf-rf1p1kLhzKGXn2i1XGhQ/formResponse" method="POST" target="hidden_iframe">
-            <input name="Nom" type="text" value="" id="entry_name" require placeholder="Votre nom">
+            <input name="Nom" type="text" value="" id="entry_name" placeholder="Votre nom">
             <input name="entry.1732478127" title="" class="ss-q-short" id="entry_comment" dir="auto" aria-label="Message  " type="text" value="" placeholder="Votre commentaire">
             <input name="draftResponse" type="hidden" value='[,,"-2195881827543510175"]&#10;'>
             <input name="pageHistory" type="hidden" value="0">
@@ -129,7 +198,6 @@ if (!empty($_POST['id_doc'])) {
 </main>
 
 <script src="document.view.js"></script>
-
 
 
 

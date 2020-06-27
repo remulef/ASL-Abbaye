@@ -1,15 +1,16 @@
-
 let id_doc;
 let lien;
 let commentaire_to_delete = [];
 let old_title;
 let old_description;
-function init(id_doc) {
+
+function init(id) {
+    id_doc = id;
     //document.getElementById("myInput").style.display = "none";
-    let url = "http://localhost/ASL-Abbaye/controler/script-document.php";
+    let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/script-document.php";
 
     try {
-        ajax_post_request(affiche, url, true, encodeURIComponent(id_doc));
+        ajax_post_request(affiche, url, true, encodeURIComponent(id));
 
     } catch (error) {
         error();
@@ -26,14 +27,16 @@ function error() {
 
 function affiche(json) {
     //alert("success");
-    //console.log(json);
+    console.log("le json");
+    console.log(json);
 
     let doc = JSON.parse(json);
-    id_doc = doc.id;
+    id_doc = doc.id_doc;
+    console.log(id_doc);
     let title = doc.nom;
-    let description = doc.descrip;
+    let description = doc.descri;
     let date = doc.datepublication;
-    lien = doc.lien;
+    lien = doc.chemin;
     lien = "/" + lien;
 
     let type = doc.typedoc;
@@ -144,17 +147,19 @@ function affiche(json) {
             break;
     }
 
-    console.log(date==null);
-    document.getElementById("telecharger").setAttribute("href", "http://localhost/" + lien);
+    document.getElementById("telecharger").setAttribute("href", "http://www.les-asl-abbaye.ovh" + lien);
     document.getElementById("titreh1").innerHTML = title;
-    document.getElementById("titre").innerHTML += "<h4>"+(date==null?"":date)+"</h4>";
+
+    var today = new Date(date);
+    var yyyy = today.getFullYear();
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var dd = String(today.getDate()).padStart(2, '0');
+    today = dd + '/' + mm + '/' + yyyy;
+
+    document.getElementById("titre").innerHTML += "<h4>" + (date == null ? "" : today) + "</h4>";
 
     document.getElementById("description").getElementsByTagName("p")[0].innerHTML += description;
     recup_all_comment();
-
-
-
-
 
 }
 
@@ -163,11 +168,10 @@ function supprimer() {
     if (confirm("Voulez vous vraiment supprimer ce document ")) {
 
         console.log(id_doc);
-        id_doc = 1816;
-        let url = "http://localhost/ASL-Abbaye/controler/script-delete-sql.php?";
+        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/script-delete-sql.php?";
 
         try {
-            ajax_post_request(null, url, true, encodeURIComponent(id_doc));
+            //ajax_post_request(null, url, true, encodeURIComponent(id_doc));
 
         } catch (error) {
             alert("La suppresion n'a pas aboutie");
@@ -180,7 +184,7 @@ function ajax_post_request(callback, url, async, data) {
     // Instanciation d'un objet XHR
     var xhr = new XMLHttpRequest();
 
-    xhr.onreadystatechange = function () {
+    xhr.onreadystatechange = function() {
         if (callback && xhr.readyState == 4 && xhr.status == 200) {
             callback(xhr.responseText);
         }
@@ -201,6 +205,8 @@ function ajax_post_request(callback, url, async, data) {
 }
 
 function modifier() {
+    affiche_button_del_tag();
+    document.getElementById("ss-submit").disabled = true;
     add_button_delete_all();
     addicondelete();
     //ajouter des infos bull avec des span https://www.alsacreations.com/astuce/lire/1-comment-personnaliser-une-infobulle.html
@@ -208,7 +214,7 @@ function modifier() {
     var div_description = document.getElementById("description");
     var description = div_description.getElementsByTagName("p")[0].innerHTML;
     const regex = /<br>/gi;
-    description = description.replace(regex,'\n');
+    description = description.replace(regex, '\n');
     var div_titre = document.getElementById("titre");
     var titre = document.getElementsByTagName("h1")[0].innerHTML;
 
@@ -218,6 +224,9 @@ function modifier() {
     input_description.setAttribute("id", "input_description");
     input_description.setAttribute("name", "nouvelle description ");
     input_description.setAttribute("rows", "4");
+    input_description.setAttribute("style", "background-color:white;")
+    input_description.setAttribute("placeholder", "Saisir description..");
+
     //input_description.setAttribute("cols","95");
     input_description.innerHTML = description;
 
@@ -229,6 +238,8 @@ function modifier() {
     input_title.setAttribute("spellcheck", "false");
     input_title.setAttribute("name", "nouveau titre ");
     input_title.setAttribute("rows", "1");
+    input_title.setAttribute("style", "background-color:white;");
+    input_title.setAttribute("placeholder", "Saisir titre..");
 
     input_title.innerHTML = titre;
 
@@ -240,10 +251,25 @@ function modifier() {
     old_title = titre;
     old_description = description;
 
+    var icon = document.getElementById("icon");
+    icon.innerHTML +=
+        '<div class="tooltip" id="-6">' +
+        '<button type="button" id="buttonmodif" onclick="valider()">' +
+        '<svg class="bi bi-check-square" width="1.33em" height="1.33em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">' +
+        '<path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />' +
+        '<path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z" />' +
+        '</svg>' +
+        '<span class="tooltiptext" id="myTooltip">Valider les modifications</span>' +
+        '</button>' +
+        '</div>';
+
 }
 
 
 function valider() {
+    document.getElementById("ss-submit").disabled = false;
+
+    remove_button_modif();
     removecondelete();
     remove_button_delete_all();
     delete_selected_comment();
@@ -254,7 +280,7 @@ function valider() {
     var title = document.getElementsByTagName("textarea")[0].value;
     var description = document.getElementsByTagName("textarea")[1].value;
     const regex = /\n/gi;
-    description = description.replace(regex,'<br>');  //On enleve le "\n" dans les titres
+    description = description.replace(regex, '<br>'); //On enleve le "\n" dans les titres
 
 
     div_titre.removeChild(div_titre.getElementsByTagName("textarea")[0]);
@@ -281,7 +307,7 @@ function valider() {
 
         try {
             uri = JSON.stringify(newdoc);
-            let url = "http://localhost/ASL-Abbaye/controler/script-modify.php?";
+            let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/script-modify.php?";
             ajax_post_request(null, url, false, encodeURIComponent(uri));
         } catch (error) {
             alert(error);
@@ -306,7 +332,7 @@ function myFunction() {
     */
 
     var copy = document.createElement("a");
-    copy.innerHTML = "http://localhost" + lien;
+    copy.innerHTML = "http://www.les-asl-abbaye.ovh" + window.location.href;
     var range = document.createRange();
     document.getElementById("telecharger").append(copy);
     range.selectNode(copy);
@@ -318,7 +344,7 @@ function myFunction() {
         var msg = successful ? 'successful' : 'unsuccessful';
         console.log('Copy email command was ' + msg);
         var tooltip = document.getElementById("myTooltip");
-        tooltip.innerHTML = "Copied: " + "http://localhost" + lien;;
+        tooltip.innerHTML = "Copied: " + "http://www.les-asl-abbaye.ovh" + window.location.href;
 
     } catch (error) {
         console.log('Oops, unable to copy');
@@ -339,7 +365,8 @@ function outFunc() {
 
 
 
-//Ajoute un commentaire 
+
+//Ajoute un commentaire
 function add() {
 
     var today = new Date();
@@ -373,16 +400,16 @@ function add() {
     })
     try {
         uri = JSON.stringify(comment);
-        let url = "http://localhost/ASL-Abbaye/controler/script-add-comment.php?";
+        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/script-add-comment.php?";
         ajax_post_request(recup_all_comment, url, false, encodeURIComponent(uri));
     } catch (error) {
         alert(error);
     }
 }
-//Fait un appel AJAX pour recuperer les commentaires 
+//Fait un appel AJAX pour recuperer les commentaires
 function recup_all_comment() {
     try {
-        let url = "http://localhost/ASL-Abbaye/controler/script-recup-comment.php?";
+        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/script-recup-comment.php?";
         ajax_post_request(display_all_comment, url, false, encodeURIComponent(id_doc));
     } catch (error) {
         alert(error);
@@ -395,7 +422,7 @@ function add_one_comment(commentaire, nom, date, id) {
     var yyyy = today.getFullYear();
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var dd = String(today.getDate()).padStart(2, '0');
-    today = yyyy + '/' + mm + '/' + dd;
+    today = dd + '/' + mm + '/' + yyyy;
 
 
     commentaire = commentaire.replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -475,7 +502,7 @@ function clear_comment() {
 
 
 function addicondelete() {
-    //on ajoute un petit bouton poubelle 
+    //on ajoute un petit bouton poubelle
     var i = 0;
     while (i < document.getElementsByClassName("chat_name").length) {
         current = document.getElementsByClassName("chat_name")[i];
@@ -504,6 +531,8 @@ function removecondelete() {
 
 }
 
+
+
 function selectcomment(id_com) {
     var x = document.getElementsByClassName("chat_name")[id_com];
     var parent = x.parentElement;
@@ -529,7 +558,7 @@ function delete_selected_comment() {
 
 
             console.log(json);
-            let url = "http://localhost/ASL-Abbaye/controler/script-delete-comment.php?";
+            let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/script-delete-comment.php?";
             ajax_post_request(recup_all_comment, url, false, encodeURIComponent(json));
         } catch (error) {
             alert(error);
@@ -560,7 +589,7 @@ function delete_all() {
 
 
         console.log(json);
-        let url = "http://localhost/ASL-Abbaye/controler/script-delete-comment.php?";
+        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/script-delete-comment.php?";
         ajax_post_request(recup_all_comment, url, false, encodeURIComponent(json));
     } catch (error) {
         alert(error);
@@ -581,12 +610,15 @@ function add_button_delete_all() {
 function remove_button_delete_all() {
     var elm = document.getElementById("deleteall");
     elm.parentNode.removeChild(elm);
+}
 
-
+function remove_button_modif() {
+    var elm = document.getElementById("buttonmodif");
+    elm.parentNode.removeChild(elm);
 }
 
 function diselect(i) {
-    //il faut aussi enlever de la liste 
+    //il faut aussi enlever de la liste
     current = document.getElementsByClassName("chat_name")[i];
     current.parentElement.style.backgroundColor = "white";
 
@@ -597,20 +629,84 @@ function diselect(i) {
     var x = document.getElementsByClassName("chat_name")[i];
     var parent = x.parentElement;
     var id = parent.id;
-    
-    commentaire_to_delete=arrayRemove(commentaire_to_delete,id);
+
+    commentaire_to_delete = arrayRemove(commentaire_to_delete, id);
 
 }
 
-function arrayRemove(arr, value)
- { 
+function arrayRemove(arr, value) {
     recopie = [];
     var i = 0;
-     while( i < arr.length){
-         if(arr[i]!=value){
+    while (i < arr.length) {
+        if (arr[i] != value) {
             recopie.push(arr[i]);
-         }
-         i++;
-     }
-     return recopie;
-} 
+        }
+        i++;
+    }
+    return recopie;
+}
+
+
+//TODO
+
+// Limiter le nombre de tags 
+//Ajouter des antiechappement aux tags 
+//Limiter le nombre de caractere dans un tag 
+
+//Un appel ajax pour ajouter a la db 
+//Une fonction pour pouvoir les supprimers 
+//un mode
+function addtag() {
+    var ul = document.getElementById("tags");
+
+    if (ul.getElementsByTagName("li").length < 20) {
+        var value = document.getElementById("inputtag").value;
+        if (value.length < 30) {
+            var tag = document.createElement("li");
+            var a = document.createElement("a");
+            a.className = "tag";
+            a.innerHTML = value;
+            tag.append(a);
+            document.getElementById("tags").append(tag);
+        } else alert("Les tags sont limités à 30 caracteres");
+    } else alert("Le nombre de tags est limité à 20");
+}
+
+
+function ChangeUrl(formulaire) {
+    if (formulaire.ListeUrl.selectedIndex != 0) {
+        var url;
+        url = formulaire.ListeUrl.options[formulaire.ListeUrl.selectedIndex].value;
+        window.location.href = url;
+    }
+}
+
+
+function affiche_button_del_tag() {
+    var ul = document.getElementById("tags");
+    var list = ul.getElementsByTagName("li");
+    var i = 0;
+    while (i < list.length) {
+        list[i].getElementsByTagName("a")[0].innerHTML += '<div class="tooltip"><button type="button" class="supprimer_comm" onclick="deletetag(' + i + ')">' +
+            '<svg class="bi bi-trash" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">' +
+            '<path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />' +
+            '<path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />' +
+            '</svg></button><span class="tooltiptext">Supprimer le tag</span></div>';
+        i++;
+    }
+}
+
+function supprimer_button_del_tag() {
+    var ul = document.getElementById("tags");
+    var list = ul.getElementsByTagName("li");
+    var i = 0;
+    while (i < list.length) {
+        var current = list[i];
+        current.removeChild(current.getElementsByClassName("tooltip")[0]);
+    }
+}
+
+function deletetag(i) {
+    var ul = document.getElementById("tags");
+    ul.removeChild(ul.getElementsByTagName("li")[i]);
+}

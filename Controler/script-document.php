@@ -1,57 +1,46 @@
 <?php
-
+header('Access-Control-Allow-Origin: *');
 
 
 //if(isset( $_POST['id_doc'])){
-if(true){
+if (true) {
 
-    //$id_doc = $_POST['data'];
-    //$id_doc = random_int(1,1813);
-    $id_doc = 238;
-    //il faudra checker l'identhitifcation 
-    
-   
+  $id_doc = $_POST['data'];
+  
+  //il faudra checker l'identhitifcation
 
-    //On ouvre la base de donnée
-    $database = 'localhost';
-    $user = 'root';
-    $password = 'OUI';
-    try{
-      $db = new PDO("mysql:host=127.0.0.1:3308;dbname=asl", $user);
+
+
+  //On ouvre la base de donnée
+  $database = 'gsjrnmiasl.mysql.db';
+  $user = 'gsjrnmiasl';
+  $password = 'MJCAbbaye38';
+  try {
+    $db = new PDO("mysql:host=gsjrnmiasl.mysql.db;dbname=gsjrnmiasl", $user, $password);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    //echo "Connected successfully"; 
-  }
-  catch (Exception $e)
-  {
+    //echo "Connected successfully";
+  } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
   }
 
 
-  $sth= $db->prepare('Select * FROM DOCUMENT WHERE id_doc = ?');
-  $sth->bindParam(1,$id_doc);
-    
+  $sth = $db->prepare('Select * FROM `DOCUMENT` WHERE id_doc = ?');
+  $sth->bindParam(1, $id_doc);
+
   $sth->execute();
-  $res = $sth->fetch();
-  
-
-  $doc = array(
-    "id"=>$res["id_doc"],
-    "typedoc" =>  $res["typedoc"],
-    "nom" => $res["nom"],
-    "date" => $res["datepublication"],
-    "lien" => $res["chemin"],
-    "descrip" => $res["descri"]
-  );
+  $res = $sth->fetch(PDO::FETCH_ASSOC);
 
 
-$json = json_encode($doc);
-echo $json;
+  //Passage en UTF8 pour corriger les erreurs de création du json
+  $res["nom"] = utf8_encode($res["nom"]);
+  $res["chemin"] = utf8_encode($res["chemin"]);
+  $res["descri"] = utf8_encode($res["descri"]);
 
-$db=null;
-  
+  //Encodage en Json pour envoie XHR
+  $json = json_encode($res);
+  echo $json;
+  //var_dump($res);
 
-
+  //Deconnexion
+  $db = null;
 }
-
-
-?>
