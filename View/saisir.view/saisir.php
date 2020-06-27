@@ -13,7 +13,7 @@
     <form action="test.php" method="post" enctype="multipart/form-data">
     
         <label for="">Titre du compte-rendu :</label>
-        <input type="text" name="titre" value="test" required="required" /><br>
+        <input type="text" name="titre" value="COMPTE RENDU LOREM" required="required" /><br>
         <label for="">Nom de l'auteur:</label>
         <input type="text" name="auteur" value="testeur" required="required" /><br>
         <label for="">date du compte-rendu :</label>
