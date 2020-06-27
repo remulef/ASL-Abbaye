@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         var_export($file_ary);
 
     
-        $allowed = array('gif', 'jpg', 'jpe', 'jpeg', 'image/png', 'pdf', 'docx', 'doc', 'ppx', 'pptx', 'mp3', 'aac', 'txt', 'odt', 'mp4', 'odt');
+        $allowed = array('gif', 'jpg', 'jpe', 'jpeg','png', 'image/png', 'pdf', 'docx', 'doc', 'ppx', 'pptx', 'mp3', 'aac', 'txt', 'odt', 'mp4', 'odt');
     
         foreach ($file_ary as $file) {
             if ($file["error"] == 0) {
