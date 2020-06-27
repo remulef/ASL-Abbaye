@@ -43,67 +43,52 @@ $pdf->writeHTML($html, true, false, true, false, '');
 // reset pointer to the last page
 $pdf->lastPage();
 //Close and output PDF document
-$pdf->Output($_POST['title'], 'I');
+$pdf->Output($_POST['title'], 'F');
 
 
-$acc_type = array('gif', 'jpg', 'jpe', 'jpeg', 'png', 'pdf', 'docx', 'doc', 'ppx', 'pptx', 'mp3', 'aac', 'txt', 'odt', 'mp4', 'odt');
-$target_dir = "uploads/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-$uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 */
 var_export($_FILES["fileToUpload"]);
-echo PHP_EOL;
+$allowed = array('gif', 'jpg', 'jpe', 'jpeg', 'png', 'pdf', 'docx', 'doc', 'ppx', 'pptx', 'mp3', 'aac', 'txt', 'odt', 'mp4', 'odt');
+
 // Vérifier si le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Vérifie si le fichier a été uploadé sans erreur.
-    if (isset($_FILES["fileToUpload"]) && $_FILES["fileToUpload"]["error"] == 0) {
-        $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png");
-        $filename = $_FILES["fileToUpload"]["name"];
-        $filetype = $_FILES["fileToUpload"]["type"];
-        $filesize = $_FILES["fileToUpload"]["size"];
 
-        // Vérifie l'extension du fichier
-        $ext = pathinfo($filename, PATHINFO_EXTENSION);
-        if (!array_key_exists($ext, $allowed)) die("Erreur : Veuillez sélectionner un format de fichier valide.");
 
-        // Vérifie la taille du fichier - 5Mo maximum
-        $maxsize = 5 * 1024 * 1024;
-        if ($filesize > $maxsize) die("Error: La taille du fichier est supérieure à la limite autorisée.");
+    foreach ($_FILES['files']['name'] as $f => $name) {
+        // Vérifie si le fichier a été uploadé sans erreur.
+        if (isset($_FILES["fileToUpload"]) && $_FILES["fileToUpload"]["error"][$f] == 0) {
+            $filename = $_FILES["fileToUpload"]["name"][$f];
+            $filetype = $_FILES["fileToUpload"]["type"][$f];
+            $filesize = $_FILES["fileToUpload"]["size"][$f];
 
-        // Vérifie le type MIME du fichier
-        if (in_array($filetype, $allowed)) {
-            // Vérifie si le fichier existe avant de le télécharger.
-            if (file_exists("upload/" . $_FILES["fileToUpload"]["name"])) {
-                echo $_FILES["fileToUpload"]["name"] . " existe déjà.";
+            // Vérifie l'extension du fichier
+            $ext = pathinfo($filename, PATHINFO_EXTENSION);
+            if (!array_key_exists($ext, $allowed)) die("Erreur : Veuillez sélectionner un format de fichier valide pour le fichier ".$filename);
+
+            // Vérifie la taille du fichier - 5Mo maximum
+            $maxsize = 5 * 1024 * 1024;
+            if ($filesize > $maxsize) die("Error: La taille du fichier est supérieure à la limite autorisée.");
+
+            // Vérifie le type MIME du fichier
+            if (in_array($filetype, $allowed)) {
+                // Vérifie si le fichier existe avant de le télécharger.
+                if (file_exists("~/uploads/" . $filename)) {
+                    echo $filename . " existe déjà.";
+                } else {
+
+                    if (preg_match('#[\x00-\x1F\x7F-\x9F/\\\\]#', $filename)) {
+                        exit("Nom de fichier non valide");
+                    } else if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"][$f], "~/uploads/".$filename)) {
+                        echo "The file " . basename($filename) . " has been uploaded.";
+                    } else {
+                        echo "Sorry, there was an error uploading your file.";
+                    }
+                }
             } else {
-                echo move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], ".".$_FILES["fileToUpload"]["name"]).PHP_EOL;
-                echo "Votre fichier a été téléchargé avec succès.";
+                echo "Error: Il y a eu un problème de téléchargement de votre fichier. Veuillez réessayer.";
             }
         } else {
-            echo "Error: Il y a eu un problème de téléchargement de votre fichier. Veuillez réessayer.";
+            echo "Error: " . $_FILES["fileToUpload"]["error"][$f];
         }
-    } else {
-        echo "Error: " . $_FILES["fileToUpload"]["error"];
     }
 }
-
-
-// Usage: uploadfile($_FILE['file']['name'],'temp/',$_FILE['file']['tmp_name'])
-function uploadfile($origin, $dest, $tmp_name)
-{
-  $origin = strtolower(basename($origin));
-  $fulldest = $dest.$origin;
-  $filename = $origin;
-  for ($i=1; file_exists($fulldest); $i++)
-  {
-    $fileext = (strpos($origin,'.')===false?'':'.'.substr(strrchr($origin, "."), 1));
-    $filename = substr($origin, 0, strlen($origin)-strlen($fileext)).'['.$i.']'.$fileext;
-    $fulldest = $dest.$newfilename;
-  }
- 
-  if (move_uploaded_file($tmp_name, $fulldest))
-    return $filename;
-  return false;
-}
-?>
