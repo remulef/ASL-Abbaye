@@ -70,7 +70,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($_FILES['fileToUpload']) {
         $file_ary = reArrayFiles($_FILES['fileToUpload']);
         var_export($file_ary);
-
+        echo"<br>";
+        echo"<br>";
     
         $allowed = array('gif', 'jpg', 'jpe', 'jpeg', 'image/jpeg', 'png', 'image/png', 'pdf', 'docx', 'doc', 'ppx', 'pptx', 'mp3', 'aac', 'txt', 'odt', 'mp4', 'odt');
     
@@ -82,6 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $filesize = $file['size'];
     
                 // Vérifie l'extension du fichier
+                echo pathinfo($filename, PATHINFO_EXTENSION);
                 $ext = pathinfo($filename, PATHINFO_EXTENSION);
                 if (!array_key_exists($ext, $allowed)) die("Erreur : Veuillez sélectionner un format de fichier valide pour le fichier " . $filename);
     
