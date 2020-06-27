@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($filesize > $maxsize) die("Error: La taille du fichier est supérieure à la limite autorisée.");
                 if (in_array($filetype, $allowed)) {
                     // Vérifie si le fichier existe avant de le télécharger.
-                    if (file_exists("~/uploads/" . $filename)) {
+                    if (file_exists("../../../uploads/" . $filename)) {
                         echo $filename . " existe déjà.";
                     } else {
     
