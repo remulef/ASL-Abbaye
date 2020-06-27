@@ -54,7 +54,7 @@ $allowed = array('gif', 'jpg', 'jpe', 'jpeg', 'png', 'pdf', 'docx', 'doc', 'ppx'
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
-    foreach ($_FILES['files']['name'] as $f => $name) {
+    foreach ($_FILES['fileToUpload']['name'] as $f => $name) {
         // Vérifie si le fichier a été uploadé sans erreur.
         if (isset($_FILES["fileToUpload"]) && $_FILES["fileToUpload"]["error"][$f] == 0) {
             $filename = $_FILES["fileToUpload"]["name"][$f];
