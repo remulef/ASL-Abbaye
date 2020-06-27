@@ -63,7 +63,7 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
     //Close and output PDF document
     //$pdf->Output(__DIR__."/tmp-CR/".$_POST["titre"].".pdf", 'F');
     $txt = $pdf->Output($_POST["titre"] . ".pdf", "S");
-    $fp = fopen(__DIR__ . "/tmp-CR/" . $_POST["titre"] . ".pdf", 'w');
+    $fp = fopen("../../../tmp-CR/" . $_POST["titre"] . ".pdf", 'w');
     fwrite($fp, $txt);
     fclose($fp);
 
