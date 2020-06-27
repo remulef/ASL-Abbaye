@@ -1,44 +1,53 @@
 <?php
 ini_set('display_errors', 1);
+//Si la page est généré par une requete POST 
+//Sinon redirection 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-// Include the main TCPDF library (search for installation path).
-require_once('TCPDF-master/tcpdf.php');
+    /*
+////////////////////////////////
+PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
+///////////////////////////////
+*/
 
-// create new PDF document
-$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+    // Include the main TCPDF library (search for installation path).
+    require_once('TCPDF-master/tcpdf.php');
 
-// set document information
-$pdf->SetCreator(PDF_CREATOR);
-$pdf->SetAuthor($_POST["auteur"]);
-$pdf->SetTitle($_POST["titre"]);
+    // create new PDF document
+    $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
-$string = "Publié par " . $_POST["auteur"] . " le " . $_POST["date"];
-// set default header data
-$pdf->SetHeaderData('logoasl.jpg', '50', $_POST["titre"], $string);
+    // set document information
+    $pdf->SetCreator(PDF_CREATOR);
+    $pdf->SetAuthor($_POST["auteur"]);
+    $pdf->SetTitle($_POST["titre"]);
 
-// set header and footer fonts
-$pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-$pdf->setFooterFont(array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+    $string = "Publié par " . $_POST["auteur"] . " le " . $_POST["date"];
+    // set default header data
+    $pdf->SetHeaderData('logoasl.jpg', '50', $_POST["titre"], $string);
 
-// set default monospaced font
-$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+    // set header and footer fonts
+    $pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+    $pdf->setFooterFont(array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
-// set margins
-$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+    // set default monospaced font
+    $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
-// set auto page breaks
-$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+    // set margins
+    $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+    $pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
+    $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 
-// set image scale factor
-$pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+    // set auto page breaks
+    $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 
-// add a page
-$pdf->AddPage();
+    // set image scale factor
+    $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
-//$html = $_POST["editeur"];
-$html = "
+    // add a page
+    $pdf->AddPage();
+
+    //$html = $_POST["editeur"];
+    $html = "
 <h1>TEST</h1>
 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium neque asperiores hic dolorum itaque repudiandae sed nostrum. Vitae ratione fugiat amet voluptatibus? Perferendis nisi corporis consectetur dolore nesciunt necessitatibus amet!</p>
 <h2>list</h2>
@@ -48,37 +57,41 @@ $html = "
 </ul>
 <a href=\"www.les-asl-abbaye.ovh\">lien vers une page </a>";
 
-$pdf->writeHTML($html, true, false, true, false, '');
-// reset pointer to the last page
-$pdf->lastPage();
-//Close and output PDF document
-//$pdf->Output(__DIR__."/tmp-CR/".$_POST["titre"].".pdf", 'F');
-$txt = $pdf->Output($_POST["titre"].".pdf","S");
-$fp = fopen($_POST["titre"].".pdf", 'w');   
-fwrite($fp, $txt);
-fclose($fp);
+    $pdf->writeHTML($html, true, false, true, false, '');
+    // reset pointer to the last page
+    $pdf->lastPage();
+    //Close and output PDF document
+    //$pdf->Output(__DIR__."/tmp-CR/".$_POST["titre"].".pdf", 'F');
+    $txt = $pdf->Output($_POST["titre"] . ".pdf", "S");
+    $fp = fopen(__DIR__ . "/tmp-CR/" . $_POST["titre"] . ".pdf", 'w');
+    fwrite($fp, $txt);
+    fclose($fp);
 
+    /*
+/////////////////////////////////
+ POUR LA GESTION DE FICHIER 
+ Liste des formats limités
+ taille limité à 5Mo
+ Nombre de fichier limité à 5
+////////////////////////////////
+*/
+    function reArrayFiles(&$file_post)
+    {
 
+        $file_ary = array();
+        $file_count = count($file_post['name']);
+        $file_keys = array_keys($file_post);
 
-
-function reArrayFiles(&$file_post)
-{
-
-    $file_ary = array();
-    $file_count = count($file_post['name']);
-    $file_keys = array_keys($file_post);
-
-    for ($i = 0; $i < $file_count; $i++) {
-        foreach ($file_keys as $key) {
-            $file_ary[$i][$key] = $file_post[$key][$i];
+        for ($i = 0; $i < $file_count; $i++) {
+            foreach ($file_keys as $key) {
+                $file_ary[$i][$key] = $file_post[$key][$i];
+            }
         }
+
+        return $file_ary;
     }
 
-    return $file_ary;
-}
-
-// Vérifier si le formulaire a été soumis
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Vérifier si le formulaire a été soumis
 
     if ($_FILES['fileToUpload']) {
         $file_ary = reArrayFiles($_FILES['fileToUpload']);
@@ -112,7 +125,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             if (preg_match('#[\x00-\x1F\x7F-\x9F/\\\\]#', $filename)) {
                                 exit("Nom de fichier non valide");
                             } else if (move_uploaded_file($file["tmp_name"], "../../../uploads/" . $filename)) {
-                                echo "Le fichier" . basename($filename) . "a été ajouté";
+                                echo "Le fichier <strong>" . basename($filename) . "</strong> a été ajouté" . PHP_EOL;
+
+                                //AJOUT A LA BASE DE DONNNE 
+
+                                //On ouvre la base de donnée
+                                $database = 'gsjrnmiasl.mysql.db';
+                                $user = 'gsjrnmiasl';
+                                $password = 'MJCAbbaye38';
+                                try {
+                                    $db = new PDO("mysql:host=gsjrnmiasl.mysql.db;dbname=gsjrnmiasl", $user, $password);
+                                    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    //echo "Connected successfully"; 
+                                } catch (Exception $e) {
+                                    die('Erreur : ' . $e->getMessage());
+                                }
+                                
+
+
+
+                                //NOTIFICATION PAR MAIL
+                                
+                                
                             } else {
                                 echo "Sorry, there was an error uploading your file.";
                             }
@@ -129,7 +163,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     header("Location: http://les-asl-abbaye.ovh");
 }
-
-
-
-?>
