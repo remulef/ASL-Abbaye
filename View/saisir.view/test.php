@@ -91,4 +91,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Error: " . $_FILES["fileToUpload"]["error"][$f];
         }
     }
+}else {
+    header("HTTP/1.0 404 Not Found");
 }
