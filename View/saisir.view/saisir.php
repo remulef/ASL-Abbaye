@@ -11,7 +11,7 @@
 <body>
     <h1>Redaction de compte rendu </h1>
     <form action="test.php" method="post" enctype="multipart/form-data">
-    <!--
+    
         <label for="">Titre du compte-rendu :</label>
         <input type="text" name="titre" value="" required="required" /><br>
         <label for="">Nom de l'auteur:</label>
@@ -21,9 +21,11 @@
         <label for="">Saisit du compt-rendu  :</label>
         <textarea name="editeur" id="editeur" value=" test" rows="8" cols="80"></textarea>
         <label for="">Fichier lié au compte rendu</label>
-         MAX_FILE_SIZE doit précéder le champ input de type file -->
+         <!--MAX_FILE_SIZE doit précéder le champ input de type file -->
         <p>Format possible : image/audio/.doc/.docx/.pdf/.odt/.odp/.ppt/.pptx</p>
-        <input type="hidden" name="MAX_FILE_SIZE" value="500000" />
+        <p>Nombre de fichier maximum  : 5 </p>
+        <p>Taille maximal par fichier  : 5Mo </p>
+        <input type="hidden" name="MAX_FILE_SIZE" value="5000000" />
         <input type="file" name="fileToUpload[]" multiple="multiple" name="submit" accept="image/*,audio/*,.doc,.docx,.pdf,.odt,.odp,.ppt,.pptx">
         <p>
             <input type="submit" value="Ajouter" />
