@@ -1,5 +1,5 @@
 <?php
-
+ini_set('display_errors',1);
 /*
 // Include the main TCPDF library (search for installation path).
 require_once('TCPDF-master/tcpdf.php');
@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         var_export($file_ary);
 
     
-        $allowed = array('gif', 'jpg', 'jpe', 'jpeg', 'png', 'pdf', 'docx', 'doc', 'ppx', 'pptx', 'mp3', 'aac', 'txt', 'odt', 'mp4', 'odt');
+        $allowed = array('gif', 'jpg', 'jpe', 'jpeg', 'image/png', 'pdf', 'docx', 'doc', 'ppx', 'pptx', 'mp3', 'aac', 'txt', 'odt', 'mp4', 'odt');
     
         foreach ($file_ary as $file) {
             if ($file["error"] == 0) {
