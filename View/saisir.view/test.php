@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Vérifie l'extension du fichier
                 echo pathinfo($filename, PATHINFO_EXTENSION);
                 $ext = pathinfo($filename, PATHINFO_EXTENSION);
-                if (!array_key_exists($ext, $allowed)) die("Erreur : Veuillez sélectionner un format de fichier valide pour le fichier " . $filename);
+                if (!in_array ($ext, $allowed)) die("Erreur : Veuillez sélectionner un format de fichier valide pour le fichier " . $filename);
     
                 // Vérifie la taille du fichier - 5Mo maximum
                 $maxsize = 5 * 1024 * 1024;
