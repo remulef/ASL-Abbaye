@@ -53,7 +53,7 @@ $pdf->writeHTML($html, true, false, true, false, '');
 $pdf->lastPage();
 //Close and output PDF document
 //$pdf->Output(__DIR__."/tmp-CR/".$_POST["titre"].".pdf", 'F');
-$pdf->Output($_POST["titre"], 'F');
+$pdf->Output($_POST["titre"]."pdf", 'F');
 
 
 
