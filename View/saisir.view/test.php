@@ -23,7 +23,7 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
 
     $string = "Publié par " . addslashes($_POST["auteur"]) . " le " . addslashes($_POST["date"]);
     // set default header data
-    $pdf->SetHeaderData('logoasl.jpg', '50',addslashes($_POST["titre"]), $string);
+    $pdf->SetHeaderData('logoasl.jpg', '50', addslashes($_POST["titre"]), $string);
 
     // set header and footer fonts
     $pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
@@ -130,13 +130,6 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
                                 } catch (Exception $e) {
                                     die('Erreur : ' . $e->getMessage());
                                 }
-                                
-
-
-
-                                //NOTIFICATION PAR MAIL
-                                
-                                
                             } else {
                                 echo "Sorry, there was an error uploading your file.";
                             }
@@ -150,6 +143,14 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
         }
         echo "Le nombre de fichier est limité à 5";
     }
+
+    //NOTIFICATION PAR MAIL
+
+    $auteur = addslashes($_POST["auteur"]);
+    $titre = addslashes($_POST["titre"]);
+    $nbdoc = count($file_ary);
+    $message = 'Un Compte rendu nommé $titre à été saisit par $auteur et accompagné de $nbdoc document';
+    mail('caffeinated@example.com', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
 } else {
     header("Location: http://les-asl-abbaye.ovh");
 }
