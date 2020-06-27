@@ -92,5 +92,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }else {
-    header("HTTP/1.0 404 Not Found");
-}
+    header("Location: http://wwww.les-asl-abbaye.ovh");}
