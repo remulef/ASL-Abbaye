@@ -150,7 +150,7 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
     $titre = addslashes($_POST["titre"]);
     $nbdoc = count($file_ary);
     $message = 'Un Compte rendu nommé $titre à été saisit par $auteur et accompagné de $nbdoc document';
-    mail('caffeinated@example.com', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
+    mail('fabienremule974@gmail.com', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
 } else {
     header("Location: http://les-asl-abbaye.ovh");
 }
