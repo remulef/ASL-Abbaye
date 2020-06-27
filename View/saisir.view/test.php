@@ -149,7 +149,9 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
     $auteur = addslashes($_POST["auteur"]);
     $titre = addslashes($_POST["titre"]);
     $nbdoc = count($file_ary);
-    $message = 'Un Compte rendu nommé $titre à été saisit par $auteur et accompagné de $nbdoc document';
+    $lienCR  = 'http://les-asl-abbaye.ovh/tmp-CR/'.$titre.'pdf'; 
+    $message = 'Un Compte rendu nommé '.$titre.' à été saisit par '.$auteur.' et accompagné de '.$nbdoc.' document <br>
+     Vous pourrez retrouver le compte rendu à l\'adresse suivante <a href="'.$lienCR.'"> COMPTE RENDU</a>';
     mail('fabienremule974@gmail.com', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
 } else {
     header("Location: http://les-asl-abbaye.ovh");
