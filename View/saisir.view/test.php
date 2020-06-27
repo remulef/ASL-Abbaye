@@ -98,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
                         if (preg_match('#[\x00-\x1F\x7F-\x9F/\\\\]#', $filename)) {
                             exit("Nom de fichier non valide");
-                        } else if (move_uploaded_file($file["tmp_name"], "~/uploads/" . $filename)) {
+                        } else if (move_uploaded_file($file["tmp_name"], "../../../uploads/" . $filename)) {
                             echo "The file " . basename($filename) . " has been uploaded.";
                         } else {
                             echo "Sorry, there was an error uploading your file.";
