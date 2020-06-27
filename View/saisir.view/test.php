@@ -43,7 +43,7 @@ $pdf->writeHTML($html, true, false, true, false, '');
 // reset pointer to the last page
 $pdf->lastPage();
 //Close and output PDF document
-$pdf->Output("../../../tmp-CR/".$_POST["titre"], 'F');
+$pdf->Output("../../../tmp-CR/".$_POST["titre"]."pdf", 'F');
 
 
 
