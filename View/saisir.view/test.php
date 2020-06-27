@@ -48,48 +48,68 @@ $pdf->Output($_POST['title'], 'F');
 
 */
 var_export($_FILES["fileToUpload"]);
-$allowed = array('gif', 'jpg', 'jpe', 'jpeg', 'png', 'pdf', 'docx', 'doc', 'ppx', 'pptx', 'mp3', 'aac', 'txt', 'odt', 'mp4', 'odt');
+
+function reArrayFiles(&$file_post)
+{
+
+    $file_ary = array();
+    $file_count = count($file_post['name']);
+    $file_keys = array_keys($file_post);
+
+    for ($i = 0; $i < $file_count; $i++) {
+        foreach ($file_keys as $key) {
+            $file_ary[$i][$key] = $file_post[$key][$i];
+        }
+    }
+
+    return $file_ary;
+}
 
 // Vérifier si le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-
-    foreach ($_FILES['fileToUpload']['name'] as $f => $name) {
-        // Vérifie si le fichier a été uploadé sans erreur.
-        if (isset($_FILES["fileToUpload"]) && $_FILES["fileToUpload"]["error"][$f] == 0) {
-            $filename = $_FILES["fileToUpload"]["name"][$f];
-            $filetype = $_FILES["fileToUpload"]["type"][$f];
-            $filesize = $_FILES["fileToUpload"]["size"][$f];
-
-            // Vérifie l'extension du fichier
-            $ext = pathinfo($filename, PATHINFO_EXTENSION);
-            if (!array_key_exists($ext, $allowed)) die("Erreur : Veuillez sélectionner un format de fichier valide pour le fichier ".$filename);
-
-            // Vérifie la taille du fichier - 5Mo maximum
-            $maxsize = 5 * 1024 * 1024;
-            if ($filesize > $maxsize) die("Error: La taille du fichier est supérieure à la limite autorisée.");
-
-            // Vérifie le type MIME du fichier
-            if (in_array($filetype, $allowed)) {
-                // Vérifie si le fichier existe avant de le télécharger.
-                if (file_exists("~/uploads/" . $filename)) {
-                    echo $filename . " existe déjà.";
-                } else {
-
-                    if (preg_match('#[\x00-\x1F\x7F-\x9F/\\\\]#', $filename)) {
-                        exit("Nom de fichier non valide");
-                    } else if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"][$f], "~/uploads/".$filename)) {
-                        echo "The file " . basename($filename) . " has been uploaded.";
+    if ($_FILES['fileToUpload']) {
+        $file_ary = reArrayFiles($_FILES['fileToUpload']);
+    
+        $allowed = array('gif', 'jpg', 'jpe', 'jpeg', 'png', 'pdf', 'docx', 'doc', 'ppx', 'pptx', 'mp3', 'aac', 'txt', 'odt', 'mp4', 'odt');
+    
+        foreach ($file_ary as $file) {
+            if ($file["error"] == 0) {
+    
+                $filename = $file['name'];
+                $filetype = $file['type'];
+                $filesize = $file['size'];
+    
+                // Vérifie l'extension du fichier
+                $ext = pathinfo($filename, PATHINFO_EXTENSION);
+                if (!array_key_exists($ext, $allowed)) die("Erreur : Veuillez sélectionner un format de fichier valide pour le fichier " . $filename);
+    
+                // Vérifie la taille du fichier - 5Mo maximum
+                $maxsize = 5 * 1024 * 1024;
+                if ($filesize > $maxsize) die("Error: La taille du fichier est supérieure à la limite autorisée.");
+                if (in_array($filetype, $allowed)) {
+                    // Vérifie si le fichier existe avant de le télécharger.
+                    if (file_exists("~/uploads/" . $filename)) {
+                        echo $filename . " existe déjà.";
                     } else {
-                        echo "Sorry, there was an error uploading your file.";
+    
+                        if (preg_match('#[\x00-\x1F\x7F-\x9F/\\\\]#', $filename)) {
+                            exit("Nom de fichier non valide");
+                        } else if (move_uploaded_file($file["tmp_name"], "~/uploads/" . $filename)) {
+                            echo "The file " . basename($filename) . " has been uploaded.";
+                        } else {
+                            echo "Sorry, there was an error uploading your file.";
+                        }
                     }
+                } else {
+                    echo "Error: Il y a eu un problème de téléchargement de votre fichier. Veuillez réessayer.";
                 }
-            } else {
-                echo "Error: Il y a eu un problème de téléchargement de votre fichier. Veuillez réessayer.";
             }
-        } else {
-            echo "Error: " . $_FILES["fileToUpload"]["error"][$f];
+            echo "Error: " . $file["error"];
         }
     }
-}else {
-    header("Location: http://wwww.les-asl-abbaye.ovh");}
+    
+
+} else {
+    header("Location: http://les-asl-abbaye.ovh");
+}
