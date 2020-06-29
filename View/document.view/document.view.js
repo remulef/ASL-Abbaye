@@ -134,12 +134,23 @@ function affiche(json) {
         case "doc":
         case "docx":
             var ifram = document.createElement("iframe");
-            url="https://docs.google.com/gview?url="+"http://www.les-asl-abbaye.ovh" + lien+"&embedded=true";
-            ifram.src=url;
+            url = "https://docs.google.com/gview?url=" + "http://www.les-asl-abbaye.ovh" + lien + "&embedded=true";
+            ifram.src = url;
             ifram.style = "width: 100%;height: 500px;";
 
             media.appendChild(ifram);
-        break;
+
+        case "odt":
+                var ifram = document.createElement("iframe");
+                url = "https://view.officeapps.live.com/op/embed.aspx?src=" + "http://www.les-asl-abbaye.ovh" + lien;
+                ifram.src = url;
+                ifram.width="100%";
+                ifram.frameBorder='0';
+    
+                media.appendChild(ifram);
+    
+
+            break;
 
 
 
@@ -708,7 +719,7 @@ function deletetag(i) {
 
         var json = ({
             id_tags: id_tags,
-            id_doc:id_doc
+            id_doc: id_doc
             //login : $_SESSION["login"], 
             // mdp : $_SESSION["mdp"]
         })
@@ -770,12 +781,12 @@ function recuptag(json) {
 }
 
 function AJAXgettag() {
- try{
-    let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/document/recup-tag.php?";
-    ajax_post_request(recuptag, url, false, encodeURIComponent(id_doc));
-}  catch (error) {
-    alert(error);
-}
+    try {
+        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/document/recup-tag.php?";
+        ajax_post_request(recuptag, url, false, encodeURIComponent(id_doc));
+    } catch (error) {
+        alert(error);
+    }
 }
 
 
