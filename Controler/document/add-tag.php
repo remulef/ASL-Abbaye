@@ -33,7 +33,7 @@ if (true) {
     $nbcolumn = $sth->fetchColumn();
 
 
-    if (count($tag) < 30 && $nbcolumn <= 10) {
+    if (strlen($tag) <= 30 && $nbcolumn <= 10) {
         $sth = $db->prepare('INSERT INTO  TAGS (id_doc,tag)VALUES(?,?)');
         $sth->bindParam(1, $id_doc);
         $sth->bindParam(2, $tags);
