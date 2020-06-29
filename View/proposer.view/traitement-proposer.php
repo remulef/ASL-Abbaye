@@ -61,10 +61,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $sth->bindParam(1, $date);
                         $sth->bindParam(2, $ext);
                         $sth->bindParam(3, $_POST['titre']);
-                        $sth->bindParam(4, urlencode($chemin));
+                        $sth->bindParam(4, $chemin);
                         $sth->bindParam(5, $_POST['description']);
                         $sth->execute();
-                        var_dump($_POST['tags']);
+                        //var_dump($_POST['tags']);
                         if (strlen($_POST['tags']) > 0 && strlen($_POST['tags']) < 200) {
                             $tags = explode("+", $_POST["tags"]);
                             var_dump($tags);
@@ -72,8 +72,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                             foreach ($tags as $key => $value) {
                                 $sth = $db->prepare('INSERT INTO TAGS (tag,id_doc) value (?,?)');
-                                $sth->bindParam(1, $tags[$key]);
+                                $sth->bindParam(1, $value);
                                 $sth->bindParam(2, $max_DOC);
+                                $sth->execute();
+
                             }
                         }
 
