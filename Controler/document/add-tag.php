@@ -23,7 +23,7 @@ if (true) {
     }
 
     $data = json_decode($data);
-
+    var_dump($data);
     $id_doc = $data->id_doc;
     $tag = $data->tags;
 
