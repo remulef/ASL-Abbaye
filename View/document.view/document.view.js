@@ -703,7 +703,7 @@ function deletetag(i) {
             // mdp : $_SESSION["mdp"]
         })
         json = JSON.stringify(json);
-        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Document/delete-tag.php?";
+        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/document/delete-tag.php?";
         ajax_post_request(recuptag, url, true, encodeURIComponent(json));
     } catch (error) {
 
@@ -738,7 +738,7 @@ function sendtag() {
                     //mdp: $_SESSION["mdp"] ,
                 })
                 json = JSON.stringify(tags);
-                let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Document/add-tag.php?";
+                let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/document/add-tag.php?";
                 ajax_post_request(AJAXgettag, url, false, encodeURIComponent(json));
             } catch (error) {
                 alert(error);
@@ -761,7 +761,7 @@ function recuptag(json) {
 
 function AJAXgettag() {
  try{
-    let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Document/add-tag.php?";
+    let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/document/add-tag.php?";
     ajax_post_request(recuptag, url, false, encodeURIComponent(id_doc));
 }  catch (error) {
     alert(error);
