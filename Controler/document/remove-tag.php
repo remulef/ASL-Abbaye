@@ -30,7 +30,7 @@ if (true) {
     $login = $data->login;
     $mdp = $data->mdp;
 */
-    $sth = $db->prepare('DELETE  FROM COMMENTAIRE WHERE id_doc = ? AND id_tags = ?');
+    $sth = $db->prepare('DELETE  FROM TAGS WHERE id_doc = ? AND id_tags = ?');
     $sth->bindParam(1, $id_doc);
     $sth->bindParam(2, $id_tags);
     $sth->execute();
