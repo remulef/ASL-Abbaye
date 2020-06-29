@@ -25,7 +25,7 @@ if (true) {
     $data = json_decode($data);
 
     $id_doc = $data->id_doc;
-    $tag = $data->tag;
+    $tag = $data->tags;
 
     $sth = $db->prepare('SELECT count(*) from TAGS where id_doc = ?');
     $sth->bindParam(1, $id_doc);
