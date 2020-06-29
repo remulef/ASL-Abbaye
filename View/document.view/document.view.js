@@ -5,6 +5,7 @@ let old_title;
 let old_description;
 
 function init(id) {
+    
     id_doc = id;
     //document.getElementById("myInput").style.display = "none";
     let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/script-document.php";
@@ -27,6 +28,7 @@ function error() {
 
 function affiche(json) {
     //alert("success");
+    AJAXgettag();
     console.log("le json");
     console.log(json);
 
