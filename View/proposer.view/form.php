@@ -27,14 +27,14 @@
 				<li id="li_2">
 					<label class="description" for="element_2">Titre </label>
 					<div>
-						<input id="element_2" name="titre" class="element text medium" type="text" maxlength="255" value="" />
+						<input required id="element_2" name="titre" class="element text medium" type="text" maxlength="255" value="" />
 					</div>
 					<p class="guidelines" id="guide_2"><small>Titre de votre document</small></p>
 				</li>
 				<li id="li_3">
 					<label class="description" for="element_3">Description </label>
 					<div>
-						<textarea id="element_3" name="description" class="element textarea medium"></textarea>
+						<textarea required id="element_3" name="description" class="element textarea medium"></textarea>
 					</div>
 					<p class="guidelines" id="guide_3"><small>Description rapide de votre document
 							En quoi est-il une bonne ressource pédagogique ? </small></p>
@@ -44,7 +44,7 @@
 					<div>
 						<input type="hidden" name="MAX_FILE_SIZE" value="5000000" />
 
-						<input id="element_1" name="fileToUpload" class="element file" type="file" />
+						<input required id="element_1" name="fileToUpload" class="element file" type="file" />
 					</div>
 					<p class="guidelines" id="guide_1"><small>Format possible : image/audio/.doc/.docx/.pdf/.odt/.odp/.ppt/.pptx
 
@@ -53,7 +53,7 @@
 				<li id="li_4">
 					<label class="description" for="element_4">Etiquettes </label>
 					<div>
-						<input id="element_4" name="tags" class="element text medium" type="text" maxlength="255" value="" />
+						<input required id="element_4" name="tags" class="element text medium" type="text" maxlength="255" value="" />
 					</div>
 					<p class="guidelines" id="guide_4"><small>Séparer les étiquettes par des caracteres "+"
 							Ces etiquettes nous aiderons à mieux rechercher votre document dans le cas ou nous ajoutons celui-ci à notre base </small></p>

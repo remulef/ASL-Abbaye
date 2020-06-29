@@ -160,10 +160,10 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
                                 $max_CR = $db->query("SELECT max(id_cr)as max FROM COMPTERENDU ")->fetchColumn();
                                 $chemin = "uploads/".$filename;
                                 $sth = $db->prepare('INSERT INTO DOCUMENT (datepublication,typedoc,nom,chemin,tmp,cr) value (?,?,?,?,true,false)');
-                                $sth->bindParam(1, $today);
-                                $sth->bindParam(2, $filetype);
+                                $sth->bindParam(1, $date);
+                                $sth->bindParam(2, $ext);
                                 $sth->bindParam(3, $filename);
-                                $sth->bindParam(4, $chemin );
+                                $sth->bindParam(4, urlencode($chemin) );
                                 $sth->execute();
                                 $max_DOC = $db->query("SELECT max(id_doc)as max FROM DOCUMENT ")->fetchColumn();
                                 

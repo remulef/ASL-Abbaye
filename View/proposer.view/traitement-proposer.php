@@ -58,10 +58,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $date = $today['year'] . "/" . $mon . "/" . $today['mday'];
                         $chemin = "uploads/" . $filename;
                         $sth = $db->prepare('INSERT INTO DOCUMENT (datepublication,typedoc,nom,chemin,descri,tmp) value (?,?,?,?,?,true)');
-                        $sth->bindParam(1, $today);
-                        $sth->bindParam(2, $filetype);
+                        $sth->bindParam(1, $date);
+                        $sth->bindParam(2, $ext);
                         $sth->bindParam(3, $_POST['titre']);
-                        $sth->bindParam(4, $chemin);
+                        $sth->bindParam(4, urlencode($chemin));
                         $sth->bindParam(5, $_POST['description']);
                         $sth->execute();
 
