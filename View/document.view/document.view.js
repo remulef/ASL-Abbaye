@@ -695,10 +695,10 @@ function deletetag(i) {
     var ul = document.getElementById("tags");
     //ul.removeChild(ul.getElementsByTagName("li")[i]);
     try {
-        var id_tag = ul.getElementsByTagName("li")[i].id;
+        var id_tags = ul.getElementsByTagName("li")[i].id;
 
         var json = ({
-            id_tag: id_tag,
+            id_tags: id_tag,
             id_doc:id_doc
             //login : $_SESSION["login"], 
             // mdp : $_SESSION["mdp"]
