@@ -64,9 +64,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $sth->bindParam(4, urlencode($chemin));
                         $sth->bindParam(5, $_POST['description']);
                         $sth->execute();
-
+                        var_dump($_POST['tags']);
                         if (strlen($_POST['tags']) > 0 && strlen($_POST['tags']) < 200) {
                             $tags = explode("+", $_POST["tags"]);
+                            var_dump($tags);
                             $max_DOC = $db->query("SELECT max(id_doc)as max FROM DOCUMENT ")->fetchColumn();
 
                             foreach ($tags as $key => $value) {
