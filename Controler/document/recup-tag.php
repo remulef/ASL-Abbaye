@@ -20,7 +20,7 @@ if (true) {
     }
     //le plus recent en premier
     $sth = $db->prepare('SELECT *  FROM TAGS WHERE id_doc = ?');
-    $sth->bindParam(1, $data->id_doc);
+    $sth->bindParam(1, $data);
     $sth->execute();
     $results = $sth->fetchAll(PDO::FETCH_ASSOC);
     $json = json_encode($results);
