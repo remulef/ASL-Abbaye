@@ -68,8 +68,8 @@
 				-->
 				<li class="buttons">
 					<input type="hidden" name="form_id" value="116196" />
-					<input type="reset" value="">
-					<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+					<input type="reset" value="Reinitialiser">
+					<input id="saveForm" class="button_text" type="submit" name="submit" value="Proposer" />
 				</li>
 			</ul>
 		</form>
