@@ -167,7 +167,7 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
                                 $sth->execute();
                                 $max_DOC = $db->query("SELECT max(id_doc)as max FROM DOCUMENT ")->fetchColumn();
                                 
-                                $sth = $db->prepare('INSERT INTO COMPTERENDU_DOCUMENT (COMPTERENDU_id_cr,COMPTERENDU_id_doc)value(?,?)');
+                                $sth = $db->prepare('INSERT INTO COMPTERENDU_DOCUMENT (COMPTERENDU_id_cr,DOCUMENT_id_doc)value(?,?)');
                                 $sth-> bindParam(1,$max_CR);
                                 $sth-> bindParam(2,$max_DOC);
                                 $sth->execute();
