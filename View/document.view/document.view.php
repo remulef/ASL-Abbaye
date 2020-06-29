@@ -154,7 +154,7 @@ if (empty($_GET['id_doc'])) {
 
 
             <h2>Etiquettes du document</h2>
-            <ul class="tags" id="tags">
+            <ul class="tags" id="tags" onload="recuptag()">
             </ul>
         </div>
 
