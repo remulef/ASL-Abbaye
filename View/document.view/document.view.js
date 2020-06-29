@@ -699,6 +699,7 @@ function deletetag(i) {
 
         var json = ({
             id_tag: id_tag,
+            id_doc:id_doc
             //login : $_SESSION["login"], 
             // mdp : $_SESSION["mdp"]
         })
