@@ -14,11 +14,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $allowed = array('gif', 'jpg', 'jpe', 'jpeg', 'image/jpeg', 'png', 'image/png', 'pdf', 'docx', 'doc', 'ppx', 'pptx', 'mp3', 'aac', 'txt', 'odt', 'mp4', 'odt');
 
 
-        if ($file["error"] == 0) {
+        if ($_FILES['fileToUpload']["error"] == 0) {
 
-            $filename = $file['name'];
-            $filetype = $file['type'];
-            $filesize = $file['size'];
+            $filename = $_FILES['fileToUpload']['name'];
+            $filetype = $_FILES['fileToUpload']['type'];
+            $filesize = $_FILES['fileToUpload']['size'];
 
             // Vérifie l'extension du fichier
             echo pathinfo($filename, PATHINFO_EXTENSION);
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     if (preg_match('#[\x00-\x1F\x7F-\x9F/\\\\]#', $filename)) {
                         exit("Nom de fichier non valide");
-                    } else if (move_uploaded_file($file["tmp_name"], "../../../uploads/" . $filename)) {
+                    } else if (move_uploaded_file($_FILES['fileToUpload']["tmp_name"], "../../../uploads/" . $filename)) {
                         echo "Le fichier <strong>" . basename($filename) . "</strong> a été ajouté" . PHP_EOL;
 
                         //AJOUT A LA BASE DE DONNNE 
@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
 
-        echo "Error: " . $file["error"];
+        echo "Error: " . $_FILES['fileToUpload']["error"];
     }
 }
 header("Location: http://les-asl-abbaye.ovh");
