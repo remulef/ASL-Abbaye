@@ -131,6 +131,13 @@ function affiche(json) {
             media.appendChild(img);
 
             break;
+        case "doc":
+        case "docx":
+            var ifram = document.createElement("iframe");
+            url="https://docs.google.com/gview?url="+"http://www.les-asl-abbaye.ovh" + lien+"&embedded=true";
+            ifram.src=url;
+            ifram.style = "width: 100%;height: 500px;";
+        break;
 
 
 
