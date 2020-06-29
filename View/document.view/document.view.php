@@ -149,7 +149,7 @@ if (empty($_GET['id_doc'])) {
                 <input type="input" class="form__field" placeholder="Etiquette" name="tag" id="inputtag" required />
                 <label for="tag" class="form__label">Ajouter Etiquette</label>
             </div>
-            <a  class="button4" style="background-color:#9ed0e6" onclick=sendtag()>Ajouter</a>' ?>
+            <a  class="button4" style="background-color:#9ed0e6" onclick="sendtag()">Ajouter</a>' ?>
 
 
 
