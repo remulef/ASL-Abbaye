@@ -705,7 +705,7 @@ function deletetag(i) {
         })
         json = JSON.stringify(json);
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/document/remove-tag.php?";
-        ajax_post_request(recuptag, url, true, encodeURIComponent(json));
+        ajax_post_request(AJAXgettag, url, true, encodeURIComponent(json));
     } catch (error) {
 
     }
@@ -763,7 +763,7 @@ function recuptag(json) {
 function AJAXgettag() {
  try{
     let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/document/recup-tag.php?";
-    ajax_post_request(AJAXgettag, url, false, encodeURIComponent(id_doc));
+    ajax_post_request(recuptag, url, false, encodeURIComponent(id_doc));
 }  catch (error) {
     alert(error);
 }
