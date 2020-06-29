@@ -24,7 +24,7 @@ if (true) {
   }
 
   //Affiche tous les document validé 
-  $sth = $db->prepare('Select * FROM `DOCUMENT` WHERE id_doc = ? AND tmp = false');
+  $sth = $db->prepare('Select * FROM `DOCUMENT` WHERE id_doc = ?');
   $sth->bindParam(1, $id_doc);
   $sth->execute();
   $res = $sth->fetch(PDO::FETCH_ASSOC);
