@@ -139,7 +139,9 @@ function affiche(json) {
             ifram.style = "width: 100%;height: 500px;";
 
             media.appendChild(ifram);
-
+        case "ppt":
+        case "pptx":
+        case "odp":
         case "odt":
                 var ifram = document.createElement("iframe");
                 url = "https://view.officeapps.live.com/op/embed.aspx?src=" + "http://www.les-asl-abbaye.ovh" + lien;
