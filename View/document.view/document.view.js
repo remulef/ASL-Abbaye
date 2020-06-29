@@ -184,7 +184,7 @@ function ajax_post_request(callback, url, async, data) {
     // Instanciation d'un objet XHR
     var xhr = new XMLHttpRequest();
 
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (callback && xhr.readyState == 4 && xhr.status == 200) {
             callback(xhr.responseText);
         }
@@ -656,21 +656,6 @@ function arrayRemove(arr, value) {
 //Un appel ajax pour ajouter a la db 
 //Une fonction pour pouvoir les supprimers 
 //un mode
-function addtag() {
-    var ul = document.getElementById("tags");
-
-    if (ul.getElementsByTagName("li").length < 20) {
-        var value = document.getElementById("inputtag").value;
-        if (value.length < 30) {
-            var tag = document.createElement("li");
-            var a = document.createElement("a");
-            a.className = "tag";
-            a.innerHTML = value;
-            tag.append(a);
-            document.getElementById("tags").append(tag);
-        } else alert("Les tags sont limités à 30 caracteres");
-    } else alert("Le nombre de tags est limité à 20");
-}
 
 
 function ChangeUrl(formulaire) {
@@ -708,5 +693,73 @@ function supprimer_button_del_tag() {
 
 function deletetag(i) {
     var ul = document.getElementById("tags");
-    ul.removeChild(ul.getElementsByTagName("li")[i]);
+    //ul.removeChild(ul.getElementsByTagName("li")[i]);
+    try {
+      var id_tag =  ul.getElementsByTagName("li")[i].id;
+
+      var json = ({
+          id_tag: id_tag,
+          //login : $_SESSION["login"], 
+          // mdp : $_SESSION["mdp"]
+      })
+      json = JSON.stringify(json);
+      let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Document/delete-tag.php?";
+      ajax_post_request(recuptag,url,true,encodeURIComponent(json));
+    } catch (error) {
+        
+    }
+}
+
+
+function addonetag(string,id) {
+    var ul = document.getElementById("tags");
+    var tag = document.createElement("li");
+    var a = document.createElement("a");
+    a.className = "tag";
+    a.id=id;
+    a.innerHTML = string;
+    tag.append(a);
+    document.getElementById("tags").append(tag);
+
+}
+
+function sendtag() {
+    var ul = document.getElementById("tags");
+
+    if (ul.getElementsByTagName("li").length < 20) {
+        var value = document.getElementById("inputtag").value;
+        if (value.length < 30) {
+
+            try {
+                var tags = ({
+                    id_doc: id_doc,
+                    tags: value
+                    //login: $_SESSION["login"] ,
+                    //mdp: $_SESSION["mdp"] ,
+                })
+                json = JSON.stringify(tags);
+                let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Document/recup-tag.php?";
+                ajax_post_request(recuptag, url, false, encodeURIComponent(json));
+            }  catch (error) {
+                alert(error);
+            }
+        } else alert("Les tags sont limités à 30 caracteres");
+    } else alert("Le nombre de tags est limité à 20");
+}
+
+
+function recuptag(json) {
+    data = JSON.parse(json);
+    document.getElementById("tags").innerHTML="";
+ 
+    for (let index = 0; index < data.length; index++) {
+        var current = data[index];
+        addonetag(current.tag,current.id_tags);
+    }
+   
+}
+
+
+function vidertags() {
+    document.getElementById("tags").innerHTML="";
 }

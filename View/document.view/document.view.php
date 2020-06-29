@@ -106,7 +106,7 @@ if (empty($_GET['id_doc'])) {
                 </div>' ?>
 
                 <div class="tooltip">
-                    <a id="telecharger" href="">
+                    <a id="telecharger"  onclick="popu()" href="">
                         <button type="button">
                             <svg class="bi bi-download" width="1.33em" height="1.33em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M.5 8a.5.5 0 01.5.5V12a1 1 0 001 1h12a1 1 0 001-1V8.5a.5.5 0 011 0V12a2 2 0 01-2 2H2a2 2 0 01-2-2V8.5A.5.5 0 01.5 8z" clip-rule="evenodd" />
@@ -155,11 +155,6 @@ if (empty($_GET['id_doc'])) {
 
             <h2>Etiquettes du document</h2>
             <ul class="tags" id="tags">
-
-                <li> <a class="tag">Etiquette 1</a></li>
-                <li> <a class="tag">Etiquette 2</a></li>
-                <li> <a class="tag">Etiquette 3</a></li>
-
             </ul>
         </div>
 

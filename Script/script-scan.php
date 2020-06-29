@@ -15,11 +15,11 @@ function add_document(string $path,$id_doc):string{
 
   $nom =  $path_info['filename'] ;     //nom du fichier
   $datepublication = stat($path)['mtime'];  //date de modification du fichier
-  $datepublication = new DateTime("@$datepublication");
+  $datepublication = new DateTime("$datepublication");
   $datepublication = $datepublication->format('Y-m-d');
 
-  echo 'insert into DOCUMENT (id_doc,datepublication, typedoc, nom, chemin) values('.$id_doc.',\''.$datepublication.'\',\''.$type.'\',\''.$nom.'\',\''.$path.'\')<br>';
-  return 'insert into DOCUMENT (id_doc,datepublication, typedoc, nom, chemin) values('.$id_doc.',\''.$datepublication.'\',\''.$type.'\',\''.$nom.'\',\''.$path.'\');';
+  echo 'insert into DOCUMENT (id_doc,datepublication, typedoc, nom, chemin,tmp) values('.$id_doc.',\''.$datepublication.'\',\''.$type.'\',\''.$nom.'\',\''.$path.'\',false)<br>';
+  return 'insert into DOCUMENT (id_doc,datepublication, typedoc, nom, chemin, tmp) values('.$id_doc.',\''.$datepublication.'\',\''.$type.'\',\''.$nom.'\',\''.$path.'\',false);';
 }
 
 
@@ -27,14 +27,14 @@ function add_node(string $path,int $parent,int $num):string{
   global $numnode_courant;
   $path_info = pathinfo($path);
   $nom =  $path_info['filename'] ;     //nom du dossier
-  echo'insert into NODE (id_node,name, parent_node_id) values ('.$num.',\''.$nom.'\','.$parent.');  <br> ';
+  //echo'insert into NODE (id_node,name, parent_node_id) values ('.$num.',\''.$nom.'\','.$parent.');  <br> ';
   $numnode_courant++;
   return 'insert into NODE (id_node,name, parent_node_id) values ('.$numnode_courant.',\''.$nom.'\','.$parent.');   ';
 }
 
 
 function add_node_document(int $id_node,int $id_doc):string{
-  echo 'insert into NODE_DOCUMENT (NODE_id_node, DOCUMENT_id_doc) values ('.$id_node.','.$id_doc.'); <br>';
+  //echo 'insert into NODE_DOCUMENT (NODE_id_node, DOCUMENT_id_doc) values ('.$id_node.','.$id_doc.'); <br>';
   return  'insert into NODE_DOCUMENT (NODE_id_node, DOCUMENT_id_doc) values ('.$id_node.','.$id_doc.'); ';
 }
 
@@ -112,7 +112,7 @@ function recup_worker(string $path,int $node_parent_courant,$firstline=false){
   unlink('sql/insert_NODE_DOCUMENT.sql');
   unlink('sql/insert_DOCUMENT.sql');
 
-  echo'insert into NODE (id_node,name, parent_node_id) values (0,\''.dirname('.').'\',NULL);  <br> ';
+//  echo'insert into NODE (id_node,name, parent_node_id) values (0,\''.dirname('.').'\',NULL);  <br> ';
   recup_worker('Ressourcepeda',0,true);
 
   ?>

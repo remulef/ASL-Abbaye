@@ -419,10 +419,10 @@ function recuporderby() {
     }
 
     if (inputs[20].checked === true) {
-        return "dl ASC";
+        return "pop ASC";
     }
     if (inputs[21].checked === true) {
-        return "dl DESC";
+        return "pop DESC";
     }
 }
 
