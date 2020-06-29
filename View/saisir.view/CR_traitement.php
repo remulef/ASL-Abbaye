@@ -71,11 +71,12 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
     }
 
     $nomduCR = $_POST["titre"] . ".pdf";
+    $chemin = "tmp-CR/".$nomduCR;
     $sth = $db->prepare('INSERT INTO COMPTERENDU (titre,datepub,auteur,chemin,tmp) value (?,?,?,?,true)');
     $sth->bindParam(1, $_POST["titre"]);
     $sth->bindParam(2, $_POST["date"]);
     $sth->bindParam(3,$_POST["auteur"]);
-    $sth->bindParam(4,"tmp-CR/".$nomduCR);
+    $sth->bindParam(4,$chemin);
     $sth->execute();
 
     $db=null;
@@ -157,12 +158,12 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
                                 $mon = $today['mon'];
                                 $date = $today['year'] . "/" . $mon . "/" . $today['mday'];
                                 $max_CR = $db->query("SELECT max(id_cr)as max FROM COMPTERENDU ")->fetchColumn();
-                                
+                                $chemin = "uploads/".$filename;
                                 $sth = $db->prepare('INSERT INTO DOCUMENT (datepublication,typedoc,nom,chemin,tmp,cr) value (?,?,?,?,true,false)');
                                 $sth->bindParam(1, $today);
                                 $sth->bindParam(2, $filetype);
                                 $sth->bindParam(3, $filename);
-                                $sth->bindParam(4, "uploads/".$filename);
+                                $sth->bindParam(4, $chemin );
                                 $sth->execute();
                                 $max_DOC = $db->query("SELECT max(id_doc)as max FROM DOCUMENT ")->fetchColumn();
                                 
