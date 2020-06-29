@@ -761,7 +761,7 @@ function recuptag(json) {
 
 function AJAXgettag() {
  try{
-    let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/document/add-tag.php?";
+    let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/document/recup-tag.php?";
     ajax_post_request(recuptag, url, false, encodeURIComponent(id_doc));
 }  catch (error) {
     alert(error);
