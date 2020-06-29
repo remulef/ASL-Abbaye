@@ -7,8 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if ($_FILES['fileToUpload']) {
-        $file_ary = reArrayFiles($_FILES['fileToUpload']);
-        var_export($file_ary);
+        var_export($_FILES['fileToUpload']);
         echo "<br>";
         echo "<br>";
 
