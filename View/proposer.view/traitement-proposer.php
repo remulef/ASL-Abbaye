@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                             foreach ($tags as $key => $value) {
                                 $sth = $db->prepare('INSERT INTO TAGS (tag,id_doc) value (?,?)');
-                                $sth->bindParam(1, $value);
+                                $sth->bindParam(1, $tags[$key]);
                                 $sth->bindParam(2, $max_DOC);
                             }
                         }
