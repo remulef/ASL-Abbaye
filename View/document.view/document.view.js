@@ -698,7 +698,7 @@ function deletetag(i) {
         var id_tags = ul.getElementsByTagName("li")[i].id;
 
         var json = ({
-            id_tags: id_tag,
+            id_tags: id_tags,
             id_doc:id_doc
             //login : $_SESSION["login"], 
             // mdp : $_SESSION["mdp"]
