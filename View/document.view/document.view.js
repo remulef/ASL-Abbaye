@@ -717,7 +717,7 @@ function addonetag(string, id) {
     var tag = document.createElement("li");
     var a = document.createElement("a");
     a.className = "tag";
-    a.id = id;
+    tag.id = id;
     a.innerHTML = string;
     tag.append(a);
     document.getElementById("tags").append(tag);
