@@ -20,7 +20,7 @@
 		<form id="form_116196" class="appnitro" enctype="multipart/form-data" method="post" action="traitement-proposer.php">
 			<div class="form_description">
 				<h2>Proposer un document</h2>
-				<p>Ce formulaire nous aidera à traiter au mieux le document que vous nous proposer</p>
+				<p>Ce formulaire nous aidera a traiter au mieux le document que vous nous proposer</p>
 			</div>
 			<ul>
 
@@ -56,7 +56,7 @@
 						<input required id="element_4" name="tags" class="element text medium" type="text" maxlength="255" value="" />
 					</div>
 					<p class="guidelines" id="guide_4"><small>Séparer les étiquettes par des caracteres "+"
-							Ces etiquettes nous aiderons à mieux rechercher votre document dans le cas ou nous ajoutons celui-ci à notre base </small></p>
+							Ces etiquettes nous aiderons a mieux rechercher votre document dans le cas ou nous ajoutons celui-ci à notre base </small></p>
 				</li>
 				<!--
 				<li id="li_5">
