@@ -1,4 +1,6 @@
 <?php
+ session_start();
+
 ini_set('display_errors', 1);
 //Si la page est généré par une requete POST 
 //Sinon redirection 
@@ -57,6 +59,29 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
     fwrite($fp, $txt);
     fclose($fp);
 
+    $database = 'gsjrnmiasl.mysql.db';
+    $user = 'gsjrnmiasl';
+    $password = 'MJCAbbaye38';
+    try {
+        $db = new PDO("mysql:host=gsjrnmiasl.mysql.db;dbname=gsjrnmiasl", $user, $password);
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        //echo "Connected successfully"; 
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+
+    $nomduCR = addslashes($_POST["titre"]) . ".pdf";
+    $today = getdate();
+    $mon = $today['mon'];
+    $date = $today['year'] . "/" . $mon . "/" . $today['mday'];
+
+    $sth = $db->prepare('INSERT INTO DOCUMENT (datepublication,typedoc,nom,chemin,tmp,cr) value (?,"pdf",?,?,true,true)');
+    $sth->bindParam(1, $today);
+    $sth->bindParam(2, $nomduCR);
+    $sth->bindParam(3,"tmp-CR/".$nomduCR);
+    $sth->execute();
+
+    $db=null;
     /*
 /////////////////////////////////
  POUR LA GESTION DE FICHIER 
@@ -130,6 +155,18 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
                                 } catch (Exception $e) {
                                     die('Erreur : ' . $e->getMessage());
                                 }
+
+                                $today = getdate();
+                                $mon = $today['mon'];
+                                $date = $today['year'] . "/" . $mon . "/" . $today['mday'];
+
+                                $sth = $db->prepare('INSERT INTO DOCUMENT (datepublication,typedoc,nom,chemin,tmp,cr) value (?,?,?,?,true,false)');
+                                $sth->bindParam(1, $today);
+                                $sth->bindParam(2, $filetype);
+                                $sth->bindParam(3, $filename);
+                                $sth->bindParam(4, "uploads/".$filename);
+                                $sth->execute();
+                                $db=null;
                             } else {
                                 echo "Sorry, there was an error uploading your file.";
                             }
@@ -149,10 +186,10 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
     $auteur = addslashes($_POST["auteur"]);
     $titre = addslashes($_POST["titre"]);
     $nbdoc = count($file_ary);
-    $lienCR  = 'http://les-asl-abbaye.ovh/tmp-CR/'.$titre.'pdf'; 
-    $message = 'Un Compte rendu nommé '.$titre.' à été saisit par '.$auteur.' et accompagné de '.$nbdoc.' document <br>
-     Vous pourrez retrouver le compte rendu à l\'adresse suivante <a href="'.$lienCR.'"> COMPTE RENDU</a>';
-    mail('fabienremule974@gmail.com', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
+    $lienCR  = 'http://les-asl-abbaye.ovh/tmp-CR/' . $titre . 'pdf';
+    $message = 'Un Compte rendu nommé ' . $titre . ' à été saisit par ' . $auteur . ' et accompagné de ' . $nbdoc . ' document <br>
+     Vous pourrez retrouver le compte rendu à l\'adresse suivante <a href="' . $lienCR . '"> COMPTE RENDU</a>';
+    mail('asl.abbaye@grenoble.fr', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
 } else {
     header("Location: http://les-asl-abbaye.ovh");
 }

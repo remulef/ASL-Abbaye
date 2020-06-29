@@ -21,7 +21,7 @@ if (!isset($_POST['data'])) {
     $node_name = "Ressourcepeda";
     $sth = $db->prepare('SELECT * 
     FROM DOCUMENT 
-    WHERE id_doc IN (SELECT DOCUMENT_id_doc 
+    WHERE tmp=false AND id_doc IN (SELECT DOCUMENT_id_doc 
                      FROM NODE_DOCUMENT 
                      WHERE NODE_id_node IN 
                                      (SELECT id_node 
@@ -68,7 +68,7 @@ else {
     $id_node = $data;
     $sth = $db->prepare('SELECT * 
     FROM DOCUMENT 
-    WHERE id_doc IN (SELECT DOCUMENT_id_doc 
+    WHERE tmp = false AND id_doc IN (SELECT DOCUMENT_id_doc 
                      FROM NODE_DOCUMENT 
                      WHERE NODE_id_node = ?)');
 

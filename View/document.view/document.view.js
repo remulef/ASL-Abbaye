@@ -131,28 +131,32 @@ function affiche(json) {
             media.appendChild(img);
 
             break;
+        /* case "doc":
+         case "docx":
+             var ifram = document.createElement("iframe");
+             url = "https://docs.google.com/gview?url=" + "http://www.les-asl-abbaye.ovh" + lien + "&embedded=true";
+             ifram.src = url;
+             ifram.style = "width: 100%;height: 500px;";
+ 
+             media.appendChild(ifram);
+             break;
+         */
         case "doc":
         case "docx":
-            var ifram = document.createElement("iframe");
-            url = "https://docs.google.com/gview?url=" + "http://www.les-asl-abbaye.ovh" + lien + "&embedded=true";
-            ifram.src = url;
-            ifram.style = "width: 100%;height: 500px;";
-
-            media.appendChild(ifram);
         case "ppt":
         case "pptx":
         case "odp":
         case "odt":
-                var ifram = document.createElement("iframe");
-                url = "https://view.officeapps.live.com/op/embed.aspx?src=" + "http://www.les-asl-abbaye.ovh" + lien;
-                ifram.src = url;
-                ifram.width="100%";
-                ifram.height="100";
-                ifram.frameBorder='0';
-                ifram.style = "width: 100%;height: 500px;";
+            var ifram = document.createElement("iframe");
+            url = "https://view.officeapps.live.com/op/embed.aspx?src=" + "http://www.les-asl-abbaye.ovh" + lien;
+            ifram.src = url;
+            ifram.width = "100%";
+            ifram.height = "100";
+            ifram.frameBorder = '0';
+            ifram.style = "width: 100%;height: 500px;";
 
-                media.appendChild(ifram);
-    
+            media.appendChild(ifram);
+
 
             break;
 

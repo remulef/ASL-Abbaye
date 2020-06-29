@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -10,7 +11,7 @@
 
 <body>
     <h1>Redaction de compte rendu </h1>
-    <form action="test.php" method="post" enctype="multipart/form-data">
+    <form action="CR_traitement.php" method="post" enctype="multipart/form-data">
     
         <label for="">Titre du compte-rendu :</label>
         <input type="text" name="titre" value="COMPTE RENDU LOREM" required="required" /><br>
