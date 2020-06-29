@@ -704,7 +704,7 @@ function deletetag(i) {
             // mdp : $_SESSION["mdp"]
         })
         json = JSON.stringify(json);
-        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/document/delete-tag.php?";
+        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/document/remove-tag.php?";
         ajax_post_request(recuptag, url, true, encodeURIComponent(json));
     } catch (error) {
 
