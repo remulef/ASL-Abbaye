@@ -70,15 +70,12 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
         die('Erreur : ' . $e->getMessage());
     }
 
-    $nomduCR = addslashes($_POST["titre"]) . ".pdf";
-    $today = getdate();
-    $mon = $today['mon'];
-    $date = $today['year'] . "/" . $mon . "/" . $today['mday'];
-
-    $sth = $db->prepare('INSERT INTO DOCUMENT (datepublication,typedoc,nom,chemin,tmp,cr) value (?,"pdf",?,?,true,true)');
-    $sth->bindParam(1, $today);
-    $sth->bindParam(2, $nomduCR);
-    $sth->bindParam(3,"tmp-CR/".$nomduCR);
+    $nomduCR = $_POST["titre"] . ".pdf";
+    $sth = $db->prepare('INSERT INTO COMPTERENDU (titre,datepub,auteur,chemin,tmp) value (?,?,?,?,true)');
+    $sth->bindParam(1, $_POST["titre"]);
+    $sth->bindParam(2, $_POST["date"]);
+    $sth->bindParam(3,$_POST["auteur"]);
+    $sth->bindParam(4,"tmp-CR/".$nomduCR);
     $sth->execute();
 
     $db=null;
@@ -159,13 +156,21 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
                                 $today = getdate();
                                 $mon = $today['mon'];
                                 $date = $today['year'] . "/" . $mon . "/" . $today['mday'];
-
+                                $max_CR = $db->query("SELECT max(id_cr)as max FROM COMPTERENDU ")->fetchColumn();
+                                
                                 $sth = $db->prepare('INSERT INTO DOCUMENT (datepublication,typedoc,nom,chemin,tmp,cr) value (?,?,?,?,true,false)');
                                 $sth->bindParam(1, $today);
                                 $sth->bindParam(2, $filetype);
                                 $sth->bindParam(3, $filename);
                                 $sth->bindParam(4, "uploads/".$filename);
                                 $sth->execute();
+                                $max_DOC = $db->query("SELECT max(id_doc)as max FROM DOCUMENT ")->fetchColumn();
+                                
+                                $sth = $db->prepare('INSERT INTO COMPTERENDU-DOCUMENT (COMPTERENDU_id_cr,COMPTERENDU_id_doc)value(?,?)');
+                                $sth-> bindParam(1,$max_CR);
+                                $sth-> bindParam(2,$max_DOC);
+                                $sth->execute();
+                               
                                 $db=null;
                             } else {
                                 echo "Sorry, there was an error uploading your file.";
