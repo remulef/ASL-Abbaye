@@ -98,4 +98,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: " . $_FILES['fileToUpload']["error"];
     }
 }
-header("Location: http://les-asl-abbaye.ovh");
+//header("Location: http://les-asl-abbaye.ovh");
