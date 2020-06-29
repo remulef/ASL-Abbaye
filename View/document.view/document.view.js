@@ -695,28 +695,28 @@ function deletetag(i) {
     var ul = document.getElementById("tags");
     //ul.removeChild(ul.getElementsByTagName("li")[i]);
     try {
-      var id_tag =  ul.getElementsByTagName("li")[i].id;
+        var id_tag = ul.getElementsByTagName("li")[i].id;
 
-      var json = ({
-          id_tag: id_tag,
-          //login : $_SESSION["login"], 
-          // mdp : $_SESSION["mdp"]
-      })
-      json = JSON.stringify(json);
-      let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Document/delete-tag.php?";
-      ajax_post_request(recuptag,url,true,encodeURIComponent(json));
+        var json = ({
+            id_tag: id_tag,
+            //login : $_SESSION["login"], 
+            // mdp : $_SESSION["mdp"]
+        })
+        json = JSON.stringify(json);
+        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Document/delete-tag.php?";
+        ajax_post_request(recuptag, url, true, encodeURIComponent(json));
     } catch (error) {
-        
+
     }
 }
 
 
-function addonetag(string,id) {
+function addonetag(string, id) {
     var ul = document.getElementById("tags");
     var tag = document.createElement("li");
     var a = document.createElement("a");
     a.className = "tag";
-    a.id=id;
+    a.id = id;
     a.innerHTML = string;
     tag.append(a);
     document.getElementById("tags").append(tag);
@@ -738,9 +738,9 @@ function sendtag() {
                     //mdp: $_SESSION["mdp"] ,
                 })
                 json = JSON.stringify(tags);
-                let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Document/recup-tag.php?";
-                ajax_post_request(recuptag, url, false, encodeURIComponent(json));
-            }  catch (error) {
+                let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Document/add-tag.php?";
+                ajax_post_request(AJAXgettag, url, false, encodeURIComponent(json));
+            } catch (error) {
                 alert(error);
             }
         } else alert("Les tags sont limités à 30 caracteres");
@@ -750,16 +750,25 @@ function sendtag() {
 
 function recuptag(json) {
     data = JSON.parse(json);
-    document.getElementById("tags").innerHTML="";
- 
+    document.getElementById("tags").innerHTML = "";
+
     for (let index = 0; index < data.length; index++) {
         var current = data[index];
-        addonetag(current.tag,current.id_tags);
+        addonetag(current.tag, current.id_tags);
     }
-   
+
+}
+
+function AJAXgettag() {
+ try{
+    let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Document/add-tag.php?";
+    ajax_post_request(recuptag, url, false, encodeURIComponent(id_doc));
+}  catch (error) {
+    alert(error);
+}
 }
 
 
 function vidertags() {
-    document.getElementById("tags").innerHTML="";
+    document.getElementById("tags").innerHTML = "";
 }
