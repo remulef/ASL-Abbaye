@@ -23,7 +23,7 @@ if (true) {
     }
 
     $data = json_decode($data);
-    var_dump($data);
+    //var_dump($data);
     $id_doc = $data->id_doc;
     $tag = $data->tags;
 
@@ -36,7 +36,7 @@ if (true) {
     if (strlen($tag) <= 30 && $nbcolumn <= 10) {
         $sth = $db->prepare('INSERT INTO  TAGS (id_doc,tag)VALUES(?,?)');
         $sth->bindParam(1, $id_doc);
-        $sth->bindParam(2, $tags);
+        $sth->bindParam(2, $tag);
         $sth->execute();
     }
 
