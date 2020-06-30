@@ -27,14 +27,14 @@ function add_node(string $path,int $parent,int $num):string{
   global $numnode_courant;
   $path_info = pathinfo($path);
   $nom =  $path_info['filename'] ;     //nom du dossier
-  //echo'insert into NODE (id_node,name, parent_node_id) values ('.$num.',\''.$nom.'\','.$parent.');  <br> ';
+  echo'insert into NODE (id_node,name, parent_node_id) values ('.$num.',\''.$nom.'\','.$parent.');  <br> ';
   $numnode_courant++;
   return 'insert into NODE (id_node,name, parent_node_id) values ('.$numnode_courant.',\''.$nom.'\','.$parent.');   ';
 }
 
 
 function add_node_document(int $id_node,int $id_doc):string{
-  //echo 'insert into NODE_DOCUMENT (NODE_id_node, DOCUMENT_id_doc) values ('.$id_node.','.$id_doc.'); <br>';
+  echo 'insert into NODE_DOCUMENT (NODE_id_node, DOCUMENT_id_doc) values ('.$id_node.','.$id_doc.'); <br>';
   return  'insert into NODE_DOCUMENT (NODE_id_node, DOCUMENT_id_doc) values ('.$id_node.','.$id_doc.'); ';
 }
 
