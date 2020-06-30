@@ -32,7 +32,7 @@ function add_node(string $path, int $parent, int $num): string
   global $numnode_courant;
   $path_info = pathinfo($path);
   $nom =  $path_info['filename'];     //nom du dossier
-  echo 'insert into NODE (id_node,name, parent_node_id) values (' . $num . ',\'' . $nom . '\',' . $parent . ');  <br> ';
+  echo 'insert into NODE (id_node,name, parent_node_id) values (' . $num . ',\"' . $nom . '\",' . $parent . ');  <br> ';
   $numnode_courant++;
   return 'insert into NODE (id_node,name, parent_node_id) values (' . $numnode_courant . ',\'' . $nom . '\',' . $parent . ');   ';
 }
