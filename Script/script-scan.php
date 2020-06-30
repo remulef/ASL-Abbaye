@@ -22,8 +22,8 @@ function add_document(string $path, $id_doc): string
   $datepublication = new DateTime("@$datepublication");
   $datepublication = $datepublication->format('Y-m-d');
 
-  echo 'insert into DOCUMENT (id_doc,datepublication, typedoc, nom, chemin,tmp) values(' . $id_doc . ',\'' . $datepublication . '\',\'' . $type . '\',\'' . $nom . '\',\'' . $path . '\',false)<br>';
-  return 'insert into DOCUMENT (id_doc,datepublication, typedoc, nom, chemin, tmp) values(' . $id_doc . ',\'' . $datepublication . '\',\'' . $type . '\',\"' . $nom . '\",\"' . $path . '\",false);';
+  echo 'insert into DOCUMENT (id_doc,datepublication, typedoc, nom, chemin,tmp) values(' . $id_doc . ',\'' . $datepublication . '\',"' . $type . '","' . $nom . '","' . $path . '",false)<br>';
+  return 'insert into DOCUMENT (id_doc,datepublication, typedoc, nom, chemin, tmp) values(' . $id_doc . ',\'' . $datepublication . '\',\'' . $type . '\',"' . $nom . '","' . $path . '",false);';
 }
 
 
@@ -32,9 +32,9 @@ function add_node(string $path, int $parent, int $num): string
   global $numnode_courant;
   $path_info = pathinfo($path);
   $nom =  $path_info['filename'];     //nom du dossier
-  echo 'insert into NODE (id_node,name, parent_node_id) values (' . $num . ',\"' . $nom . '\",' . $parent . ');  <br> ';
+  echo 'insert into NODE (id_node,name, parent_node_id) values (' . $num . ',"' . $nom . '",' . $parent . ');  <br> ';
   $numnode_courant++;
-  return 'insert into NODE (id_node,name, parent_node_id) values (' . $numnode_courant . ',\'' . $nom . '\',' . $parent . ');   ';
+  return 'insert into NODE (id_node,name, parent_node_id) values (' . $numnode_courant . ',"' . $nom . '",' . $parent . ');   ';
 }
 
 
