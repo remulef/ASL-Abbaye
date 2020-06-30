@@ -20,7 +20,7 @@
 		<form id="form_116196" class="appnitro" enctype="multipart/form-data" method="post" action="traitement-proposer.php">
 			<div class="form_description">
 				<h2>Proposer un document</h2>
-				<p>Ce formulaire nous aidera a traiter au mieux le document que vous nous proposer</p>
+				<p>Ce formulaire nous aidera a traiter au mieux le document que vous nous proposez</p>
 			</div>
 			<ul>
 

@@ -107,12 +107,13 @@ function recup_worker(string $path,int $node_parent_courant,$firstline=false){
   //     echo $datepublication.' = DATE <br>';
   //       echo '----------------------------- <br>';
   //   }
-  // }
+  // } 
+  /*
   unlink('sql/insert_NODE.sql');
   unlink('sql/insert_NODE_DOCUMENT.sql');
   unlink('sql/insert_DOCUMENT.sql');
-
-//  echo'insert into NODE (id_node,name, parent_node_id) values (0,\''.dirname('.').'\',NULL);  <br> ';
-  recup_worker('Ressourcepeda',0,true);
+*/
+  echo'insert into NODE (id_node,name, parent_node_id) values (0,\''.dirname('.').'\',NULL);  <br> ';
+  recup_worker('racine',0,true);
 
   ?>
