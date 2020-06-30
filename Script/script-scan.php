@@ -15,6 +15,7 @@ function add_document(string $path,$id_doc):string{
 
   $nom =  $path_info['filename'] ;     //nom du fichier
   $datepublication = stat($path)['mtime'];  //date de modification du fichier
+  echo $datepublication;
   $datepublication = new DateTime($datepublication);
   $datepublication = $datepublication->format('Y-m-d');
 
