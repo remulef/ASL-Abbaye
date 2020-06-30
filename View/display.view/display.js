@@ -7,13 +7,13 @@ function init() {
     history = [];
     var pos = ({
         id_node: 0,
-        name: "Ressource Pedagogique",
+        name: "Racine",
     })
     history.push(pos);
     updateparcours();
     try {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-load.php";
-        ajax_post_request(load, url, true, null);
+        ajax_post_request(load, url, true, encodeURIComponent(0));
     } catch (error) {
 
     }
