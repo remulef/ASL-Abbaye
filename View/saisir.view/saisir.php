@@ -18,9 +18,9 @@
         <label for="">Nom de l'auteur:</label>
         <input type="text" name="auteur" value="testeur" required="required" /><br>
         <label for="">date du compte-rendu :</label>
-        <input type="date" name="date" value="14/01/2015" required="required" /><br>
+        <input type="date" name="date"  required="required" /><br>
         <label for="">Saisit du compt-rendu  :</label>
-        <textarea name="editeur" id="editeur" value=" test" rows="8" cols="80"></textarea>
+        <textarea name="editeur" id="editeur"  rows="8" cols="80"></textarea>
         <label for="">Fichier lié au compte rendu</label>
          <!--MAX_FILE_SIZE doit précéder le champ input de type file -->
         <p>Format possible : image/audio/.doc/.docx/.pdf/.odt/.odp/.ppt/.pptx</p>
@@ -28,7 +28,7 @@
         <p>Taille maximal par fichier  : 5Mo </p>
         <p>Veillez a nommé vos fichiers correctement </p>
         <input type="hidden" name="MAX_FILE_SIZE" value="5000000" />
-        <input type="file" name="fileToUpload[]" multiple="multiple" name="submit" accept="image/*,audio/*,.doc,.docx,.pdf,.odt,.odp,.ppt,.pptx">
+        <input type="file" name="fileToUpload[]" multiple="multiple"  accept="image/*,audio/*,.doc,.docx,.pdf,.odt,.odp,.ppt,.pptx">
         <p>
             <input type="submit" value="Ajouter" />
             <input type="reset" value="Annuler" />
