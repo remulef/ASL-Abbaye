@@ -49,9 +49,9 @@ $numdoc_courant = 1;
 
 function recup_worker(string $path,int $node_parent_courant,$firstline=false){
 
-  $nodesql = fopen("sql/insert_NODE.sql", "a");
-  $docsql = fopen("sql/insert_DOCUMENT.sql", "a");
-  $docnodesql = fopen("sql/insert_NODE_DOCUMENT.sql", "a");
+  $nodesql = fopen("insert_NODE.sql", "a");
+  $docsql = fopen("insert_DOCUMENT.sql", "a");
+  $docnodesql = fopen("insert_NODE_DOCUMENT.sql", "a");
   global $numdoc_courant;
   global $numnode_courant;
   global $listedossier_courant;
@@ -110,9 +110,9 @@ function recup_worker(string $path,int $node_parent_courant,$firstline=false){
   //       echo '----------------------------- <br>';
   //   }
   // }
-  unlink('sql/insert_NODE.sql');
-  unlink('sql/insert_NODE_DOCUMENT.sql');
-  unlink('sql/insert_DOCUMENT.sql');
+  unlink('insert_NODE.sql');
+  unlink('insert_NODE_DOCUMENT.sql');
+  unlink('insert_DOCUMENT.sql');
 
 //  echo'insert into NODE (id_node,name, parent_node_id) values (0,\''.dirname('.').'\',NULL);  <br> ';
   recup_worker('racine',0,true);
