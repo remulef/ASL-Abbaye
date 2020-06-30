@@ -57,7 +57,7 @@ function recup_worker(string $path,int $node_parent_courant,$firstline=false){
   //$node_parent_courant++;
 
   if($firstline){
-    fwrite($nodesql,'insert into NODE (id_node,name, parent_node_id) values (0,\''.$path.'\',NULL);'.PHP_EOL);
+    fwrite($nodesql,'insert into NODE (id_node,name, parent_node_id) values (0,\''.dirname($path).'\',NULL);'.PHP_EOL);
   }
 
 
@@ -113,6 +113,6 @@ function recup_worker(string $path,int $node_parent_courant,$firstline=false){
   unlink('sql/insert_DOCUMENT.sql');
 
 //  echo'insert into NODE (id_node,name, parent_node_id) values (0,\''.dirname('.').'\',NULL);  <br> ';
-  recup_worker('racine',0,true);
+  recup_worker('.',0,true);
 
   ?>
