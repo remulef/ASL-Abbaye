@@ -6,6 +6,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Saisir un compte-rendu</title>
 	<link rel="stylesheet" type="text/css" href="view.css" media="all">
+	<script src="ckeditor/ckeditor.js"></script>
 	<script type="text/javascript" src="view.js"></script>
 	<script type="text/javascript" src="calendar.js"></script>
 </head>
