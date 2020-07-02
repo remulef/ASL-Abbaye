@@ -53,13 +53,13 @@
                 <label class="description" for="element_8">Lieu de recherche </label>
                 <span>
                     <div class="switch-box">
-                        <label for="default" class="label-l" class="choice" for="element_8_1">Bas de données</label>
+                        <label for="default" class="label-l" class="choice" for="element_8_1">Base de données</label>
+                        <label class="choice" for="element_8_1" class="label-r">Dossier courant</label>
 
                         <input  type="checkbox" oninput="search(this)"
                          id="element_8_1" name="element_8_1" class="element checkbox switch-box-input" />
                         <label for="element_8_1" class="switch-box-slider"></label>
 
-                        <label class="choice" for="element_8_1" class="label-r">Dossier courant</label>
                     </div>
 
                 </span>
