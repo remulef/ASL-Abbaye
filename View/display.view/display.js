@@ -339,11 +339,11 @@ function displaysearch(json) {
         history.push(pos);
     updateparcours();
     document.getElementsByTagName("h3")[0].innerHTML = "";
-    document.getElementById("docbar").innerHTML = "";
+    document.getElementById("dossbar").innerHTML = "";
     
     }
     //============
-    document.getElementById("dossbar").innerHTML = "";
+    document.getElementById("docbar").innerHTML = "";
     
     var query = document.getElementById("element_1").value;
     query = query.replace(/</g, "&lt;").replace(/>/g, "&gt;");
