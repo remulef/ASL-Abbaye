@@ -29,7 +29,7 @@ $data = json_decode($data);
 ($data->nodesearch ==-1?$nodesearch="":$nodesearch=" AND id_doc IN (SELECT DOCUMENT_id_doc FROM NODE_DOCUMENT WHERE NODE_id_node =".$data->nodesearch.")");
 
 //ALPHA 
-($data->alpha == true ? $alpha=" AND nom like \"%".$data->alpha."%\"":$alpha=="");
+($data->alpha == true ? $alpha=" AND nom like \"%ALPHA%\"":$alpha=="");
 
 
 //TEF/ANF
