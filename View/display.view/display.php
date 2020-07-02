@@ -147,9 +147,9 @@
                 <hr>
                 <label class="description" for="element_6">Option </label>
                 <span>
-                    <input disabled id="element_6_1" name="element_6_1" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
+                    <input  id="element_6_1" name="element_6_1" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
                     <label class="choice" for="element_6_1">TEF/ANF</label>
-                    <input disabled id="element_6_2" name="element_6_2" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
+                    <input  id="element_6_2" name="element_6_2" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
                     <label class="choice" for="element_6_2">Niveau ALPHA</label>
 
                 </span>

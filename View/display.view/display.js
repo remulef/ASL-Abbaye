@@ -456,7 +456,7 @@ function hide() {
 function careful() {
     if (document.getElementsByTagName("input")[0].checked === false) {
         var last = history[history.length - 1].name;
-        alert("Attention vous allez faire une recherche dans le dossier"+last);
+        alert("Attention vous allez faire une recherche dans le dossier "+last);
     } else {
         alert("Votre recherche va s'effectuer dans la totalité de la base de données");
     }
