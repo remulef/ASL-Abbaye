@@ -55,7 +55,7 @@
 					<div>
 
 						<input type="hidden" name="MAX_FILE_SIZE" value="5000000" />
-						<input id="element_5" name="element_5" class="element file" type="file" name="fileToUpload[]" multiple="multiple" accept="image/*,audio/*,.doc,.docx,.pdf,.odt,.odp,.ppt,.pptx" />
+						<input id="element_5" name="fileToUpload[]" class="element file" type="file"  multiple="multiple" accept="image/*,audio/*,.doc,.docx,.pdf,.odt,.odp,.ppt,.pptx" />
 					</div>
 					<p class="guidelines" id="guide_5"><small>Fichier lié au compte rendu
 
