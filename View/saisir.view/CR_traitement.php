@@ -1,5 +1,5 @@
 <?php
- session_start();
+session_start();
 
 ini_set('display_errors', 1);
 //Si la page est généré par une requete POST 
@@ -39,7 +39,7 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
     $sucess = array();
     if ($_FILES['fileToUpload']) {
         $file_ary = reArrayFiles($_FILES['fileToUpload']);
-        var_export($file_ary);
+        var_dump($file_ary);
         echo "<br>";
         echo "<br>";
 
@@ -82,30 +82,30 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
                                 } catch (Exception $e) {
                                     die('Erreur : ' . $e->getMessage());
                                 }
-                                
+
                                 $today = getdate();
                                 $mon = $today['mon'];
                                 $date = $today['year'] . "/" . $mon . "/" . $today['mday'];
                                 $max_CR = $db->query("SELECT max(id_cr)as max FROM COMPTERENDU ")->fetchColumn();
-                                $chemin = "uploads/".$filename;
+                                $chemin = "uploads/" . $filename;
                                 $sth = $db->prepare('INSERT INTO DOCUMENT (datepublication,typedoc,nom,chemin,tmp,cr) value (?,?,?,?,true,false)');
                                 $sth->bindParam(1, $date);
                                 $sth->bindParam(2, $ext);
                                 $sth->bindParam(3, $filename);
-                                $sth->bindParam(4, urlencode($chemin) );
+                                $sth->bindParam(4, urlencode($chemin));
                                 $sth->execute();
                                 $max_DOC = $db->query("SELECT max(id_doc)as max FROM DOCUMENT ")->fetchColumn();
-                                $file["id_doc"]=$max_DOC;
-                                $file["chemin"]=$chemin;
+                                $file["id_doc"] = $max_DOC;
+                                $file["chemin"] = $chemin;
                                 var_dump($file);
-                                $sucess.array_push($file);
+                                $sucess . array_push($file);
                                 var_dump($sucess);
                                 $sth = $db->prepare('INSERT INTO COMPTERENDU_DOCUMENT (COMPTERENDU_id_cr,DOCUMENT_id_doc)value(?,?)');
-                                $sth-> bindParam(1,$max_CR);
-                                $sth-> bindParam(2,$max_DOC);
+                                $sth->bindParam(1, $max_CR);
+                                $sth->bindParam(2, $max_DOC);
                                 $sth->execute();
-                               
-                                $db=null;
+
+                                $db = null;
                             } else {
                                 echo "Sorry, there was an error uploading your file.";
                             }
@@ -120,7 +120,7 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
         echo "Le nombre de fichier est limité à 5";
     }
 
-        //NOTIFICATION PAR MAIL
+    //NOTIFICATION PAR MAIL
 
     // Include the main TCPDF library (search for installation path).
     require_once('TCPDF-master/tcpdf.php');
@@ -187,22 +187,22 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
     }
 
     $nomduCR = $_POST["titre"] . ".pdf";
-    $chemin = "tmp-CR/".$nomduCR;
+    $chemin = "tmp-CR/" . $nomduCR;
     $sth = $db->prepare('INSERT INTO COMPTERENDU (titre,datepub,auteur,chemin,tmp) value (?,?,?,?,true)');
     $sth->bindParam(1, $_POST["titre"]);
     $sth->bindParam(2, $_POST["date"]);
-    $sth->bindParam(3,$_POST["auteur"]);
-    $sth->bindParam(4,$chemin);
+    $sth->bindParam(3, $_POST["auteur"]);
+    $sth->bindParam(4, $chemin);
     $sth->execute();
 
-    $db=null;
-    
+    $db = null;
+
     $auteur = addslashes($_POST["auteur"]);
     $titre = addslashes($_POST["titre"]);
-    $nbdoc = "count array";//count($file_ary);
+    $nbdoc = "count array"; //count($file_ary);
     $lienCR  = 'http://les-asl-abbaye.ovh/tmp-CR/' . $titre . '.pdf';
     $message = 'Un Compte rendu nommé ' . $titre . ' à été saisit par ' . $auteur . ' et accompagné de ' . $nbdoc . ' document <br>
-     Vous pourrez retrouver le compte rendu à l\'adresse suivante :' .$lienCR;
+     Vous pourrez retrouver le compte rendu à l\'adresse suivante :' . $lienCR;
     mail('asl.abbaye@grenoble.fr', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
 } else {
     header("Location: http://les-asl-abbaye.ovh");
