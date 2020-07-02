@@ -79,7 +79,7 @@
 				</li>
 			</ul>
 		</form>
-
+		 
 		<script>
 			CKEDITOR.replace('editeur');
 		</script>

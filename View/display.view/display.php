@@ -28,6 +28,7 @@
         </ul>
         <div id="listdoss">
             <H3>Listes des thématiques </H3>
+            <p>Vous pouvez rechercher dans l'ensemble de la Base de données à partir du pavé de recherche à gauche OU rechercher par thématiques à partir des capsules ci-dessus</p>
             <ul id="dossbar">
             </ul>
         </div>
@@ -39,6 +40,7 @@
 <body onload="init()">
     <div>
         <a id="hider" onclick="hide()" class="button1" style="margin-left:2em;">
+           afficher/cacher le pavé de tri/recherche  
             <svg class="bi bi-arrow-bar-left" width="1.33em" height="1.33em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M5.854 4.646a.5.5 0 0 0-.708 0l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L3.207 8l2.647-2.646a.5.5 0 0 0 0-.708z" />
                 <path fill-rule="evenodd" d="M10 8a.5.5 0 0 0-.5-.5H3a.5.5 0 0 0 0 1h6.5A.5.5 0 0 0 10 8zm2.5 6a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 1 0v11a.5.5 0 0 1-.5.5z" />
@@ -61,7 +63,7 @@
                     <input id="element_7_2" name="element_7_2" oninput="search(this)" class="element checkbox" type="checkbox" value="1" />
                     <label class="choice" for="element_7_2">Fiche pédagogique</label>
                     <input id="element_7_3" name="element_7_3" class="element checkbox" oninput="search(this)" type="checkbox" value="1" />
-                    <label class="choice" for="element_7_3">Jeux - j</label>
+                    <label class="choice" for="element_7_3">Jeux </label>
                     <input oninput="search(this)" id="element_7_4" name="element_7_4" class="element checkbox" type="checkbox" value="1" />
                     <label class="choice" for="element_7_4">Doc authentique</label>
                     <input id="element_7_5" oninput="search(this)" name="element_7_5" class="element checkbox" type="checkbox" value="1" />
@@ -119,9 +121,9 @@
                     <label class="choice" for="element_4_1">Alphabétique croissant</label>
                     <input id="element_4_2" name="element_4" class="element radio" type="radio" oninput="search(this)" value="2" />
                     <label class="choice" for="element_4_2">Alphabétique décroissant</label>
-                    <input disabled id="element_4_3" name="element_4" class="element radio" type="radio" oninput="search(this)" value="1" />
+                    <input  id="element_4_3" name="element_4" class="element radio" type="radio" oninput="search(this)" value="1" />
                     <label class="choice" for="element_4_3">Popularité croissant</label>
-                    <input disabled id="element_4_4" name="element_4" class="element radio" type="radio" oninput="search(this)" value="2" />
+                    <input  id="element_4_4" name="element_4" class="element radio" type="radio" oninput="search(this)" value="2" />
                     <label class="choice" for="element_4_4">Popularité décroissant</label>
 
                 </span>
