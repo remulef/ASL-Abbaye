@@ -53,9 +53,13 @@
 				<li id="li_5">
 					<label class="description" for="element_5">Fichier rattaché </label>
 					<div>
-
+					<!--
 						<input type="hidden" name="MAX_FILE_SIZE" value="5000000" />
-						<input id="element_5" name="fileToUpload[]" class="element file" type="file"  multiple="multiple" accept="image/*,audio/*,.doc,.docx,.pdf,.odt,.odp,.ppt,.pptx" />
+						<input id="element_5" name="fileToUpload[]" class="element file" type="file" multiple="multiple" accept="image/*,audio/*,.doc,.docx,.pdf,.odt,.odp,.ppt,.pptx" />
+						-->
+						<input type="hidden" name="MAX_FILE_SIZE" value="5000000" />
+						<input type="file" name="fileToUpload[]" multiple="multiple" accept="image/*,audio/*,.doc,.docx,.pdf,.odt,.odp,.ppt,.pptx">
+					
 					</div>
 					<p class="guidelines" id="guide_5"><small>Fichier lié au compte rendu
 
@@ -69,9 +73,9 @@
 				</li>
 
 				<li class="buttons">
-					<input type="hidden" name="form_id" value="116357" />
+				<!--	<input type="hidden" name="form_id" value="116357" /> -->
 
-					<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+					<input id="saveForm" class="button_text" type="submit" name="submit" value="Ajouter" />
 				</li>
 			</ul>
 		</form>
