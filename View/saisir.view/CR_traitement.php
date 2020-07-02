@@ -199,7 +199,7 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
     
     $auteur = addslashes($_POST["auteur"]);
     $titre = addslashes($_POST["titre"]);
-    $nbdoc = count($file_ary);
+    $nbdoc = "count array";//count($file_ary);
     $lienCR  = 'http://les-asl-abbaye.ovh/tmp-CR/' . $titre . '.pdf';
     $message = 'Un Compte rendu nommé ' . $titre . ' à été saisit par ' . $auteur . ' et accompagné de ' . $nbdoc . ' document <br>
      Vous pourrez retrouver le compte rendu à l\'adresse suivante :' .$lienCR;
