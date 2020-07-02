@@ -36,7 +36,7 @@ $data = json_decode($data);
 ($data->tefanf == true ? $tefanf=" AND (nom like '%TCF%' OR nom like '%ANF% )" :$tefanf=="");
 
 $query = 'SELECT * FROM DOCUMENT WHERE 1 ';
-$query = $query.$name.$typedoc.$niveau.$ressource.$tags.$order; //.$node
+$query = $query.$name.$typedoc.$niveau.$ressource.$tags.$alpha.$tefanf.$nodesearch.$order; //.$node
 
 //AJOUTER TEF ANF 
 //https://codepen.io/stephengreig/pen/ogoPLv
