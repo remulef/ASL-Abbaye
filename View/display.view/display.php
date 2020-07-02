@@ -39,7 +39,7 @@
 <body onload="init()">
     <div>
         <a id="hider" onclick="hide()" class="button1" style="margin-left:2em;">
-           afficher/cacher le pavé de tri/recherche  
+            afficher/cacher le pavé de tri/recherche
             <svg class="bi bi-arrow-bar-left" width="1.33em" height="1.33em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M5.854 4.646a.5.5 0 0 0-.708 0l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L3.207 8l2.647-2.646a.5.5 0 0 0 0-.708z" />
                 <path fill-rule="evenodd" d="M10 8a.5.5 0 0 0-.5-.5H3a.5.5 0 0 0 0 1h6.5A.5.5 0 0 0 10 8zm2.5 6a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 1 0v11a.5.5 0 0 1-.5.5z" />
@@ -49,6 +49,22 @@
 
         <div id="sortpanel" style="display: block;">
             <form>
+
+                <label class="description" for="element_8">Lieu de recherche </label>
+                <span>
+                    <div class="switch-box">
+                        <label for="default" class="label-l" class="choice" for="element_8_1">Bas de données</label>
+
+                        <input  type="checkbox" oninput="search(this)"
+                         id="element_8_1" name="element_8_1" class="element checkbox switch-box-input" />
+                        <label for="element_8_1" class="switch-box-slider"></label>
+
+                        <label class="choice" for="element_8_1" class="label-r">Dossier courant</label>
+                    </div>
+
+                </span>
+                <hr>
+
                 <label class="description" for="element_1">Rechercher par nom </label>
                 <div style="float: left;">
                     <input onblur="search(this)" id="element_1" name="docname" class="element text large" type="search" maxlength="255" value="" placeholder="Recherche par nom" />
@@ -116,13 +132,14 @@
                 <hr>
                 <label class="description" for="element_4">Trier par </label>
                 <span>
+
                     <input id="element_4_1" name="element_4" class="element radio" type="radio" oninput="search(this)" value="1" />
                     <label class="choice" for="element_4_1">Alphabétique croissant</label>
                     <input id="element_4_2" name="element_4" class="element radio" type="radio" oninput="search(this)" value="2" />
                     <label class="choice" for="element_4_2">Alphabétique décroissant</label>
-                    <input  id="element_4_3" name="element_4" class="element radio" type="radio" oninput="search(this)" value="1" />
+                    <input id="element_4_3" name="element_4" class="element radio" type="radio" oninput="search(this)" value="1" />
                     <label class="choice" for="element_4_3">Popularité croissant</label>
-                    <input  id="element_4_4" name="element_4" class="element radio" type="radio" oninput="search(this)" value="2" />
+                    <input id="element_4_4" name="element_4" class="element radio" type="radio" oninput="search(this)" value="2" />
                     <label class="choice" for="element_4_4">Popularité décroissant</label>
 
                 </span>
