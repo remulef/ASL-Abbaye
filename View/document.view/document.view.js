@@ -177,7 +177,7 @@ function affiche(json) {
             break;
     }
 
-    document.getElementById("telecharger").setAttribute("href", "http://www.les-asl-abbaye.ovh" + lien);
+    document.getElementById("telecharger").setAttribute("href", lien);
     document.getElementById("titreh1").innerHTML = title;
 
     var today = new Date(date);
