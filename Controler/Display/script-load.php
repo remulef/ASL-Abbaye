@@ -79,7 +79,8 @@ else {
     $sth = $db->prepare(
         'SELECT * 
     FROM NODE 
-    WHERE parent_node_id = ? '
+    WHERE parent_node_id = ? 
+    ORDER BY priority ASC'
     );
 
     $sth->bindParam(1, $id_node);
