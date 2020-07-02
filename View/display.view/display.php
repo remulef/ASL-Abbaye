@@ -54,7 +54,7 @@
                     <div class="switch-box">
                         <label for="default" class="label-l">BDD</label>
 
-                        <input id="default" class="switch-box-input" type="checkbox" />
+                        <input id="default" class="switch-box-input" type="checkbox" oninput="careful()" />
                         <label for="default" class="switch-box-slider"></label>
 
                         <label for="default" class="label-r">Dossier courant</label>

@@ -328,7 +328,7 @@ function displaysearch(json) {
     history = [];
     var pos = ({
         id_node: 0,
-        name: "Ressource Pedagogique",
+        name: "Racine",
     })
     history.push(pos);
     updateparcours();
@@ -442,4 +442,10 @@ function hide() {
                 "<path fill-rule=\"evenodd\" d=\"M10 8a.5.5 0 0 0-.5-.5H3a.5.5 0 0 0 0 1h6.5A.5.5 0 0 0 10 8zm2.5 6a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 1 0v11a.5.5 0 0 1-.5.5z\" /></svg>";
 
     };
+}
+
+function careful() {
+    var last = history[history.length - 1].name;
+    alert("Attention vous allez faire une recherche dans le dossier".last);
+    search();
 }
