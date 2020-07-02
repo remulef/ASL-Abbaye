@@ -52,7 +52,7 @@
 
                 <label class="description" for="element_8">Lieu de recherche </label>
                     <div class="switch-box">
-                        <label for="default" class="label-l">Base de données</label>
+                        <label for="default" class="label-l">BDD</label>
 
                         <input id="default" class="switch-box-input" type="checkbox" />
                         <label for="default" class="switch-box-slider"></label>
