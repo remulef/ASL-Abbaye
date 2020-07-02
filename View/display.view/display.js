@@ -199,13 +199,15 @@ function search(elem) {
     var inputs = document.getElementsByTagName("input");
 
     var param = ({
-        docname: inputs[0].value,
+        nodesearch: (inputs[0].checked===true ? -1: history[history.length-1].id_node), 
+        docname: inputs[1].value,
         ressource: recupressource(),
         typedoc: recuptype(),
-        tags: (inputs[13].value.length > 0 ? inputs[13].value.split("+") : []),
+        tags: (inputs[14].value.length > 0 ? inputs[14].value.split("+") : []),
         niveau: recupniveau(),
         order: recuporderby(), //Croissant ? 
-        tefanf: inputs[22].checked  // TEF ANF ?
+        tefanf: inputs[23].checked,  // TEF ANF ?
+        alpha:inputs[24].checked
     });
 
     param = JSON.stringify(param);
@@ -234,17 +236,17 @@ function log(params) {
 function recupressource() {
     var inputs = document.getElementsByTagName("input");
     var type = [];
-    if (inputs[1].checked === true) {
+    if (inputs[2].checked === true) {
         type.push("fp");
     }
-    if (inputs[2].checked === true) {
+    if (inputs[3].checked === true) {
         type.push("j");
     }
-    if (inputs[3].checked === true) {
+    if (inputs[4].checked === true) {
         type.push("da");
     }
 
-    if (inputs[4].checked === true) {
+    if (inputs[5].checked === true) {
         type.push("vsm");
     }
 
@@ -263,25 +265,25 @@ function recupressource() {
 function recuptype() {
     var inputs = document.getElementsByTagName("input");
     var type = [];
-    if (inputs[7].checked === true) {
+    if (inputs[8].checked === true) {
         type.push("pdf");
     }
-    if (inputs[8].checked === true) {
+    if (inputs[9].checked === true) {
         type.push("jpeg");
         type.push("jpg");
         type.push("gif");
         type.push("png");
     }
-    if (inputs[9].checked === true) {
+    if (inputs[10].checked === true) {
         type.push("wma");
         type.push("mp3");
     }
 
-    if (inputs[10].checked === true) {
+    if (inputs[11].checked === true) {
         type.push("MPG");
     }
 
-    if (inputs[11].checked === true) {
+    if (inputs[12].checked === true) {
         type.push("docx");
         type.push("odt");
         type.push("doc");
@@ -293,7 +295,7 @@ function recuptype() {
         type.push("ods");
 
     }
-    if (inputs[12].checked === true) {
+    if (inputs[13].checked === true) {
         type.push("pptx");
         type.push("ppt");
     }
@@ -304,19 +306,22 @@ function recupniveau() {
     var inputs = document.getElementsByTagName("input");
     var niv = [];
 
-    if (inputs[14].checked === true) {
-        niv.push("ALPHA")
-    }
-
     if (inputs[15].checked === true) {
-        niv.push("D")
+        niv.push("D");
+        niv.push("E");
+        niv.push("A");
+        
     }
 
     if (inputs[16].checked === true) {
-        niv.push("E")
+        niv.push("D")
     }
 
     if (inputs[17].checked === true) {
+        niv.push("E")
+    }
+
+    if (inputs[18].checked === true) {
         niv.push("A")
     }
     return niv;
@@ -411,17 +416,17 @@ function recuporderby() {
 
     var inputs = document.getElementsByTagName("input");
 
-    if (inputs[18].checked === true) {
+    if (inputs[19].checked === true) {
         return "nom ASC";
     }
-    if (inputs[19].checked === true) {
+    if (inputs[20].checked === true) {
         return "nom DESC";
     }
 
-    if (inputs[20].checked === true) {
+    if (inputs[21].checked === true) {
         return "pop ASC";
     }
-    if (inputs[21].checked === true) {
+    if (inputs[22].checked === true) {
         return "pop DESC";
     }
 }
@@ -445,7 +450,12 @@ function hide() {
 }
 
 function careful() {
-    var last = history[history.length - 1].name;
-    alert("Attention vous allez faire une recherche dans le dossier".last);
+    if(document.getElementsByTagName("input")[0].checked===false){
+        var last = history[history.length - 1].name;
+        alert("Attention vous allez faire une recherche dans le dossier".last);
+    }else {
+        alert("Votre recherche va s'effectuer dans la totalité de la base de données");
+    }
+    
     search();
 }

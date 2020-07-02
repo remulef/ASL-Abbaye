@@ -25,6 +25,16 @@ $data = json_decode($data);
 ((count($data->niveau)>0)?$niveau = " AND nom like \"%-%".implode("%\" AND nom like \"%-%",$data->niveau)."%\"":$niveau="");
 ($data->order ==""? $order="":$order = " ORDER BY ".$data->order);
 
+//NODE DE RECHERCHE
+($data->nodesearch ==-1?$nodesearch="":$nodesearch=" AND id_doc IN (SELECT DOCUMENT_id_doc FROM NODE_DOCUMENT WHERE NODE_id_node =".$data->nodesearch.")");
+
+//ALPHA 
+($data->alpha == true ? $alpha=" AND nom like \"%".$data->alpha."%\"":$alpha=="");
+
+
+//TEF/ANF
+($data->tefanf == true ? $tefanf=" AND (nom like '%TCF%' OR nom like '%ANF% )" :$tefanf=="");
+
 $query = 'SELECT * FROM DOCUMENT WHERE 1 ';
 $query = $query.$name.$typedoc.$niveau.$ressource.$tags.$order; //.$node
 
