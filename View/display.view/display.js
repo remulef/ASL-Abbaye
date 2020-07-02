@@ -97,7 +97,7 @@ function load(json) {
 }
 
 function changedoc(id, title, forward, pos) {
-    document.getElementsByTagName("h3")[0].innerHTML="Liste des thématiques";
+    document.getElementsByTagName("h3")[0].innerHTML = "Liste des thématiques";
     clearul();
     //si on descend
     if (forward) {
@@ -199,7 +199,7 @@ function search(elem) {
     var inputs = document.getElementsByTagName("input");
 
     var param = ({
-        nodesearch: (inputs[0].checked===true ? -1: history[history.length-1].id_node), 
+        nodesearch: (inputs[0].checked === true ? -1 : history[history.length - 1].id_node),
         docname: inputs[1].value,
         ressource: recupressource(),
         typedoc: recuptype(),
@@ -207,7 +207,7 @@ function search(elem) {
         niveau: recupniveau(),
         order: recuporderby(), //Croissant ? 
         tefanf: inputs[23].checked,  // TEF ANF ?
-        alpha:inputs[24].checked
+        alpha: inputs[24].checked
     });
 
     param = JSON.stringify(param);
@@ -310,7 +310,7 @@ function recupniveau() {
         niv.push("D");
         niv.push("E");
         niv.push("A");
-        
+
     }
 
     if (inputs[16].checked === true) {
@@ -330,17 +330,21 @@ function recupniveau() {
 
 function displaysearch(json) {
     //Réinitialise la barre des documents et la liste des documents
-    history = [];
-    var pos = ({
-        id_node: 0,
-        name: "Racine",
-    })
-    history.push(pos);
+    if (document.getElementsByTagName("input")[0].checked === true) {
+        history = [];
+        var pos = ({
+            id_node: 0,
+            name: "Racine",
+        })
+        history.push(pos);
     updateparcours();
-    document.getElementById("dossbar").innerHTML="";
-    document.getElementsByTagName("h3")[0].innerHTML="";
-    //============
+    document.getElementsByTagName("h3")[0].innerHTML = "";
     document.getElementById("docbar").innerHTML = "";
+    
+    }
+    //============
+    document.getElementById("dossbar").innerHTML = "";
+    
     var query = document.getElementById("element_1").value;
     query = query.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
@@ -435,27 +439,27 @@ function hide() {
     var sortpanel = document.getElementById("sortpanel");
     var hider = document.getElementById("hider");
     if (sortpanel.getAttribute("style") == "display: block;") {
-        sortpanel.setAttribute("style","display: none;");
+        sortpanel.setAttribute("style", "display: none;");
         hider.innerHTML = "<svg class=\"bi bi-arrow-bar-right\" width=\"1.33em\" height=\"1.33em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">"
-        +"<path fill-rule=\"evenodd\" d=\"M10.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 8l-2.647-2.646a.5.5 0 0 1 0-.708z\"/>"+
-        "<path fill-rule=\"evenodd\" d=\"M6 8a.5.5 0 0 1 .5-.5H13a.5.5 0 0 1 0 1H6.5A.5.5 0 0 1 6 8zm-2.5 6a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 1 0v11a.5.5 0 0 1-.5.5z\"/></svg>"
+            + "<path fill-rule=\"evenodd\" d=\"M10.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 8l-2.647-2.646a.5.5 0 0 1 0-.708z\"/>" +
+            "<path fill-rule=\"evenodd\" d=\"M6 8a.5.5 0 0 1 .5-.5H13a.5.5 0 0 1 0 1H6.5A.5.5 0 0 1 6 8zm-2.5 6a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 1 0v11a.5.5 0 0 1-.5.5z\"/></svg>"
     } else {
-        sortpanel.setAttribute("style","display: block;");
+        sortpanel.setAttribute("style", "display: block;");
         hider.innerHTML =
-            "<svg class=\"bi bi-arrow-bar-left\" width=\"1.33em\" height=\"1.33em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">"+
-                "<path fill-rule=\"evenodd\" d=\"M5.854 4.646a.5.5 0 0 0-.708 0l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L3.207 8l2.647-2.646a.5.5 0 0 0 0-.708z\" />"+
-                "<path fill-rule=\"evenodd\" d=\"M10 8a.5.5 0 0 0-.5-.5H3a.5.5 0 0 0 0 1h6.5A.5.5 0 0 0 10 8zm2.5 6a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 1 0v11a.5.5 0 0 1-.5.5z\" /></svg>";
+            "<svg class=\"bi bi-arrow-bar-left\" width=\"1.33em\" height=\"1.33em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">" +
+            "<path fill-rule=\"evenodd\" d=\"M5.854 4.646a.5.5 0 0 0-.708 0l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L3.207 8l2.647-2.646a.5.5 0 0 0 0-.708z\" />" +
+            "<path fill-rule=\"evenodd\" d=\"M10 8a.5.5 0 0 0-.5-.5H3a.5.5 0 0 0 0 1h6.5A.5.5 0 0 0 10 8zm2.5 6a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 1 0v11a.5.5 0 0 1-.5.5z\" /></svg>";
 
     };
 }
 
 function careful() {
-    if(document.getElementsByTagName("input")[0].checked===false){
+    if (document.getElementsByTagName("input")[0].checked === false) {
         var last = history[history.length - 1].name;
         alert("Attention vous allez faire une recherche dans le dossier".last);
-    }else {
+    } else {
         alert("Votre recherche va s'effectuer dans la totalité de la base de données");
     }
-    
+
     search();
 }
