@@ -51,9 +51,9 @@
             <form>
 
                 <label class="description" for="element_8">Lieu de recherche </label>
-                <input type="checkbox" id="id-name--1" name="set-name" class="switch-input">
+                <input type="checkbox" checked id="id-name--1" name="set-name" class="switch-input">
 
-                <label for="id-name--1" class="switch-label">Recherche dans
+                <label for="id-name--1" class="switch-label">
                     <span class="toggle--on">BDD</span>
                     <span class="toggle--off">Dossier courant</span></label>
 
