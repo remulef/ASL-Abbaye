@@ -28,7 +28,6 @@
         </ul>
         <div id="listdoss">
             <H3>Listes des thématiques </H3>
-            <p>Vous pouvez rechercher dans l'ensemble de la Base de données à partir du pavé de recherche à gauche OU rechercher par thématiques à partir des capsules ci-dessus</p>
             <ul id="dossbar">
             </ul>
         </div>
@@ -144,6 +143,7 @@
 
             <div id="listdoc">
                 <H3 id="h3doc">Liste des documents</H3>
+                <p style="font-style: italic;">Vous pouvez rechercher dans l'ensemble de la Base de données à partir du pavé de recherche à gauche OU rechercher par thématiques à partir des capsules ci-dessus</p>
                 <ul id="docbar">
                 </ul>
             </div>
