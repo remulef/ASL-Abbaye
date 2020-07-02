@@ -157,8 +157,9 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
 
     // add a page
     $pdf->AddPage();
-    /*
     $html = $_POST["editeur"];
+
+    /*
     foreach ($sucess as $key => $value) {
         $html += " <h3> Documents rattachés </h3>".PHP_EOL;
         $html += " <ul>".PHP_EOL;
