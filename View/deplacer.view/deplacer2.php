@@ -27,13 +27,13 @@
 				<li id="li_1">
 					<label class="description" for="element_1">Titre du document </label>
 					<div>
-						<input id="element_1" readonly name="element_1" class="element text medium" type="text" maxlength="255" value="" />
+						<input id="nom" name="nom" readonly class="element text medium" type="text" maxlength="255" value="" />
 					</div>
 				</li>
 				<li id="li_4">
 					<label class="description" for="element_4">Numéro du document </label>
 					<div>
-						<input id="element_4" readonly name="id_doc" class="element text medium" type="text" maxlength="255" value="" />
+						<input  type="text" id="id_doc" name="id_doc"readonly class="element text medium" type="text" maxlength="255" value="" />
 					</div>
 				</li>
 				<li class="section_break">
