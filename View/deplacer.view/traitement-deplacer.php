@@ -32,6 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "ERREUR";
     }
 
-    header( "refresh:2; url=http://les-asl-abbaye.ovh/ASL-Abbaye/" ); 
+    header( "refresh:2; url=http://les-asl-abbaye.ovh/" ); 
 }
 ?>

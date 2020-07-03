@@ -1,4 +1,5 @@
 let id_doc;
+let nomdoc;
 let lien;
 let commentaire_to_delete = [];
 let old_title;
@@ -36,6 +37,7 @@ function affiche(json) {
     id_doc = doc.id_doc;
     console.log(id_doc);
     let title = doc.nom;
+    nomdoc=doc.nom;
     let description = doc.descri;
     let date = doc.datepublication;
     lien = doc.chemin;
@@ -803,3 +805,9 @@ function AJAXgettag() {
 function vidertags() {
     document.getElementById("tags").innerHTML = "";
 }
+
+
+function openWin() {
+    var url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/deplacer.view/deplacer.php?id_doc="+id_doc+"&nom="+nomdoc;
+    window.open(url, "Deplacer un document", 'width=800,height=600');
+  }
