@@ -30,6 +30,8 @@ function init() {
         id_node: 0,
         name: "BDD",
     })
+    document.getElementById("id_node_dest").value = 0;
+
     history.push(pos);
     updateparcours();
     try {
