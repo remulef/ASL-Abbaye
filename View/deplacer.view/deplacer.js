@@ -1,4 +1,4 @@
-let id_doc = $_GET("id");//274; //
+let id_doc = $_GET("id_doc");//274; //
 let nom =$_GET("nom");// "nom du document";//
 
 
