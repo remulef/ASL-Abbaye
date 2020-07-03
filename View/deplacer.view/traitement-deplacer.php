@@ -55,6 +55,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-
+    echo "<script>window.close();</script>";
     header( "refresh:2; url=http://les-asl-abbaye.ovh/" ); 
 }
