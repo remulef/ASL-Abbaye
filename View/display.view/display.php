@@ -160,9 +160,9 @@
     </div>
 
     <main class="main">
-        <div class="zoom"> 
-            <img src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/presentation.png" id="presentation" alt="organisation de ressource pedagogique">
-        </div>
+
+        <img src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/presentation.png" id="presentation" alt="organisation de ressource pedagogique">
+
 
         <span id="content" class="content">
 
