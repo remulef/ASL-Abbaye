@@ -168,7 +168,7 @@
 
     <main class="main">
 
-        <img src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/presentation.png" id="presentation" alt="organisation de ressource pedagogique">
+        <img style="display:none;" src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/presentation.png" id="presentation" alt="organisation de ressource pedagogique">
 
 
         <span id="content" class="content">
