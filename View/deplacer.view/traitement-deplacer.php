@@ -24,14 +24,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tmp = $sth->fetch();
 
     if ($tmp==true) {
+
         $sth = $db->prepare('UPDATE DOCUMENT SET tmp=false WHERE id_doc = ?');
         $sth->bindParam(1, $id_node);
         $sth->execute();
+        echo "le fichier n'est plus temporaire";
     
         $sth = $db->prepare('INSERT INTO DOCUMENT_NODE (NODE_id_node,DOCUMENT_id_node) value(?,?)');
         $sth->bindParam(1, $id_node);
         $sth->bindParam(2, $id_doc);
         $sth->execute();
+        echo "le fichier est déplacé";
     }else {
 
         $sth = $db->prepare('UPDATE NODE_DOCUMENT SET NODE_id_node = ? WHERE DOCUMENT_id_doc = ?');
