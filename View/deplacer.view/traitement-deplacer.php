@@ -19,9 +19,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die('Erreur : ' . $e->getMessage());
     }
 
-    $sth = $db->prepare('SELECT tmp FROM DOCUMENT WHERE id_doc = ?');
-    $sth->bindParam(1, $id_doc);
-    $tmp = $sth->fetch();
+    $sql = 'SELECT tmp FROM DOCUMENT WHERE id_doc = '.$id_doc;
+    //$sth->bindParam(1, $id_doc);
+    //$tmp = $sth->fetch();
+    $tmp = $db->query($sql)->fetchColumn();
+
     
 
     if ($tmp==true) {
