@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="document.view.css">
-    <!--<link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" /> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" />
     <title>Document ASL Abbaye</title>
 </head>
 
@@ -88,7 +88,8 @@ if (empty($_GET['id_doc'])) {
                     <span class="tooltiptext">Modifier le document</span>
                 </div>
                 <div class="tooltip">
-                    <button type="button" id="deplacer" onclick="openWin()">
+                <a href="" onclick="openWin()">
+                    <button type="button" id="deplacer" >
                         <svg width="1.33em" height="1.33em" viewBox="0 0 16 16" class="bi bi-arrows-move" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M6.5 8a.5.5 0 0 0-.5-.5H1.5a.5.5 0 0 0 0 1H6a.5.5 0 0 0 .5-.5z" />
                             <path fill-rule="evenodd" d="M3.854 5.646a.5.5 0 0 0-.708 0l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L2.207 8l1.647-1.646a.5.5 0 0 0 0-.708zM9.5 8a.5.5 0 0 1 .5-.5h4.5a.5.5 0 0 1 0 1H10a.5.5 0 0 1-.5-.5z" />
@@ -97,6 +98,7 @@ if (empty($_GET['id_doc'])) {
                             <path fill-rule="evenodd" d="M5.646 3.854a.5.5 0 0 1 0-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8 2.207 6.354 3.854a.5.5 0 0 1-.708 0z" />
                         </svg>
                     </button>
+                    </a>
                     <span class="tooltiptext">Deplacer le document</span>
                 </div>
 
