@@ -20,13 +20,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $sth = $db->prepare('SELECT tmp FROM DOCUMENT WHERE id_doc = ?');
-    $sth->bindParam(1, $id_node);
+    $sth->bindParam(1, $id_doc);
     $tmp = $sth->fetch();
+    
 
     if ($tmp==true) {
 
         $sth = $db->prepare('UPDATE DOCUMENT SET tmp=false WHERE id_doc = ?');
-        $sth->bindParam(1, $id_node);
+        $sth->bindParam(1, $id_doc);
         $sth->execute();
         echo "le fichier n'est plus temporaire";
     
