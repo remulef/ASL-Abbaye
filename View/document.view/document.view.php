@@ -30,14 +30,6 @@
                 <path fill-rule="evenodd" d="M8.354 11.354a.5.5 0 0 0 0-.708L5.707 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z" />
                 <path fill-rule="evenodd" d="M11.5 8a.5.5 0 0 0-.5-.5H6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5z" />
 =======
-<?php session_start();
-
-if (isset($_SESSION['role']) && ($_SESSION['role'][0] == "ADMINISTRATEUR" || $_SESSION['role'][0] == "MODERATEUR"
-    || $_SESSION['role'][0] == "BENEVOLE ABBAYE")) {
-    $url = "Location: " . "http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.admin.php?id_doc=" . $id_doc;
-    header($url);
-}
-?>
 
 <DOCTYPE html>
     <html lang="fr">
