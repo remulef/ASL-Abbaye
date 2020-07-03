@@ -23,5 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sth = $db->prepare('UPDATE NODE_id_node = ? WHERE DOCUMENT_id_doc = ?');
     $sth->bindParam(1, $id_node);
     $sth->bindParam(2, $id_doc);
+    var_dump($id_node);
+    var_dump($id_doc);
     echo $sth->execute();    
 }
