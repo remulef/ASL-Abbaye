@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         $auteur = addslashes($_POST["auteur"]);
                         $titre = addslashes($_POST["titre"]);
-                        $lienCR  = 'http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=' . $max_DOC;
+                        $lienCR  = 'http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.admin.php?id_doc=' . $max_DOC;
                         $message = 'Un Document nommé ' . $titre . ' à été proposé, vous pourrez le voir  à l\'adresse suivante <a href="' . $lienCR . '"> COMPTE RENDU</a>';
                         mail('asl.abbaye@grenoble.fr', 'NOTIFICATION proposition d\'un document', $message);
                     } else {
