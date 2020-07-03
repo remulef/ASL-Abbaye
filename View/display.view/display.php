@@ -160,12 +160,13 @@
     </div>
 
     <main class="main">
+    <img src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/presentation.png" id="presentation" alt="organisation de ressource pedagogique">
+                
         <span id="content" class="content">
 
             <div id="listdoc">
                 <H3 id="h3doc">Liste des documents</H3>
                 <p style=" justify-content: center; font-size:1.5em;">Vous pouvez rechercher dans l'ensemble de la Base de données à partir du pavé de recherche à gauche OU rechercher par thématiques à partir des capsules ci-dessus</p>
-                <img src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/presentation.png" id="presentation" alt="organisation de ressource pedagogique">
                 <ul id="docbar">
                 </ul>
             </div>
