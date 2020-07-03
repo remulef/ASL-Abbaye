@@ -87,7 +87,6 @@ function ajax_post_request(callback, url, async, data) {
 
 
 function changedoc(id, title, forward, pos) {
-    document.getElementsByTagName("h3")[0].innerHTML = "Liste des thématiques";
     document.getElementById("dossbar").innerHTML = "";
     if (forward) {
         var add = ({
@@ -102,7 +101,7 @@ function changedoc(id, title, forward, pos) {
 
     }
     document.getElementById("destination").value = title;
-    
+    document.getElementById("id_node_dest").value = id;
 
     updateparcours();
     
