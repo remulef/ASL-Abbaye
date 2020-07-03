@@ -367,7 +367,7 @@ function displaysearch(json) {
         var li = document.createElement("li");
         //a
         var a = document.createElement("a");
-        a.setAttribute("href", "http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=" + current.id_doc);
+        a.setAttribute("href", "http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc=" + current.id_doc);
         a.setAttribute("target", "_blank");
         a.innerHTML = "ouvrir";
 
