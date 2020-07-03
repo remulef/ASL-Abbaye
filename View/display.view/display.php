@@ -51,7 +51,7 @@
             <form>
 
                 <label class="description" for="element_8">Lieu de recherche </label>
-                
+
                 <a data-tooltip="La recherche sera effectuer soit dans l'entiereté des documents disponible soit dans le dossier ou vous vous situez actuellement" style="padding: 5px;border: none;background: none;">
                     <svg class="bi bi-question-circle" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -147,9 +147,9 @@
                 <hr>
                 <label class="description" for="element_6">Option </label>
                 <span>
-                    <input  id="element_6_1" name="element_6_1" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
+                    <input id="element_6_1" name="element_6_1" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
                     <label class="choice" for="element_6_1">TEF/ANF</label>
-                    <input  id="element_6_2" name="element_6_2" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
+                    <input id="element_6_2" name="element_6_2" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
                     <label class="choice" for="element_6_2">Niveau ALPHA</label>
 
                 </span>
@@ -160,8 +160,10 @@
     </div>
 
     <main class="main">
-    <img src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/presentation.png" id="presentation" alt="organisation de ressource pedagogique">
-                
+        <div class="zoom"> 
+            <img src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/presentation.png" id="presentation" alt="organisation de ressource pedagogique">
+        </div>
+
         <span id="content" class="content">
 
             <div id="listdoc">
