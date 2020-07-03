@@ -64,8 +64,10 @@
 				
 				<li id="li_3">
 					<label class="description" for="element_3">Destination </label>
+					<label class="description" id="id_node_dest"for="element_3" hidden ></label>
+					
 					<div>
-						<input id="element_3" readonly name="element_3" class="element text medium" type="text" maxlength="255" value="" />
+						<input id="destination" readonly name="destination" class="element text medium" type="text" maxlength="255" value="" />
 					</div>
 				</li>
 
