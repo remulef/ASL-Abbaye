@@ -45,9 +45,7 @@ color: #FFFFFF;
 
 #parcours li:last-child a {
  background-color: #6883ba; 
- color: #dbdbdb;
- cursor: not-allowed;
-  
+ color: #dbdbdb;  
 }
 
 #parcours li {
