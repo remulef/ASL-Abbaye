@@ -4,10 +4,10 @@ $id_doc = $_GET["id_doc"];
 
 if(isset($_SESSION['role']) && ($_SESSION['role'][0] == "ADMINISTRATEUR" || $_SESSION['role'][0] == "MODERATEUR" 
 || $_SESSION['role'][0] == "BENEVOLE ABBAYE")){
-    $url = "Location: "."http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view.admin.php?id_doc=".$id_doc;
+    $url = "Location: "."http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.admin.php?id_doc=".$id_doc;
     header($url);
 }else {
-    $url = "Location: "."http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view.php?id_doc=".$id_doc;
+    $url = "Location: "."http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=".$id_doc;
     header($url);
 }
     
