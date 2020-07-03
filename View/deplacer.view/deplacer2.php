@@ -17,7 +17,7 @@
 	<div id="form_container">
 
 		<h1><a>Deplacer un document</a></h1>
-		<form id="form_116623" class="appnitro" method="post" action="">
+		<form id="form_116623" class="appnitro" method="post" action="traitement-deplacer.php">
 			<div class="form_description">
 				<h2>Untitled Form</h2>
 				<p>This is your form description. Click here to edit.</p>
