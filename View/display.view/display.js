@@ -23,12 +23,6 @@ function init() {
 function load(json) {
     //clearul();
 
-    if( current.name === "Ressources pédagogiques"){
-        document.getElementById("presentation").setAttribute("style","display: block");
-    }else {
-        document.getElementById("presentation").setAttribute("style","display: none");
-    }
-
     var data = JSON.parse(json);
     var nbdoc = 0;
     var uldoc = document.getElementById("docbar");
@@ -127,7 +121,15 @@ function changedoc(id, title, forward, pos) {
         history.splice(pos + 1);
 
     }
+    
+    if( title === "Ressources pédagogiques"){
+        document.getElementById("presentation").setAttribute("style","display: block");
+    }else {
+        document.getElementById("presentation").setAttribute("style","display: none");
+    }
+
     updateparcours();
+    
 
     try {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-load.php";
