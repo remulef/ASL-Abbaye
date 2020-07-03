@@ -31,7 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     else {
         echo "ERREUR";
     }
-    sleep(1);
     echo "<script>window.close();</script>";
        
 }
