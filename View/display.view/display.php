@@ -92,11 +92,6 @@
                     <label class="choice" for="element_7_4">Doc authentique</label>
                     <input id="element_7_5" oninput="search(this)" name="element_7_5" class="element checkbox" type="checkbox" value="1" />
                     <label class="choice" for="element_7_5">video/site internet/mp3</label>
-<<<<<<< HEAD
-=======
-                    <input id="element_7_6" oninput="search(this)" name="element_7_6" class="element checkbox"type="hidden" value="1" />
-                    <label class="choice" for="element_7_6">doc authentique</label>
->>>>>>> 538d6f2bc2d0b2f14d72038d6d8cb03b96902036
                     <input id="element_7_7" oninput="search(this)" name="element_7_7" class="element checkbox" type="checkbox" value="1" />
                     <label class="choice" for="element_7_6">exos/activités</label>
                 </span>
@@ -172,7 +167,7 @@
 
     <main class="main">
 
-        <img style="display:none;" src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/presentation.png" id="presentation" alt="organisation de ressource pedagogique">
+        <img style="display:none" src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/presentation.png" id="presentation" alt="organisation de ressource pedagogique">
 
 
         <span id="content" class="content">
@@ -185,11 +180,6 @@
             </div>
         </span>
     </main>
-    <footer>
-      <a class="Contact" href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/contact.view/contact.php">Contact</a>
-      <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/RGPD.pdf" onclick = "window.open(this.href); return false;" >Mentions Légales</a>
-      <img id="logos" src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/Logos.PNG" alt="Logos des Financeurs" width="20%" height="10%">
-    </footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
