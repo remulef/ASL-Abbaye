@@ -7,7 +7,7 @@ function init() {
     history = [];
     var pos = ({
         id_node: 0,
-        name: "Racine",
+        name: "BDD",
     })
     history.push(pos);
     updateparcours();
@@ -340,7 +340,7 @@ function displaysearch(json) {
         history = [];
         var pos = ({
             id_node: 0,
-            name: "Racine",
+            name: "BDD",
         })
         history.push(pos);
     updateparcours();
