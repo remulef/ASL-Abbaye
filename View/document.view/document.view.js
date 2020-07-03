@@ -213,7 +213,7 @@ function supprimer() {
 }
 
 function redirect() {
-    location.replace("https://www.les-asl-abbaye.ovh");
+    //location.replace("https://www.les-asl-abbaye.ovh");
 
 }
 
