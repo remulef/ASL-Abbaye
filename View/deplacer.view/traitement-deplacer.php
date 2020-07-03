@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
         $sth = $db->prepare('INSERT INTO DOCUMENT_NODE (NODE_id_node,DOCUMENT_id_node) value(?,?)');
         $sth->bindParam(1, $id_node);
-        $sth->bindParam(1, $id_doc);
+        $sth->bindParam(2, $id_doc);
         $sth->execute();
     }else {
 
