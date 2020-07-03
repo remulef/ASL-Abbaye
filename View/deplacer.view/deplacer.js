@@ -1,5 +1,5 @@
-let id_doc = 274; //$_GET("id");
-let nom = "nom du document";//$_GET("nom");
+let id_doc = $_GET("id");//274; //
+let nom =$_GET("nom");// "nom du document";//
 
 
 let history = [];
