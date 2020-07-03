@@ -9,8 +9,7 @@
         <path fill-rule=\"evenodd\" d=\"M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z\"/>
         </svg>
         <div id=\"myDropdown\" class=\"dropdown-contenu\">
-          <a>Mon rôle : $role[0] </a>
-          <a href=\"#\">Mes favoris</a>
+          <p>Mon rôle : $role[0] </p>
           <a href=\"main'.php?deconnexion=true\">Déconnexion</a>
         </div>
       </div>";
@@ -23,9 +22,9 @@
           <path fill-rule=\"evenodd\" d=\"M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z\"/>
           </svg>
           <div id=\"myDropdown\" class=\"dropdown-contenu\">
-            <a>Mon rôle : $role[0] </a>
+            <p>Mon rôle : $role[0] </p>
             <a href=\"http://les-asl-abbaye.ovh/ASL-Abbaye/View/admin.view/user-management.php\">Gestion des comptes</a>
-            <a href=\"#\">Mes favoris</a>
+            <a href=\"http://les-asl-abbaye.ovh/ASL-Abbaye/View/admin.view/user-management.php\">Gestion des documents</a>
             <a href=\"http://les-asl-abbaye.ovh/ASL-Abbaye/View/accueil.view/main'.php?deconnexion=true\">Déconnexion</a>
           </div>
         </div>";
@@ -38,8 +37,7 @@
         <path fill-rule=\"evenodd\" d=\"M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z\"/>
         </svg>
         <div id=\"myDropdown\" class=\"dropdown-contenu\">
-          <a>Mon rôle : $role[0] </a>
-          <a href=\"#\">Mes favoris</a>
+          <p>Mon rôle : $role[0] </p>
           <a href=\"http://les-asl-abbaye.ovh/ASL-Abbaye/View/accueil.view/main'.php?deconnexion=true\">Déconnexion</a>
         </div>
       </div>";
