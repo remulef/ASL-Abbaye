@@ -6,7 +6,7 @@ a.button1 {
     margin: 0 0.3em 0.3em 0;
     border-radius: 0.12em;
     box-sizing: border-box;
-    text-decoration: none;
+    text-decoration: bold;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     color: #000000;
@@ -44,8 +44,8 @@ color: #FFFFFF;
 }
 
 #parcours li:last-child a {
- background-color: #6883ba; 
- color: #dbdbdb;  
+ background-color: #6883ba;
+ color: #dbdbdb;
 }
 
 #parcours li {
@@ -132,7 +132,7 @@ header{
 #form_container
 {
 	background:#fff;
-	
+
 	margin:0 auto;
 	text-align:left;
 	width:640px;
@@ -395,7 +395,7 @@ textarea.large
 	z-index: 2;
 	cursor: pointer;
   }
-  
+
   /* Hide the tooltip content by default */
   [data-tooltip]:before,
   [data-tooltip]:after {
@@ -405,7 +405,7 @@ textarea.large
 	opacity: 0;
 	pointer-events: none;
   }
-  
+
   /* Position tooltip above the element */
   [data-tooltip]:before {
 	position: absolute;
@@ -426,7 +426,7 @@ textarea.large
 	font-size: 14px;
 	line-height: 1.2;
   }
-  
+
   /* Triangle hack to make tooltip look like a speech bubble */
   [data-tooltip]:after {
 	position: absolute;
@@ -442,7 +442,7 @@ textarea.large
 	font-size: 0;
 	line-height: 0;
   }
-  
+
   /* Show tooltip content on hover */
   [data-tooltip]:hover:before,
   [data-tooltip]:hover:after {
@@ -461,11 +461,11 @@ textarea.large
   main * {
 	box-sizing: border-box;
   }
-  
+
   main img {
 	max-width: 100%;
   }
-  
+
  main ul {
 	list-style: none;
 	padding: 0;
