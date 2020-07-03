@@ -29,7 +29,7 @@
   
 
     foreach ($res as $key => $value) {
-        echo "<li> <a href='http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.admin.view.php?id_doc=".$value["id_doc"]."'>
+        echo "<li> <a href='http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.admin.php?id_doc=".$value["id_doc"]."'>
         ".$value["nom"]."</a></li>";
     }
 ?>
