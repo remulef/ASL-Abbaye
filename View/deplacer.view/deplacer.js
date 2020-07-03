@@ -25,7 +25,6 @@ function init() {
     document.getElementById("id_doc").value=id_doc;
     document.getElementById("nom").value=nom;
     document.getElementById("destination").value = "BDD";
-    clearul();
     history = [];
     var pos = ({
         id_node: 0,
