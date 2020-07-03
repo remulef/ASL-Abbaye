@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="view.css" media="all">
 	<script type="text/javascript" src="view.js"></script>
 	<script type="text/javascript" src="deplacer.js"></script>
-	<link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" />
+	<!--<link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" />-->
 
 
 </head>
