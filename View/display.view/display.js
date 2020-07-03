@@ -23,6 +23,12 @@ function init() {
 function load(json) {
     //clearul();
 
+    if( current.name === "Ressources pédagogiques"){
+        document.getElementById("presentation").setAttribute("style","display: block");
+    }else {
+        document.getElementById("presentation").setAttribute("style","display: none");
+    }
+
     var data = JSON.parse(json);
     var nbdoc = 0;
     var uldoc = document.getElementById("docbar");
