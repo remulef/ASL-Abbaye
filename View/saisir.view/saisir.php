@@ -15,6 +15,7 @@
 <body id="main_body">
 	<?php
 		include ("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/templateprofil.php");
+		if(isset($_SESSION['role'])){
 	?>
 	<a href="http://les-asl-abbaye.ovh">
 	<svg class="bi-house-door-fill" width="40px" height="40px" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
@@ -97,6 +98,12 @@
 		<a href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/RGPD.pdf" onclick = "window.open(this.href); return false;" >Mentions Légales</a>
 		<img id="logos" src="../../data/img/Logos.PNG" alt="Logos des Financeurs" width="20%" height="10%">
 	</footer>
+	<?php
+		}else{
+			echo "<p>Vous n'êtes pas connecté, veuillez vous authentifier.</p>";
+			echo "<a href=\"http://les-asl-abbaye.ovh\">Cliquez ici pour retourner sur la page d'accueil</a>";
+		}
+	 ?>
 </body>
 
 

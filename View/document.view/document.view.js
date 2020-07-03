@@ -6,7 +6,7 @@ let old_title;
 let old_description;
 
 function init(id) {
-    
+
     id_doc = id;
     //document.getElementById("myInput").style.display = "none";
     let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/script-document.php";
@@ -141,7 +141,7 @@ function affiche(json) {
              url = "https://docs.google.com/gview?url=" + "http://www.les-asl-abbaye.ovh" + lien + "&embedded=true";
              ifram.src = url;
              ifram.style = "width: 100%;height: 500px;";
- 
+
              media.appendChild(ifram);
              break;
          */
@@ -364,7 +364,7 @@ function myFunction() {
     */
 
     var copy = document.createElement("a");
-    copy.innerHTML = "http://www.les-asl-abbaye.ovh" + window.location.href;
+    copy.innerHTML = window.location.href;
     var range = document.createRange();
     document.getElementById("telecharger").append(copy);
     range.selectNode(copy);
@@ -376,7 +376,7 @@ function myFunction() {
         var msg = successful ? 'successful' : 'unsuccessful';
         console.log('Copy email command was ' + msg);
         var tooltip = document.getElementById("myTooltip");
-        tooltip.innerHTML = "Copied: " + "http://www.les-asl-abbaye.ovh" + window.location.href;
+        tooltip.innerHTML = "Copied: " + window.location.href;
 
     } catch (error) {
         console.log('Oops, unable to copy');
@@ -681,12 +681,12 @@ function arrayRemove(arr, value) {
 
 //TODO
 
-// Limiter le nombre de tags 
-//Ajouter des antiechappement aux tags 
-//Limiter le nombre de caractere dans un tag 
+// Limiter le nombre de tags
+//Ajouter des antiechappement aux tags
+//Limiter le nombre de caractere dans un tag
 
-//Un appel ajax pour ajouter a la db 
-//Une fonction pour pouvoir les supprimers 
+//Un appel ajax pour ajouter a la db
+//Une fonction pour pouvoir les supprimers
 //un mode
 
 
@@ -732,7 +732,7 @@ function deletetag(i) {
         var json = ({
             id_tags: id_tags,
             id_doc: id_doc
-            //login : $_SESSION["login"], 
+            //login : $_SESSION["login"],
             // mdp : $_SESSION["mdp"]
         })
         json = JSON.stringify(json);

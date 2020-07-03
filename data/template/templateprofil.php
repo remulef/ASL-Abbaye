@@ -24,7 +24,7 @@
           <div id=\"myDropdown\" class=\"dropdown-contenu\">
             <p>Mon rôle : $role[0] </p>
             <a href=\"http://les-asl-abbaye.ovh/ASL-Abbaye/View/admin.view/user-management.php\">Gestion des comptes</a>
-            <a href=\"http://les-asl-abbaye.ovh/ASL-Abbaye/View/admin.view/user-management.php\">Gestion des documents</a>
+            <a href=\"http://les-asl-abbaye.ovh/ASL-Abbaye/View/admin.view/gestiondoc.php\">Gestion des documents</a>
             <a href=\"http://les-asl-abbaye.ovh/ASL-Abbaye/View/accueil.view/main'.php?deconnexion=true\">Déconnexion</a>
           </div>
         </div>";

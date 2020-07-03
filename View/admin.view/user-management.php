@@ -109,7 +109,7 @@
     <?php
   }else{
     echo "<p>Vous n'êtes pas connecté en tant qu'Administrateur, veuillez vous authentifier.</p>";
-    echo "<a href=\"http://les-asl-abbaye.ovh\"> Cliquez ici pour retourner sur la page d'accueil</a>";
+    echo "<a href=\"http://les-asl-abbaye.ovh\">Cliquez ici pour retourner sur la page d'accueil</a>";
   }
     ?>
 
