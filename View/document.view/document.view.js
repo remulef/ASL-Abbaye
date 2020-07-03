@@ -203,12 +203,17 @@ function supprimer() {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/script-delete-sql.php?";
 
         try {
-            //ajax_post_request(null, url, true, encodeURIComponent(id_doc));
+            ajax_post_request(redirect, url, true, encodeURIComponent(id_doc));
 
         } catch (error) {
             alert("La suppresion n'a pas aboutie");
         }
     }
+
+}
+
+function redirect() {
+    location.replace("https://www.les-asl-abbaye.ovh");
 
 }
 
