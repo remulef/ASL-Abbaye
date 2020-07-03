@@ -21,16 +21,6 @@
             <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z" clip-rule="evenodd" />
         </svg></a>
 
-
-    <FORM>
-        <h3>Site en fonction des roles</h3>
-        <SELECT NAME="ListeUrl" SIZE=1 onChange="ChangeUrl(this.form)">
-            <OPTION SELECTED VALUE="">-Type d'utilisateur-</option>
-            <OPTION VALUE="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"] ?>&mode=admin">-Administrateur-</option>
-            <OPTION VALUE="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"] ?>&mode=visit">-Visiteur-</option>
-        </SELECT>
-    </FORM>
-
     <div>
         <h3>Changer de document</h3>
         <a href="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"] - 1 ?>" class="previous round">
