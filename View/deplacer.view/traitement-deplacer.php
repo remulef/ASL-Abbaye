@@ -23,7 +23,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sth = $db->prepare('UPDATE NODE_DOCUMENT SET NODE_id_node = ? WHERE DOCUMENT_id_doc = ?');
     $sth->bindParam(1, $id_node);
     $sth->bindParam(2, $id_doc);
-    var_dump($id_node);
-    var_dump($id_doc);
-    echo $sth->execute();    
+    //var_dump($id_node);
+    //var_dump($id_doc);
+    if ($sth->execute()==1) {
+        echo"Déplacé avec succés";
+    } 
+    else {
+        echo "ERREUR";
+    }
+    sleep(1);
+    echo "<script>window.close();</script>";
+       
 }
