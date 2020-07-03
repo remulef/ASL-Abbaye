@@ -50,12 +50,11 @@
 				</li>
 				<li class="section_break">
 					<h3>Destination possible</h3>
-					<p>hhhhhhhhhhhhh</p>
+					<p>Sous thématique du dossier courant</p>
 				</li>
 				<li id="li_6">
 					<label class="description" for="element_4">Sous-thématique</label>
 					<div id="listdoss">
-							<H3>Listes des thématiques </H3>
 							<ul id="dossbar">
 							</ul>
 						</div>
