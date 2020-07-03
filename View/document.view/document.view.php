@@ -1,3 +1,35 @@
+<<<<<<< HEAD
+<?php session_start()?>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="document.view.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" />
+    <title>Document ASL Abbaye</title>
+</head>
+
+<header>
+  <?php
+    include ("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/templateprofil.php");
+   ?>
+   <a href="http://les-asl-abbaye.ovh">
+     <svg class="bi-house-door-fill" width="40px" height="40px" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+       <path d="M6.5 10.995V14.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z"/>
+       <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+     </svg>
+   </a>
+   <br><br><br>
+
+    <div>
+        <a href="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=<?php echo  $_GET["id_doc"] - 1 ?>" class="previous round">
+        <svg class="bi bi-arrow-left-circle" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <path fill-rule="evenodd" d="M8.354 11.354a.5.5 0 0 0 0-.708L5.707 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z" />
+                <path fill-rule="evenodd" d="M11.5 8a.5.5 0 0 0-.5-.5H6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5z" />
+=======
 <?php session_start();
 
 if (isset($_SESSION['role']) && ($_SESSION['role'][0] == "ADMINISTRATEUR" || $_SESSION['role'][0] == "MODERATEUR"
@@ -21,6 +53,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'][0] == "ADMINISTRATEUR" || $_S
         <a href="/"><svg class="bi bi-house-door" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M7.646 1.146a.5.5 0 01.708 0l6 6a.5.5 0 01.146.354v7a.5.5 0 01-.5.5H9.5a.5.5 0 01-.5-.5v-4H7v4a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-7a.5.5 0 01.146-.354l6-6zM2.5 7.707V14H6v-4a.5.5 0 01.5-.5h3a.5.5 0 01.5.5v4h3.5V7.707L8 2.207l-5.5 5.5z" clip-rule="evenodd" />
                 <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 01.5-.5h1a.5.5 0 01.5.5z" clip-rule="evenodd" />
+>>>>>>> a32d073c5722ea179efdf57c5e3aa2ea01db42e0
             </svg></a>
         <a href=""><svg class="bi bi-people-circle" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z" />
@@ -69,6 +102,25 @@ if (isset($_SESSION['role']) && ($_SESSION['role'][0] == "ADMINISTRATEUR" || $_S
 
             </div>
 
+                <?php if ($_GET["mode"] == "admin") echo '
+                <div class="tooltip">
+                    <button type="button" id="supprimer" onclick="supprimer()" disabled>
+                        <svg class="bi bi-trash" width="1.33em" height="1.33em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z" />
+                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="tooltiptext">Supprimer le document</span>
+                    </button>
+                </div>
+                <div class="tooltip">
+                    <button type="button" id="modifier" onclick="modifier()">
+                        <svg class="bi bi-pencil-square" width="1.33em" height="1.33em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z" />
+                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-6a.5.5 0 00-1 0v6a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-11a.5.5 0 01.5-.5H9a.5.5 0 000-1H2.5A1.5 1.5 0 001 2.5v11z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <span class="tooltiptext">Modifier le document</span>
+                </div>' ?>
 
             <div id="icontitre">
                 <div id="titre">
@@ -115,6 +167,16 @@ if (isset($_SESSION['role']) && ($_SESSION['role'][0] == "ADMINISTRATEUR" || $_S
 
             </div>
 
+<<<<<<< HEAD
+        <div id="divtag">
+            <?php if ($_GET["mode"] == "admin") echo ' <div class="form__group field">
+                <input type="input" class="form__field" placeholder="Etiquette" name="tag" id="inputtag" required />
+                <label for="tag" class="form__label">Ajouter Etiquette</label>
+            </div>
+            <a  class="button4" style="background-color:#9ed0e6" onclick="sendtag()">Ajouter</a>' ?>
+
+=======
+>>>>>>> a32d073c5722ea179efdf57c5e3aa2ea01db42e0
 
             <div id="divtag">
 
@@ -161,8 +223,14 @@ if (isset($_SESSION['role']) && ($_SESSION['role'][0] == "ADMINISTRATEUR" || $_S
     <script src="document.view.js"></script>
 
 
+<<<<<<< HEAD
+</body>
+
+</html>
+=======
 
 
     </body>
 
     </html>
+>>>>>>> a32d073c5722ea179efdf57c5e3aa2ea01db42e0

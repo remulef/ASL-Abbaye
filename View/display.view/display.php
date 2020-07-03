@@ -1,6 +1,7 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
-
+<br><br>
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -8,10 +9,20 @@
 
     <link rel="stylesheet" type="text/css" href="display.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" />
     <title> Recherche documents</title>
 </head>
 
 <header>
+  <?php
+    include ("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/templateprofil.php");
+   ?>
+   <a href="http://les-asl-abbaye.ovh">
+     <svg class="bi-house-door-fill" width="40px" height="40px" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+       <path d="M6.5 10.995V14.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z"/>
+       <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+     </svg>
+   </a>
 
 
     <div>
@@ -59,7 +70,7 @@
 
                 <label class="description" for="element_8">Lieu de recherche </label>
 
-                <a data-tooltip="La recherche sera effectuer soit dans l'entiereté des documents disponible soit dans le dossier ou vous vous situez actuellement" style="padding: 5px;border: none;background: none;">
+                <a data-tooltip="La recherche sera effectuée soit dans la totalité des documents disponibles soit dans le dossier où vous vous situez actuellement" style="padding: 5px;border: none;background: none;">
                     <svg class="bi bi-question-circle" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                         <path d="M5.25 6.033h1.32c0-.781.458-1.384 1.36-1.384.685 0 1.313.343 1.313 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.007.463h1.307v-.355c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.326 0-2.786.647-2.754 2.533zm1.562 5.516c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
@@ -69,7 +80,7 @@
 
                 <label for="id-name--1" class="switch-label">
                     <span class="toggle--on">BDD</span>
-                    <span class="toggle--off">Dossier courant</span></label>
+                    <span class="toggle--off">Thématique</span></label>
 
                 <hr>
 
@@ -78,7 +89,7 @@
                     <input onblur="search(this)" id="element_1" name="docname" class="element text large" type="search" maxlength="255" value="" placeholder="Recherche par nom" />
                     <hr>
                 </div>
-
+<br><br><br><br>
 
 
                 <label class="description" for="element_7">Type de ressource </label>
@@ -91,10 +102,8 @@
                     <label class="choice" for="element_7_4">Doc authentique</label>
                     <input id="element_7_5" oninput="search(this)" name="element_7_5" class="element checkbox" type="checkbox" value="1" />
                     <label class="choice" for="element_7_5">video/site internet/mp3</label>
-                    <input id="element_7_6" oninput="search(this)" name="element_7_6" class="element checkbox"type="hidden" value="1" />
-                    <label class="choice" for="element_7_6">doc authentique</label>
                     <input id="element_7_7" oninput="search(this)" name="element_7_7" class="element checkbox" type="checkbox" value="1" />
-                    <label class="choice" for="element_7_7">exos/activité</label>
+                    <label class="choice" for="element_7_6">exos/activités</label>
                 </span>
 
                 <hr>
@@ -109,11 +118,11 @@
                     <input oninput="search(this)" id="element_5_4" name="element_5_4" class="element checkbox" type="checkbox" value="1" />
                     <label class="choice" for="element_5_4">Video (mp4/mpeg,..)</label>
                     <input id="element_5_5" oninput="search(this)" name="element_5_5" class="element checkbox" type="checkbox" value="1" />
-                    <label class="choice" for="element_5_5">Text (docx/doc/txt..)</label>
+                    <label class="choice" for="element_5_5">Texte (docx/doc/txt..)</label>
                     <input id="element_5_6" oninput="search(this)" name="element_5_6" class="element checkbox" type="checkbox" value="1" />
                     <label class="choice" for="element_5_6">Diaporama (pptx,..)</label>
                     <hr>
-                    <label class="description" for="element_1">Recherche par etiquette (desactivé)</label>
+                    <label class="description" for="element_1">Recherche par étiquette</label>
                     <div>
                         <input list="format" id="element_1" name="element_1" onblur="search(this)" class="element text large" type="search" maxlength="255" value="" placeholder="&#128269; exemple : verbe+present" />
                         <a data-tooltip="Séparez les étiquettes par des signes + si il y en a plusieurs" style="padding: 0;border: none;background: none; margin: 49%;">
@@ -129,7 +138,7 @@
                 <label class="description" for="element_3">Niveau </label>
                 <span>
                     <input id="element_3_1" name="element_3_1" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
-                    <label class="choice" for="element_3_1">Tous Niveau</label>
+                    <label class="choice" for="element_3_1">Tous Niveaux</label>
                     <input id="element_3_2" name="element_3_2" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
                     <label class="choice" for="element_3_2">D</label>
                     <input id="element_3_3" name="element_3_3" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
@@ -146,9 +155,9 @@
                     <input id="element_4_2" name="element_4" class="element radio" type="radio" oninput="search(this)" value="2" />
                     <label class="choice" for="element_4_2">Alphabétique décroissant</label>
                     <input id="element_4_3" name="element_4" class="element radio" type="radio" oninput="search(this)" value="1" />
-                    <label class="choice" for="element_4_3">Popularité croissant</label>
+                    <label class="choice" for="element_4_3">Popularité croissante</label>
                     <input id="element_4_4" name="element_4" class="element radio" type="radio" oninput="search(this)" value="2" />
-                    <label class="choice" for="element_4_4">Popularité décroissant</label>
+                    <label class="choice" for="element_4_4">Popularité décroissante</label>
 
                 </span>
                 <hr>
@@ -168,7 +177,7 @@
 
     <main class="main">
 
-        <img style="display:none;" src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/presentation.png" id="presentation" alt="organisation de ressource pedagogique">
+        <img style="display:none" src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/presentation.png" id="presentation" alt="organisation de ressource pedagogique">
 
 
         <span id="content" class="content">
@@ -181,7 +190,6 @@
             </div>
         </span>
     </main>
-
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
@@ -194,7 +202,7 @@
         }
     });
 </script>
-<!-- jQuery first, then Popper.js, then Bootstrap JS 
+<!-- jQuery first, then Popper.js, then Bootstrap JS
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 -->

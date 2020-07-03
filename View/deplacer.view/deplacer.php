@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="view.css" media="all">
 	<script type="text/javascript" src="view.js"></script>
 	<script type="text/javascript" src="deplacer.js"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" />
 
 
 </head>
@@ -19,8 +20,7 @@
 		<h1><a>Deplacer un document</a></h1>
 		<form id="form_116623" class="appnitro" method="post" action="traitement-deplacer.php">
 			<div class="form_description">
-				<h2>Untitled Form</h2>
-				<p>This is your form description. Click here to edit.</p>
+				<h2>Déplacer un document</h2>
 			</div>
 			<ul>
 
@@ -38,32 +38,31 @@
 				</li>
 				<li class="section_break">
 					<h3>Selecteur de destination</h3>
-					<p>Déplacez vous au seins des dossiers jusqu'a la destination de votre choix
-						Le dossier courant est en bleu</p>
+					<p>Déplacez-vous au sein des dossiers jusqu'à la destination de votre choix.
+						La thématique est en bleu</p>
 				</li>
 
 				<li id="li_5">
 					<label class="description" for="element_4">Thématique</label>
 					<ul id="parcours">
 						</ul>
-					
+
 				</li>
 				<li class="section_break">
 					<h3>Destination possible</h3>
-					<p>Sous thématique du dossier courant</p>
+					<p>Sous-thématique</p>
 				</li>
 				<li id="li_6">
-					<label class="description" for="element_4">Sous-thématique</label>
 					<div id="listdoss">
 							<ul id="dossbar">
 							</ul>
 						</div>
-					
+
 				</li>
-				
+
 				<li id="li_3">
 					<label class="description" for="element_3">Destination </label>
-					
+
 					<div>
 						<input id="destination" readonly name="destination" class="element text medium" type="text" maxlength="255" value="" />
 						<input id="id_node_dest" readonly name="id_node" class="element text medium" type="text"  maxlength="255" value="" />
@@ -74,7 +73,7 @@
 				<li class="buttons">
 					<input type="hidden" name="form_id" value="116623" />
 
-					<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+					<input id="saveForm" class="button_text" type="submit" name="submit" value="Soumettre" />
 				</li>
 			</ul>
 		</form>
