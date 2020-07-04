@@ -1,11 +1,4 @@
-<?php session_start();
-
-if(isset($_SESSION['role']) && ($_SESSION['role'][0] == "ADMINISTRATEUR" || $_SESSION['role'][0] == "MODERATEUR" 
-|| $_SESSION['role'][0] == "BENEVOLE ABBAYE")){
-    $url = "Location: "."http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.admin.php?id_doc=".$id_doc;
-    header($url);
-}
-?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="fr">
 
