@@ -44,7 +44,7 @@ function load(json) {
             nbdoc++;
             var li = document.createElement("li");
             var a = document.createElement("a");
-            a.setAttribute("href", "http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc=" + current.id_doc);
+            a.setAttribute("href", "http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc=" + current.id_doc);
             a.setAttribute("target", "_blank");
             a.innerHTML = "ouvrir";
             //p 

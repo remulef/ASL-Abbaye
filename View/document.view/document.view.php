@@ -1,10 +1,6 @@
 <?php session_start();
 var_dump($_SESSION);
-$allowed = array("ADMINISTRATEUR","MODERATEUR","BENEVOLE ABBAYE");
-if(isset($_SESSION['role']) && in_array( $_SESSION['role'][0],$allowed)){
-    $url = "Location: "."http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.admin.php?id_doc=".$_GET["id_doc"];        ;
-    header($url);
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
