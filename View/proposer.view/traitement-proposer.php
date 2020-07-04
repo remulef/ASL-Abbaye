@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         mail('asl.abbaye@grenoble.fr', 'NOTIFICATION proposition d\'un document', $message);
 
                         echo '    setTimeout(() => {   window.history.length <= 1 ? location.replace("https://www.les-asl-abbaye.ovh"):window.history.back(-2); }, 2000);
-                        </script>'
+                        </script>';
                     } else {
                         echo "Sorry, there was an error uploading your file.";
                     }
