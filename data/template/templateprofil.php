@@ -1,4 +1,5 @@
 <?php
+session_start();
   if(isset($_SESSION['role']) && $_SESSION['role'] != ""){
     $role = $_SESSION['role'];
     if($role[0] == "BENEVOLE ABBAYE"){
