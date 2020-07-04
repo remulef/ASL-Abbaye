@@ -27,10 +27,21 @@ if (true) {
 
 
   if ($tmp == false) {
-    $sth = $db->prepare('DELETE  FROM NODE_DOCUMENT WHERE DOCUMENT_id_doc = ?');
-    $sth->bindParam(1, $id_doc);
-    $sth->execute();
+echo "lol";
   }
+  
+  $sth = $db->prepare('DELETE  FROM NODE_DOCUMENT WHERE DOCUMENT_id_doc = ?');
+  $sth->bindParam(1, $id_doc);
+  $sth->execute();
+
+  $sth = $db->prepare('DELETE  FROM TAGS WHERE DOCUMENT_id_doc = ?');
+  $sth->bindParam(1, $id_doc);
+  $sth->execute();
+
+  $sth = $db->prepare('DELETE  FROM COMMENTAIRE WHERE DOCUMENT_id_doc = ?');
+  $sth->bindParam(1, $id_doc);
+  $sth->execute();
+
 
   $sth = $db->prepare('DELETE  FROM DOCUMENT WHERE id_doc = ?');
   $sth->bindParam(1, $id_doc);

@@ -813,7 +813,6 @@ function vidertags() {
 
 
 function openWin() {
-    alert("wtf");
     var url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/deplacer.view/deplacer.php?id_doc="+id_doc+"&nom="+nomdoc;
     window.open(url, "Deplacer un document", 'width=800,height=600');
   }
