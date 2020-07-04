@@ -164,6 +164,7 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
         
     }
     echo $html ;
+    die();
     $pdf->writeHTML($html, true, false, true, false, '');
     // reset pointer to the last page
     $pdf->lastPage();
