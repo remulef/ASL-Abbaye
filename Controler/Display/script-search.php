@@ -1,4 +1,5 @@
 <?php
+session_start();
 header('Access-Control-Allow-Origin: *');
 
 $database = 'gsjrnmiasl.mysql.db';
@@ -37,12 +38,12 @@ $data = json_decode($data);
 
 $query = 'SELECT * FROM DOCUMENT WHERE 1 ';
 $query = $query.$name.$typedoc.$niveau.$ressource.$tags.$alpha.$tefanf.$nodesearch.$order; //.$node
-
+echo $query;
 //AJOUTER TEF ANF 
 //https://codepen.io/stephengreig/pen/ogoPLv
 $sth = $db->query($query);
 $document = $sth->fetchAll(PDO::FETCH_ASSOC);
-
+var_dump($document);
 foreach ($document as $key => $value) {
     $document[$key]["nom"] = utf8_encode($value["nom"]);
     $document[$key]["chemin"] = utf8_encode($value["chemin"]);
