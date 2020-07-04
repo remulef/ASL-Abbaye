@@ -1,3 +1,6 @@
+<?session_start();
+var_dump($_SESSION);
+?>
 <html>
     <head>
        <meta charset="utf-8">

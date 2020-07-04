@@ -1,4 +1,5 @@
 <?php
+session_start();
 $id_doc = $_GET["id_doc"];
 $allowed = array("ADMINISTRATEUR","MODERATEUR","BENEVOLE ABBAYE");
 
