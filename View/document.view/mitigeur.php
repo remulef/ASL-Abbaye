@@ -10,6 +10,7 @@ file_put_contents("dump.txt", ob_get_flush());
 
 $fp = fopen('log.txt', 'a+');
 
+fwrite($fp,$_SESSION['role'][0].PHP_EOL);
 
 if(!isset($_SESSION['role']) && in_array( $_SESSION['role'][0],$allowed)){
     
