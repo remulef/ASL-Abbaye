@@ -215,7 +215,7 @@ function supprimer() {
 function redirect() {
 
     document.getElementsByTagName("main")[0].innerHTML = "<h1> Document supprimé, vous allez etre redirigé </1>";
-    setTimeout(() => {  location.replace("https://www.les-asl-abbaye.ovh"); }, 2000);
+    setTimeout(() => {     window.history.back();/*location.replace("https://www.les-asl-abbaye.ovh")*/; }, 2000);
 
 }
 
