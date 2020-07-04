@@ -150,7 +150,7 @@
                 <label class="description" for="element_4">Trier par </label>
                 <span>
 
-                    <input id="element_4_1" name="element_4" class="element radio" checked type="radio" oninput="search(this)" value="1" />
+                    <input id="element_4_1" name="element_4" class="element radio"  type="radio" oninput="search(this)" value="1" />
                     <label class="choice" for="element_4_1">Alphabétique croissant</label>
                     <input id="element_4_2" name="element_4" class="element radio" type="radio" oninput="search(this)" value="2" />
                     <label class="choice" for="element_4_2">Alphabétique décroissant</label>
