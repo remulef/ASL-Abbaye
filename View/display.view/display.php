@@ -1,4 +1,5 @@
-<?php if (!isset($_SESSION)) { session_start(); }?>
+<?php var_dump($_SESSION);
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <br><br>
