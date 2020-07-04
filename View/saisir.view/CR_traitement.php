@@ -187,7 +187,7 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
 
     $nomduCR = $_POST["titre"] . ".pdf";
     $chemin = "tmp-CR/" . $nomduCR;
-    $sth = $db->prepare('INSERT INTO COMPTERENDU (titre,datepub,auteur,chemin,tmp) value (?,?,?,?,true)');
+    $sth = $db->prepare('INSERT INTO DOCUMENT (titre,datepub,auteur,chemin,tmp) value (?,?,?,?,true)');
     $sth->bindParam(1, $_POST["titre"]);
     $sth->bindParam(2, $_POST["date"]);
     $sth->bindParam(3, $_POST["auteur"]);

@@ -10,8 +10,6 @@ var_dump($_SESSION);
 	<link rel="stylesheet" type="text/css" href="view.css" media="all">
 	<link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" />
 	<script src="ckeditor/ckeditor.js"></script>
-	<script type="text/javascript" src="view.js"></script>
-	<script type="text/javascript" src="calendar.js"></script>
 </head>
 
 <body id="main_body">
@@ -55,7 +53,7 @@ var_dump($_SESSION);
 						<p class="guidelines" id="guide_3"><small>Date effective du compte-rendu </small></p>
 				</li>
 				<li id="li_4">
-					<label class="description" for="editeur">Compte-rendu </label>
+					<label class="description" for="">Compte-rendu </label>
 					<div>
 						<textarea id="editeur" name="editeur" class="element textarea large"></textarea>
 					</div>
