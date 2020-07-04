@@ -1,5 +1,5 @@
 <?php
-session_start();
+echo session_start();
 header('Access-Control-Allow-Origin: *');
 var_dump($_SESSION);
 
@@ -27,7 +27,7 @@ if (true) {
 
 
   if ($tmp == false) {
-    $sth = $db->prepare('DELETE  FROM NODE_DOCUMENT WHERE id_doc = ?');
+    $sth = $db->prepare('DELETE  FROM NODE_DOCUMENT WHERE DOCUMENT_id_doc = ?');
     $sth->bindParam(1, $id_doc);
     $sth->execute();
   }

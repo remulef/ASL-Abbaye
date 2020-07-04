@@ -1,5 +1,5 @@
 <?php
-session_start();
+echo session_start();
  var_dump($_SESSION);
 ?>
 <!DOCTYPE html>
