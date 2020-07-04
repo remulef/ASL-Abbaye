@@ -213,9 +213,10 @@ function supprimer() {
 }
 
 function redirect() {
-
-    alert("document supprimer, vous allez etre redirigé");
-    location.replace("https://www.les-asl-abbaye.ovh");
+    var node = document. getElementById('parent');
+    node. innerHTML = "<h1> Document supprimé, vous allez etre redirigé </1>";
+    setTimeout(() => {  location.replace("https://www.les-asl-abbaye.ovh"); }, 2000);
+    
 
 }
 
