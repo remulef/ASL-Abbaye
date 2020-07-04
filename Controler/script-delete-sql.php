@@ -1,7 +1,7 @@
 <?php
 echo session_start();
-header('Access-Control-Allow-Origin: *');
 var_dump($_SESSION);
+header('Access-Control-Allow-Origin: *');
 
 //if(isset( $_POST['id_doc'])){
 if (true) {
