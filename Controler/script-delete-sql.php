@@ -34,11 +34,11 @@ echo "lol";
   $sth->bindParam(1, $id_doc);
   $sth->execute();
 
-  $sth = $db->prepare('DELETE  FROM TAGS WHERE DOCUMENT_id_doc = ?');
+  $sth = $db->prepare('DELETE  FROM TAGS WHERE id_doc = ?');
   $sth->bindParam(1, $id_doc);
   $sth->execute();
 
-  $sth = $db->prepare('DELETE  FROM COMMENTAIRE WHERE DOCUMENT_id_doc = ?');
+  $sth = $db->prepare('DELETE  FROM COMMENTAIRE WHERE id_doc = ?');
   $sth->bindParam(1, $id_doc);
   $sth->execute();
 
