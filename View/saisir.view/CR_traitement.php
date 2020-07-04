@@ -163,7 +163,7 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
         $html += " </ul>".PHP_EOL;
         
     }
-    
+    echo $html ;
     $pdf->writeHTML($html, true, false, true, false, '');
     // reset pointer to the last page
     $pdf->lastPage();
