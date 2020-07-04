@@ -100,10 +100,6 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
                                 var_dump($file);
                                 $sucess . array_push($file);
                                 var_dump($sucess);
-                                $sth = $db->prepare('INSERT INTO COMPTERENDU_DOCUMENT (COMPTERENDU_id_cr,DOCUMENT_id_doc)value(?,?)');
-                                $sth->bindParam(1, $max_CR);
-                                $sth->bindParam(2, $max_DOC);
-                                $sth->execute();
 
                                 $db = null;
                             } else {
@@ -159,13 +155,15 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
     $pdf->AddPage();
     $html = $_POST["editeur"];
 
-    /*
+    $html += " <h3> Documents rattachés </h3>".PHP_EOL;
     foreach ($sucess as $key => $value) {
-        $html += " <h3> Documents rattachés </h3>".PHP_EOL;
         $html += " <ul>".PHP_EOL;
-        $html += '<li><a href="'.$value[""];
+        $titre_doc = sprintf("[%s]  %s",$value["type"],$value["filename"]);
+        $html += '<li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc='.$value["id_doc"].'">'.$titre_doc.'</a>';
+        $html += " </ul>".PHP_EOL;
+        
     }
-    */
+    
     $pdf->writeHTML($html, true, false, true, false, '');
     // reset pointer to the last page
     $pdf->lastPage();
@@ -195,16 +193,20 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
     $sth->bindParam(3, $_POST["auteur"]);
     $sth->bindParam(4, $chemin);
     $sth->execute();
-
+    $max_DOC = $db->query("SELECT max(id_doc)as max FROM DOCUMENT ")->fetchColumn();
+                                
     $db = null;
 
     $auteur = addslashes($_POST["auteur"]);
     $titre = addslashes($_POST["titre"]);
     $nbdoc = "count array"; //count($file_ary);
-    $lienCR  = 'http://les-asl-abbaye.ovh/tmp-CR/' . $titre . '.pdf';
+    //$lienCR  = 'http://les-asl-abbaye.ovh/tmp-CR/' . $titre . '.pdf';
+    $lienCR = 'http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc='.$max_DOC;
     $message = 'Un Compte rendu nommé ' . $titre . ' à été saisit par ' . $auteur . ' et accompagné de ' . $nbdoc . ' document <br>
      Vous pourrez retrouver le compte rendu à l\'adresse suivante :' . $lienCR;
-    mail('asl.abbaye@grenoble.fr', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
+    mail('fabienremule974@gmail.com', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
+    //    mail('asl.abbaye@grenoble.fr', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
+
 } else {
     header("Location: http://les-asl-abbaye.ovh");
 }
