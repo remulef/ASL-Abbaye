@@ -104,6 +104,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-echo '<h1>Opération terminé, retour automatique </h1> <script>  setTimeout(() => {   window.history.length <= 1 ? location.replace("https://www.les-asl-abbaye.ovh"):window.history.back(-2); }, 5000);
+echo '<h1>Opération terminé, retour automatique dans 3 secondes </h1> <script>  setTimeout(() => {   window.history.length <= 1 ? location.replace("https://www.les-asl-abbaye.ovh"):window.history.back(-2); }, 3000);
 </script>';
 //header("Location: http://les-asl-abbaye.ovh");
