@@ -11,7 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<br>";
         echo "<br>";
 
-        $allowed = array('gif','application/pdf' ,'jpg', 'jpe', 'jpeg', 'image/jpeg', 'png', 'image/png', 'pdf', 'docx', 'doc', 'ppx', 'pptx', 'mp3', 'aac', 'txt', 'odt', 'mp4', 'odt');
+        $allowed = array('gif','image/gif','jpg', 'image/jpg', 'jpe', 'image/jpe', 'jpeg', 'image/jpeg',
+         'png', 'image/png', 'pdf','application/pdf' , 'docx','application/docx' , 'doc', 'ppx', 'pptx', 'mp3', 'aac', 'txt', 'odt', 'mp4', 'odt');
 
 
         if ($_FILES['fileToUpload']["error"] == 0) {
