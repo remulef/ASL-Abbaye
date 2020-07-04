@@ -90,6 +90,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $lienCR  = 'http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.admin.php?id_doc=' . $max_DOC;
                         $message = 'Un Document nommé ' . $titre . ' à été proposé, vous pourrez le voir  à l\'adresse suivante <a href="' . $lienCR . '"> COMPTE RENDU</a>';
                         mail('asl.abbaye@grenoble.fr', 'NOTIFICATION proposition d\'un document', $message);
+
+                        echo '    setTimeout(() => {   window.history.length <= 1 ? location.replace("https://www.les-asl-abbaye.ovh"):window.history.back(-2); }, 2000);
+                        </script>'
                     } else {
                         echo "Sorry, there was an error uploading your file.";
                     }
