@@ -11,7 +11,7 @@ file_put_contents("dump.txt", ob_get_flush());
 $fp = fopen('log.txt', 'a+');
 
 
-if(isset($_SESSION['role']) && in_array( $_SESSION['role'][0],$allowed)){
+if(!isset($_SESSION['role']) && in_array( $_SESSION['role'][0],$allowed)){
     
     $url = "Location: "."http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.admin.php?id_doc=".$id_doc;
     fwrite($fp,"admin".PHP_EOL);
