@@ -140,15 +140,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pdf->AddPage();
     var_dump($sucess);
     $html = $_POST["editeur"];
-    $html += " <h3> Documents rattachés </h3>".PHP_EOL;
+    $ul = " <h3> Documents rattachés </h3>".PHP_EOL;
     foreach ($sucess as  $key => $value) {
-        $html += " <ul>".PHP_EOL;
         $titre_doc = sprintf("[%s]  %s",$sucess[$key]["typefile"],$sucess[$key]["name"]);
-        $html += '<li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc='.$sucess[$key]["id_doc"].'">'.$titre_doc.'</a>';
-        $html += " </ul>".PHP_EOL;
+        
+        $ul = $ul." <ul>".PHP_EOL.
+        '<li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc='.$sucess[$key]["id_doc"].'">'.$titre_doc.'</a>'
+        ." </ul>".PHP_EOL;
         
     }
     echo $html ;
+    echo $ul;
     die();
     $pdf->writeHTML($html, true, false, true, false, '');
     // reset pointer to the last page
