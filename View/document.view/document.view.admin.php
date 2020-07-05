@@ -1,5 +1,5 @@
 <?php session_start(); 
-var_dump($_SESSION);
+//var_dump($_SESSION);
 if(!isset($_SESSION['role'])){
     
     $url = "Location: "."http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=".$id_doc;
