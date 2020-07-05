@@ -182,12 +182,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nomduCR = $_POST["titre"] . ".pdf";
     $chemin = "tmp-CR/" . $nomduCR;
     $titre = '[Compte-Rendu]'.$_POST["titre"];
-    $sth = $db->prepare('INSERT INTO DOCUMENT (nom,datepublication,chemin,typedoc,tmp,cr) value (?,?,?,?,true,true)');
+    $sth = $db->prepare('INSERT INTO DOCUMENT (nom,datepublication,chemin,typedoc,tmp,cr) value (?,?,?,"pdf",true,true)');
 
     $sth->bindParam(1, $titre);
     $sth->bindParam(2, $_POST["date"]);
     $sth->bindParam(3, $chemin);
-    $sth->bindParam(4, "pdf");
     $sth->execute();
     $max_DOC = $db->query("SELECT max(id_doc)as max FROM DOCUMENT ")->fetchColumn();
 
