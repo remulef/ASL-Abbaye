@@ -136,8 +136,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
     // add a page
+    
     $pdf->AddPage();
-
+    echo "==============".PHP_EOL;
+    echo json_encode($sucess);
+    echo "==============".PHP_EOL;
+    $html = $_POST["editeur"];
     $html += " <h3> Documents rattachés </h3>".PHP_EOL;
     foreach ($sucess as  $value) {
         $html += " <ul>".PHP_EOL;
