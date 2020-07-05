@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+$html = $_POST["editeur"];
+
+
 ini_set('display_errors', 1);
 //Si la page est généré par une requete POST 
 //Sinon redirection 
@@ -153,7 +156,6 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
 
     // add a page
     $pdf->AddPage();
-    $html = $_POST["editeur"];
 
     $html += " <h3> Documents rattachés </h3>".PHP_EOL;
     foreach ($sucess as $key => $value) {
