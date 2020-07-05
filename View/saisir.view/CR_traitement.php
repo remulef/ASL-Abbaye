@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 $file["id_doc"] = $max_DOC;
                                 $file["chemin"] = $chemin;
                                // var_dump($file);
-                                $sucess.array_push($file);
+                                array_push($sucess,$file);
                                
                                 $db = null;
                             } else {
