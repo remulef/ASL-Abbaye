@@ -27,6 +27,14 @@ function error() {
 }
 
 
+function encode_utf8(s) {
+    return unescape(encodeURIComponent(s));
+  }
+  
+  function decode_utf8(s) {
+    return decodeURIComponent(escape(s));
+  }
+
 function affiche(json) {
     //alert("success");
     AJAXgettag();
@@ -42,7 +50,8 @@ function affiche(json) {
     let date = doc.datepublication;
     lien = doc.chemin;
     lien = "/" + lien;
-
+    lien = decode_utf8(lien);
+    title = decode_utf8(title); 
     let type = doc.typedoc;
     type = type.toLowerCase();
 

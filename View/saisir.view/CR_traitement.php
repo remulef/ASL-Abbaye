@@ -201,7 +201,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      Vous pourrez retrouver le compte rendu à l\'adresse suivante :' . $lienCR .'(*Veillez a valider le document en le deplacant
      **Les documents qui accompagnent les comptes rendu sont dans le fichier pdf et doivent aussi etre validés)';
        mail('asl.abbaye@grenoble.fr', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
-       mail('fabienremule974@gmail.com', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
 
     echo sprintf("<br> Retrouvez votre compte rendu à l'adresse suivante <a href='%s' > %s </a>",$lienCR,$titre);
 } else {
