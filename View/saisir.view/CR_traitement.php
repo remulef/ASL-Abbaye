@@ -97,10 +97,9 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
                                 $max_DOC = $db->query("SELECT max(id_doc)as max FROM DOCUMENT ")->fetchColumn();
                                 $file["id_doc"] = $max_DOC;
                                 $file["chemin"] = $chemin;
-                                var_dump($file);
-                                $sucess . array_push($file);
-                                var_dump($sucess);
-
+                               // var_dump($file);
+                                $sucess.array_push($file);
+                               
                                 $db = null;
                             } else {
                                 echo "Sorry, there was an error uploading your file.";
