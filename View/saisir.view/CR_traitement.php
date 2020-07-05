@@ -6,19 +6,6 @@ ini_set('display_errors', 1);
 //Sinon redirection 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    /*
-////////////////////////////////
-PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
-///////////////////////////////
-*/
-    /*
-/////////////////////////////////
- POUR LA GESTION DE FICHIER 
- Liste des formats limités
- taille limité à 5Mo
- Nombre de fichier limité à 5
-////////////////////////////////
-*/
     function reArrayFiles(&$file_post)
     {
 
@@ -53,7 +40,6 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
                     $filesize = $file['size'];
 
                     // Vérifie l'extension du fichier
-                    echo pathinfo($filename, PATHINFO_EXTENSION);
                     $ext = pathinfo($filename, PATHINFO_EXTENSION);
                     if (!in_array($ext, $allowed)) die("Erreur : Veuillez sélectionner un format de fichier valide pour le fichier " . $filename);
 
