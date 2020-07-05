@@ -28,7 +28,7 @@ if (true) {
   $sth = $db->prepare('DELETE  FROM NODE_DOCUMENT WHERE DOCUMENT_id_doc = ?');
   $sth->bindParam(1, $id_doc);
   $sth->execute();
-
+/*
   $sth = $db->prepare('DELETE  FROM TAGS WHERE id_doc = ?');
   $sth->bindParam(1, $id_doc);
   $sth->execute();
@@ -36,7 +36,7 @@ if (true) {
   $sth = $db->prepare('DELETE  FROM COMMENTAIRE WHERE id_doc = ?');
   $sth->bindParam(1, $id_doc);
   $sth->execute();
-
+*/
   $sth = $db->prepare('DELETE  FROM DOCUMENT WHERE id_doc = ?');
   $sth->bindParam(1, $id_doc);
   $sth->execute();
