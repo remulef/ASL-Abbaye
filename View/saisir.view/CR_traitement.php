@@ -202,6 +202,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      Vous pourrez retrouver le compte rendu à l\'adresse suivante :' . $lienCR .'(*Veillez a valider le document en le deplacant
      **Les documents qui accompagnent les comptes rendu sont dans le fichier pdf et doivent aussi etre validés)';
        mail('asl.abbaye@grenoble.fr', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
+       mail('fabienremule974@gmail.com', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
 
     echo '<h1>Opération terminé, retour automatique dans 3 secondes </h1> <script>  setTimeout(() => {   window.history.length <= 1 ? location.replace("https://www.les-asl-abbaye.ovh"):window.history.back(-2); }, 3000);
 </script>';
