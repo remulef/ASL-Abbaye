@@ -198,7 +198,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //$lienCR  = 'http://les-asl-abbaye.ovh/tmp-CR/' . $titre . '.pdf';
     $lienCR = 'http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc=' . $max_DOC;
     $message = 'Un Compte rendu nommé ' . $titre . ' à été saisit par ' . $auteur . ' et accompagné de ' . $nbdoc . ' document <br>
-     Vous pourrez retrouver le compte rendu à l\'adresse suivante :' . $lienCR .'(*Veillez a valider le document en le deplacant
+     Vous pourrez retrouver le compte rendu à l\'adresse suivante :' . $lienCR .'  (*Veillez a valider le document en le deplacant
      **Les documents qui accompagnent les comptes rendu sont dans le fichier pdf et doivent aussi etre validés)';
        mail('asl.abbaye@grenoble.fr', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
 
