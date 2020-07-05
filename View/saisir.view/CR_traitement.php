@@ -39,7 +39,7 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
     $sucess = array();
     if ($_FILES['fileToUpload']) {
         $file_ary = reArrayFiles($_FILES['fileToUpload']);
-        var_dump($file_ary);
+        //var_dump($file_ary);
         echo "<br>";
         echo "<br>";
 
