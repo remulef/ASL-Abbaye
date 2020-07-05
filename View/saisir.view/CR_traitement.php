@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             if (preg_match('#[\x00-\x1F\x7F-\x9F/\\\\]#', $filename)) {
                                 exit("Nom de fichier non valide");
                             } else if (move_uploaded_file($file["tmp_name"], "../../../uploads/" . $filename)) {
-                                echo "Le fichier <strong>" . basename($filename) . "</strong> a été ajouté" . PHP_EOL;
+                                echo "Le fichier <strong>" . basename($filename) . "</strong> a été ajouté" . "<br>";
 
                                 //On ouvre la base de donnée
                                 $database = 'gsjrnmiasl.mysql.db';
@@ -103,9 +103,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     }
                 }
             }
-            echo "Error: " . $file["error"];
+            //echo "Error: " . $file["error"];
         }
-        echo "Le nombre de fichier est limité à 5";
+        echo "<br>Le nombre de fichier est limité à 5";
     }
     //NOTIFICATION PAR MAIL
 
@@ -145,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // add a page
 
     $pdf->AddPage();
-    var_dump($sucess);
+    //var_dump($sucess);
     $html = $_POST["editeur"];
     $ul = PHP_EOL . " <h3> Documents rattachés </h3>" . PHP_EOL;
     foreach ($sucess as  $key => $value) {
@@ -155,8 +155,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             '<li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc=' . $sucess[$key]["id_doc"] . '">' . $titre_doc . '</a>'
             . " </ul>" . PHP_EOL;
     }
-    echo $html;
-    echo $ul;
+    //echo $html;
+    //echo $ul;
     $html = $html . $ul;
     $pdf->writeHTML($html, true, false, true, false, '');
     // reset pointer to the last page
@@ -203,8 +203,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        mail('asl.abbaye@grenoble.fr', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
        mail('fabienremule974@gmail.com', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
 
-    echo '<h1>Opération terminé, retour automatique dans 3 secondes </h1> <script>  setTimeout(() => {   window.history.length <= 1 ? location.replace("https://www.les-asl-abbaye.ovh"):window.history.back(-2); }, 3000);
-</script>';
+    echo sprintf("Retrouvez votre compte rendu à l'adresse suivante <a href='%s' > %s </a>",$lienCR,$titre);
 } else {
     header("Location: http://les-asl-abbaye.ovh");
 }
