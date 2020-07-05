@@ -100,9 +100,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         echo "Le nombre de fichier est limité à 5";
     }
-    var_dump($sucess);
-    die();
-    
     //NOTIFICATION PAR MAIL
 
     // Include the main TCPDF library (search for installation path).
@@ -144,7 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $html += " <h3> Documents rattachés </h3>".PHP_EOL;
     foreach ($sucess as  $value) {
         $html += " <ul>".PHP_EOL;
-        $titre_doc = sprintf("[%s]  %s",$value["type"],$value["filename"]);
+        $titre_doc = sprintf("[%s]  %s",$value["type"],$value["name"]);
         $html += '<li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc='.$value["id_doc"].'">'.$titre_doc.'</a>';
         $html += " </ul>".PHP_EOL;
         
