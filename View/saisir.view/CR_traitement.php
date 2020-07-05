@@ -138,9 +138,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // add a page
     
     $pdf->AddPage();
-    echo "==============".PHP_EOL;
-    echo json_encode(var_dump($sucess));
-    echo "==============".PHP_EOL;
+    var_dump($sucess);
     $html = $_POST["editeur"];
     $html += " <h3> Documents rattachés </h3>".PHP_EOL;
     foreach ($sucess as  $key => $value) {
