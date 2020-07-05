@@ -11,8 +11,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<br>";
         echo "<br>";
 
-        $allowed = array('gif','image/gif','jpg', 'image/jpg', 'jpe', 'image/jpe', 'jpeg', 'image/jpeg',
-         'png', 'image/png', 'pdf','application/pdf' , 'docx','application/docx' , 'doc', 'ppx', 'pptx', 'mp3', 'aac', 'txt', 'odt', 'mp4', 'odt');
+        $allowed = array(
+            'gif', 'image/gif', 'jpg', 'image/jpg', 'jpe', 'image/jpe', 'jpeg', 'image/jpeg',
+            'png', 'image/png', 'pdf', 'application/pdf', 'docx', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'doc', 'application/msword', 'ppx', 'application/vnd.ms-powerpoint',
+            'pptx', 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+            'mp3', 'audio/mpeg', 'aac', 'audio/aac', 'txt', 'text/txt', 'odt', 'application/vnd.oasis.opendocument.text',
+            'mp4', 'video/mpeg', 'odt', 'application/vnd.oasis.opendocument.text'
+        );
 
 
         if ($_FILES['fileToUpload']["error"] == 0) {
@@ -76,7 +81,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 $sth->bindParam(1, $value);
                                 $sth->bindParam(2, $max_DOC);
                                 $sth->execute();
-
                             }
                         }
 
@@ -90,7 +94,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $lienCR  = 'http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.admin.php?id_doc=' . $max_DOC;
                         $message = 'Un Document nommé ' . $titre . ' à été proposé, vous pourrez le voir  à l\'adresse suivante <a href="' . $lienCR . '"> COMPTE RENDU</a>';
                         mail('asl.abbaye@grenoble.fr', 'NOTIFICATION proposition d\'un document', $message);
-
                     } else {
                         echo "Sorry, there was an error uploading your file.";
                     }

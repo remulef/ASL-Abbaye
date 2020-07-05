@@ -30,7 +30,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<br>";
         echo "<br>";
 
-        $allowed = array('gif', 'jpg', 'jpe', 'jpeg', 'image/jpeg', 'png', 'image/png', 'pdf', 'docx', 'doc', 'ppx', 'pptx', 'mp3', 'aac', 'txt', 'odt', 'mp4', 'odt');
+
+        $allowed = array(
+            'gif', 'image/gif', 'jpg', 'image/jpg', 'jpe', 'image/jpe', 'jpeg', 'image/jpeg',
+            'png', 'image/png', 'pdf', 'application/pdf', 'docx', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'doc', 'application/msword', 'ppx', 'application/vnd.ms-powerpoint',
+            'pptx', 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+            'mp3', 'audio/mpeg', 'aac', 'audio/aac', 'txt', 'text/txt', 'odt', 'application/vnd.oasis.opendocument.text',
+            'mp4', 'video/mpeg', 'odt', 'application/vnd.oasis.opendocument.text'
+        );
         if (sizeof($file_ary) < 5) {
             foreach ($file_ary as $file) {
                 if ($file["error"] == 0) {
@@ -68,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 } catch (Exception $e) {
                                     die('Erreur : ' . $e->getMessage());
                                 }
-                                
+
                                 $today = getdate();
                                 $mon = $today['mon'];
                                 $date = $today['year'] . "/" . $mon . "/" . $today['mday'];
@@ -83,9 +90,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 $file["id_doc"] = $max_DOC;
                                 $file["chemin"] = $chemin;
                                 $file["typefile"] = $ext;
-                               // var_dump($file);
-                                array_push($sucess,$file);
-                               
+                                // var_dump($file);
+                                array_push($sucess, $file);
+
                                 $db = null;
                             } else {
                                 echo "Sorry, there was an error uploading your file.";
@@ -136,22 +143,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
     // add a page
-    
+
     $pdf->AddPage();
     var_dump($sucess);
     $html = $_POST["editeur"];
-    $ul = " <h3> Documents rattachés </h3>".PHP_EOL;
+    $ul = PHP_EOL . " <h3> Documents rattachés </h3>" . PHP_EOL;
     foreach ($sucess as  $key => $value) {
-        $titre_doc = sprintf("[%s]  %s",$sucess[$key]["typefile"],$sucess[$key]["name"]);
-        
-        $ul = $ul." <ul>".PHP_EOL.
-        '<li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc='.$sucess[$key]["id_doc"].'">'.$titre_doc.'</a>'
-        ." </ul>".PHP_EOL;
-        
+        $titre_doc = sprintf("[%s]  %s", $sucess[$key]["typefile"], $sucess[$key]["name"]);
+
+        $ul = $ul . " <ul>" . PHP_EOL .
+            '<li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc=' . $sucess[$key]["id_doc"] . '">' . $titre_doc . '</a>'
+            . " </ul>" . PHP_EOL;
     }
-    echo $html ;
+    echo $html;
     echo $ul;
-    die();
+    $html = $html . $ul;
     $pdf->writeHTML($html, true, false, true, false, '');
     // reset pointer to the last page
     $pdf->lastPage();
@@ -182,19 +188,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sth->bindParam(4, $chemin);
     $sth->execute();
     $max_DOC = $db->query("SELECT max(id_doc)as max FROM DOCUMENT ")->fetchColumn();
-                                
+
     $db = null;
 
     $auteur = addslashes($_POST["auteur"]);
     $titre = addslashes($_POST["titre"]);
     $nbdoc = "count array"; //count($file_ary);
     //$lienCR  = 'http://les-asl-abbaye.ovh/tmp-CR/' . $titre . '.pdf';
-    $lienCR = 'http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc='.$max_DOC;
+    $lienCR = 'http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc=' . $max_DOC;
     $message = 'Un Compte rendu nommé ' . $titre . ' à été saisit par ' . $auteur . ' et accompagné de ' . $nbdoc . ' document <br>
-     Vous pourrez retrouver le compte rendu à l\'adresse suivante :' . $lienCR;
-    mail('fabienremule974@gmail.com', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
-    //    mail('asl.abbaye@grenoble.fr', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
+     Vous pourrez retrouver le compte rendu à l\'adresse suivante :' . $lienCR .'(*Veillez a valider le document en le deplacant
+     **Les documents qui accompagnent les comptes rendu sont dans le fichier pdf)';
+       mail('asl.abbaye@grenoble.fr', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
 
+    echo '<h1>Opération terminé, retour automatique dans 3 secondes </h1> <script>  setTimeout(() => {   window.history.length <= 1 ? location.replace("https://www.les-asl-abbaye.ovh"):window.history.back(-2); }, 3000);
+</script>';
 } else {
     header("Location: http://les-asl-abbaye.ovh");
 }
