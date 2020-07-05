@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 $sth->bindParam(1, $date);
                                 $sth->bindParam(2, $ext);
                                 $sth->bindParam(3, $filename);
-                                $sth->bindParam(4, urlencode($chemin));
+                                $sth->bindParam(4, $chemin);
                                 $sth->execute();
                                 $max_DOC = $db->query("SELECT max(id_doc)as max FROM DOCUMENT ")->fetchColumn();
                                 $file["id_doc"] = $max_DOC;
