@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 } catch (Exception $e) {
                                     die('Erreur : ' . $e->getMessage());
                                 }
-
+                                
                                 $today = getdate();
                                 $mon = $today['mon'];
                                 $date = $today['year'] . "/" . $mon . "/" . $today['mday'];
@@ -83,6 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 $max_DOC = $db->query("SELECT max(id_doc)as max FROM DOCUMENT ")->fetchColumn();
                                 $file["id_doc"] = $max_DOC;
                                 $file["chemin"] = $chemin;
+                                $file["typefile"] = $ext;
                                // var_dump($file);
                                 array_push($sucess,$file);
                                
@@ -141,12 +142,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $html += " <h3> Documents rattachés </h3>".PHP_EOL;
     foreach ($sucess as  $value) {
         $html += " <ul>".PHP_EOL;
-        $titre_doc = sprintf("[%s]  %s",$value["type"],$value["name"]);
+        $titre_doc = sprintf("[%s]  %s",$value["typefile"],$value["name"]);
         $html += '<li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc='.$value["id_doc"].'">'.$titre_doc.'</a>';
         $html += " </ul>".PHP_EOL;
         
     }
     echo $html ;
+    die();
     $pdf->writeHTML($html, true, false, true, false, '');
     // reset pointer to the last page
     $pdf->lastPage();

@@ -42,7 +42,7 @@ var_dump($_SESSION);
 				<li id="li_2">
 					<label class="description" for="element_2">Auteur </label>
 					<div>
-						<input id="element_2" name="auteur" class="element text medium" type="text" maxlength="255" value="" />
+						<input id="element_2" name="auteur" class="element text medium" type="text" maxlength="255" value="<?php echo $_SESSION["username"] ?>" />
 					</div>
 					<p class="guidelines" id="guide_2"><small>Votre nom</small></p>
 				</li>
