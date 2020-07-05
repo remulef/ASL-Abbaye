@@ -114,7 +114,9 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
         }
         echo "Le nombre de fichier est limité à 5";
     }
-
+    var_dump($sucess);
+    die();
+    
     //NOTIFICATION PAR MAIL
 
     // Include the main TCPDF library (search for installation path).
@@ -154,16 +156,14 @@ PARTIE POUR CREE UN PDF A PARTIR DU FORMULAIRE
     $pdf->AddPage();
 
     $html += " <h3> Documents rattachés </h3>".PHP_EOL;
-    foreach ($sucess as $key => $value) {
+    foreach ($sucess as  $value) {
         $html += " <ul>".PHP_EOL;
         $titre_doc = sprintf("[%s]  %s",$value["type"],$value["filename"]);
         $html += '<li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc='.$value["id_doc"].'">'.$titre_doc.'</a>';
         $html += " </ul>".PHP_EOL;
         
     }
-    var_dump($sucess);
     echo $html ;
-    die();
     $pdf->writeHTML($html, true, false, true, false, '');
     // reset pointer to the last page
     $pdf->lastPage();
