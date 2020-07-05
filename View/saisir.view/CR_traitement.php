@@ -143,10 +143,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "==============".PHP_EOL;
     $html = $_POST["editeur"];
     $html += " <h3> Documents rattachés </h3>".PHP_EOL;
-    foreach ($sucess as  $value) {
+    foreach ($sucess as  $key => $value) {
         $html += " <ul>".PHP_EOL;
-        $titre_doc = sprintf("[%s]  %s",$value["typefile"],$value["name"]);
-        $html += '<li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc='.$value["id_doc"].'">'.$titre_doc.'</a>';
+        $titre_doc = sprintf("[%s]  %s",$sucess[$key]["typefile"],$sucess[$key]["name"]);
+        $html += '<li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc='.$sucess[$key]["id_doc"].'">'.$titre_doc.'</a>';
         $html += " </ul>".PHP_EOL;
         
     }
