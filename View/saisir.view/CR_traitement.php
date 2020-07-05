@@ -203,7 +203,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        mail('asl.abbaye@grenoble.fr', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
        mail('fabienremule974@gmail.com', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
 
-    echo sprintf("Retrouvez votre compte rendu à l'adresse suivante <a href='%s' > %s </a>",$lienCR,$titre);
+    echo sprintf("<br> Retrouvez votre compte rendu à l'adresse suivante <a href='%s' > %s </a>",$lienCR,$titre);
 } else {
     header("Location: http://les-asl-abbaye.ovh");
 }
