@@ -2,8 +2,8 @@
 session_start();
 
 $html = $_POST["editeur"];
-
-
+echo $html;
+die();
 ini_set('display_errors', 1);
 //Si la page est généré par une requete POST 
 //Sinon redirection 
