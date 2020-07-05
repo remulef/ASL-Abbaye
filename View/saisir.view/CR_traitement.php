@@ -72,7 +72,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 $today = getdate();
                                 $mon = $today['mon'];
                                 $date = $today['year'] . "/" . $mon . "/" . $today['mday'];
-                                $max_CR = $db->query("SELECT max(id_cr)as max FROM COMPTERENDU ")->fetchColumn();
                                 $chemin = "uploads/" . $filename;
                                 $sth = $db->prepare('INSERT INTO DOCUMENT (datepublication,typedoc,nom,chemin,tmp,cr) value (?,?,?,?,true,false)');
                                 $sth->bindParam(1, $date);
