@@ -181,8 +181,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $nomduCR = $_POST["titre"] . ".pdf";
     $chemin = "tmp-CR/" . $nomduCR;
+    $titre = '[Compte-Rendu]'.$_POST["titre"];
     $sth = $db->prepare('INSERT INTO DOCUMENT (titre,datepub,auteur,chemin,tmp) value (?,?,?,?,true)');
-    $sth->bindParam(1, $_POST["titre"]);
+    $sth->bindParam(1, $titre);
     $sth->bindParam(2, $_POST["date"]);
     $sth->bindParam(3, $_POST["auteur"]);
     $sth->bindParam(4, $chemin);
@@ -193,12 +194,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $auteur = addslashes($_POST["auteur"]);
     $titre = addslashes($_POST["titre"]);
-    $nbdoc = "count array"; //count($file_ary);
+    $nbdoc = count($sucess);
     //$lienCR  = 'http://les-asl-abbaye.ovh/tmp-CR/' . $titre . '.pdf';
     $lienCR = 'http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc=' . $max_DOC;
     $message = 'Un Compte rendu nommé ' . $titre . ' à été saisit par ' . $auteur . ' et accompagné de ' . $nbdoc . ' document <br>
      Vous pourrez retrouver le compte rendu à l\'adresse suivante :' . $lienCR .'(*Veillez a valider le document en le deplacant
-     **Les documents qui accompagnent les comptes rendu sont dans le fichier pdf)';
+     **Les documents qui accompagnent les comptes rendu sont dans le fichier pdf et doivent aussi etre validés)';
        mail('asl.abbaye@grenoble.fr', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
 
     echo '<h1>Opération terminé, retour automatique dans 3 secondes </h1> <script>  setTimeout(() => {   window.history.length <= 1 ? location.replace("https://www.les-asl-abbaye.ovh"):window.history.back(-2); }, 3000);
