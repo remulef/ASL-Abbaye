@@ -58,8 +58,7 @@ var_dump($_SESSION);
       ?>
 
       <li>
-        <img src="http://placehold.it/200x120">
-        <h3>006synth�se</h3>
+      <h3>006synth�se</h3>
         <p class="price">pdf</p>
         <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.admin.php?id_doc=2035">
           Ouvrir</a>
