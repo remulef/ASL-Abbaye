@@ -1,0 +1,13 @@
+array(3) {
+  ["username"]=>
+  string(6) "JulieG"
+  ["password"]=>
+  string(5) "ASL38"
+  ["role"]=>
+  array(2) {
+    [0]=>
+    string(14) "ADMINISTRATEUR"
+    ["role"]=>
+    string(14) "ADMINISTRATEUR"
+  }
+}
