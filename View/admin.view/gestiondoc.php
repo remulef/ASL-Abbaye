@@ -24,8 +24,6 @@ var_dump($_SESSION);
         <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
       </svg>
     </a>
-    <h1>Document en attente de validation</h1>
-    <ul>
       <?php
 
       //On ouvre la base de donnée
@@ -39,11 +37,12 @@ var_dump($_SESSION);
       } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
       }
-      $sth = $db->prepare('SELECT * from DOCUMENT where tmp= true ;');
+      $sth = $db->prepare('SELECT * from DOCUMENT where tmp= true OR type ="pdf";');
       $sth->execute();
       $res = $sth->fetchAll(PDO::FETCH_ASSOC);
-
-
+      ((count($res)>0)? $alert = count($res)."<h1>Document en attente de validation</h1>":$alert ="<h1>Aucun Document en attente de validation</h1>");
+      echo $alert;
+      echo"<ul>";
       foreach ($res as $key => $value) {
         echo "<li>
         <img src=\"http://placehold.it/200x120\">
