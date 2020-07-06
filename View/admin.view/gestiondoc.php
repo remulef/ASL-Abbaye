@@ -24,6 +24,7 @@ var_dump($_SESSION);
         <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
       </svg>
     </a>
+    <main>
       <?php
 
       //On ouvre la base de donnée
@@ -47,7 +48,7 @@ var_dump($_SESSION);
         echo "<li>
         <img src=\"http://placehold.it/200x120\">
         <h3>" . $value["nom"] . "</h3>
-        <p class='price'>" . $value["type"] . "</p> 
+        <p class='price'>" . $value["typedoc"] . "</p> 
         <a href='http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.admin.php?id_doc=" . $value["id_doc"] . "'>
         Ouvrir</a>
         </li>";
@@ -60,6 +61,7 @@ var_dump($_SESSION);
     echo "<a href=\"http://les-asl-abbaye.ovh\">Cliquez ici pour retourner sur la page d'accueil</a>";
   }
   ?>
+  </main>
 </body>
 
 </html>
