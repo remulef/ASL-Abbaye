@@ -37,7 +37,7 @@ var_dump($_SESSION);
       } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
       }
-      $sth = $db->prepare('SELECT * from DOCUMENT where tmp= true OR type ="pdf";');
+      $sth = $db->prepare('SELECT * from DOCUMENT where tmp= true OR typedoc ="pdf";');
       $sth->execute();
       $res = $sth->fetchAll(PDO::FETCH_ASSOC);
       ((count($res)>0)? $alert = count($res)."<h1>Document en attente de validation</h1>":$alert ="<h1>Aucun Document en attente de validation</h1>");
