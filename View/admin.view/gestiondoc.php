@@ -41,9 +41,9 @@ var_dump($_SESSION);
       $sth = $db->prepare('SELECT * from DOCUMENT where tmp= true;');
       $sth->execute();
       $res = $sth->fetchAll(PDO::FETCH_ASSOC);
-      ((count($res)>0)? $alert = count($res)."<h1>Document en attente de validation</h1>":$alert ="<h1>Aucun Document en attente de validation</h1>");
+      ((count($res) > 0) ? $alert = count($res) . "<h1>Document en attente de validation</h1>" : $alert = "<h1>Aucun Document en attente de validation</h1>");
       echo $alert;
-      echo"<ul>";
+      echo "<ul>";
       foreach ($res as $key => $value) {
         echo "<li>
         <img src=\"http://placehold.it/200x120\">
@@ -53,15 +53,32 @@ var_dump($_SESSION);
         Ouvrir</a>
         </li>";
       }
+
+
       ?>
-    </ul>
-  <?php
+
+      <li>
+        <img src="http://placehold.it/200x120">
+        <h3>006synth�se</h3>
+        <p class="price"></p>
+        <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.admin.php?id_doc=2035">
+          Ouvrir</a>
+      </li>
+      <li>
+        <img src="http://placehold.it/200x120">
+        <h3>005u</h3>
+        <p class="price"></p>
+        <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.admin.php?id_doc=2036">
+          Ouvrir</a>
+      </li>
+      </ul>
+    <?php
   } else {
     echo "<p>Vous n'êtes pas connecté en tant qu'Administrateur, veuillez vous authentifier.</p>";
     echo "<a href=\"http://les-asl-abbaye.ovh\">Cliquez ici pour retourner sur la page d'accueil</a>";
   }
-  ?>
-  </main>
+    ?>
+    </main>
 </body>
 
 </html>
