@@ -50,8 +50,13 @@ function affiche(json) {
     let date = doc.datepublication;
     lien = doc.chemin;
     lien = "/" + lien;
+    try {
+     
     lien = decode_utf8(lien);
-    title = decode_utf8(title); 
+    title = decode_utf8(title);   
+    } catch (error) {
+        console.log("probleme decodage utf8");
+    } 
     let type = doc.typedoc;
     type = type.toLowerCase();
 
