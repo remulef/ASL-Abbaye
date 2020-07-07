@@ -6,7 +6,6 @@ let old_title;
 let old_description;
 
 function init(id) {
-    msieversion();
     id_doc = id;
     //document.getElementById("myInput").style.display = "none";
     let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/script-document.php";

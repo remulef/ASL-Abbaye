@@ -1,8 +1,26 @@
 <?php
 session_start();
-echo 
-' <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>';
-  if(isset($_SESSION['role']) && $_SESSION['role'] != ""){
+
+function ae_detect_ie()
+{
+    if (isset($_SERVER['HTTP_USER_AGENT']) && 
+    (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false))
+        return true;
+    else
+        return false;
+}
+
+if (ae_detect_ie()){
+  echo '<h1>
+  It seems, that your are using MSIE.
+Why not to switch to standard-complaint brower, like 
+<a href="http://www.mozilla.com/firefox/">Firefox</a>
+</h1>  
+';
+}
+
+
+if(isset($_SESSION['role']) && $_SESSION['role'] != ""){
     $role = $_SESSION['role'];
     if($role[0] == "BENEVOLE ABBAYE"){
       echo "<div class=\"drop\" onclick=\"affichage()\">
