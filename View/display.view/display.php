@@ -7,7 +7,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="display.css">
-    
     <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" /> 
     <!--<link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/footer.css" />
 -->    
@@ -66,9 +65,7 @@
         </a>
 
 
-    <main class="main">
-
-    <div id="sortpanel" style="display: block;">
+        <div id="sortpanel" style="display: block;">
             <form>
 
                 <label class="description" for="element_8">Lieu de recherche (cliquer à droite des cases)</label>
@@ -177,6 +174,8 @@
             </form>
         </div>
     </div>
+    <main class="main">
+
 
 
         <img style="display:none" src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/presentation.png" id="presentation" alt="organisation de ressource pedagogique">
