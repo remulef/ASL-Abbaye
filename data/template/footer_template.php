@@ -12,15 +12,15 @@
           <div class="col-xs-6 col-md-3">
             <h6>Document</h6>
             <ul class="footer-links">
-              <li><a href="http://scanfcode.com/category/c-language/">Chercher un document</a></li>
-              <li><a href="http://scanfcode.com/category/front-end-development/">Proposer un document</a></li>
+              <li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/display.view/display.php">Chercher un document</a></li>
+              <li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/proposer.view/proposer.php">Proposer un document</a></li>
             </ul>
           </div>
 
           <div class="col-xs-6 col-md-3">
             <h6>Lien rapide </h6>
             <ul class="footer-links">
-              <li><a href="">Accueil</a></li>
+              <li><a href="http://les-asl-abbaye.ovh/">Accueil</a></li>
               <li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/contact.view/contact.php">Nous contacter</a></li>
               <li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/RGPD.pdf">Règlement général sur la protection des données</a></li>
             </ul>
