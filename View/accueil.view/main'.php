@@ -8,9 +8,9 @@ session_start();
   <meta charset="utf-8">
   <title>Accueil Abbaye</title>
   <link rel="stylesheet" type="text/css" media="screen" href="main'.css" />
-     <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" />
 
-     <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/footer.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/footer.css" />
 
 </head>
 
@@ -26,32 +26,40 @@ session_start();
   </header>
   <main>
     <!--style="float:left"-->
-    <div class="dropdown" >
-      <button class="dropbtn">Consulter</button>
-      <div class="dropdown-content">
-        <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/display.view/display.php">Outils d'Évaluation</a>
-        <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/display.view/display.php">Ressources Pédagogiques</a>
-        <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/display.view/display.php">Actualités / Informations des ASL</a>
-        <?php
-        if (isset($_SESSION['role'])) {
-          echo "<a href=\"http://les-asl-abbaye.ovh/ASL-Abbaye/View/display.view/display.php\">Réalisations Apprenants</a>";
-          echo "<a href=\"http://les-asl-abbaye.ovh/ASL-Abbaye/View/display.view/display.php\">Comptes-Rendus</a>";
-        }
-        ?>
-      </div>
-    </div>
-    <!--style="float:right"-->
-    <div class="dropdown" >
-      <button class="dropbtn">Contribuer</button>
-      <div class="dropdown-content" id="id">
-        <a href="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/proposer.view/proposer.php">Proposer un Document</a>
-        <?php
-        if (isset($_SESSION['role'])) {
-          echo "<a href=\"http://les-asl-abbaye.ovh/ASL-Abbaye/View/saisir.view/saisir.php\">Saisir un Compte-Rendu</a>";
-        }
+    <div class="container">
+      <div class="row">
+        <div class="dropdown">
+          <div class="col-sm">
+            <button class="dropbtn">Consulter</button>
+            <div class="dropdown-content">
+              <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/display.view/display.php">Outils d'Évaluation</a>
+              <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/display.view/display.php">Ressources Pédagogiques</a>
+              <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/display.view/display.php">Actualités / Informations des ASL</a>
+              <?php
+              if (isset($_SESSION['role'])) {
+                echo "<a href=\"http://les-asl-abbaye.ovh/ASL-Abbaye/View/display.view/display.php\">Réalisations Apprenants</a>";
+                echo "<a href=\"http://les-asl-abbaye.ovh/ASL-Abbaye/View/display.view/display.php\">Comptes-Rendus</a>";
+              }
+              ?>
+            </div>
+          </div>
+        </div>
+        <!--style="float:right"-->
+        <div class="col-sm">
+          <div class="dropdown">
+            <button class="dropbtn">Contribuer</button>
+            <div class="dropdown-content" id="id">
+              <a href="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/proposer.view/proposer.php">Proposer un Document</a>
+              <?php
+              if (isset($_SESSION['role'])) {
+                echo "<a href=\"http://les-asl-abbaye.ovh/ASL-Abbaye/View/saisir.view/saisir.php\">Saisir un Compte-Rendu</a>";
+              }
 
-        ?>
-        <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/contact.view/contact.php">Nous contacter</a>
+              ?>
+              <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/contact.view/contact.php">Nous contacter</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <!--
