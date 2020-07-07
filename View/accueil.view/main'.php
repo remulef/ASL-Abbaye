@@ -15,7 +15,7 @@
     <?php
       include ("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/templateprofil.php");
      ?>
-     <br><br><br><br>
+     <br><br>
     <div class="dropdown" style="float:left">
      <button class="dropbtn">Consulter</button>
      <div class="dropdown-content">
