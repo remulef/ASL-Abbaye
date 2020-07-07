@@ -211,11 +211,11 @@ function search(elem) {
         docname: inputs[1].value,
         ressource: recupressource(),
         typedoc: recuptype(),
-        tags: (inputs[14].value.length > 0 ? inputs[14].value.split("+") : []),
+        tags: (inputs[13].value.length > 0 ? inputs[13].value.split("+") : []),
         niveau: recupniveau(),
         order: recuporderby(), //Croissant ?
-        tefanf: inputs[23].checked,  // TEF ANF ?
-        alpha: inputs[24].checked
+        tefanf: inputs[22].checked,  // TEF ANF ?
+        alpha: inputs[23].checked
     });
 
     param = JSON.stringify(param);
@@ -257,13 +257,6 @@ function recupressource() {
     if (inputs[5].checked === true) {
         type.push("vsm");
     }
-
-
-    if (inputs[5].checked === true) {
-        type.push("da");
-    }
-
-
     if (inputs[6].checked === true) {
         type.push("ea");
     }
@@ -314,23 +307,26 @@ function recupniveau() {
     var inputs = document.getElementsByTagName("input");
     var niv = [];
 
+    if (inputs[14].checked === true) {
+        niv.push("Decouvert");
+        niv.push("Exploration");
+        niv.push("Appropriation");
+
+    }
+
     if (inputs[15].checked === true) {
-        niv.push("D");
-        niv.push("E");
-        niv.push("A");
+        niv.push("Decouvert");
 
     }
 
     if (inputs[16].checked === true) {
-        niv.push("D")
+        niv.push("Exploration");
+
     }
 
     if (inputs[17].checked === true) {
-        niv.push("E")
-    }
+        niv.push("Appropriation");
 
-    if (inputs[18].checked === true) {
-        niv.push("A")
     }
     return niv;
 }
@@ -428,17 +424,17 @@ function recuporderby() {
 
     var inputs = document.getElementsByTagName("input");
 
-    if (inputs[19].checked === true) {
+    if (inputs[18].checked === true) {
         return "nom ASC";
     }
-    if (inputs[20].checked === true) {
+    if (inputs[19].checked === true) {
         return "nom DESC";
     }
 
-    if (inputs[21].checked === true) {
+    if (inputs[20].checked === true) {
         return "pop ASC";
     }
-    if (inputs[22].checked === true) {
+    if (inputs[21].checked === true) {
         return "pop DESC";
     }
 }
