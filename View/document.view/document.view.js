@@ -32,6 +32,7 @@ function msieversion() {
     if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))  // If Internet Explorer, return version number
     {
         alert(parseInt(ua.substring(msie + 5, ua.indexOf(".", msie))));
+        document.getElementsByTagName("body")[0].innerHTML="<h1> Veuillez changer de navigateur </h1>"
     }
     else  // If another browser, return 0
     {
