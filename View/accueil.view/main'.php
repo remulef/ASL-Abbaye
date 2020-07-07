@@ -28,7 +28,7 @@ session_start();
     <!--style="float:left"-->
     <div class="container">
       <div class="row">
-        <div class="col-sm">
+        <div class="col">
 
           <div class="dropdown">
             <button class="dropbtn">Consulter</button>
@@ -46,7 +46,7 @@ session_start();
           </div>
         </div>
         <!--style="float:right"-->
-        <div class="col-sm">
+        <div class="col">
           <div class="dropdown">
             <button class="dropbtn">Contribuer</button>
             <div class="dropdown-content" id="id">
