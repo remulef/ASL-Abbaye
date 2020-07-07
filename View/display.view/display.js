@@ -308,24 +308,24 @@ function recupniveau() {
     var niv = [];
 
     if (inputs[14].checked === true) {
-        niv.push("Decouvert");
-        niv.push("Exploration");
-        niv.push("Appropriation");
+        niv.push("D");
+        niv.push("E");
+        niv.push("A");
 
     }
 
     if (inputs[15].checked === true) {
-        niv.push("Decouvert");
+        niv.push("D");
 
     }
 
     if (inputs[16].checked === true) {
-        niv.push("Exploration");
+        niv.push("E");
 
     }
 
     if (inputs[17].checked === true) {
-        niv.push("Appropriation");
+        niv.push("A");
 
     }
     return niv;
