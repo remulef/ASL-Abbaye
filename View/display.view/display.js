@@ -266,25 +266,25 @@ function recupressource() {
 function recuptype() {
     var inputs = document.getElementsByTagName("input");
     var type = [];
-    if (inputs[8].checked === true) {
+    if (inputs[7].checked === true) {
         type.push("pdf");
     }
-    if (inputs[9].checked === true) {
+    if (inputs[8].checked === true) {
         type.push("jpeg");
         type.push("jpg");
         type.push("gif");
         type.push("png");
     }
-    if (inputs[10].checked === true) {
+    if (inputs[9].checked === true) {
         type.push("wma");
         type.push("mp3");
     }
 
-    if (inputs[11].checked === true) {
+    if (inputs[10].checked === true) {
         type.push("MPG");
     }
 
-    if (inputs[12].checked === true) {
+    if (inputs[11].checked === true) {
         type.push("docx");
         type.push("odt");
         type.push("doc");
@@ -296,7 +296,7 @@ function recuptype() {
         type.push("ods");
 
     }
-    if (inputs[13].checked === true) {
+    if (inputs[12].checked === true) {
         type.push("pptx");
         type.push("ppt");
     }
