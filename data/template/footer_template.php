@@ -1,5 +1,4 @@
-  <!-- Site footer -->
-  <footer class="site-footer">
+<?php echo '<footer class="site-footer">
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-6">
@@ -48,4 +47,4 @@
           </div>
         </div>
       </div>
-</footer>
+</footer>'?>
