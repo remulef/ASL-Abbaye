@@ -11,7 +11,7 @@
   </head>
   <body>
     <h1>Bienvenue sur la base de données pédagogique des Ateliers Socio-Linguistiques de l'Abbaye</h1>
-    <h6>(Pour une meilleure navigation, ne pas utiliser Internet Explorer)<h2>
+    <h3>(Pour une meilleure navigation, ne pas utiliser Internet Explorer)<h2>
     <?php
       include ("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/templateprofil.php");
      ?>
