@@ -101,7 +101,7 @@
                     <label class="choice" for="element_7_4">Doc authentique</label>
                     <input id="element_7_5" oninput="search(this)" name="element_7_5" class="element checkbox" type="checkbox" value="1" />
                     <label class="choice" for="element_7_5">video/site internet/mp3</label>
-                    <input id="element_7_7" oninput="search(this)" name="element_7_7" class="element checkbox" type="checkbox" value="1" />
+                    <input id="element_7_6" oninput="search(this)" name="element_7_6" class="element checkbox" type="checkbox" value="1" />
                     <label class="choice" for="element_7_6">exos/activités</label>
                 </span>
 
