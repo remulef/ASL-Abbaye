@@ -7,9 +7,9 @@ session_start();
 <head>
   <meta charset="utf-8">
   <title>Accueil Abbaye</title>
-  <!--<link rel="stylesheet" type="text/css" media="screen" href="main'.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="main'.css" />
      <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" />
--->
+
      <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/footer.css" />
 
 </head>
@@ -25,7 +25,8 @@ session_start();
 
   </header>
   <main>
-    <div class="dropdown" style="float:left">
+    <!--style="float:left"-->
+    <div class="dropdown" >
       <button class="dropbtn">Consulter</button>
       <div class="dropdown-content">
         <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/display.view/display.php">Outils d'Évaluation</a>
@@ -39,7 +40,8 @@ session_start();
         ?>
       </div>
     </div>
-    <div class="dropdown" style="float:right">
+    <!--style="float:right"-->
+    <div class="dropdown" >
       <button class="dropbtn">Contribuer</button>
       <div class="dropdown-content" id="id">
         <a href="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/proposer.view/proposer.php">Proposer un Document</a>
