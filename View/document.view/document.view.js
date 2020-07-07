@@ -6,7 +6,7 @@ let old_title;
 let old_description;
 
 function init(id) {
-
+    msieversion();
     id_doc = id;
     //document.getElementById("myInput").style.display = "none";
     let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/script-document.php";
@@ -21,6 +21,25 @@ function init(id) {
 
 
 }
+
+
+
+function msieversion() {
+
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE ");
+  
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))  // If Internet Explorer, return version number
+    {
+        alert(parseInt(ua.substring(msie + 5, ua.indexOf(".", msie))));
+    }
+    else  // If another browser, return 0
+    {
+        alert("otherbrowser");
+    }
+  
+    return false;
+  }
 
 function error() {
     alert("error document");
