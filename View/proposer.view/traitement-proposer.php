@@ -16,7 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             'png', 'image/png', 'pdf', 'application/pdf', 'docx', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'doc', 'application/msword', 'ppx', 'application/vnd.ms-powerpoint',
             'pptx', 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
             'mp3', 'audio/mpeg', 'aac', 'audio/aac', 'txt', 'text/txt', 'odt', 'application/vnd.oasis.opendocument.text',
-            'mp4', 'video/mpeg', 'odt', 'application/vnd.oasis.opendocument.text'
+            'mp4', 'video/mpeg', 'odt', 'application/vnd.oasis.opendocument.text',
+            'xls', 'application/vnd.ms-excel',
+            'xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
         );
 
 
@@ -29,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Vérifie l'extension du fichier
             echo pathinfo($filename, PATHINFO_EXTENSION);
             $ext = pathinfo($filename, PATHINFO_EXTENSION);
+            $ext = strtolower($ext);
             if (!in_array($ext, $allowed)) die("Erreur : Veuillez sélectionner un format de fichier valide pour le fichier " . $filename);
 
             // Vérifie la taille du fichier - 5Mo maximum
