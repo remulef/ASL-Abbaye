@@ -51,7 +51,6 @@
  echo '
    <!-- Site footer -->
   
-  <p> ouiiiiiiiiiiiii</p>  
 
     <footer class="site-footer">
       <div class="container">
