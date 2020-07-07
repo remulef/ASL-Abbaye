@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-
-<?php session_start()?>
-=======
 <?php session_start() ?>
->>>>>>> 7144ca5f1e49de9584c24ef64b6f03b04f3dd604
 <!DOCTYPE html>
 <html lang="fr">
 
