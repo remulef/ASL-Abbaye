@@ -12,6 +12,7 @@
  
   </head>
   <body>
+    <main>
     <h1>Bienvenue sur la base de données pédagogique des Ateliers Socio-Linguistiques de l'Abbaye</h1>
     <h2>(Pour une meilleure navigation, ne pas utiliser Internet Explorer)</h2>
     <?php
@@ -52,7 +53,9 @@
       <img id="logos" src="../../data/img/Logos.PNG" alt="Logos des Financeurs" width="20%" height="10%">
     </footer>
         -->
-  </body>
+        </main>
+        
   <?php include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/footer_template.php"); ?>
 
+  </body>
 </html>
