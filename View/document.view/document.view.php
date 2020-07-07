@@ -157,6 +157,6 @@ echo "<body onload=\"init(" . $id_doc . ")\">";
 </main>
 <script src="document.view.js"></script>
 </body>
-<?php //include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/footer_template.php"); ?>
+<?php include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/footer_template.php"); ?>
 
 </html>
