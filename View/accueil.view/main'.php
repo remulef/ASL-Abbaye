@@ -28,8 +28,9 @@ session_start();
     <!--style="float:left"-->
     <div class="container">
       <div class="row">
-        <div class="dropdown">
-          <div class="col-sm">
+        <div class="col-sm">
+
+          <div class="dropdown">
             <button class="dropbtn">Consulter</button>
             <div class="dropdown-content">
               <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/display.view/display.php">Outils d'Évaluation</a>
