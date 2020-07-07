@@ -1,5 +1,10 @@
 <?php
 session_start();
+echo 
+' <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script> if ( $.browser.msie ) {
+  alert( $.browser.version );
+} </script>';
   if(isset($_SESSION['role']) && $_SESSION['role'] != ""){
     $role = $_SESSION['role'];
     if($role[0] == "BENEVOLE ABBAYE"){
