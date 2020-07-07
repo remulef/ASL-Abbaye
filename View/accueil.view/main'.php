@@ -8,9 +8,9 @@ session_start();
   <meta charset="utf-8">
   <title>Accueil Abbaye</title>
   <link rel="stylesheet" type="text/css" media="screen" href="main'.css" />
-  <!--   <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" />-->
+  <!--   <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/footer.css" />
-
+-->
 </head>
 
 <body>
