@@ -44,10 +44,10 @@ function load(json) {
             nbdoc++;
             var li = document.createElement("li");
             var a = document.createElement("a");
-            a.setAttribute("href", "http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc=" + current.id_doc);
+            a.setAttribute("href", "http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=" + current.id_doc);
             a.setAttribute("target", "_blank");
             a.innerHTML = "ouvrir";
-            //p 
+            //p
             var p = document.createElement("p");
             p.class = "price";
             p.innerHTML = current.typedoc;
@@ -121,7 +121,7 @@ function changedoc(id, title, forward, pos) {
         history.splice(pos + 1);
 
     }
-    
+
     if( title === "Ressources pédagogiques"){
         document.getElementById("presentation").setAttribute("style","display: block");
     }else {
@@ -129,7 +129,7 @@ function changedoc(id, title, forward, pos) {
     }
 
     updateparcours();
-    
+
 
     try {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-load.php";
@@ -211,11 +211,11 @@ function search(elem) {
         docname: inputs[1].value,
         ressource: recupressource(),
         typedoc: recuptype(),
-        tags: (inputs[13].value.length > 0 ? inputs[14].value.split("+") : []),
+        tags: (inputs[14].value.length > 0 ? inputs[14].value.split("+") : []),
         niveau: recupniveau(),
-        order: recuporderby(), //Croissant ? 
-        tefanf: inputs[22].checked,  // TEF ANF ?
-        alpha: inputs[23].checked
+        order: recuporderby(), //Croissant ?
+        tefanf: inputs[23].checked,  // TEF ANF ?
+        alpha: inputs[24].checked
     });
 
     param = JSON.stringify(param);
@@ -258,6 +258,12 @@ function recupressource() {
         type.push("vsm");
     }
 
+
+    if (inputs[5].checked === true) {
+        type.push("da");
+    }
+
+
     if (inputs[6].checked === true) {
         type.push("ea");
     }
@@ -267,25 +273,25 @@ function recupressource() {
 function recuptype() {
     var inputs = document.getElementsByTagName("input");
     var type = [];
-    if (inputs[7].checked === true) {
+    if (inputs[8].checked === true) {
         type.push("pdf");
     }
-    if (inputs[8].checked === true) {
+    if (inputs[9].checked === true) {
         type.push("jpeg");
         type.push("jpg");
         type.push("gif");
         type.push("png");
     }
-    if (inputs[9].checked === true) {
+    if (inputs[10].checked === true) {
         type.push("wma");
         type.push("mp3");
     }
 
-    if (inputs[10].checked === true) {
+    if (inputs[11].checked === true) {
         type.push("MPG");
     }
 
-    if (inputs[11].checked === true) {
+    if (inputs[12].checked === true) {
         type.push("docx");
         type.push("odt");
         type.push("doc");
@@ -297,7 +303,7 @@ function recuptype() {
         type.push("ods");
 
     }
-    if (inputs[12].checked === true) {
+    if (inputs[13].checked === true) {
         type.push("pptx");
         type.push("ppt");
     }
@@ -308,22 +314,22 @@ function recupniveau() {
     var inputs = document.getElementsByTagName("input");
     var niv = [];
 
-    if (inputs[14].checked === true) {
+    if (inputs[15].checked === true) {
         niv.push("D");
         niv.push("E");
         niv.push("A");
 
     }
 
-    if (inputs[15].checked === true) {
+    if (inputs[16].checked === true) {
         niv.push("D")
     }
 
-    if (inputs[16].checked === true) {
+    if (inputs[17].checked === true) {
         niv.push("E")
     }
 
-    if (inputs[17].checked === true) {
+    if (inputs[18].checked === true) {
         niv.push("A")
     }
     return niv;
@@ -342,11 +348,11 @@ function displaysearch(json) {
     updateparcours();
     document.getElementsByTagName("h3")[0].innerHTML = "";
     document.getElementById("dossbar").innerHTML = "";
-    
+
     }
     //============
     document.getElementById("docbar").innerHTML = "";
-    
+
     var query = document.getElementById("element_1").value;
     query = query.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
@@ -361,7 +367,7 @@ function displaysearch(json) {
         var li = document.createElement("li");
         //a
         var a = document.createElement("a");
-        a.setAttribute("href", "http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc=" + current.id_doc);
+        a.setAttribute("href", "http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=" + current.id_doc);
         a.setAttribute("target", "_blank");
         a.innerHTML = "ouvrir";
 
@@ -369,7 +375,7 @@ function displaysearch(json) {
 
         //add 24 June
 
-        //p 
+        //p
         var p = document.createElement("p");
         p.class = "price";
         p.innerHTML = current.typedoc;
@@ -422,17 +428,17 @@ function recuporderby() {
 
     var inputs = document.getElementsByTagName("input");
 
-    if (inputs[18].checked === true) {
+    if (inputs[19].checked === true) {
         return "nom ASC";
     }
-    if (inputs[19].checked === true) {
+    if (inputs[20].checked === true) {
         return "nom DESC";
     }
 
-    if (inputs[20].checked === true) {
+    if (inputs[21].checked === true) {
         return "pop ASC";
     }
-    if (inputs[21].checked === true) {
+    if (inputs[22].checked === true) {
         return "pop DESC";
     }
 }

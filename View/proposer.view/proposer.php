@@ -23,7 +23,7 @@
 	 </a>
 	<div id="form_container">
 
-		<h1><a>Proposer un document</a></h1>
+		<h1><a>Proposer un document</a> </h1>
 		<form id="form_116196" class="appnitro" enctype="multipart/form-data" method="post" action="traitement-proposer.php">
 			<div class="form_description">
 				<p>Ce formulaire nous aidera à traiter au mieux le document que vous nous proposez</p>
@@ -85,7 +85,7 @@
 	</div>
 	<!--
 	<footer>
-		
+
 		<a class="Contact" href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/contact.view/contact.php">Contact</a>
 		<a href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/RGPD.pdf" onclick = "window.open(this.href); return false;" >Mentions Légales</a>
 		<img id="logos" src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/Logos.PNG" alt="Logos des Financeurs" width="20%" height="10%">

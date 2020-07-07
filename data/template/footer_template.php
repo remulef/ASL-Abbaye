@@ -2,10 +2,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-6">
-            <h6>About</h6>
-            <p class="text-justify">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur fuga vel dolor ducimus omnis commodi accusantium laudantium laboriosam veritatis dignissimos autem explicabo rem maxime amet quam, quia, ullam sunt repellat. 
-            </p>
+            
             <img  src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/Logos.PNG" style="width: 50%;" alt="Logos des Financeurs" >
           </div>
 
@@ -31,7 +28,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyright &copy; 2020 Developped by  
+            <p class="copyright-text">Copyright &copy; 2020 Developped by
          <a href="https://codepen.io/scanfcode/pen/MEZPNd">Footer forked on Codepen/scanfcode </a>.
             </p>
           </div>
@@ -41,13 +38,13 @@
               <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
               <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
               <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
-              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
             </ul>
           </div>
         </div>
       </div>
 </footer>';
- 
+
 
 
 ?>

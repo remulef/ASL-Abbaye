@@ -139,11 +139,11 @@
                     <input id="element_3_1" name="element_3_1" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
                     <label class="choice" for="element_3_1">Tous Niveaux</label>
                     <input id="element_3_2" name="element_3_2" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
-                    <label class="choice" for="element_3_2">D</label>
+                    <label class="choice" for="element_3_2">Découverte</label>
                     <input id="element_3_3" name="element_3_3" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
-                    <label class="choice" for="element_3_3">E</label>
+                    <label class="choice" for="element_3_3">Exploration</label>
                     <input id="element_3_4" name="element_3_4" class="element checkbox" type="checkbox" oninput="search(this)" value="1" />
-                    <label class="choice" for="element_3_4">A</label>
+                    <label class="choice" for="element_3_4">Approfondissement</label>
                 </span>
                 <hr>
                 <label class="description" for="element_4">Trier par </label>

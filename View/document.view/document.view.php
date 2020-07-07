@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php session_start()?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -48,6 +48,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'][0] == "ADMINISTRATEUR" || $_S
         <link rel="stylesheet" type="text/css" href="document.view.css">
         <title>Document ASL Abbaye</title>
     </head>
+
 
 
         <div>

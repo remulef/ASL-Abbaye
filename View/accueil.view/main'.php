@@ -11,6 +11,7 @@
   </head>
   <body>
     <h1>Bienvenue sur la base de données pédagogique des Ateliers Socio-Linguistiques de l'Abbaye</h1>
+    <h2>(Pour une meilleure navigation, ne pas utiliser Internet Explorer)<h2>
     <?php
       include ("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/templateprofil.php");
      ?>
@@ -37,6 +38,7 @@
           if(isset($_SESSION['role'])){
             echo "<a href=\"http://les-asl-abbaye.ovh/ASL-Abbaye/View/saisir.view/saisir.php\">Saisir un Compte-Rendu</a>";
           }
+
         ?>
        <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/contact.view/contact.php">Nous contacter</a>
      </div>
