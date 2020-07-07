@@ -5,9 +5,8 @@
             <h6>About</h6>
             <p class="text-justify">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur fuga vel dolor ducimus omnis commodi accusantium laudantium laboriosam veritatis dignissimos autem explicabo rem maxime amet quam, quia, ullam sunt repellat. 
-            	<img  src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/Logos.PNG" alt="Logos des Financeurs" >
-	
             </p>
+            <img  src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/Logos.PNG style="width: 50%;" alt="Logos des Financeurs" >
           </div>
 
           <div class="col-xs-6 col-md-3">
