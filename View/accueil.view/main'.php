@@ -18,7 +18,7 @@ session_start();
   <header>
 
     <h1>Bienvenue sur la base de données pédagogique des Ateliers Socio-Linguistiques de l'Abbaye</h1>
-    <h2>(Pour une meilleure navigation, ne pas utiliser Internet Explorer)</h2>
+    <h4>(Pour une meilleure navigation, ne pas utiliser Internet Explorer)</h4>
     <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/templateprofil.php");
     ?>
@@ -28,7 +28,7 @@ session_start();
     <!--style="float:left"-->
     <div class="container">
       <div class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-5">
 
           <div class="dropdown">
             <button class="dropbtn">Consulter</button>
@@ -45,8 +45,12 @@ session_start();
             </div>
           </div>
         </div>
+
+        <div class="col-xs-2">
+
+        </div>
         <!--style="float:right"-->
-        <div class="col-xs-6">
+        <div class="col-xs-5">
           <div class="dropdown">
             <button class="dropbtn">Contribuer</button>
             <div class="dropdown-content" id="id">
