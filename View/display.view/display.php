@@ -55,6 +55,8 @@
 
 
 <body onload="init()">
+    <main class="main">
+        
     <div>
         <a id="hider" onclick="hide()" class="button1" style="margin-left:2em;">
             cacher le panel <br> de tri/recherche <br>
@@ -175,7 +177,6 @@
         </div>
     </div>
 
-    <main class="main">
 
         <img style="display:none" src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/presentation.png" id="presentation" alt="organisation de ressource pedagogique">
 
