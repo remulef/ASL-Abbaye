@@ -8,14 +8,16 @@
     <title>Accueil Abbaye</title>
     <link rel="stylesheet" type="text/css" media="screen" href="main'.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/footer.css" />
+ 
   </head>
   <body>
     <h1>Bienvenue sur la base de données pédagogique des Ateliers Socio-Linguistiques de l'Abbaye</h1>
-    <h3>(Pour une meilleure navigation, ne pas utiliser Internet Explorer)<h2>
+    <h2>(Pour une meilleure navigation, ne pas utiliser Internet Explorer)<h2>
     <?php
       include ("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/templateprofil.php");
      ?>
-     <br><br>
+     <br><br><br><br>
     <div class="dropdown" style="float:left">
      <button class="dropbtn">Consulter</button>
      <div class="dropdown-content">
@@ -43,10 +45,14 @@
        <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/contact.view/contact.php">Nous contacter</a>
      </div>
     </div>
+ <!--
     <footer>
       <a class="Contact" href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/contact.view/contact.php">Contact</a>
       <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/RGPD.pdf" onclick = "window.open(this.href); return false;" >Mentions Légales</a>
       <img id="logos" src="../../data/img/Logos.PNG" alt="Logos des Financeurs" width="20%" height="10%">
     </footer>
+        -->
   </body>
+  <?php include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/footer_template.php"); ?>
+
 </html>
