@@ -113,7 +113,7 @@ echo '<body onload="init(' . $id_doc . ')">';
         </div>
         <!-- Insipirée de https://codepen.io/leenalavanya/pen/YqGeoz et modifier pour convenir a nos besoin -->
         <div id="chat" class="col-sm-4" style="padding-left: 0px;padding-right: 0px;">
-            <div class="chat_header">Commentaires</div>
+            <div class="chat_header"> <h2>Espace commentaire libre</h2> </div>
             <div id="chat_s"></div>
             <script type="text/javascript">
                 var submitted = false;
@@ -122,10 +122,7 @@ echo '<body onload="init(' . $id_doc . ')">';
             <form id="ss-form" onsubmit="submitted=true" action="https://docs.google.com/forms/d/1-PRLoHTtgldV5cNTvmVyjf-rf1p1kLhzKGXn2i1XGhQ/formResponse" method="POST" target="hidden_iframe">
                 <input name="Nom" class="form-control" type="text" value="" id="entry_name" placeholder="Votre nom">
                 <input name="entry.1732478127" title="" class="ss-q-short form-control" id="entry_comment" dir="auto" aria-label="Message  " type="text" value="" placeholder="Votre commentaire">
-                <small id="passwordHelpBlock" class="form-text text-muted">
-                Merci de rester respectueux     
-                </small>
-                <br>
+                
                 <input name="draftResponse" type="hidden" value='[,,"-2195881827543510175"]&#10;'>
                 <input name="pageHistory" type="hidden" value="0">
                 <input name="fvv" type="hidden" value="0">
