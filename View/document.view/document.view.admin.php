@@ -23,12 +23,9 @@ if (!isset($_SESSION['role'])) {
 </head>
 
 <?php
-if (empty($_GET['id_doc'])) {
-    header("Location http://les-asl-abbaye.ovh");
-} else {
-    $id_doc = $_GET['id_doc'];
+$id_doc = $_GET['id_doc'];
     echo "<body onload=\"init(" . $id_doc . ")\">";
-}
+
 ?>
 
 <header>
