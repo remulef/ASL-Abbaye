@@ -172,14 +172,14 @@ $id_doc = $_GET['id_doc'];
             </script>
             <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){add()}"></iframe>
             <form id="ss-form" onsubmit="submitted=true" action="https://docs.google.com/forms/d/1-PRLoHTtgldV5cNTvmVyjf-rf1p1kLhzKGXn2i1XGhQ/formResponse" method="POST" target="hidden_iframe">
-                <input name="Nom" class="form-control" type="text" value="" id="entry_name" placeholder="Votre nom">
+                <input name="Nom" class="form-control" type="text" value="<?php echo $_SESSION["username"] ?>" id="entry_name" placeholder="Votre nom">
                 <input name="entry.1732478127" title="" class="ss-q-short form-control" id="entry_comment" dir="auto" aria-label="Message  " type="text" value="" placeholder="Votre commentaire">
                 <input name="draftResponse" type="hidden" value='[,,"-2195881827543510175"]&#10;'>
                 <input name="pageHistory" type="hidden" value="0">
                 <input name="fvv" type="hidden" value="0">
                 <input name="fbzx" type="hidden" value="-2195881827543510175">
 
-                <input name="submit" class="jfk-button jfk-button-action " id="ss-submit" type="submit" value="Commenter" onClick="return check()">
+                <input name="submit" class="jfk-button jfk-button-action  btn btn-primary " id="ss-submit" type="submit" value="Commenter" onClick="return check()">
             </form>
         </div>
     </div>
