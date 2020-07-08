@@ -129,7 +129,7 @@ echo '<body onload="init(' . $id_doc . ')">';
                 <input name="fbzx" type="hidden" value="-2195881827543510175">
 
                 <input name="submit" class="jfk-button jfk-button-action btn btn-primary" id="ss-submit" type="submit" value="Commenter" onClick="return check()">
-                <input name="reset" class="jfk-button jfk-button-action btn btn-primary" id="ss-submit" type="reset" value="réinitialiser" onClick="">
+                <input name="reset" class="jfk-button jfk-button-action btn btn-primary" id="ss-reset" type="reset" value="réinitialiser" onClick="">
             </form>
 
         </div>

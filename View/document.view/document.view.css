@@ -258,6 +258,17 @@ main {
     font-family: "Montserrat", sans-serif;
 }
 
+
+#chat input[type="reset"] {
+    box-sizing: border-box;
+    margin-top: 5%;
+    padding: 10px;
+    margin-left: -1px;
+    border: 1px solid grey;
+    font-family: "Montserrat", sans-serif;
+}
+
+
 #chat input[type="submit"]:hover {
     background: grey;
     color: #fff;
