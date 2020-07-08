@@ -105,7 +105,7 @@ echo '<body onload="init('.$id_doc.')">';
             </div>
             <div id="divtag">
                 <h2>Etiquettes du document</h2>
-                <ul class="tags" id="tags" onload="AJAXgettag()">
+                <ul class="tags " id="tags" onload="AJAXgettag()">
                 </ul>
             </div>
 
@@ -119,8 +119,8 @@ echo '<body onload="init('.$id_doc.')">';
             </script>
             <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){add()}"></iframe>
             <form id="ss-form" onsubmit="submitted=true" action="https://docs.google.com/forms/d/1-PRLoHTtgldV5cNTvmVyjf-rf1p1kLhzKGXn2i1XGhQ/formResponse" method="POST" target="hidden_iframe">
-                <input name="Nom" type="text" value="" id="entry_name" placeholder="Votre nom">
-                <input name="entry.1732478127" title="" class="ss-q-short" id="entry_comment" dir="auto" aria-label="Message  " type="text" value="" placeholder="Votre commentaire">
+                <input name="Nom" class="form-control" type="text" value="" id="entry_name" placeholder="Votre nom">
+                <input name="entry.1732478127" title="" class="ss-q-short form-control" id="entry_comment" dir="auto" aria-label="Message  " type="text" value="" placeholder="Votre commentaire">
                 <input name="draftResponse" type="hidden" value='[,,"-2195881827543510175"]&#10;'>
                 <input name="pageHistory" type="hidden" value="0">
                 <input name="fvv" type="hidden" value="0">
