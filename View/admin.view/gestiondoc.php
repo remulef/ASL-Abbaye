@@ -10,8 +10,10 @@ var_dump($_SESSION);
   <title>Document</title>
   <link rel="stylesheet" href="css/view.css">
     <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/footer.css" />
   <link rel="stylesheet" href="gestiondoc.css">
+
+  <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/footer.css" />
+
 
 </head>
 
