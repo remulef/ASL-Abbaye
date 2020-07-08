@@ -18,6 +18,10 @@ if (isset($_SESSION['role']) && ($_SESSION['role'][0] == "ADMINISTRATEUR" || $_S
 
     <title>Document ASL Abbaye</title>
 </head>
+<?php
+$id_doc = $_GET['id_doc'];
+echo '<body onload="init('.$id_doc.')">';
+?>
 
 <header>
     <?php
@@ -54,10 +58,6 @@ if (isset($_SESSION['role']) && ($_SESSION['role'][0] == "ADMINISTRATEUR" || $_S
             </svg></a>
     </div>
 </header>
-<?php
-$id_doc = $_GET['id_doc'];
-echo "<body onload=\"init(" . $id_doc . ")\">";
-?>
 
 <main class="container">
     <div class="row">
