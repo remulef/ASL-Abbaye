@@ -45,9 +45,9 @@ function ajouterLigne()
   var op1 = document.createElement('option');
   var op2 = document.createElement('option');
   var op3 = document.createElement('option');
-  op1.text = "Appreneur";
-  op2.text = "SuperAppreneur";
-  op3.text = "Admin";
+  op1.text = "BENEVOLE ABBAYE";
+  op2.text = "MODERATEUR";
+  op3.text = "ADMINISTRATEUR";
   ele.options.add(op1);
   ele.options.add(op2);
   ele.options.add(op3);

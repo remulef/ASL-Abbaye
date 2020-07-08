@@ -1,4 +1,5 @@
 let id_doc;
+let nomdoc;
 let lien;
 let commentaire_to_delete = [];
 let old_title;
@@ -20,13 +21,42 @@ function init(id) {
 
 }
 
+
+
+function msieversion() {
+
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE ");
+  
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))  // If Internet Explorer, return version number
+    {
+        alert(parseInt(ua.substring(msie + 5, ua.indexOf(".", msie))));
+        document.getElementsByTagName("body")[0].innerHTML="<h1> Veuillez changer de navigateur </h1>"
+    }
+    else  // If another browser, return 0
+    {
+        alert("otherbrowser");
+    }
+  
+    return false;
+  }
+
 function error() {
     alert("error document");
 }
 
 
+function encode_utf8(s) {
+    return unescape(encodeURIComponent(s));
+  }
+  
+  function decode_utf8(s) {
+    return decodeURIComponent(escape(s));
+  }
+
 function affiche(json) {
     //alert("success");
+    AJAXgettag();
     console.log("le json");
     console.log(json);
 
@@ -34,11 +64,18 @@ function affiche(json) {
     id_doc = doc.id_doc;
     console.log(id_doc);
     let title = doc.nom;
+    nomdoc=doc.nom;
     let description = doc.descri;
     let date = doc.datepublication;
     lien = doc.chemin;
     lien = "/" + lien;
-
+    try {
+     
+    lien = decode_utf8(lien);
+    title = decode_utf8(title);   
+    } catch (error) {
+        console.log("probleme decodage utf8");
+    } 
     let type = doc.typedoc;
     type = type.toLowerCase();
 
@@ -131,6 +168,34 @@ function affiche(json) {
             media.appendChild(img);
 
             break;
+        /* case "doc":
+         case "docx":
+             var ifram = document.createElement("iframe");
+             url = "https://docs.google.com/gview?url=" + "http://www.les-asl-abbaye.ovh" + lien + "&embedded=true";
+             ifram.src = url;
+             ifram.style = "width: 100%;height: 500px;";
+
+             media.appendChild(ifram);
+             break;
+         */
+        case "doc":
+        case "docx":
+        case "ppt":
+        case "pptx":
+        case "odp":
+        case "odt":
+            var ifram = document.createElement("iframe");
+            url = "https://view.officeapps.live.com/op/embed.aspx?src=" + "http://www.les-asl-abbaye.ovh" + lien;
+            ifram.src = url;
+            ifram.width = "100%";
+            ifram.height = "100";
+            ifram.frameBorder = '0';
+            ifram.style = "width: 100%;height: 500px;";
+
+            media.appendChild(ifram);
+
+
+            break;
 
 
 
@@ -171,7 +236,7 @@ function supprimer() {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/script-delete-sql.php?";
 
         try {
-            //ajax_post_request(null, url, true, encodeURIComponent(id_doc));
+            ajax_post_request(redirect, url, true, encodeURIComponent(id_doc));
 
         } catch (error) {
             alert("La suppresion n'a pas aboutie");
@@ -180,11 +245,18 @@ function supprimer() {
 
 }
 
+function redirect() {
+
+    document.getElementsByTagName("main")[0].innerHTML = "<h1> Document supprimé, vous allez etre redirigé </1>";
+    setTimeout(() => {   window.history.length===0? location.replace("https://www.les-asl-abbaye.ovh"):window.history.back(); }, 2000);
+
+}
+
 function ajax_post_request(callback, url, async, data) {
     // Instanciation d'un objet XHR
     var xhr = new XMLHttpRequest();
 
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (callback && xhr.readyState == 4 && xhr.status == 200) {
             callback(xhr.responseText);
         }
@@ -332,7 +404,7 @@ function myFunction() {
     */
 
     var copy = document.createElement("a");
-    copy.innerHTML = "http://www.les-asl-abbaye.ovh" + window.location.href;
+    copy.innerHTML = window.location.href;
     var range = document.createRange();
     document.getElementById("telecharger").append(copy);
     range.selectNode(copy);
@@ -344,7 +416,7 @@ function myFunction() {
         var msg = successful ? 'successful' : 'unsuccessful';
         console.log('Copy email command was ' + msg);
         var tooltip = document.getElementById("myTooltip");
-        tooltip.innerHTML = "Copied: " + "http://www.les-asl-abbaye.ovh" + window.location.href;
+        tooltip.innerHTML = "Copied: " + window.location.href;
 
     } catch (error) {
         console.log('Oops, unable to copy');
@@ -649,28 +721,13 @@ function arrayRemove(arr, value) {
 
 //TODO
 
-// Limiter le nombre de tags 
-//Ajouter des antiechappement aux tags 
-//Limiter le nombre de caractere dans un tag 
+// Limiter le nombre de tags
+//Ajouter des antiechappement aux tags
+//Limiter le nombre de caractere dans un tag
 
-//Un appel ajax pour ajouter a la db 
-//Une fonction pour pouvoir les supprimers 
+//Un appel ajax pour ajouter a la db
+//Une fonction pour pouvoir les supprimers
 //un mode
-function addtag() {
-    var ul = document.getElementById("tags");
-
-    if (ul.getElementsByTagName("li").length < 20) {
-        var value = document.getElementById("inputtag").value;
-        if (value.length < 30) {
-            var tag = document.createElement("li");
-            var a = document.createElement("a");
-            a.className = "tag";
-            a.innerHTML = value;
-            tag.append(a);
-            document.getElementById("tags").append(tag);
-        } else alert("Les tags sont limités à 30 caracteres");
-    } else alert("Le nombre de tags est limité à 20");
-}
 
 
 function ChangeUrl(formulaire) {
@@ -708,5 +765,90 @@ function supprimer_button_del_tag() {
 
 function deletetag(i) {
     var ul = document.getElementById("tags");
-    ul.removeChild(ul.getElementsByTagName("li")[i]);
+    //ul.removeChild(ul.getElementsByTagName("li")[i]);
+    try {
+        var id_tags = ul.getElementsByTagName("li")[i].id;
+
+        var json = ({
+            id_tags: id_tags,
+            id_doc: id_doc
+            //login : $_SESSION["login"],
+            // mdp : $_SESSION["mdp"]
+        })
+        json = JSON.stringify(json);
+        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/document/remove-tag.php?";
+        ajax_post_request(AJAXgettag, url, true, encodeURIComponent(json));
+    } catch (error) {
+
+    }
 }
+
+
+function addonetag(string, id) {
+    var ul = document.getElementById("tags");
+    var tag = document.createElement("li");
+    var a = document.createElement("a");
+    a.className = "tag";
+    tag.id = id;
+    a.innerHTML = string;
+    tag.append(a);
+    document.getElementById("tags").append(tag);
+
+}
+
+function sendtag() {
+    var ul = document.getElementById("tags");
+
+    if (ul.getElementsByTagName("li").length < 20) {
+        var value = document.getElementById("inputtag").value;
+        if (value.length < 30) {
+
+            try {
+                var tags = ({
+                    id_doc: id_doc,
+                    tags: value
+                    //login: $_SESSION["login"] ,
+                    //mdp: $_SESSION["mdp"] ,
+                })
+                document.getElementById("inputtag").value="";
+                json = JSON.stringify(tags);
+                let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/document/add-tag.php?";
+                ajax_post_request(AJAXgettag, url, false, encodeURIComponent(json));
+            } catch (error) {
+                alert(error);
+            }
+        } else alert("Les tags sont limités à 30 caracteres");
+    } else alert("Le nombre de tags est limité à 20");
+}
+
+
+function recuptag(json) {
+    data = JSON.parse(json);
+    document.getElementById("tags").innerHTML = "";
+
+    for (let index = 0; index < data.length; index++) {
+        var current = data[index];
+        addonetag(current.tag, current.id_tags);
+    }
+
+}
+
+function AJAXgettag() {
+    try {
+        let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/document/recup-tag.php?";
+        ajax_post_request(recuptag, url, false, encodeURIComponent(id_doc));
+    } catch (error) {
+        alert(error);
+    }
+}
+
+
+function vidertags() {
+    document.getElementById("tags").innerHTML = "";
+}
+
+
+function openWin() {
+    var url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/deplacer.view/deplacer.php?id_doc="+id_doc+"&nom="+nomdoc;
+    window.open(url, "Deplacer un document", 'width=800,height=600');
+  }

@@ -7,13 +7,13 @@ function init() {
     history = [];
     var pos = ({
         id_node: 0,
-        name: "Ressource Pedagogique",
+        name: "BDD",
     })
     history.push(pos);
     updateparcours();
     try {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-load.php";
-        ajax_post_request(load, url, true, null);
+        ajax_post_request(load, url, true, encodeURIComponent(0));
     } catch (error) {
 
     }
@@ -44,10 +44,10 @@ function load(json) {
             nbdoc++;
             var li = document.createElement("li");
             var a = document.createElement("a");
-            a.setAttribute("href", "http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=" + current.id_doc);
+            a.setAttribute("href", "http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc=" + current.id_doc);
             a.setAttribute("target", "_blank");
             a.innerHTML = "ouvrir";
-            //p 
+            //p
             var p = document.createElement("p");
             p.class = "price";
             p.innerHTML = current.typedoc;
@@ -97,7 +97,7 @@ function load(json) {
 }
 
 function changedoc(id, title, forward, pos) {
-    document.getElementsByTagName("h3")[0].innerHTML="Liste des thématiques";
+    document.getElementsByTagName("h3")[0].innerHTML = "Liste des thématiques";
     clearul();
     //si on descend
     if (forward) {
@@ -121,7 +121,15 @@ function changedoc(id, title, forward, pos) {
         history.splice(pos + 1);
 
     }
+
+    if( title === "Ressources pédagogiques"){
+        document.getElementById("presentation").setAttribute("style","display: block");
+    }else {
+        document.getElementById("presentation").setAttribute("style","display: none");
+    }
+
     updateparcours();
+
 
     try {
         let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/Display/script-load.php";
@@ -199,13 +207,15 @@ function search(elem) {
     var inputs = document.getElementsByTagName("input");
 
     var param = ({
-        docname: inputs[0].value,
+        nodesearch: (inputs[0].checked === true ? -1 : history[history.length - 1].id_node),
+        docname: inputs[1].value,
         ressource: recupressource(),
         typedoc: recuptype(),
         tags: (inputs[13].value.length > 0 ? inputs[13].value.split("+") : []),
         niveau: recupniveau(),
-        order: recuporderby(), //Croissant ? 
-        tefanf: inputs[22].checked  // TEF ANF ?
+        order: recuporderby(), //Croissant ?
+        tefanf: inputs[22].checked,  // TEF ANF ?
+        alpha: inputs[23].checked
     });
 
     param = JSON.stringify(param);
@@ -234,26 +244,19 @@ function log(params) {
 function recupressource() {
     var inputs = document.getElementsByTagName("input");
     var type = [];
-    if (inputs[1].checked === true) {
+    if (inputs[2].checked === true) {
         type.push("fp");
     }
-    if (inputs[2].checked === true) {
+    if (inputs[3].checked === true) {
         type.push("j");
     }
-    if (inputs[3].checked === true) {
+    if (inputs[4].checked === true) {
         type.push("da");
     }
-
-    if (inputs[4].checked === true) {
-        type.push("vsm");
-    }
-
 
     if (inputs[5].checked === true) {
-        type.push("da");
+        type.push("vsm");
     }
-
-
     if (inputs[6].checked === true) {
         type.push("ea");
     }
@@ -305,19 +308,25 @@ function recupniveau() {
     var niv = [];
 
     if (inputs[14].checked === true) {
-        niv.push("ALPHA")
+        niv.push("D");
+        niv.push("E");
+        niv.push("A");
+
     }
 
     if (inputs[15].checked === true) {
-        niv.push("D")
+        niv.push("D");
+
     }
 
     if (inputs[16].checked === true) {
-        niv.push("E")
+        niv.push("E");
+
     }
 
     if (inputs[17].checked === true) {
-        niv.push("A")
+        niv.push("A");
+
     }
     return niv;
 }
@@ -325,17 +334,21 @@ function recupniveau() {
 
 function displaysearch(json) {
     //Réinitialise la barre des documents et la liste des documents
-    history = [];
-    var pos = ({
-        id_node: 0,
-        name: "Ressource Pedagogique",
-    })
-    history.push(pos);
+    if (document.getElementsByTagName("input")[0].checked === true) {
+        history = [];
+        var pos = ({
+            id_node: 0,
+            name: "BDD",
+        })
+        history.push(pos);
     updateparcours();
-    document.getElementById("dossbar").innerHTML="";
-    document.getElementsByTagName("h3")[0].innerHTML="";
+    document.getElementsByTagName("h3")[0].innerHTML = "";
+    document.getElementById("dossbar").innerHTML = "";
+
+    }
     //============
     document.getElementById("docbar").innerHTML = "";
+
     var query = document.getElementById("element_1").value;
     query = query.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
@@ -350,7 +363,7 @@ function displaysearch(json) {
         var li = document.createElement("li");
         //a
         var a = document.createElement("a");
-        a.setAttribute("href", "http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.php?id_doc=" + current.id_doc);
+        a.setAttribute("href", "http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc=" + current.id_doc);
         a.setAttribute("target", "_blank");
         a.innerHTML = "ouvrir";
 
@@ -358,7 +371,7 @@ function displaysearch(json) {
 
         //add 24 June
 
-        //p 
+        //p
         var p = document.createElement("p");
         p.class = "price";
         p.innerHTML = current.typedoc;
@@ -419,10 +432,10 @@ function recuporderby() {
     }
 
     if (inputs[20].checked === true) {
-        return "dl ASC";
+        return "pop ASC";
     }
     if (inputs[21].checked === true) {
-        return "dl DESC";
+        return "pop DESC";
     }
 }
 
@@ -430,16 +443,27 @@ function hide() {
     var sortpanel = document.getElementById("sortpanel");
     var hider = document.getElementById("hider");
     if (sortpanel.getAttribute("style") == "display: block;") {
-        sortpanel.setAttribute("style","display: none;");
-        hider.innerHTML = "<svg class=\"bi bi-arrow-bar-right\" width=\"1.33em\" height=\"1.33em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">"
-        +"<path fill-rule=\"evenodd\" d=\"M10.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 8l-2.647-2.646a.5.5 0 0 1 0-.708z\"/>"+
-        "<path fill-rule=\"evenodd\" d=\"M6 8a.5.5 0 0 1 .5-.5H13a.5.5 0 0 1 0 1H6.5A.5.5 0 0 1 6 8zm-2.5 6a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 1 0v11a.5.5 0 0 1-.5.5z\"/></svg>"
+        sortpanel.setAttribute("style", "display: none;");
+        hider.innerHTML = "afficher le panel <br> de tri/recherche <br> <svg class=\"bi bi-arrow-bar-right\" width=\"1.33em\" height=\"1.33em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">"
+            + "<path fill-rule=\"evenodd\" d=\"M10.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 8l-2.647-2.646a.5.5 0 0 1 0-.708z\"/>" +
+            "<path fill-rule=\"evenodd\" d=\"M6 8a.5.5 0 0 1 .5-.5H13a.5.5 0 0 1 0 1H6.5A.5.5 0 0 1 6 8zm-2.5 6a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 1 0v11a.5.5 0 0 1-.5.5z\"/></svg>"
     } else {
-        sortpanel.setAttribute("style","display: block;");
+        sortpanel.setAttribute("style", "display: block;");
         hider.innerHTML =
-            "<svg class=\"bi bi-arrow-bar-left\" width=\"1.33em\" height=\"1.33em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">"+
-                "<path fill-rule=\"evenodd\" d=\"M5.854 4.646a.5.5 0 0 0-.708 0l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L3.207 8l2.647-2.646a.5.5 0 0 0 0-.708z\" />"+
-                "<path fill-rule=\"evenodd\" d=\"M10 8a.5.5 0 0 0-.5-.5H3a.5.5 0 0 0 0 1h6.5A.5.5 0 0 0 10 8zm2.5 6a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 1 0v11a.5.5 0 0 1-.5.5z\" /></svg>";
+            "cacher le panel <br> de tri/recherche <br> <svg class=\"bi bi-arrow-bar-left\" width=\"1.33em\" height=\"1.33em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">" +
+            "<path fill-rule=\"evenodd\" d=\"M5.854 4.646a.5.5 0 0 0-.708 0l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L3.207 8l2.647-2.646a.5.5 0 0 0 0-.708z\" />" +
+            "<path fill-rule=\"evenodd\" d=\"M10 8a.5.5 0 0 0-.5-.5H3a.5.5 0 0 0 0 1h6.5A.5.5 0 0 0 10 8zm2.5 6a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 1 0v11a.5.5 0 0 1-.5.5z\" /></svg>";
 
     };
+}
+
+function careful() {
+    if (document.getElementsByTagName("input")[0].checked === false) {
+        var last = history[history.length - 1].name;
+        alert("Attention vous allez faire une recherche dans le dossier "+last);
+    } else {
+        alert("Votre recherche va s'effectuer dans la totalité de la base de données");
+    }
+
+    search();
 }

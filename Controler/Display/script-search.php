@@ -1,4 +1,5 @@
 <?php
+session_start();
 header('Access-Control-Allow-Origin: *');
 
 $database = 'gsjrnmiasl.mysql.db';
@@ -17,26 +18,32 @@ try {
 $data = $_POST['data'];
 $data = json_decode($data);
 
-($data->docname ==""?$name="":$name=" AND nom like \"%".$data->docname."%\"");
-((count($data->tags)>0)?$tags = " AND id_doc IN (SELECT id_doc FROM TAGS WHERE tags like\"%".implode("%\" OR tags like \"%",$data->tags)."%\")":$tags="");
-((count($data->ressource)>0)?$ressource = "  AND nom like \"%-%".implode("%\" AND nom like \"%-%",$data->ressource)."%\"":$ressource="");
+((count($data->ressource)>0)?$ressource = "  AND nom like \"% %%-%".implode("%\" AND nom like \"% %%-%",$data->ressource)."%\"":$ressource="");
+((count($data->tags)>0)?$tags = " AND id_doc IN (SELECT id_doc FROM TAGS WHERE tag like\"%".implode("%\" OR tag like \"%",$data->tags)."%\")":$tags="");
+//((count($data->ressource)>0)?$ressource = "  AND nom like \"%-%".implode("%\" AND nom like \"%-%",$data->ressource)."%\"":$ressource="");
 ((count($data->typedoc)>0)?$typedoc =  " AND typedoc in (\"".implode("\",\"",$data->typedoc)."\")":$typedoc="");
 ($data->TEFANF == true?$TEFANF="AND nom like %tefanf%":$$TEFANF="");
-((count($data->niveau)>0)?$niveau = " AND nom like \"%-%".implode("%\" AND nom like \"%-%",$data->niveau)."%\"":$niveau="");
+((count($data->niveau)>0)?$niveau = " AND nom like BINARY \"%-%".implode("%\" AND nom like BINARY \"%-%",$data->niveau)."%\"":$niveau="");
 ($data->order ==""? $order="":$order = " ORDER BY ".$data->order);
 
-$query = 'SELECT * FROM DOCUMENT WHERE 1 ';
-$query = $query.$name.$typedoc.$niveau.$ressource.$tags.$order; //.$node
+//NODE DE RECHERCHE
+($data->nodesearch ==-1?$nodesearch="":$nodesearch=" AND id_doc IN (SELECT DOCUMENT_id_doc FROM NODE_DOCUMENT WHERE NODE_id_node =".$data->nodesearch.")");
 
+//ALPHA 
+($data->alpha == true ? $alpha=" AND nom like BINARY \"%ALPHA%\"":$alpha=="");
+
+
+//TEF/ANF
+($data->tefanf == true ? $tefanf=" AND (nom like '%TCF%' OR nom like '%ANF%' )" :$tefanf=="");
+
+$query = 'SELECT * FROM DOCUMENT WHERE 1 ';
+$query = $query.$name.$typedoc.$niveau.$ressource.$tags.$alpha.$tefanf.$nodesearch.$order; //.$node
+//echo $query;
 //AJOUTER TEF ANF 
-//TESTER done
-//DEPLOYER done
-//METTRE LES ICONES EN MODE ECOMMERCE 
-//CLIQUE FAIT UNE NOUVELLE ONGLET done
 //https://codepen.io/stephengreig/pen/ogoPLv
 $sth = $db->query($query);
 $document = $sth->fetchAll(PDO::FETCH_ASSOC);
-
+//var_dump($document);
 foreach ($document as $key => $value) {
     $document[$key]["nom"] = utf8_encode($value["nom"]);
     $document[$key]["chemin"] = utf8_encode($value["chemin"]);
