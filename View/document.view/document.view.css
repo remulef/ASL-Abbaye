@@ -1,4 +1,3 @@
-
 #chat {
     color: black;
 }
@@ -13,14 +12,15 @@
     font-variant: normal;
     text-transform: none;
 }
+
 header {
     color: white;
-    
 }
 
-p,h1,h4 {
+p, h1, h4 {
     color: blanchedalmond;
 }
+
 #input_description {
     width: 100%;
     background-color: #e0e0e0;
@@ -126,6 +126,7 @@ header {
 #description {
     margin-top: 50px;
 }
+
 /*
 main {
     
@@ -156,6 +157,7 @@ main {
     grid-area: commentaire2;
 }
 */
+
 .tooltip {
     position: relative;
     display: inline-block;
@@ -240,6 +242,7 @@ main {
 
 #chat input[type="text"] {
     width: 100%;
+    height: auto;
     box-sizing: border-box;
     padding: 10px;
     border: 1px solid grey;
@@ -361,7 +364,7 @@ a.button4 {
     display: inline-block;
     padding: 0.3em 1.2em;
     padding-top: 5px;
-     margin: 0em 0.1em 0.1em 0em;
+    margin: 0em 0.1em 0.1em 0em;
     border: 0.16em solid rgba(255, 255, 255, 0);
     border-radius: 2em;
     box-sizing: border-box;
@@ -442,11 +445,9 @@ a.button4:hover {
     font-weight: 700;
 }
 
-
 /* reset input */
 
-.form__field:required,
-.form__field:invalid {
+.form__field:required, .form__field:invalid {
     box-shadow: none;
 }
 
