@@ -1,5 +1,5 @@
 <?php session_start();
-var_dump($_SESSION);
+//var_dump($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -9,7 +9,7 @@ var_dump($_SESSION);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="css/view.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" />
   <link rel="stylesheet" href="gestiondoc.css">
 
   <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/footer.css" />
@@ -57,18 +57,10 @@ var_dump($_SESSION);
         Ouvrir</a>
         </li>";
       }
-
-
       ?>
       </ul>
-    <?php
-  } else {
-    echo "<p>Vous n'êtes pas connecté en tant qu'Administrateur, veuillez vous authentifier.</p>";
-    echo "<a href=\"http://les-asl-abbaye.ovh\">Cliquez ici pour retourner sur la page d'accueil</a>";
-  }
-    ?>
     </main>
 </body>
-<?php     include ("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/footer_template.php"); ?>
+<?php include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/footer_template.php"); ?>
 
 </html>
