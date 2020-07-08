@@ -810,6 +810,7 @@ function sendtag() {
                     //login: $_SESSION["login"] ,
                     //mdp: $_SESSION["mdp"] ,
                 })
+                document.getElementById("inputtag").value="";
                 json = JSON.stringify(tags);
                 let url = "http://www.les-asl-abbaye.ovh/ASL-Abbaye/Controler/document/add-tag.php?";
                 ajax_post_request(AJAXgettag, url, false, encodeURIComponent(json));
