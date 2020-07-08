@@ -1,4 +1,5 @@
 <?php session_start();
+$id_doc = $_GET["id_doc"];
 
 if (isset($_SESSION['role']) && ($_SESSION['role'][0] == "ADMINISTRATEUR" || $_SESSION['role'][0] == "MODERATEUR"
     || $_SESSION['role'][0] == "BENEVOLE ABBAYE")) {
