@@ -18,19 +18,19 @@ try {
 $data = $_POST['data'];
 $data = json_decode($data);
 
-((count($data->ressource)>0)?$ressource = "  AND nom like \"%-%".implode("%\" AND nom like \"%-%",$data->ressource)."%\"":$ressource="");
+((count($data->ressource)>0)?$ressource = "  AND nom like \"% %%-%".implode("%\" AND nom like \"% %%-%",$data->ressource)."%\"":$ressource="");
 ((count($data->tags)>0)?$tags = " AND id_doc IN (SELECT id_doc FROM TAGS WHERE tag like\"%".implode("%\" OR tag like \"%",$data->tags)."%\")":$tags="");
-((count($data->ressource)>0)?$ressource = "  AND nom like \"%-%".implode("%\" AND nom like \"%-%",$data->ressource)."%\"":$ressource="");
+//((count($data->ressource)>0)?$ressource = "  AND nom like \"%-%".implode("%\" AND nom like \"%-%",$data->ressource)."%\"":$ressource="");
 ((count($data->typedoc)>0)?$typedoc =  " AND typedoc in (\"".implode("\",\"",$data->typedoc)."\")":$typedoc="");
 ($data->TEFANF == true?$TEFANF="AND nom like %tefanf%":$$TEFANF="");
-((count($data->niveau)>0)?$niveau = " AND nom like \"%-%".implode("%\" AND nom like \"%-%",$data->niveau)."%\"":$niveau="");
+((count($data->niveau)>0)?$niveau = " AND nom like BINARY \"%-%".implode("%\" AND nom like BINARY \"%-%",$data->niveau)."%\"":$niveau="");
 ($data->order ==""? $order="":$order = " ORDER BY ".$data->order);
 
 //NODE DE RECHERCHE
 ($data->nodesearch ==-1?$nodesearch="":$nodesearch=" AND id_doc IN (SELECT DOCUMENT_id_doc FROM NODE_DOCUMENT WHERE NODE_id_node =".$data->nodesearch.")");
 
 //ALPHA 
-($data->alpha == true ? $alpha=" AND nom like \"%ALPHA%\"":$alpha=="");
+($data->alpha == true ? $alpha=" AND nom like BINARY \"%ALPHA%\"":$alpha=="");
 
 
 //TEF/ANF
