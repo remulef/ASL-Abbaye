@@ -1,10 +1,10 @@
 * {
 	 box-sizing: border-box;
 }
- img {
+main img {
 	 max-width: 100%;
 }
- ul {
+ main ul {
 	 list-style: none;
 	 padding: 0;
 	 font: 0.9em Arial;
@@ -12,7 +12,7 @@
      flex-wrap: wrap;
      color: #000;
 }
- ul li {
+ main ul li {
 	 float: left;
 	 width: 23.5%;
 	 margin-right: 2%;
@@ -25,20 +25,20 @@
 	 justify-content: space-between;
 	 align-items: center;
 }
- ul li:nth-child(4n) {
+ main ul li:nth-child(4n) {
 	 margin-right: 0;
 }
- ul li a {
+ main ul li a {
 	 background: #333;
 	 text-align: center;
 	 color: #000;
 	 padding: 5px 30px;
 	 text-decoration: none;
 }
- ul li .price {
+ main ul li .price {
 	 margin: 0 0 10px;
 }
 
-ul {
+main ul {
     margin: 5%;
 }
