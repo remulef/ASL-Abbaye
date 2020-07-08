@@ -9,7 +9,7 @@
     font-variant: normal;
     text-transform: none;
 }
-form {
+#chat {
     color: black;
 }
 #input_description {
