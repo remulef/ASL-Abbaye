@@ -128,7 +128,7 @@ echo '<body onload="init(' . $id_doc . ')">';
                 <input name="fvv" type="hidden" value="0">
                 <input name="fbzx" type="hidden" value="-2195881827543510175">
 
-                <input name="submit" class="jfk-button jfk-button-action " id="ss-submit" type="submit" value="Commenter" onClick="return check()">
+                <input name="submit" class="jfk-button jfk-button-action btn btn-primary" id="ss-submit" type="submit" value="Commenter" onClick="return check()">
             </form>
 
         </div>
