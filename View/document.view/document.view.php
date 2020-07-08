@@ -12,7 +12,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'][0] == "ADMINISTRATEUR" || $_S
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/header.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/footer.css" />
     <link rel="stylesheet" type="text/css" href="document.view.css">
     <link rel="stylesheet" type="text/css" media="screen" href="bootstrap-forms.css" />
@@ -26,7 +26,7 @@ echo '<body onload="init(' . $id_doc . ')">';
 
 <header>
     <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/templateprofil.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
     ?>
     <a href="http://les-asl-abbaye.ovh">
         <svg class="bi-house-door-fill" width="40px" height="40px" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
