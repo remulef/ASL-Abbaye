@@ -113,7 +113,7 @@ echo '<body onload="init(' . $id_doc . ')">';
         </div>
         <!-- Insipirée de https://codepen.io/leenalavanya/pen/YqGeoz et modifier pour convenir a nos besoin -->
         <div id="chat" class="col-sm-4" style="padding-left: 0px;padding-right: 0px;">
-            <div class="chat_header"> <h2>Espace commentaire libre</h2> </div>
+            <div class="chat_header"> <strong>Espace commentaire </strong></div>
             <div id="chat_s"></div>
             <script type="text/javascript">
                 var submitted = false;
