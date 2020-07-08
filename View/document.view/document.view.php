@@ -16,12 +16,12 @@ if (isset($_SESSION['role']) && ($_SESSION['role'][0] == "ADMINISTRATEUR" || $_S
     <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/footer.css" />
     <link rel="stylesheet" type="text/css" href="document.view.css">
     <link rel="stylesheet" type="text/css" media="screen" href="bootstrap-forms.css" />
-    
+
     <title>Document ASL Abbaye</title>
 </head>
 <?php
 $id_doc = $_GET['id_doc'];
-echo '<body onload="init('.$id_doc.')">';
+echo '<body onload="init(' . $id_doc . ')">';
 ?>
 
 <header>
@@ -100,7 +100,7 @@ echo '<body onload="init('.$id_doc.')">';
                     </div>
                 </div>
             </div>
-            <div id="description" >
+            <div id="description">
                 <p>
                 </p>
             </div>
@@ -122,6 +122,9 @@ echo '<body onload="init('.$id_doc.')">';
             <form id="ss-form" onsubmit="submitted=true" action="https://docs.google.com/forms/d/1-PRLoHTtgldV5cNTvmVyjf-rf1p1kLhzKGXn2i1XGhQ/formResponse" method="POST" target="hidden_iframe">
                 <input name="Nom" class="form-control" type="text" value="" id="entry_name" placeholder="Votre nom">
                 <input name="entry.1732478127" title="" class="ss-q-short form-control" id="entry_comment" dir="auto" aria-label="Message  " type="text" value="" placeholder="Votre commentaire">
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                Merci de rester respectueux     
+                </small>
                 <input name="draftResponse" type="hidden" value='[,,"-2195881827543510175"]&#10;'>
                 <input name="pageHistory" type="hidden" value="0">
                 <input name="fvv" type="hidden" value="0">
@@ -138,4 +141,5 @@ echo '<body onload="init('.$id_doc.')">';
 <?php include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/footer_template.php"); ?>
 
 </body>
+
 </html>
