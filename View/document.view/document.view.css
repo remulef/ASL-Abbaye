@@ -251,6 +251,7 @@ main {
 
 #chat input[type="submit"] {
     box-sizing: border-box;
+    margin-top: 5%;
     padding: 10px;
     margin-left: -1px;
     border: 1px solid grey;
