@@ -96,11 +96,6 @@
 		</script>
 		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 	</div>
-	<footer>
-		<a class="Contact" href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/contact.view/contact.php">Contact</a>
-		<a href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/RGPD.pdf" onclick = "window.open(this.href); return false;" >Mentions Légales</a>
-		<img id="logos" src="../../data/img/Logos.PNG" alt="Logos des Financeurs" width="20%" height="10%">
-	</footer>
 	<?php
 		}else{
 			echo "<p>Vous n'êtes pas connecté, veuillez vous authentifier.</p>";
