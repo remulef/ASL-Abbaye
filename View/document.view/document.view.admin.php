@@ -58,9 +58,9 @@ $id_doc = $_GET['id_doc'];
 </header>
 <main class="container">
     <div class="row">
-        <div id="Content">
+        <div id="Content" class="col-sm-8">
 
-            <div id="media" class="col-sm-8">
+            <div id="media" >
 
             </div>
 
