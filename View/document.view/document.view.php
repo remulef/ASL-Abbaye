@@ -127,15 +127,9 @@ echo '<body onload="init(' . $id_doc . ')">';
                 <input name="pageHistory" type="hidden" value="0">
                 <input name="fvv" type="hidden" value="0">
                 <input name="fbzx" type="hidden" value="-2195881827543510175">
-                <div class="row">
-                    <div class="col">
-                    <input name="submit" class="jfk-button jfk-button-action btn btn-primary form-control" id="ss-submit" type="submit" value="Commenter" onClick="return check()">
-                    </div>
-                    <div class="col">
-                    <input name="reset" class="jfk-button jfk-button-action btn btn-primary form-control"  id="ss-reset" type="reset" value="Réinitialiser" onClick="">
-                    </div>
-                </div>
-            </form>
+                    <input name="submit" class="jfk-button jfk-button-action btn btn-primary" id="ss-submit" type="submit" value="Commenter" onClick="return check()">
+                    <input name="reset" class="jfk-button jfk-button-action btn btn-primary"  id="ss-reset" type="reset" value="Réinitialiser" onClick="">
+                </form>
 
         </div>
     </div>
