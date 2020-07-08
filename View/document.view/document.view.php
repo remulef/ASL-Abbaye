@@ -125,6 +125,7 @@ echo '<body onload="init(' . $id_doc . ')">';
                 <small id="passwordHelpBlock" class="form-text text-muted">
                 Merci de rester respectueux     
                 </small>
+                <br>
                 <input name="draftResponse" type="hidden" value='[,,"-2195881827543510175"]&#10;'>
                 <input name="pageHistory" type="hidden" value="0">
                 <input name="fvv" type="hidden" value="0">
