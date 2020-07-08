@@ -124,11 +124,11 @@ main {
     gap: 1px 1px;
     grid-template-areas: "Content Comment";
 }
-*/
+
 #Content {
     margin: 100px;
 }
-/*
+
 .grid-container {
     display: grid;
     grid-template-columns: min-content;
