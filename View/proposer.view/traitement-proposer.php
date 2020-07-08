@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo pathinfo($filename, PATHINFO_EXTENSION);
             $ext = pathinfo($filename, PATHINFO_EXTENSION);
             $ext = strtolower($ext);
-            if (!in_array($ext, $allowed)) die("Erreur : Veuillez sélectionner un format de fichier valide pour le fichier " . $filename);
+            if (!in_array($ext, $allowed)) die("Erreur : Veuillez sélectionner un format de fichier valide " . $filename);
 
             // Vérifie la taille du fichier - 5Mo maximum
             $maxsize = 5 * 1024 * 1024;
@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     } else if (move_uploaded_file($_FILES['fileToUpload']["tmp_name"], "../../../uploads/" . $filename)) {
                         echo "Le fichier <strong>" . basename($filename) . "</strong> a été ajouté" . PHP_EOL;
 
-                        //AJOUT A LA BASE DE DONNNE 
+                        //AJOUT A LA BASE DE DONNNE
 
                         //On ouvre la base de donnée
                         $database = 'gsjrnmiasl.mysql.db';
@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         try {
                             $db = new PDO("mysql:host=gsjrnmiasl.mysql.db;dbname=gsjrnmiasl", $user, $password);
                             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                            //echo "Connected successfully"; 
+                            //echo "Connected successfully";
                         } catch (Exception $e) {
                             die('Erreur : ' . $e->getMessage());
                         }
@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $auteur = addslashes($_POST["auteur"]);
                         $titre = addslashes($_POST["titre"]);
                         $lienCR  = 'http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/document.view.admin.php?id_doc=' . $max_DOC;
-                        $message = 'Un Document nommé ' . $titre . ' à été proposé, vous pourrez le voir  à l\'adresse suivante <a href="' . $lienCR . '"> COMPTE RENDU</a>';
+                        $message = 'Un Document nommé ' . $titre . ' a été proposé, vous pourrez le voir  à l\'adresse suivante <a href="' . $lienCR . '"> COMPTE RENDU</a>';
                         mail('asl.abbaye@grenoble.fr', 'NOTIFICATION proposition d\'un document', $message);
                     } else {
                         echo "Sorry, there was an error uploading your file.";
@@ -110,6 +110,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-echo '<h1>Opération terminé, retour automatique dans 3 secondes </h1> <script>  setTimeout(() => {   window.history.length <= 1 ? location.replace("https://www.les-asl-abbaye.ovh"):window.history.back(-2); }, 3000);
+echo '<h1>Opération terminée, retour automatique dans 3 secondes </h1> <script>  setTimeout(() => {   window.history.length <= 1 ? location.replace("https://www.les-asl-abbaye.ovh"):window.history.back(-2); }, 3000);
 </script>';
 //header("Location: http://les-asl-abbaye.ovh");

@@ -2,7 +2,9 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-6">
-            
+            <h6>A propos</h6>
+            <p class="text-justify">
+                Base de données pédagogique des Ateliers SocioLinguistiques de la MJC Abbaye à Grenoble - accessible à tous les intervenants en ASL</p>
             <img  src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/Logos.PNG" style="width: 50%;" alt="Logos des Financeurs" >
           </div>
 

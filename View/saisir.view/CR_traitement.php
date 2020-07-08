@@ -2,8 +2,8 @@
 session_start();
 
 ini_set('display_errors', 1);
-//Si la page est généré par une requete POST 
-//Sinon redirection 
+//Si la page est généré par une requete POST
+//Sinon redirection
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     function reArrayFiles(&$file_post)
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             'mp4', 'video/mpeg', 'odt', 'application/vnd.oasis.opendocument.text',
             'xls', 'application/vnd.ms-excel',
             'xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-        
+
         );
         if (sizeof($file_ary) < 5) {
             foreach ($file_ary as $file) {
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     // Vérifie l'extension du fichier
                     $ext = pathinfo($filename, PATHINFO_EXTENSION);
                     $ext = strtolower($ext);
-                    if (!in_array($ext, $allowed)) die("Erreur : Veuillez sélectionner un format de fichier valide pour le fichier " . $filename);
+                    if (!in_array($ext, $allowed)) die("Erreur : Veuillez sélectionner un format de fichier valide " . $filename);
 
                     // Vérifie la taille du fichier - 5Mo maximum
                     $maxsize = 5 * 1024 * 1024;
@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 try {
                                     $db = new PDO("mysql:host=gsjrnmiasl.mysql.db;dbname=gsjrnmiasl", $user, $password);
                                     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                                    //echo "Connected successfully"; 
+                                    //echo "Connected successfully";
                                 } catch (Exception $e) {
                                     die('Erreur : ' . $e->getMessage());
                                 }
@@ -178,7 +178,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $db = new PDO("mysql:host=gsjrnmiasl.mysql.db;dbname=gsjrnmiasl", $user, $password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        //echo "Connected successfully"; 
+        //echo "Connected successfully";
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
     }
@@ -201,9 +201,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nbdoc = count($sucess);
     //$lienCR  = 'http://les-asl-abbaye.ovh/tmp-CR/' . $titre . '.pdf';
     $lienCR = 'http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc=' . $max_DOC;
-    $message = 'Un Compte rendu nommé ' . $titre . ' à été saisit par ' . $auteur . ' et accompagné de ' . $nbdoc . ' document <br>
-     Vous pourrez retrouver le compte rendu à l\'adresse suivante :' . $lienCR .'  (*Veillez a valider le document en le deplacant
-     **Les documents qui accompagnent les comptes rendu sont dans le fichier pdf et doivent aussi etre validés)';
+    $message = 'Un Compte rendu nommé ' . $titre . ' à été saisi par ' . $auteur . ' et accompagné de ' . $nbdoc . ' document <br>
+     Vous pourrez retrouver le compte rendu à l\'adresse suivante :' . $lienCR .'  (*Veillez à valider le document en le deplacant
+     **Les documents qui accompagnent les comptes rendus sont dans le fichier pdf et doivent aussi être validés)';
        mail('asl.abbaye@grenoble.fr', 'NOTIFICATION ajout d\'un comtpe-rendu', $message);
 
     echo sprintf("<br> Retrouvez votre compte rendu à l'adresse suivante <a href='%s' > %s </a>",$lienCR,$titre);
