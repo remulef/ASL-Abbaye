@@ -17,9 +17,9 @@ header {
     color: white;
     
 }
-#content {
-    color: white;
-    
+
+p,h1,h4 {
+    color: blanchedalmond;
 }
 #input_description {
     width: 100%;
@@ -239,7 +239,7 @@ main {
 }
 
 #chat input[type="text"] {
-    width: calc(100% - 70px);
+    width: 100%;
     box-sizing: border-box;
     padding: 10px;
     border: 1px solid grey;
