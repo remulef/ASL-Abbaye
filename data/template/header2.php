@@ -1,6 +1,11 @@
 <?php //session_start();
 var_dump($_POST);
 
+if ($_POST["deconnexion"] == "Deconnexion") {
+    echo "vide le Session";
+    session_unset();
+}
+
 if (!isset($_SESSION["role"])) {
     echo "ENTRE";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -35,15 +40,8 @@ if (!isset($_SESSION["role"])) {
                 echo "<script> alert('Couple identifiant/motdepasse incorrect'); </script>";
             }
             echo "<script> alert('identifiant ou mdp vide'); </script>";
-        } else {
-            if ($_POST["deconnexion"]=="Deconnexion") {
-                echo "vide le Session";
-                session_unset();
-                var_dump($_SESSION);
-            } else {
-                echo "<script> alert ('identifiant ou mdp vide 2') </script>";
-            }
         }
+        echo "<script> alert ('identifiant ou mdp vide 2') </script>";
     }
 }
 ?>
