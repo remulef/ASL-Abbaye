@@ -38,10 +38,13 @@
     Connexion
     <ul>
         <form action="#" method="post">
-            <label for="username">Identifiant</label>
+            <li><label for="username">Identifiant</label>
             <input type="text" id="username" class="form-control"  required>
+            </li>
+            <li>
             <label for="password">Mot de passe</label>
             <input type="password" id="password" class="form-control" aria-describedby="passwordHelpBlock" required>
+            </li>
         </form>
       </ul>  
       </div>';
