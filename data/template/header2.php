@@ -94,8 +94,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo '
     <div class="header-user-menu">
     Connexion
-    <ul>    
-    <form action="#" method="post">
+    <ul id="connexion" style="display: none;" onclick="hide()">    
+    <form action="#"  method="post">
             <li>   
             <label for="username">Identifiant</label>
             <input type="text" id="username" name="username" class="form-control"  required>
@@ -110,7 +110,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
       </ul>
         
-      </div>';
+      </div>
+      <script>
+      function hide(){
+      let co = document.getElementById("connexion");
+    if (co.getAttribute("style") == "display: block;") {
+        co.setAttribute("style", "display: none;");
+     }else {
+        co.setAttribute("style", "display: block;");
+    }
+    } </script>
+      ';
         }
         ?>
     </div>
