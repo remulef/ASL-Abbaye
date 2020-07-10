@@ -1,4 +1,40 @@
 <?php session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    //On ouvre la base de donnée
+    $database = 'gsjrnmiasl.mysql.db';
+    $user = 'gsjrnmiasl';
+    $password = 'MJCAbbaye38';
+    try {
+        $db = new PDO("mysql:host=gsjrnmiasl.mysql.db;dbname=gsjrnmiasl", $user, $password);
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        //echo "Connected successfully";
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+
+    if (isset($_POST['username']) && isset($_POST['password'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        if ($username !== "" && $password !== "") {
+            $sth = $db->prepare('Select * FROM USER WHERE username = ? AND password = ?');
+            $sth->bindParam(1, $username);
+            $sth->bindParam(2, $password);
+            $sth->execute();
+            $res = $sth->fetch();
+            var_dump($res);
+            if (count($res) == 1) {
+                $_SESSION['username'] = $username;
+                $_SESSION['password'] = $password;
+                $_SESSION['role'] = $res->role;
+            }
+        echo "<script> alert('Couple identifiant/motdepasse incorrect'); </script>";
+        }
+        echo "<script> alert('identifiant ou mdp vide'); </script>";
+    }
+    echo "<script> alert ('identifiant ou mdp vide') </script>";
+}
 ?>
 <header class="header-user-dropdown">
     <div class="header-limiter">
