@@ -29,7 +29,7 @@ if (!isset($_SESSION["role"])) {
                 if (count($res) == 3) {
                     $_SESSION['username'] = $username;
                     $_SESSION['password'] = $password;
-                    $_SESSION['role'] = $res->role;
+                    $_SESSION['role'] = $res["role"];
     
                 }
                 echo "<script> alert('Couple identifiant/motdepasse incorrect'); </script>";
