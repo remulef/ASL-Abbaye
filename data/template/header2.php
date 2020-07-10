@@ -77,12 +77,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <li>   
             <label for="username">Identifiant</label>
             <input type="text" id="username" class="form-control"  required>
-            </li>
-            <li>
             <label for="password">Mot de passe</label>
             <input type="password" id="password" name="password" class="form-control" aria-describedby="passwordHelpBlock" required>
-            </li>
-            <li>
             <input id="saveForm" class=" btn btn-primary" type="submit" name="submit" value="Connexion" />
             </li>
             </form>
