@@ -41,11 +41,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['password'] = $res["password"];
                     $_SESSION['role'] = $res["role"];
 
-                }
+                }else
                 echo "<script> alert('Couple identifiant/motdepasse incorrect'); </script>";
-            }
+            }else
             echo "<script> alert('identifiant ou mdp vide'); </script>";
-        }
+        }else
         echo "<script> alert ('identifiant ou mdp vide 2') </script>";
     }
 }
