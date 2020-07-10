@@ -30,13 +30,16 @@ if (!isset($_SESSION["role"])) {
                     $_SESSION['username'] = $res["username"][0];
                     $_SESSION['password'] = $res["password"][0];
                     $_SESSION['role'] = $res["role"][0];
-    
                 }
                 echo "<script> alert('Couple identifiant/motdepasse incorrect'); </script>";
             }
             echo "<script> alert('identifiant ou mdp vide'); </script>";
+        } else {
+            if ($_POST["deconnexion"]) {
+            } else {
+                echo "<script> alert ('identifiant ou mdp vide 2') </script>";
+            }
         }
-        echo "<script> alert ('identifiant ou mdp vide 2') </script>";
     }
 }
 ?>
@@ -64,13 +67,21 @@ if (!isset($_SESSION["role"])) {
                 echo '<li><p class="highlight" >Mon rôle :   ADMINISTRATEUR </p></li>
         <li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/admin.view/user-management.php">Gestion des comptes</a></li>
         <li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/admin.view/gestiondoc.php">Gestion des documents</a></li>
-        <li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/accueil.view/main\'.php?deconnexion=true">Déconnexion</a></li>
+        <li>
+            <form action="#" method="post">   
+                <input id="saveForm" class=" btn btn-primary" type="submit" name="deconnexion" value="Deconnexion" />
+            </form>
+        </li>
         </ul>  </div>';
             } else { //if (in_array($role[0],$other) ) {
                 echo sprintf('
         <li><p>Mon rôle : %s </p><li>
-        <li><a href="main\'.php?deconnexion=true">Déconnexion</a><li>
-        </ul>  </div>', $role[0]);
+        <li>
+        <form action="#" method="post">   
+        <input id="saveForm" class=" btn btn-primary" type="submit" name="deconnexion" value="Deconnexion" />
+        </form>
+            <li>
+        </ul>  </div>', $role);
             }
         } else {
             echo '
