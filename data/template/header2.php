@@ -60,7 +60,7 @@ if (!isset($_SESSION["role"])) {
     <div class="header-user-menu">
     <img src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/index.png" >
       <ul>';
-            if ($role[0] == "ADMINISTRATEUR") {
+            if ($role == "ADMINISTRATEUR") {
                 echo '<li><p class="highlight" >Mon rôle :   ADMINISTRATEUR </p></li>
         <li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/admin.view/user-management.php">Gestion des comptes</a></li>
         <li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/admin.view/gestiondoc.php">Gestion des documents</a></li>
