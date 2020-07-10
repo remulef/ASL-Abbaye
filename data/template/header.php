@@ -16,7 +16,6 @@ if(isset($_SESSION)){
     </nav>
 
 
-  </div>
   <?php
   $other = array("MODERATEUR","BENEVOLE ABBAYE");
  
@@ -48,7 +47,7 @@ if(isset($_SESSION)){
     <ul>';
   }
   ?>
-
+  </div>
 
 
 </header>
