@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['username']) && isset($_POST['password'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
-
+        
         if ($username !== "" && $password !== "") {
             $sth = $db->prepare('Select * FROM USER WHERE username = ? AND password = ?');
             $sth->bindParam(1, $username);
@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         } else {
             echo '
-    <div class="header-user-menu">
+    <div class="header-user-menu-connexion">
     Connexion
     <ul>    
     <form action="#" method="post">
