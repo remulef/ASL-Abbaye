@@ -1,9 +1,9 @@
 <?php //session_start();
-var_dump($_POST);
-var_dump($_SESSION);
+//var_dump($_POST);
+//var_dump($_SESSION);
 
 $do = true;
-if ( $_SERVER["REQUEST_METHOD"] == "POST" && $_POST["deconnexion"] == "Deconnexion" && isset($_SESSION["role"])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["deconnexion"] == "Deconnexion" && isset($_SESSION["role"])) {
     echo "vide le Session";
     session_unset();
     var_dump($_SESSION);
@@ -11,9 +11,8 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" && $_POST["deconnexion"] == "Deconnexi
     $do = false;
 }
 
-if (!isset($_SESSION["role"]) && $do) {
-    echo "ENTRE";
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_SESSION["role"]) && $do) {
         //On ouvre la base de donnée
         $database = 'gsjrnmiasl.mysql.db';
         $user = 'gsjrnmiasl';
@@ -36,7 +35,7 @@ if (!isset($_SESSION["role"]) && $do) {
                 $sth->bindParam(2, $password);
                 $sth->execute();
                 $res = $sth->fetch(PDO::FETCH_ASSOC);
-                var_dump($res);
+                //var_dump($res);
                 if (count($res) == 3) {
                     $_SESSION['username'] = $res["username"][0];
                     $_SESSION['password'] = $res["password"][0];
