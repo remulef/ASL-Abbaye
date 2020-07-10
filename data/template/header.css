@@ -121,7 +121,7 @@ body {
 	left: 15px;
 	position:absolute;
 	border:5px solid transparent;
-	border-top-color:#fff;
+	/*border-top-color:#fff;*/
 }
 #connexion {
 	font:bold 13px Arial, Helvetica, sans-serif;
