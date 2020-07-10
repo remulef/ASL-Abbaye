@@ -7,7 +7,7 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" && $_POST["deconnexion"] == "Deconnexi
     $do = false;
 }else 
 
-if (!isset($_SESSION) && !$do) {
+if (!isset($_SESSION) && $do) {
     echo "ENTRE";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //On ouvre la base de donnée
