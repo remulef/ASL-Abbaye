@@ -10,10 +10,12 @@
 <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/footer.css" />
 	
 	<link rel="stylesheet" type="text/css" href="view.css" media="all">
-	<link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/header.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/bootstrap-forms-button.css" />
 
-	<!--	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+	<!--
+	<link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" />	
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 </head>
 
 <body id="main_body">
@@ -31,14 +33,14 @@
 					<li id="li_2">
 						<label class="description" for="element_2">Titre </label>
 						<div>
-							<input required id="element_2" name="titre" class="element text medium" type="text" maxlength="255" value="" />
+							<input required id="element_2" name="titre" class="element text medium form-control" type="text" maxlength="255" value="" />
 						</div>
 						<p class="guidelines" id="guide_2"><small>Titre de votre document</small></p>
 					</li>
 					<li id="li_3">
 						<label class="description" for="element_3">Description </label>
 						<div>
-							<textarea required id="element_3" name="description" class="element textarea medium"></textarea>
+							<textarea required id="element_3" name="description" class="element textarea medium form-control"></textarea>
 						</div>
 						<p class="guidelines" id="guide_3"><small>Description rapide de votre document.
 								En quoi est-ce une bonne ressource pédagogique ? </small></p>
@@ -48,7 +50,7 @@
 						<div>
 							<input type="hidden" name="MAX_FILE_SIZE" value="5000000" />
 
-							<input required id="element_1" name="fileToUpload" class="element file" type="file" />
+							<input required id="element_1" name="fileToUpload" class="element file form-control" type="file" />
 						</div>
 						<p class="guidelines" id="guide_1"><small>Formats possibles : image/audio/.doc/.docx/.pdf/.odt/.odp/.ppt/.pptx/.xls
 
@@ -57,7 +59,7 @@
 					<li id="li_4">
 						<label class="description" for="element_4">Etiquettes </label>
 						<div>
-							<input required id="element_4" name="tags" class="element text medium" type="text" maxlength="255" value="" />
+							<input required id="element_4" name="tags" class="element text medium form-control" type="text" maxlength="255" value="" />
 						</div>
 						<p class="guidelines" id="guide_4"><small>Séparer les étiquettes par des caractères "+"
 								Ces etiquettes nous aideront à mieux rechercher votre document si nous ajoutons celui-ci à notre base </small></p>
@@ -72,8 +74,8 @@
 				-->
 					<li class="buttons">
 						<input type="hidden" name="form_id" value="116196" />
-						<input type="reset" value="Reinitialiser">
-						<input id="saveForm" class="button_text" type="submit" name="submit" value="Proposer" />
+						<input type="reset" class="btn btn-primary" value="Reinitialiser">
+						<input id="saveForm" class="button_text btn btn-primary" type="submit" name="submit" value="Proposer" />
 					</li>
 				</ul>
 			</form>
