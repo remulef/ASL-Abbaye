@@ -1,5 +1,7 @@
 <?php //session_start();
 var_dump($_POST);
+var_dump($_SESSION);
+
 $do = true;
 if ( $_SERVER["REQUEST_METHOD"] == "POST" && $_POST["deconnexion"] == "Deconnexion" && isset($_SESSION)) {
     echo "vide le Session";
