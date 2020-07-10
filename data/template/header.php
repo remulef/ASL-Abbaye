@@ -7,7 +7,7 @@ if(isset($_SESSION)){
 ?>
 
   <div class="header-limiter">
-  <h1><a href="#">Company<span>logo</span></a></h1>
+  <h1><a href="#">ASL<span> Abbaye</span></a></h1>
     <nav>
       <a href="#">Accueil</a>
       <a href="#">Recherche document</a>
