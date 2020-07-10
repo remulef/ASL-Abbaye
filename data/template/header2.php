@@ -6,6 +6,8 @@ $do = true;
 if ( $_SERVER["REQUEST_METHOD"] == "POST" && $_POST["deconnexion"] == "Deconnexion" && isset($_SESSION["role"])) {
     echo "vide le Session";
     session_unset();
+    var_dump($_SESSION);
+
     $do = false;
 }
 
