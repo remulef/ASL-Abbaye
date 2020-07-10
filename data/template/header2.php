@@ -92,8 +92,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         } else {
             echo '
-    <div class="header-user-menu" onclick="hide()">
-    Connexion
+    <div class="header-user-menu" >
+    <button type="button" onclick="hide()" class="btn btn-light">Connexion</button>
     <ul id="connexion" style="display: none;">    
     <form action="#"  method="post">
             <li>   
