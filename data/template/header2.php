@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </li>
             <li>
             <label for="password">Mot de passe</label>
-            <input type="password" id="password" class="form-control" aria-describedby="passwordHelpBlock" required>
+            <input type="password" id="password" name="password" class="form-control" aria-describedby="passwordHelpBlock" required>
             </li>
             <li>
             <input id="saveForm" class=" btn btn-primary" type="submit" name="submit" value="Connexion" />
