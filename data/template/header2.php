@@ -5,7 +5,7 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" && $_POST["deconnexion"] == "Deconnexi
     echo "vide le Session";
     session_unset();
     $do = false;
-}else 
+}
 
 if (!isset($_SESSION) && $do) {
     echo "ENTRE";
