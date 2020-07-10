@@ -36,18 +36,19 @@
             echo '
     <div class="header-user-menu">
     Connexion
-    <form action="#" method="post">
-    <ul>
-            <li><label for="username">Identifiant</label>
+    <ul>    
+            <li>    <form action="#" method="post">
+            <label for="username">Identifiant</label>
             <input type="text" id="username" class="form-control"  required>
             </li>
             <li>
             <label for="password">Mot de passe</label>
             <input type="password" id="password" class="form-control" aria-describedby="passwordHelpBlock" required>
+            </form>
             </li>
         
       </ul>
-      </form>  
+        
       </div>';
         }
         ?>
