@@ -1,132 +1,159 @@
-/* DEBUT FONT */
-
-@font-face {
-    font-family: "Aaux";
-    src: url("http://les-asl-abbaye.ovh/ASL-Abbaye/data/fonts/Aaux-ProLight-Regular.ttf") format("truetype");
+.header-user-dropdown {
+	background-color:#292c2f;
+	box-shadow:0 1px 1px #ccc;
+	padding: 20px 40px;
+	height: 80px;
+	color: #ffffff;
+	box-sizing: border-box;
 }
 
-/* FIN FONT */
-
-/* ////////////////////////////////////////////////////////// */
-
-/* DEBUT BODY */
-
-body {
-    background: -webkit-linear-gradient(left, #25c481, #25b7c4);
-    background: linear-gradient(to right, #25c481, #25b7c4);
-    color: white;
-    font-family: 'Aaux', sans-serif;
+.header-user-dropdown .header-limiter {
+	max-width: 1200px;
+	text-align: center;
+	margin: 0 auto;
 }
 
-/* FIN BODY */
+/* Logo */
 
-/* ////////////////////////////////////////////////////////// */
-
-/* DEBUT BOUTON HOME */
-
-/* FIN BOUTON HOME */
-
-/* ////////////////////////////////////////////////////////// */
-
-/* DEBUT BOUTON SE CONNECTER */
-
-.button {
-    display: inline-block;
-    padding: 15px 25px;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #5E33FF;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-    transition: all 0.5s;
+.header-user-dropdown .header-limiter h1{
+	float: left;
+	font: normal 28px Cookie, Arial, Helvetica, sans-serif;
+	line-height: 40px;
+	margin:0;
 }
 
-.button:hover {
-    background-color: magenta;
+.header-user-dropdown .header-limiter h1 span {
+	color: #bc40df;
 }
 
-.button:active {
-    background-color: #C133FF;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
+/* The header links */
+
+.header-user-dropdown .header-limiter a {
+	color: #ffffff;
+	text-decoration: none;
 }
 
-.button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
+.header-user-dropdown .header-limiter nav{
+	font:16px Arial, Helvetica, sans-serif;
+	line-height: 40px;
+	float: left;
+	margin: 0 0 0 60px;
+	padding: 0;
 }
 
-.button span:after {
-    content: '\00bb';
-    opacity: 0;
-    transition: 0.5s;
+.header-user-dropdown .header-limiter nav a{
+	font-size: 14px;
+	display: inline-block;
+	padding: 0 12px;
+	opacity: 0.9;
+	position: relative;
+	text-decoration:none;
+	line-height: 1;
 }
 
-.button:hover span {
-    padding-right: 25px;
+.header-user-dropdown .header-limiter nav a:hover {
+	opacity: 1;
 }
 
-.button:hover span:after {
-    opacity: 1;
+/* The "new" badge */
+
+.header-user-dropdown .header-limiter nav a span {
+	position: absolute;
+	top: -12px;
+	border-radius: 2px;
+	background-color: #2A6A92;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	height: 13px;
+	font-size: 11px;
+	right: -15px;
+	padding: 1px 4px 0;
 }
 
-/* FIN BOUTON SE CONNECTER */
+/* The user menu */
 
-/* ////////////////////////////////////////////////////////// */
-
-/* POUR LE MENU DÉROULANT DU PROFIL */
-
-.bi-person-circle {
-    background-color: inherit;
-    color: inherit;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
+.header-user-dropdown .header-limiter .header-user-menu{
+	position: relative;
+	float:right;
+	background-color:#3a3c3e;
+	width:75px;
+	height:40px;
+	border-radius:2px;
 }
 
-.drop {
-    float: right;
-    position: absolute;
-    display: inline-block;
+.header-user-dropdown .header-limiter .header-user-menu:before{
+	content:'';
+	width:0;
+	height:0;
+	top: 18px;
+	left: 15px;
+	position:absolute;
+	border:5px solid transparent;
+	border-top-color:#fff;
 }
 
-.dropdown-contenu {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+.header-user-dropdown .header-limiter .header-user-menu ul{
+	display: none;
+	font:bold 13px Arial, Helvetica, sans-serif;
+	background-color: inherit;
+	list-style: none;
+	position: absolute;
+	text-align: center;
+	width: 125px;
+	top: 25px;
+	right: 0;
+	padding: 10px;
+	border-radius: 2px;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+	box-sizing: border-box;
 }
 
-.dropdown-contenu a, .dropdown-contenu p {
-    color: black;
-    /* padding: 12px 16px; */
-    text-decoration: none;
-    display: block;
+.header-user-dropdown .header-user-menu:active ul,
+.header-user-dropdown .header-user-menu:hover ul,
+.header-user-dropdown .header-user-menu.show ul{
+	display:block;
 }
 
-.dropdown-contenu p {
-    background-color: gray;
+.header-user-dropdown .header-user-menu ul li{
+	padding:5px;
 }
 
-.drop a:hover {
-    background-color: #ddd;
+.header-user-dropdown .header-user-menu ul li a:hover{
+	opacity:0.9;
 }
 
-.show {
-    display: block;
+.header-user-dropdown .header-user-menu ul li a.highlight{
+	color:#e9ac09;
 }
 
-/* FIN DU MENU DÉROULANT DU PROFIL */
+.header-user-dropdown .header-user-menu img{
+	border-radius:50%;
+	position:absolute;
+	top:6px;
+	max-width: 28px;
+	right:10px;
+}
 
-/* ////////////////////////////////////////////////////////// */
+
+@media all and (max-width: 800px) {
+
+	.header-user-dropdown .header-limiter h1 {
+		font-size: 24px;
+	}
+
+	.header-user-dropdown .header-limiter nav a {
+		padding: 0 5px;
+	}
+
+	.header-user-dropdown .header-limiter nav {
+		margin-left: 20px;
+	}
+
+}
+
+@media all and (max-width: 600px) {
+
+	.header-user-dropdown .header-limiter nav {
+		display: none;
+	}
+
+}
