@@ -46,7 +46,7 @@
 								En quoi est-ce une bonne ressource pédagogique ? </small></p>
 					</li>
 					<li id="li_1">
-						<label class="description" for="element_1">Upload a File </label>
+						<label class="description" for="element_1">Ajouter un fichier </label>
 						<div>
 							<input type="hidden" name="MAX_FILE_SIZE" value="5000000" />
 
