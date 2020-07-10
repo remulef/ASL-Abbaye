@@ -24,9 +24,9 @@ if (!isset($_SESSION["role"])) {
                 $sth->bindParam(1, $username);
                 $sth->bindParam(2, $password);
                 $sth->execute();
-                $res = $sth->fetch();
+                $res = $sth->fetch(PDO::FETCH_ASSOC);
                 var_dump($res);
-                if (count($res) == 1) {
+                if (count($res) == 3) {
                     $_SESSION['username'] = $username;
                     $_SESSION['password'] = $password;
                     $_SESSION['role'] = $res->role;
