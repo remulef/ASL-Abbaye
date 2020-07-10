@@ -36,9 +36,11 @@ if(isset($_SESSION)){
     }
   } else {
     echo '<ul>
+    <li>
     <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/authentication.view/login.php">
     Connexion  
     </a>
+    </li>
     <ul>';
   }
   ?>
