@@ -1,6 +1,7 @@
 <?php session_start();
 
 if (!isset($_SESSION["role"])) {
+    echo "ENTRE";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //On ouvre la base de donnée
         $database = 'gsjrnmiasl.mysql.db';
@@ -50,7 +51,7 @@ if (!isset($_SESSION["role"])) {
         </nav>
 
 
-        <?php
+        <?
         $other = array("MODERATEUR", "BENEVOLE ABBAYE");
 
         if (isset($_SESSION['role']) && $_SESSION['role'] != "") {
