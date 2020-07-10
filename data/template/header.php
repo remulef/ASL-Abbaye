@@ -44,7 +44,8 @@ if(isset($_SESSION)){
     Connexion  
     </a>
     </li>
-    <ul>';
+    <ul>
+    </div>';
   }
   ?>
   </div>
