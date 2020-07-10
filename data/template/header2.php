@@ -1,5 +1,6 @@
 <?php //session_start();
-var_dump($_SESSION);
+var_dump($_POST);
+
 if (!isset($_SESSION["role"])) {
     echo "ENTRE";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
