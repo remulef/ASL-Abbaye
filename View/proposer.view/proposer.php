@@ -74,8 +74,9 @@
 				-->
 					<li class="buttons">
 						<input type="hidden" name="form_id" value="116196" />
-						<input type="reset" class=" btn btn-primary" value="Reinitialiser">
 						<input id="saveForm" class=" btn btn-primary" type="submit" name="submit" value="Proposer" />
+						<input type="reset" class=" btn btn-primary" value="Reinitialiser">
+					
 					</li>
 				</ul>
 			</form>
