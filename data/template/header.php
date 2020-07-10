@@ -9,9 +9,9 @@ if(isset($_SESSION['role'])){
   <div class="header-limiter">
   <h1><a href="#">ASL<span> Abbaye</span></a></h1>
     <nav>
-      <a href="#">Accueil</a>
-      <a href="#">Recherche document</a>
-      <a href="#">Proposer document</a>
+      <a href="http://les-asl-abbaye.ovh">Accueil</a>
+      <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/display.view/display.php">Recherche document</a>
+      <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/proposer.view/proposer.php">Proposer document</a>
 
     </nav>
 
