@@ -17,7 +17,11 @@ if(isset($_SESSION)){
 
 
   </div>
-  <?php if (isset($_SESSION['role']) && $_SESSION['role'] != "") {
+  <?php
+  $other = array("MODERATEUR","BENEVOLE ABBAYE");
+ 
+  if (isset($_SESSION['role']) && $_SESSION['role'] != "") {
+    $role = $_SESSION['role'];
     echo '
     <div class="header-user-menu">
     <img src="logoasl.png" alt="User Image"/>
@@ -28,7 +32,7 @@ if(isset($_SESSION)){
         <li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/admin.view/gestiondoc.php">Gestion des documents</a></li>
         <li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/accueil.view/main\'.php?deconnexion=true">Déconnexion</a></li>
         </ul>  </div>';
-    } else {
+    } else { //if (in_array($role[0],$other) ) {
       echo sprintf('
         <li><p>Mon rôle : %s </p><li>
         <li><a href="main\'.php?deconnexion=true">Déconnexion</a><li>
