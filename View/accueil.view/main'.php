@@ -54,7 +54,7 @@ session_start();
           <div class="dropdown">
             <button class="dropbtn">Contribuer</button>
             <div class="dropdown-content" id="id">
-              <a href="http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/proposer.view/proposer.php">Proposer un Document</a>
+              <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/proposer.view/proposer.php">Proposer un Document</a>
               <?php
               if (isset($_SESSION['role'])) {
                 echo "<a href=\"http://les-asl-abbaye.ovh/ASL-Abbaye/View/saisir.view/saisir.php\">Saisir un Compte-Rendu</a>";
