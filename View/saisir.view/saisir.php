@@ -53,7 +53,7 @@
 					</li>
 					<li id="li_3">
 						<label class="description" for="element_3">Date du compte-rendu </label>
-						<input type="date" name="date" class=" form-control" required="required" /><br>
+						<input type="date" name="date" class="datepicker form-control" required="required" /><br>
 						<span>
 							<p class="guidelines" id="guide_3"><small>Date effective du compte-rendu </small></p>
 					</li>
