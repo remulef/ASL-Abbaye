@@ -25,18 +25,18 @@ if (!isset($_SESSION["role"])) {
                 $sth->bindParam(2, $password);
                 $sth->execute();
                 $res = $sth->fetch();
-                //var_dump($res);
+                var_dump($res);
                 if (count($res) == 1) {
                     $_SESSION['username'] = $username;
                     $_SESSION['password'] = $password;
                     $_SESSION['role'] = $res->role;
-    //                header("Refresh:0");
+    
                 }
-                //echo "<script> alert('Couple identifiant/motdepasse incorrect'); </script>";
+                echo "<script> alert('Couple identifiant/motdepasse incorrect'); </script>";
             }
-            //echo "<script> alert('identifiant ou mdp vide'); </script>";
+            echo "<script> alert('identifiant ou mdp vide'); </script>";
         }
-        //echo "<script> alert ('identifiant ou mdp vide 2') </script>";
+        echo "<script> alert ('identifiant ou mdp vide 2') </script>";
     }
 }
 ?>
