@@ -1,5 +1,5 @@
 <?php session_start();
-if(isset($_SESSION)){
+if(isset($_SESSION['role'])){
   echo '<header class="header-user-dropdown">';
 } else {
   echo '<header class="header-login-signup">';
