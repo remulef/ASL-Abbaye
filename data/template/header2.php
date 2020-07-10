@@ -13,7 +13,7 @@ if (!isset($_SESSION["username"])) {
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());
         }
-        var_dump($_POST);
+        //var_dump($_POST);
         if (isset($_POST['username']) && isset($_POST['password'])) {
             $username = $_POST['username'];
             $password = $_POST['password'];
@@ -29,6 +29,7 @@ if (!isset($_SESSION["username"])) {
                     $_SESSION['username'] = $username;
                     $_SESSION['password'] = $password;
                     $_SESSION['role'] = $res->role;
+                    header("Refresh:0");
                 }
                 //echo "<script> alert('Couple identifiant/motdepasse incorrect'); </script>";
             }
