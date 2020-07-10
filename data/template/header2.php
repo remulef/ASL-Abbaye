@@ -92,9 +92,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         } else {
             echo '
-    <div class="header-user-menu">
+    <div class="header-user-menu" onclick="hide()">
     Connexion
-    <ul id="connexion" style="display: none;" onclick="hide()">    
+    <ul id="connexion" style="display: none;">    
     <form action="#"  method="post">
             <li>   
             <label for="username">Identifiant</label>
