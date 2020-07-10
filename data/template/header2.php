@@ -4,13 +4,13 @@
 
 $do = true;
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["deconnexion"] == "Deconnexion" && isset($_SESSION["role"])) {
-    echo "vide le Session";
+    //echo "vide le Session";
     session_unset();
-    var_dump($_SESSION);
+    //var_dump($_SESSION);
 
     $do = false;
 }
-echo $do;
+//echo $do;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!isset($_SESSION["role"]) && $do) {
         //On ouvre la base de donnée
