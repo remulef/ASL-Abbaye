@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["deconnexion"] == "Deconnexio
 }
 echo $do;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty($_SESSION["role"]) && $do) {
+    if (!isset($_SESSION["role"]) && $do) {
         //On ouvre la base de donnée
         $database = 'gsjrnmiasl.mysql.db';
         $user = 'gsjrnmiasl';
@@ -37,9 +37,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $res = $sth->fetch(PDO::FETCH_ASSOC);
                 //var_dump($res);
                 if (count($res) == 3) {
-                    $_SESSION['username'] = $res["username"][0];
-                    $_SESSION['password'] = $res["password"][0];
-                    $_SESSION['role'] = $res["role"][0];
+                    $_SESSION['username'] = $res["username"];
+                    $_SESSION['password'] = $res["password"];
+                    $_SESSION['role'] = $res["role"];
 
                 }
                 echo "<script> alert('Couple identifiant/motdepasse incorrect'); </script>";
