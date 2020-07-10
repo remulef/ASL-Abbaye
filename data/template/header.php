@@ -23,7 +23,7 @@ if(isset($_SESSION)){
     $role = $_SESSION['role'];
     echo '
     <div class="header-user-menu">
-    <img src="index.png" >
+    <img src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/index.png" >
       <ul>';
     if ($role[0] == "ADMINISTRATEUR") {
       echo '<li><p class="highlight" >Mon rôle :   ADMINISTRATEUR </p></li>
