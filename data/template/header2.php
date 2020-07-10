@@ -1,6 +1,6 @@
 <?php session_start();
 
-if (!isset($_SESSION["role"])) {
+if (isset($_SESSION["role"])) {
     echo "ENTRE";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //On ouvre la base de donnée
