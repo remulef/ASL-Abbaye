@@ -37,7 +37,9 @@ if (!isset($_SESSION["role"])) {
             echo "<script> alert('identifiant ou mdp vide'); </script>";
         } else {
             if ($_POST["deconnexion"]=="Deconnexion") {
+                echo "vide le Session";
                 session_unset();
+                var_dump($_SESSION);
             } else {
                 echo "<script> alert ('identifiant ou mdp vide 2') </script>";
             }
