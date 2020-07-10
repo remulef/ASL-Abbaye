@@ -30,54 +30,6 @@ body {
 
 /* DEBUT BOUTON SE CONNECTER */
 
-.button {
-    display: inline-block;
-    padding: 15px 25px;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #5E33FF;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-    transition: all 0.5s;
-}
-
-.button:hover {
-    background-color: magenta;
-}
-
-.button:active {
-    background-color: #C133FF;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-}
-
-.button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}
-
-.button span:after {
-    content: '\00bb';
-    opacity: 0;
-    transition: 0.5s;
-}
-
-.button:hover span {
-    padding-right: 25px;
-}
-
-.button:hover span:after {
-    opacity: 1;
-}
-
-
 .header-user-dropdown {
 	background-color:#292c2f;
 	box-shadow:0 1px 1px #ccc;
