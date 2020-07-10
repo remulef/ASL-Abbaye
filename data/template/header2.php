@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         echo "<script> alert('identifiant ou mdp vide'); </script>";
     }
-    echo "<script> alert ('identifiant ou mdp vide') </script>";
+    echo "<script> alert ('identifiant ou mdp vide 2') </script>";
 }
 ?>
 <header class="header-user-dropdown">
