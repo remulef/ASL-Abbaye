@@ -40,7 +40,7 @@ $name = sprintf('AND nom like "%s"',$data->docname);
 
 $query = 'SELECT * FROM DOCUMENT WHERE 1 ';
 $query = $query.$name.$typedoc.$niveau.$ressource.$tags.$alpha.$tefanf.$nodesearch.$order; //.$node
-//echo $query;
+echo $query;
 //AJOUTER TEF ANF 
 //https://codepen.io/stephengreig/pen/ogoPLv
 $sth = $db->query($query);
