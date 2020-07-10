@@ -29,6 +29,7 @@ if (!isset($_SESSION["username"])) {
                     $_SESSION['username'] = $username;
                     $_SESSION['password'] = $password;
                     $_SESSION['role'] = $res->role;
+                    header("Refresh:0");
                 }
                 //echo "<script> alert('Couple identifiant/motdepasse incorrect'); </script>";
             }
