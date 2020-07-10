@@ -2,7 +2,7 @@
 <header class="header-user-dropdown">
 
   <div class="header-limiter">
-    <h1><a href="#"><img src="../img/logoasl.png" alt="logo des ASL Abbaye" width="80px" height="40px"></a></h1>
+    <h1><a href="#"><img src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/logoasl.png" alt="logo des ASL Abbaye" width="80px" height="40px"></a></h1>
 
     <nav>
       <a href="#">Home</a>
