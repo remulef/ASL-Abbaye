@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["deconnexion"] == "Deconnexio
 
     $do = false;
 }
-
+echo $do;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_SESSION["role"]) && $do) {
         //On ouvre la base de donnée
@@ -40,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['username'] = $res["username"][0];
                     $_SESSION['password'] = $res["password"][0];
                     $_SESSION['role'] = $res["role"][0];
+
                 }
                 echo "<script> alert('Couple identifiant/motdepasse incorrect'); </script>";
             }
