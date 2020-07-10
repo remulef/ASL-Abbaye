@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
     }
-
+    var_dump($_POST);
     if (isset($_POST['username']) && isset($_POST['password'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -29,11 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['password'] = $password;
                 $_SESSION['role'] = $res->role;
             }
-        echo "<script> alert('Couple identifiant/motdepasse incorrect'); </script>";
+        //echo "<script> alert('Couple identifiant/motdepasse incorrect'); </script>";
         }
-        echo "<script> alert('identifiant ou mdp vide'); </script>";
+        //echo "<script> alert('identifiant ou mdp vide'); </script>";
     }
-    echo "<script> alert ('identifiant ou mdp vide 2') </script>";
+    //echo "<script> alert ('identifiant ou mdp vide 2') </script>";
 }
 ?>
 <header class="header-user-dropdown">
