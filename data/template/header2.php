@@ -1,6 +1,6 @@
 <?php session_start();
-
-if (isset($_SESSION["role"])) {
+var_dump($_SESSION);
+if (!isset($_SESSION["role"])) {
     echo "ENTRE";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //On ouvre la base de donnée
@@ -25,7 +25,7 @@ if (isset($_SESSION["role"])) {
                 $sth->bindParam(2, $password);
                 $sth->execute();
                 $res = $sth->fetch();
-                var_dump($res);
+                //var_dump($res);
                 if (count($res) == 1) {
                     $_SESSION['username'] = $username;
                     $_SESSION['password'] = $password;
