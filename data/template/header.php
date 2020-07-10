@@ -1,11 +1,19 @@
-<?php session_start(); ?>
-<header class="header-user-dropdown">
+<?php session_start();
+if(isset($_SESSION)){
+  echo '<header class="header-user-dropdown">';
+} else {
+  echo '<header class="header-login-signup">';
+}
+?>
 
-  <div class="header-limiter">
-    <h1><a href="#"><img src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/logoasl.png" alt="logo des ASL Abbaye" width="80px" height="40px"></a></h1>
+  <div class="<header-limiter<">
+    <h1><a href="#"><img src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/logoasl.png" alt="logo des ASL Abbaye" ></a></h1>
 
     <nav>
-      <a href="#">Home</a>
+      <a href="#">Accueil</a>
+      <a href="#">Recherche document</a>
+      <a href="#">Proposer document</a>
+
     </nav>
 
 
@@ -32,11 +40,11 @@
         </ul>', $role[0]);
     }
   } else {
-    echo '<a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/authentication.view/login.php\">
-        <button class="button" style="vertical-align:middle">
-          <span>Se connecter</span>
-        </button>
-      </a>';
+    echo '<ul>
+    <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/authentication.view/login.php\">
+    Connexion  
+    </a>
+    <ul>';
   }
   ?>
 
