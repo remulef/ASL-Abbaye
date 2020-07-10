@@ -27,9 +27,9 @@ if (!isset($_SESSION["role"])) {
                 $res = $sth->fetch(PDO::FETCH_ASSOC);
                 var_dump($res);
                 if (count($res) == 3) {
-                    $_SESSION['username'] = $username;
-                    $_SESSION['password'] = $password;
-                    $_SESSION['role'] = $res["role"];
+                    $_SESSION['username'] = $res["username"][0];
+                    $_SESSION['password'] = $res["password"][0];
+                    $_SESSION['role'] = $res["role"][0];
     
                 }
                 echo "<script> alert('Couple identifiant/motdepasse incorrect'); </script>";
