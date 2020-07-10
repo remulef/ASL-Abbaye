@@ -39,8 +39,7 @@ $data = json_decode($data);
 
 $query = 'SELECT * FROM DOCUMENT WHERE 1 ';
 $query = $query.$name.$typedoc.$niveau.$ressource.$tags.$alpha.$tefanf.$nodesearch.$order; //.$node
-echo $query;
-//AJOUTER TEF ANF 
+//echo $query;
 //https://codepen.io/stephengreig/pen/ogoPLv
 $sth = $db->query($query);
 $document = $sth->fetchAll(PDO::FETCH_ASSOC);
