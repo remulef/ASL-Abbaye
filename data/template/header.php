@@ -6,7 +6,7 @@ if(isset($_SESSION)){
 }
 ?>
 
-  <div class="<header-limiter<">
+  <div class="header-limiter">
     <h1><a href="#"><img src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/logoasl.png" alt="logo des ASL Abbaye" ></a></h1>
 
     <nav>
