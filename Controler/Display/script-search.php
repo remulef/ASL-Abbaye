@@ -18,6 +18,8 @@ try {
 $data = $_POST['data'];
 $data = json_decode($data);
 
+
+$name = sprintf('AND nom like "%s"',$data->docname);
 ((count($data->ressource)>0)?$ressource = "  AND nom like \"% %%-%".implode("%\" AND nom like \"% %%-%",$data->ressource)."%\"":$ressource="");
 ((count($data->tags)>0)?$tags = " AND id_doc IN (SELECT id_doc FROM TAGS WHERE tag like\"%".implode("%\" OR tag like \"%",$data->tags)."%\")":$tags="");
 //((count($data->ressource)>0)?$ressource = "  AND nom like \"%-%".implode("%\" AND nom like \"%-%",$data->ressource)."%\"":$ressource="");
