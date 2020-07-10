@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="password" id="password" name="password" class="form-control" aria-describedby="passwordHelpBlock" required>
             </li>
             <li>
-            <input id="saveForm" class=" btn btn-primary" type="submit" name="submit" value="Connexion" />
+            <input id="saveForm" class=" btn btn-primary" type="submit" name="submit" value="Valider" />
             </li>
             </form>
       </ul>
