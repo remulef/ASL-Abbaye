@@ -18,7 +18,7 @@ session_start();
   <header>
      <FONT color="white">
      </style>
-    <h1> <br><br><font size="+3">Bienvenue sur la base de données pédagogique des Ateliers Socio-Linguistiques de l'Abbaye</h1>
+    <h1> <br><br><font size="+2">Bienvenue sur la base de données pédagogique des Ateliers Socio-Linguistiques de l'Abbaye</h1>
     <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/templateprofil.php");
     ?>
