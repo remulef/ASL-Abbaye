@@ -1,12 +1,13 @@
 <?php //session_start();
 var_dump($_POST);
-
-if ($_POST["deconnexion"] == "Deconnexion") {
+$do = true;
+if ( $_SERVER["REQUEST_METHOD"] == "POST" && $_POST["deconnexion"] == "Deconnexion" && isset($_SESSION)) {
     echo "vide le Session";
     session_unset();
-}
+    $do = false;
+}else 
 
-if (!isset($_SESSION["role"])) {
+if (!isset($_SESSION) && !$do) {
     echo "ENTRE";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //On ouvre la base de donnée
@@ -87,7 +88,7 @@ if (!isset($_SESSION["role"])) {
             }
         } else {
             echo '
-    <div class="header-user-menu-connexion">
+    <div class="header-user-menu">
     Connexion
     <ul>    
     <form action="#" method="post">
