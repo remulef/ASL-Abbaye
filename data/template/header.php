@@ -49,8 +49,5 @@ if(isset($_SESSION)){
   ?>
 
   </div>
-  </div>
-  </div>
-  </div>
 
 </header>
