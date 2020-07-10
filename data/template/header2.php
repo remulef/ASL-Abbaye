@@ -36,8 +36,8 @@
             echo '
     <div class="header-user-menu">
     Connexion
+    <form action="#" method="post">
     <ul>
-        <form action="#" method="post">
             <li><label for="username">Identifiant</label>
             <input type="text" id="username" class="form-control"  required>
             </li>
@@ -45,8 +45,9 @@
             <label for="password">Mot de passe</label>
             <input type="password" id="password" class="form-control" aria-describedby="passwordHelpBlock" required>
             </li>
-        </form>
-      </ul>  
+        
+      </ul>
+      </form>  
       </div>';
         }
         ?>
