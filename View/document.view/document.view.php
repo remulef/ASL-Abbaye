@@ -27,7 +27,7 @@ echo '<body onload="init(' . $id_doc . ')">';
 
 <header>
     <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header2.php");
     ?>
     <a href="http://les-asl-abbaye.ovh">
         <svg class="bi-house-door-fill" width="40px" height="40px" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
