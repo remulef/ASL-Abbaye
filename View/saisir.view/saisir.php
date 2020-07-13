@@ -72,7 +72,8 @@ if (!in_array($_SESSION['role'], $allowed)) {
 						-->
 							<input type="hidden" name="MAX_FILE_SIZE" value="5000000" />
 							<input type="file" name="fileToUpload[]" multiple="multiple" class=" form-control" accept="image/*,audio/*,.doc,.docx,.pdf,.odt,.odp,.ppt,.pptx">
-
+							<small>Format possible : image/audio/.doc/.docx/.pdf/.odt/.odp/.ppt/.pptx</small>
+							<small> Merci de correctement nommer vos fichiers au préalable et d'enlever les apostrophes</small>
 						</div>
 						<p class="guidelines" id="guide_5"><small>Fichier lié au compte-rendu
 
@@ -86,7 +87,7 @@ if (!in_array($_SESSION['role'], $allowed)) {
 					</li>
 
 					<li class="buttons">
-							<input type="hidden" name="form_id" value="116357" /> 
+						<input type="hidden" name="form_id" value="116357" />
 						<input id="saveForm" class=" btn btn-primary" type="submit" name="submit" value="Ajouter" />
 						<input type="reset" class=" btn btn-primary" value="Reinitialiser">
 					</li>
