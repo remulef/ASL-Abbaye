@@ -42,14 +42,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["submit"] == "Envoyé"){
          //$headers[] = 'From: Anniversaire <anniversaire@example.com>';
          //$headers[] = 'Cc: anniversaire_archive@example.com';
          //$headers[] = 'Bcc: anniversaire_verif@example.com';
-    
+        $to = 'fabienremule974@gmail.com';
          // Envoi
          try {
           
-         mail("asl.abbaye@grenoble.fr","Nouveau Message site", $send, implode("\r\n", $headers));
+         mail($to,"Nouveau Message site", $send, implode("\r\n", $headers));
     
          } catch (\Throwable $th) {
-            mail("asl.abbaye@grenoble.fr","Nouveau Message site", $send2);
+            mail($to,"Nouveau Message site", $send2);
         }
     }else {
         header("Location: http://les-asl-abbaye.ovh/ASL-Abbaye/View/contact.view/contact.php");
