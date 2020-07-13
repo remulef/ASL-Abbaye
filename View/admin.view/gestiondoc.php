@@ -7,13 +7,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Gestion des documents</title>
   <link rel="stylesheet" href="css/view.css">
-  <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" />
   <link rel="stylesheet" href="gestiondoc.css">
-
+  <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/header.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/footer.css" />
-
 
 </head>
 
@@ -26,10 +24,10 @@
     </svg>
   </a>
   </header>
-  <main>
+  <main style="margin: 5em;">
     <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/templateprofil.php");
-    if ($_SESSION['role'][0] == "ADMINISTRATEUR") {
+    include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header2.php");
+    if ($_SESSION['role'] == "ADMINISTRATEUR") {
 
       //On ouvre la base de donnée
       $database = 'gsjrnmiasl.mysql.db';
@@ -59,6 +57,7 @@
       }
       echo '</ul>';
     }
+    header("Location : http://les-asl-abbaye.ovh");
     ?>
 
   </main>
