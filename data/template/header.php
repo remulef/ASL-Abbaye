@@ -7,8 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["deconnexion"] == "Deconnexio
     //echo "vide le Session";
     session_unset();
     //var_dump($_SESSION);
-
     $do = false;
+//    header("Refresh:0");
 }
 //echo $do;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['username'] = $res["username"];
                     $_SESSION['password'] = $res["password"];
                     $_SESSION['role'] = $res["role"];
-
+                    
                 }else
                 echo "<script> alert('Couple identifiant/motdepasse incorrect'); </script>";
             }else
@@ -49,6 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<script> alert ('identifiant ou mdp vide 2') </script>";
     }
 }
+header("Refresh:0");
 ?>
 <header class="header-user-dropdown">
     <div class="header-limiter">
