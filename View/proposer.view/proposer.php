@@ -19,7 +19,7 @@
 </head>
 
 <body id="main_body">
-	<?php include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header2.php"); ?>
+	<?php include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php"); ?>
 	<main>
 		<div id="form_container">
 
