@@ -51,8 +51,9 @@
         </li>";
       }
       echo '</ul>';
+    }else {
+      header("Location : http://les-asl-abbaye.ovh");
     }
-    //header("Location : http://les-asl-abbaye.ovh");
     ?>
 </header>
   </main>
