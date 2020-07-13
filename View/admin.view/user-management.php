@@ -36,7 +36,7 @@
 
        // On récupère tout le contenu de la table user
        $reponse = $bdd->query('SELECT * FROM USER ORDER BY username');
-       if(isset($_SESSION['role']) && $_SESSION['role'][0] == "ADMINISTRATEUR"){
+       if(isset($_SESSION['role']) && $_SESSION['role'] == "ADMINISTRATEUR"){
        ?>
        <a href="http://les-asl-abbaye.ovh">
          <svg class="bi-house-door-fill" width="40px" height="40px" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
@@ -113,8 +113,7 @@
     </section>
     <?php
   }else{
-    echo "<p>Vous n'êtes pas connecté en tant qu'Administrateur, veuillez vous authentifier.</p>";
-    echo "<a href=\"http://les-asl-abbaye.ovh\">Cliquez ici pour retourner sur la page d'accueil</a>";
+    header("Location : http://les-asl-abbaye.ovh");
   }
     ?>
 
