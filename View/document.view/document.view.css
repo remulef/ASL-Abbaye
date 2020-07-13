@@ -2,6 +2,11 @@
     color: black;
 }
 
+
+main{
+margin-top: 75px;
+
+}
 * {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     letter-spacing: 0px;
