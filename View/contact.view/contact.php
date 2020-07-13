@@ -23,7 +23,6 @@
       <h1><a>Nous contacter</a></h1>
       <form id="form_117718" class="appnitro" method="post" action="/formbuilder/view.php">
         <div class="form_description">
-          <h2>Nous contacter</h2>
           <p>Nous avons hâte de vous lire
             Ce message sera envoyé à asl.abbaye@grenoble.fr</p>
         </div>
