@@ -31,7 +31,7 @@ echo "<body onload=\"init(" . $id_doc . ")\">";
 
 ?>
 <?php
-include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header2.php");
+include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
 ?>
 <main class="container">
     <div class="row">
