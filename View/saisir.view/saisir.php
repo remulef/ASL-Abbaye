@@ -86,9 +86,9 @@ if (!in_array($_SESSION['role'], $allowed)) {
 					</li>
 
 					<li class="buttons">
-						<!--	<input type="hidden" name="form_id" value="116357" /> -->
-						<input type="reset" class=" btn btn-primary" value="Reinitialiser">
+							<input type="hidden" name="form_id" value="116357" /> 
 						<input id="saveForm" class=" btn btn-primary" type="submit" name="submit" value="Ajouter" />
+						<input type="reset" class=" btn btn-primary" value="Reinitialiser">
 					</li>
 				</ul>
 			</form>
