@@ -21,7 +21,7 @@
     <div id="form_container">
 
       <h1><a>Nous contacter</a></h1>
-      <form id="form_117718" class="appnitro" method="post" action="/formbuilder/view.php">
+      <form id="form_117718" class="appnitro" method="post" action="send.php">
         <div class="form_description">
           <p>Nous avons hâte de vous lire
             Ce message sera envoyé à asl.abbaye@grenoble.fr</p>
@@ -31,7 +31,7 @@
           <li id="li_1">
             <label class="description" for="element_1">Nom </label>
             <div>
-              <input id="element_1" name="element_1" class="element text medium form-control" type="text" maxlength="255" value="" />
+              <input id="element_1" name="nom" class="element text medium form-control" type="text" maxlength="255" value="" />
             </div>
             <p class="guidelines" id="guide_1"><small>Votre nom ou pseudonyme
               </small></p>
@@ -39,14 +39,14 @@
           <li id="li_2">
             <label class="description" for="element_2">Email </label>
             <div>
-              <input id="element_2" name="element_2" class="element text medium form-control" type="text" maxlength="255" value="" />
+              <input id="element_2" name="mail" class="element text medium form-control" type="text" maxlength="255" value="" />
             </div>
             <p class="guidelines" id="guide_2"><small>Cette adresse mail nous permettrons de vous répondre si besoin</small></p>
           </li>
           <li id="li_3">
             <label class="description" for="element_3">Votre message </label>
             <div>
-              <textarea id="element_3" name="element_3" class="element textarea medium form-control"></textarea>
+              <textarea id="element_3" name="message" class="element textarea medium form-control"></textarea>
             </div>
           </li>
 
