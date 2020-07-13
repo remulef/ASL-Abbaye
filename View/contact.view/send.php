@@ -6,7 +6,11 @@
     <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/header.css" />
 
     <title>Mail envoyé</title>
+
+
 </head>
+
+
 <body>
     <?php
 
@@ -21,9 +25,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["submit"] == "Envoyé"){
         <title>Nouveau message</title>
     </head>
     <body>
-        <p><strong> %s </strong> à envoyé :</p>
+        <h1>%s vous a envoyé un message</h1>
         <p>%s</p>
-        <p><a href="%s">Répondre %s</a></p>
+        <p><a href="mailto :%s">Répondre %s</a></p>
     </body>
     </html>',$nom,$message,$mail,$mail);
     
@@ -44,7 +48,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["submit"] == "Envoyé"){
          //$headers[] = 'From: Anniversaire <anniversaire@example.com>';
          //$headers[] = 'Cc: anniversaire_archive@example.com';
          //$headers[] = 'Bcc: anniversaire_verif@example.com';
-        $to = 'fabienremule974@gmail.com';
+        $to = 'asl.abbaye@grenoble.fr';
          // Envoi
          try {
           
@@ -65,3 +69,5 @@ echo '<h1>Opération terminée, retour automatique dans 3 secondes </h1> <script
 </html>
 
 <?php 
+
+
