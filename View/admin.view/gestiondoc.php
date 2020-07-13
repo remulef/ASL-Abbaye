@@ -20,7 +20,7 @@
   
   
     <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header2.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
     echo '<main style="margin: 5em;">';
     if ($_SESSION['role'] == "ADMINISTRATEUR") {
 

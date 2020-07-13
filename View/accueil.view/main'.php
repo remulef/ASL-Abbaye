@@ -15,16 +15,12 @@ session_start();
 </head>
 
 <body>
-  <header>
-     <FONT color="white">
-     </style>
-    <h1> <br><br><font size="+3">Bienvenue sur la base de données pédagogique des Ateliers Socio-Linguistiques de l'Abbaye</h1>
-    <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/templateprofil.php");
-    ?>
-
-  </header>
-  <main>
+<?php
+    include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");    ?>
+ <main>
+ 
+  <h1> <br><br><font size="+3">Bienvenue sur la base de données pédagogique des Ateliers Socio-Linguistiques de l'Abbaye</h1>
+ 
     <!--style="float:left"-->
     <div class="container">
       <div class="row">
@@ -67,16 +63,9 @@ session_start();
         </div>
       </div>
     </div>
-    <!--
-    <footer>
-      <a class="Contact" href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/contact.view/contact.php">Contact</a>
-      <a href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/RGPD.pdf" onclick = "window.open(this.href); return false;" >Mentions Légales</a>
-      <img id="logos" src="../../data/img/Logos.PNG" alt="Logos des Financeurs" width="20%" height="10%">
-    </footer>
-        -->
   </main>
-
   <?php include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/footer_template.php"); ?>
+
 
 </body>
 

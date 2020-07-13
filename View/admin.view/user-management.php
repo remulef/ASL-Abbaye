@@ -15,7 +15,7 @@
   </head>
   <body id="body">
     <?php
-    include ("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header2.php");
+    include ("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
     echo '<main>';
       $db_username = 'gsjrnmiasl';
       $db_password = 'MJCAbbaye38';
