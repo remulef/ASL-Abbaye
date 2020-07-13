@@ -18,7 +18,7 @@
     <form action="mailto:asl.abbaye@grenoble.fr" method="post" enctype="text/plain">
 
       <p id="J">Votre Message : </p>
-      <textarea required cols="50" class="form-control" rows="30" type="text" name="Message" value="">
+      <textarea required  class="form-control"  type="text" name="Message" value="">
       </textarea>
       <input type="submit" class="btn btn-primary" name="" value="Envoyer">
       <input type="reset" class="btn btn-primary" name="" value="Réinitialiser">
