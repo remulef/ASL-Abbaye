@@ -12,6 +12,7 @@ h1{
   font-family: "Aaux";
   src: url("http://les-asl-abbaye.ovh/ASL-Abbaye/data/fonts/Aaux-ProLight-Regular.ttf") format("truetype");
   font-size: large;
+  color: white;
 }
 
 /* DEBUT MENU DEROULANT DES PAVES */

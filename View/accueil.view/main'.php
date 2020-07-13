@@ -10,6 +10,7 @@ session_start();
   <link rel="stylesheet" type="text/css" media="screen" href="main'.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/header.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/footer.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/bootstrap-forms-button.css" />
 
 </head>
 
@@ -18,7 +19,7 @@ session_start();
     include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");    ?>
  <main>
  
-  <h1> <br><br><font size="+3">Bienvenue sur la base de données pédagogique des Ateliers Socio-Linguistiques de l'Abbaye</h1>
+  <h1>Bienvenue sur la base de données pédagogique des Ateliers Socio-Linguistiques de l'Abbaye</h1>
  
     <!--style="float:left"-->
     <div class="container">
