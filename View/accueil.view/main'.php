@@ -22,7 +22,7 @@ session_start();
   <h1>Bienvenue sur la base de données pédagogique des Ateliers Socio-Linguistiques de l'Abbaye</h1>
  
     <!--style="float:left"-->
-    <div class="container" style="margin-top: 50px;">
+    <div class="container" style="margin-top: 80px;">
       <div class="row">
         <div class="col-xs-5">
 
