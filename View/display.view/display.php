@@ -17,30 +17,28 @@
 include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
 ?>
 
-<div>
-
-    <a class="button1" onclick="getback()">
-        <svg class="bi bi-arrow-90deg-up" width="1.33em" height="1.33em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M2.646 6.854a.5.5 0 0 0 .708 0L6 4.207l2.646 2.647a.5.5 0 1 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 0 0 0 .708z" />
-            <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 0-.5.5v6.5A2.5 2.5 0 0 0 8 13h5.5a.5.5 0 0 0 0-1H8a1.5 1.5 0 0 1-1.5-1.5V4a.5.5 0 0 0-.5-.5z" />
-        </svg>
-    </a>
-    <br>
-    <ul id="parcours">
-    </ul>
-    <div id="listdoss">
-        <H3>Listes des thématiques </H3>
-        <ul id="dossbar">
-        </ul>
-    </div>
-
-</div>
-</header>
 
 
-<body onload="init()">
+<body onload="init()" class="container">
 
     <main class="main container">
+        <div class="row">
+            <a class="button1" onclick="getback()">
+                <svg class="bi bi-arrow-90deg-up" width="1.33em" height="1.33em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M2.646 6.854a.5.5 0 0 0 .708 0L6 4.207l2.646 2.647a.5.5 0 1 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 0 0 0 .708z" />
+                    <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 0-.5.5v6.5A2.5 2.5 0 0 0 8 13h5.5a.5.5 0 0 0 0-1H8a1.5 1.5 0 0 1-1.5-1.5V4a.5.5 0 0 0-.5-.5z" />
+                </svg>
+            </a>
+
+            <ul id="parcours">
+            </ul>
+
+            <div id="listdoss">
+                <H3>Listes des thématiques </H3>
+                <ul id="dossbar">
+                </ul>
+            </div>
+        </div>
         <div class="row">
             <div class="col-4">
                 <a id="hider" onclick="hide()" class="button1" style="margin-left:2em;">
