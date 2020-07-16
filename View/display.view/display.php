@@ -82,28 +82,28 @@ include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
                         <span>
                             <input id="element_7_2" name="element_7_2" oninput="search(this)" class="element checkbox" type="checkbox" value="1" />
                             <label class="choice" for="element_7_2">Fiche pédagogique</label>
-                            <input id="element_7_3" name="element_7_3" class="element checkbox form-control" oninput="search(this)" type="checkbox" value="1" />
+                            <input id="element_7_3" name="element_7_3" class="element checkbox form-check-input" oninput="search(this)" type="checkbox" value="1" />
                             <label class="choice" for="element_7_3">Jeux </label>
-                            <input oninput="search(this)" id="element_7_4" name="element_7_4" class="element checkbox form-control" type="checkbox" value="1" />
+                            <input oninput="search(this)" id="element_7_4" name="element_7_4" class="element checkbox form-check-input" type="checkbox" value="1" />
                             <label class="choice" for="element_7_4">Doc authentique</label>
-                            <input id="element_7_5" oninput="search(this)" name="element_7_5" class="element checkbox form-control" type="checkbox" value="1" />
+                            <input id="element_7_5" oninput="search(this)" name="element_7_5" class="element checkbox form-check-input" type="checkbox" value="1" />
                             <label class="choice" for="element_7_5">video/site internet/mp3</label>
-                            <input id="element_7_6" oninput="search(this)" name="element_7_6" class="element checkbox form-control" type="checkbox" value="1" />
+                            <input id="element_7_6" oninput="search(this)" name="element_7_6" class="element checkbox form-check-input" type="checkbox" value="1" />
                             <label class="choice" for="element_7_6">exos/activités</label>
                         </span>
 
                         <hr>
                         <label class="description" for="element_5">Format de document </label>
                         <span>
-                            <input id="element_5_1" oninput="search(this)" name="element_5_1" class="element checkbox form-control" type="checkbox" value="1" />
+                            <input id="element_5_1" oninput="search(this)" name="element_5_1" class="element checkbox form-check-input" type="checkbox" value="1" />
                             <label class="choice" for="element_5_1">PDF</label>
-                            <input id="element_5_2" name="element_5_2" oninput="search(this)" class="element checkbox form-control" type="checkbox" value="1" />
+                            <input id="element_5_2" name="element_5_2" oninput="search(this)" class="element checkbox form-check-input" type="checkbox" value="1" />
                             <label class="choice" for="element_5_2">Image (jpeg/png/gif/..)</label>
-                            <input id="element_5_3" name="element_5_3" class="element checkbox form-control" oninput="search(this)" type="checkbox" value="1" />
+                            <input id="element_5_3" name="element_5_3" class="element checkbox form-check-input" oninput="search(this)" type="checkbox" value="1" />
                             <label class="choice" for="element_5_3">Audio (mp3/aac/..)</label>
-                            <input oninput="search(this)" id="element_5_4" name="element_5_4" class="element checkbox form-control" type="checkbox" value="1" />
+                            <input oninput="search(this)" id="element_5_4" name="element_5_4" class="element checkbox form-check-input" type="checkbox" value="1" />
                             <label class="choice" for="element_5_4">Video (mp4/mpeg,..)</label>
-                            <input id="element_5_5" oninput="search(this)" name="element_5_5" class="element checkbox form-control" type="checkbox" value="1" />
+                            <input id="element_5_5" oninput="search(this)" name="element_5_5" class="element checkbox form-check-input" type="checkbox" value="1" />
                             <label class="choice" for="element_5_5">Texte (docx/doc/txt..)</label>
                             <input id="element_5_6" oninput="search(this)" name="element_5_6" class="element checkbox" type="checkbox" value="1" />
                             <label class="choice" for="element_5_6">Diaporama (pptx,..)</label>
@@ -136,22 +136,22 @@ include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
                         <label class="description" for="element_4">Trier par </label>
                         <span>
 
-                            <input id="element_4_1" name="element_4" class="element radio form-control" checked type="radio" oninput="search(this)" value="1" />
+                            <input id="element_4_1" name="element_4" class="element radio form-check-input" checked type="radio" oninput="search(this)" value="1" />
                             <label class="choice" for="element_4_1">Alphabétique croissant</label>
-                            <input id="element_4_2" name="element_4" class="element radio form-control" type="radio" oninput="search(this)" value="2" />
+                            <input id="element_4_2" name="element_4" class="element radio form-check-input" type="radio" oninput="search(this)" value="2" />
                             <label class="choice" for="element_4_2">Alphabétique décroissant</label>
-                            <input id="element_4_3" name="element_4" class="element radio form-control" type="radio" oninput="search(this)" value="1" />
+                            <input id="element_4_3" name="element_4" class="element radio form-check-input" type="radio" oninput="search(this)" value="1" />
                             <label class="choice" for="element_4_3">Popularité croissante</label>
-                            <input id="element_4_4" name="element_4" class="element radio form-control" type="radio" oninput="search(this)" value="2" />
+                            <input id="element_4_4" name="element_4" class="element radio form-check-input" type="radio" oninput="search(this)" value="2" />
                             <label class="choice" for="element_4_4">Popularité décroissante</label>
 
                         </span>
                         <hr>
                         <label class="description" for="element_6">Option </label>
                         <span>
-                            <input id="element_6_1" name="element_6_1" class="element checkbox form-control" type="checkbox" oninput="search(this)" value="1" />
+                            <input id="element_6_1" name="element_6_1" class="element checkbox form-check-input" type="checkbox" oninput="search(this)" value="1" />
                             <label class="choice" for="element_6_1">TEF/ANF</label>
-                            <input id="element_6_2" name="element_6_2" class="element checkbox form-control" type="checkbox" oninput="search(this)" value="1" />
+                            <input id="element_6_2" name="element_6_2" class="element checkbox form-check-input" type="checkbox" oninput="search(this)" value="1" />
                             <label class="choice" for="element_6_2">Niveau ALPHA</label>
 
                         </span>
