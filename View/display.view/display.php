@@ -41,7 +41,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
         </div>
         <div class="row">
             <div class="col-sm-3">
-                <a id="hider" onclick="hide()" class="button1" style="margin-left:2em;">
+                <a id="hider" onclick="hidepan()" class="button1" style="margin-left:2em;">
                     cacher le panel <br> de tri/recherche <br>
                     <svg class="bi bi-arrow-bar-left" width="1.33em" height="1.33em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M5.854 4.646a.5.5 0 0 0-.708 0l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L3.207 8l2.647-2.646a.5.5 0 0 0 0-.708z" />
