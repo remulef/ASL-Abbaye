@@ -439,7 +439,7 @@ function recuporderby() {
     }
 }
 
-function hide() {
+function hidepan() {
     var sortpanel = document.getElementById("sortpanel");
     var hider = document.getElementById("hider");
     if (sortpanel.getAttribute("style") == "display: block;") {
