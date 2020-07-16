@@ -12,7 +12,7 @@
     <title> Recherche documents</title>
 </head>
 
-<body onload="init()" class="container">
+<body onload="init()">
 
 <?php
 include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
