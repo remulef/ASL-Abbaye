@@ -112,17 +112,17 @@ function affiche(json) {
             img.setAttribute("height", "400");
             media.appendChild(img);
             break;
-/*
+
         case "pdf":
             var pdf = document.createElement("embed");
             pdf.setAttribute("src", lien);
-            pdf.setAttribute("width", "800");
+           // pdf.setAttribute("width", "800");
             pdf.setAttribute("height", "500");
             pdf.setAttribute("type", "application/pdf");
             media.appendChild(pdf);
 
             break;
-*/
+
         case "mp3":
             var div = document.createElement("div");
             div.setAttribute("class", "controlimage");
