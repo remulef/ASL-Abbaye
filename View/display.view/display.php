@@ -20,7 +20,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
 
 
 
-    <main class="main container">
+    <main class="main container" style="width: 98%;margin-left: 2%;margin-right: 2%;">
         <div class="row">
             <a class="button1" onclick="getback()">
                 dossier parent <br>
