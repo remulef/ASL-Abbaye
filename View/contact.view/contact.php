@@ -51,10 +51,10 @@
           </li>
 
           <li class="buttons">
-          	<input type="hidden" name="form_id" value="116196" />
-						<input id="saveForm" class=" btn btn-primary" type="submit" name="submit" value="Envoyé" />
-						<input type="reset" class=" btn btn-primary" value="Reinitialiser">
-					          </li>
+            <input type="hidden" name="form_id" value="116196" />
+            <input id="saveForm" class=" btn btn-primary" type="submit" name="submit" value="Envoyé" />
+            <input type="reset" class=" btn btn-primary" value="Reinitialiser">
+          </li>
         </ul>
       </form>
       <div id="footer">
