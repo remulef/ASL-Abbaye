@@ -34,9 +34,9 @@ function load(json) {
             var li = document.createElement("li");
             var a = document.createElement("a");
             a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",true,-1)');
-            //a.setAttribute("class", "button3");
+            a.setAttribute("class", "button3");
             //a.setAttribute("class", "btn btn-light");
-            a.setAttribute("class", "button7");
+            //a.setAttribute("class", "button7");
             
             a.innerHTML = current.name;
 
