@@ -124,7 +124,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
                     <input type="input" class="form__field" placeholder="Etiquette" name="tag" id="inputtag" required />
                     <label for="tag" class="form__label">Ajouter Etiquette</label>
                 </div>
-                <a class="btn btn-primary" style="background-color:#9ed0e6" onclick="sendtag()">Ajouter</a>
+                <a class="btn btn-primary" style="margin:2em;" onclick="sendtag()">Ajouter</a>
 
 
 
