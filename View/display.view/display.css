@@ -489,6 +489,7 @@ main img {
 }
 
 #docbar li {
+	border-radius: 20px;
 	float: left;
 	width: 20%;
 	margin-right: 2%;
