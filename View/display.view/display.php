@@ -24,7 +24,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
     <main class="main container">
         <div class="row">
             <a class="button1" onclick="getback()">
-             dossier parent <br>
+                dossier parent <br>
                 <svg class="bi bi-arrow-90deg-up" width="1.33em" height="1.33em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M2.646 6.854a.5.5 0 0 0 .708 0L6 4.207l2.646 2.647a.5.5 0 1 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 0 0 0 .708z" />
                     <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 0-.5.5v6.5A2.5 2.5 0 0 0 8 13h5.5a.5.5 0 0 0 0-1H8a1.5 1.5 0 0 1-1.5-1.5V4a.5.5 0 0 0-.5-.5z" />
@@ -50,11 +50,12 @@ include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
         </div>
         <div class="row">
             <div id="row-panel" class="col-sm-3">
-
+                <small>cliquer à droite des cases</small>
                 <div id="sortpanel" style="display: block;">
                     <form>
 
-                        <label class="description" for="element_8">Lieu de recherche (cliquer à droite des cases)</label>
+                        <label class="description" for="element_8">Lieu de recherche </label>
+
 
                         <a data-tooltip="La recherche sera effectuée soit dans la totalité des documents disponibles soit dans le dossier où vous vous situez actuellement" style="padding: 5px;border: none;background: none;">
                             <svg class="bi bi-question-circle" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
