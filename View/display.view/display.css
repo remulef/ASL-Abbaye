@@ -581,8 +581,7 @@ textarea.large
 	margin-top: 0px;
 }
 
-main {
-	width: 98%;
-    margin-left: 2%;
-    margin-right: 2%;
+label {
+	background: white;
+    padding: 3px;
 }

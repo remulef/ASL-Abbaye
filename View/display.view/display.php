@@ -68,14 +68,14 @@ include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
                             <span class="toggle--on">BDD</span>
                             <span class="toggle--off">Thématique</span></label>
 
-                        <hr>
+                        
 
                         <label class="description" for="element_1">Rechercher par nom </label>
                         <div style="float: left;">
                             <input onblur="search(this)" id="element_1" name="docname" class="element text large form-control" type="search" maxlength="255" value="" placeholder="Recherche par nom" />
-                            <hr>
+                            
                         </div>
-                        <br><br><br><br>
+                        
 
 
                         <label class="description" for="element_7">Type de ressource </label>
@@ -92,7 +92,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
                             <label class="choice" for="element_7_6">exos/activités</label>
                         </span>
 
-                        <hr>
+                        
                         <label class="description" for="element_5">Format de document </label>
                         <span>
                             <input id="element_5_1" oninput="search(this)" name="element_5_1" class="element checkbox form-check-input" type="checkbox" value="1" />
@@ -107,7 +107,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
                             <label class="choice" for="element_5_5">Texte (docx/doc/txt..)</label>
                             <input id="element_5_6" oninput="search(this)" name="element_5_6" class="element checkbox" type="checkbox" value="1" />
                             <label class="choice" for="element_5_6">Diaporama (pptx,..)</label>
-                            <hr>
+                        
                             <label class="description" for="element_1">Recherche par étiquette</label>
                             <div>
                                 <input list="format" id="element_1" name="element_1" onblur="search(this)" class="element text large form-control" type="search" maxlength="255" value="" placeholder="&#128269; exemple : verbe+present" />
@@ -120,7 +120,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
 
                             </div>
                         </span>
-                        <hr>
+                        
                         <label class="description" for="element_3">Niveau </label>
                         <span>
                             <input id="element_3_1" name="element_3_1" class="element checkbox form-check-input" type="checkbox" oninput="search(this)" value="1" />
@@ -132,10 +132,9 @@ include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
                             <input id="element_3_4" name="element_3_4" class="element checkbox form-check-input" type="checkbox" oninput="search(this)" value="1" />
                             <label class="choice" for="element_3_4">Approfondissement</label>
                         </span>
-                        <hr>
+                        
                         <label class="description" for="element_4">Trier par </label>
                         <span>
-
                             <input id="element_4_1" name="element_4" class="element radio form-check-input" checked type="radio" oninput="search(this)" value="1" />
                             <label class="choice" for="element_4_1">Alphabétique croissant</label>
                             <input id="element_4_2" name="element_4" class="element radio form-check-input" type="radio" oninput="search(this)" value="2" />
