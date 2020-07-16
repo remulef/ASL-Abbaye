@@ -14,6 +14,10 @@ a.button1 {
     transition: all 0.2s;
 }
 
+h3doc{
+	margin-top: 0px;
+}
+
 a.button1:hover {
 background-color: #ffc2e2;
 color: #FFFFFF;
@@ -102,7 +106,6 @@ body > div {
 #sortpanel {
     width: 225px;
     border: 1px solid black;
-    margin: 2em;
 }
 
 #sortpanel label {
