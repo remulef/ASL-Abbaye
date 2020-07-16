@@ -121,11 +121,10 @@ include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
 
             <div id="divtag">
                 <div class="form__group field">
-                    <input type="input" class="form__field" placeholder="Etiquette" name="tag" id="inputtag" required />
-                    <label for="tag" class="form__label">Ajouter Etiquette</label>
+                    <input type="input" class="form-control" placeholder="Etiquette" name="tag" id="inputtag" required />
+                    <label for="tag" class="label-control">Ajouter Etiquette</label>
+                    <a class="btn btn-primary" style="margin:2em;" onclick="sendtag()">Ajouter</a>
                 </div>
-                <a class="btn btn-primary" style="margin:2em;" onclick="sendtag()">Ajouter</a>
-
 
 
                 <h2>Etiquettes du document</h2>
