@@ -123,10 +123,10 @@ include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
                     <label for="tag">Nouvelle Etiquette</label>
                     <input type="input" class="form-control" placeholder="Etiquette" name="tag" id="inputtag" required />
                     <small class="form-text text-muted">30 caracteres maximum</small>
-                    <a class="btn btn-primary" style="margin:2em;" onclick="sendtag()">Ajouter</a>
+                    <a class="btn btn-primary" style="margin-top:2em;" onclick="sendtag()">Ajouter</a>
                 </div>
             </form>
-            
+
                 <h2>Etiquettes du document</h2>
                 <ul class="tags" id="tags" onload="AJAXgettag()">
                 </ul>
