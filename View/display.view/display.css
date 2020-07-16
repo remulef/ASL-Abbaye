@@ -222,7 +222,6 @@ label.description
 	font-size:95%;
 	font-weight:700;
 	line-height:150%;
-	padding:0 0 1px;
 }
 
 span.symbol
@@ -583,5 +582,5 @@ textarea.large
 
 .description {
 	background: white;
-    padding: 3px;
+    padding: 5px;
 }
