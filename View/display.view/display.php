@@ -165,7 +165,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
             <img style="display:none" src="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/presentation.png" id="presentation" alt="organisation de ressource pedagogique">
 
 
-            <span id="content" class="content col-8">
+            <div id="content" class="content col-8">
 
                 <div id="listdoc">
                     <H3 id="h3doc">Liste des documents</H3>
@@ -173,7 +173,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
                     <ul id="docbar">
                     </ul>
                 </div>
-            </span>
+</div>
     </main>
 
     <?php
