@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-<br><br>
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
