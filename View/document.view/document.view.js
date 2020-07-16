@@ -178,7 +178,6 @@ function affiche(json) {
              media.appendChild(ifram);
              break;
          */
-        case "pdf":
         case "doc":
         case "docx":
         case "ppt":
