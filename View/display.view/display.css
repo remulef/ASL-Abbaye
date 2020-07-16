@@ -581,7 +581,7 @@ textarea.large
 	margin-top: 0px;
 }
 
-label {
+.description {
 	background: white;
     padding: 3px;
 }
