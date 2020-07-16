@@ -76,8 +76,6 @@ include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
                             <input onblur="search(this)" id="element_1" name="docname" class="element text large" type="search" maxlength="255" value="" placeholder="Recherche par nom" />
                             <hr>
                         </div>
-                        <br><br><br><br>
-
 
                         <label class="description" for="element_7">Type de ressource </label>
                         <span>
