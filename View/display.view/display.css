@@ -580,3 +580,9 @@ textarea.large
 #h3doc{
 	margin-top: 0px;
 }
+
+main {
+	width: 98%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
