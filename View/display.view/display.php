@@ -77,7 +77,7 @@
 
                         </div>
 
-                        <br>
+                    
 
                         <label class="description" for="element_7">Type de ressource </label>
                         <span>
