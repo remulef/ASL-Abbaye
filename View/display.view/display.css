@@ -467,14 +467,14 @@ textarea.large
 	max-width: 100%;
   }
 
- main ul {
+ #docbar {
 	list-style: none;
 	padding: 0;
 	font: 0.9em Arial;
 	display: flex;
 	flex-wrap: wrap;
   }
-  main ul li {
+  #docbar li {
 	float: left;
 	width: 23.5%;
 	margin-right: 2%;
