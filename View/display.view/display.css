@@ -78,6 +78,7 @@ a.button7 {
 	text-align: center;
 	position: relative;
 }
+
 a.button7:hover {
 	background-color: #4095c6;
 }
@@ -103,13 +104,15 @@ a.button3 {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 	color: #FFFFFF;
-	background-color: #9ed0e6;
+	/*background-color: #9ed0e6;*/
 	text-align: center;
 	transition: all 0.2s;
 }
 
 a.button3:hover {
 	background-color: #4095c6;
+	text-decoration: none;
+	color: white;
 }
 
 @media all and (max-width:30em) {
