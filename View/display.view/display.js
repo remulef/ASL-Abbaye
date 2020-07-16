@@ -36,7 +36,7 @@ function load(json) {
             a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",true,-1)');
             //a.setAttribute("class", "button3");
             //a.setAttribute("class", "btn btn-light");
-            a.setAttribute("class", "7");
+            a.setAttribute("class", "button7");
             
             a.innerHTML = current.name;
 
