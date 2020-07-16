@@ -123,13 +123,13 @@ include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
                         <hr>
                         <label class="description" for="element_3">Niveau </label>
                         <span>
-                            <input id="element_3_1" name="element_3_1" class="element checkbox form-control" type="checkbox" oninput="search(this)" value="1" />
+                            <input id="element_3_1" name="element_3_1" class="element checkbox form-check-input" type="checkbox" oninput="search(this)" value="1" />
                             <label class="choice" for="element_3_1">Tous Niveaux</label>
-                            <input id="element_3_2" name="element_3_2" class="element checkbox form-control" type="checkbox" oninput="search(this)" value="1" />
+                            <input id="element_3_2" name="element_3_2" class="element checkbox form-check-input" type="checkbox" oninput="search(this)" value="1" />
                             <label class="choice" for="element_3_2">Découverte</label>
-                            <input id="element_3_3" name="element_3_3" class="element checkbox form-control" type="checkbox" oninput="search(this)" value="1" />
+                            <input id="element_3_3" name="element_3_3" class="element checkbox form-check-input" type="checkbox" oninput="search(this)" value="1" />
                             <label class="choice" for="element_3_3">Exploration</label>
-                            <input id="element_3_4" name="element_3_4" class="element checkbox form-control" type="checkbox" oninput="search(this)" value="1" />
+                            <input id="element_3_4" name="element_3_4" class="element checkbox form-check-input" type="checkbox" oninput="search(this)" value="1" />
                             <label class="choice" for="element_3_4">Approfondissement</label>
                         </span>
                         <hr>
