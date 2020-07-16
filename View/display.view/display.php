@@ -72,7 +72,7 @@
 
 
                         <label class="description" for="element_1">Rechercher par nom </label>
-                        <span>
+                        <span style="    margin-bottom: 15px;margin-top: 15px;">
                             <input onblur="search(this)" id="element_1" name="docname" class="element text large form-control" type="search" maxlength="255" value="" placeholder="Recherche par nom" />
 
                         </span>
