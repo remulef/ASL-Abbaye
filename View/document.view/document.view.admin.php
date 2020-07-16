@@ -117,49 +117,49 @@ include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
 
 
             </div>
+
+            
             <div id="divtag">
-
-                <form>
-                    <label for="tag">Nouvelle Etiquette</label>
+                <div class="form__group field">
                     <input type="input" class="form-control" placeholder="Etiquette" name="tag" id="inputtag" required />
-                    <small class="form-text text-muted">30 caracteres maximum</small>
-                    <a class="btn btn-primary" style="margin-top:2em;" onclick="sendtag()">Ajouter</a>
+                    <label for="tag" class="label-control">Ajouter Etiquette</label>
+                    <a class="btn btn-primary" style="margin:2em;" onclick="sendtag()">Ajouter</a>
+                </div>
 
-                </form>
+
+                <h2>Etiquettes du document</h2>
+                <ul class="tags" id="tags" onload="AJAXgettag()">
+                </ul>
             </div>
-            <h2>Etiquettes du document</h2>
-            <ul class="tags" id="tags" onload="AJAXgettag()">
-            </ul>
+
+            <script src="test.js"></script>
+
+
+
+
+
         </div>
+        <!-- Insipirée de https://codepen.io/leenalavanya/pen/YqGeoz et modifier pour convenir a nos besoin -->
+        <div id="chat" class="col-sm-4" style="padding-left: 0px;padding-right: 0px;">
+            <div class="chat_header">Commentaires</div>
+            <div id="chat_s"></div>
+            <script type="text/javascript">
+                var submitted = false;
+            </script>
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){add()}"></iframe>
+            <form id="ss-form" onsubmit="submitted=true" action="https://docs.google.com/forms/d/1-PRLoHTtgldV5cNTvmVyjf-rf1p1kLhzKGXn2i1XGhQ/formResponse" method="POST" target="hidden_iframe">
+                <input name="Nom" class="form-control" type="text" value="<?php echo $_SESSION["username"] ?>" id="entry_name" placeholder="Votre nom">
+                <input name="entry.1732478127" title="" class="ss-q-short form-control" id="entry_comment" dir="auto" aria-label="Message  " type="text" value="" placeholder="Votre commentaire">
+                <input name="draftResponse" type="hidden" value='[,,"-2195881827543510175"]&#10;'>
+                <input name="pageHistory" type="hidden" value="0">
+                <input name="fvv" type="hidden" value="0">
+                <input name="fbzx" type="hidden" value="-2195881827543510175">
 
-        <script src="test.js"></script>
-
-
-
-
-
-    </div>
-    <!-- Insipirée de https://codepen.io/leenalavanya/pen/YqGeoz et modifier pour convenir a nos besoin -->
-    <div id="chat" class="col-sm-4" style="padding-left: 0px;padding-right: 0px;">
-        <div class="chat_header">Commentaires</div>
-        <div id="chat_s"></div>
-        <script type="text/javascript">
-            var submitted = false;
-        </script>
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){add()}"></iframe>
-        <form id="ss-form" onsubmit="submitted=true" action="https://docs.google.com/forms/d/1-PRLoHTtgldV5cNTvmVyjf-rf1p1kLhzKGXn2i1XGhQ/formResponse" method="POST" target="hidden_iframe">
-            <input name="Nom" class="form-control" type="text" value="<?php echo $_SESSION["username"] ?>" id="entry_name" placeholder="Votre nom">
-            <input name="entry.1732478127" title="" class="ss-q-short form-control" id="entry_comment" dir="auto" aria-label="Message  " type="text" value="" placeholder="Votre commentaire">
-            <input name="draftResponse" type="hidden" value='[,,"-2195881827543510175"]&#10;'>
-            <input name="pageHistory" type="hidden" value="0">
-            <input name="fvv" type="hidden" value="0">
-            <input name="fbzx" type="hidden" value="-2195881827543510175">
-
-            <input name="submit" class="jfk-button jfk-button-action btn btn-primary" id="ss-submit" type="submit" value="Commenter" onClick="return check()">
-            <input name="reset" class="jfk-button jfk-button-action btn btn-primary" id="ss-reset" type="reset" value="Réinitialiser" onClick="">
-            <small>Forked from <a href="https://codepen.io/leenalavanya/pen/YqGeoz">here</a></small>
-        </form>
-    </div>
+                <input name="submit" class="jfk-button jfk-button-action btn btn-primary" id="ss-submit" type="submit" value="Commenter" onClick="return check()">
+                <input name="reset" class="jfk-button jfk-button-action btn btn-primary" id="ss-reset" type="reset" value="Réinitialiser" onClick="">
+                <small>Forked from <a href="https://codepen.io/leenalavanya/pen/YqGeoz">here</a></small>
+            </form>
+        </div>
     </div>
 </main>
 <script src="document.view.js"></script>
