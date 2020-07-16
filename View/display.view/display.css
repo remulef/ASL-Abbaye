@@ -62,9 +62,6 @@ color: #FFFFFF;
 #listdoss li {
     float: left;
 }
-#listdoc {
-    margin-left: 100px;
-}
 
 a.button3 {
     display: inline-block;
