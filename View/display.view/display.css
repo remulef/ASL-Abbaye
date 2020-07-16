@@ -100,8 +100,9 @@ body > div {
 
 
 #sortpanel {
+	background: cadetblue;
     width: 225px;
-    border: 1px solid black;
+    border: 2px solid white;
 }
 
 #sortpanel label {
