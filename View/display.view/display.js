@@ -208,7 +208,8 @@ function ajax_post_request(callback, url, async, data) {
 
 function search(elem) {
     //il faut faire de l'anti-injection
-    var inputs = document.getElementsByTagName("input");
+
+    var inputs = document.getElementById("sortpanel").getElementsByTagName("input");
 
     var param = ({
         nodesearch: (inputs[0].checked === true ? -1 : history[history.length - 1].id_node),
@@ -246,7 +247,7 @@ function log(params) {
 }
 
 function recupressource() {
-    var inputs = document.getElementsByTagName("input");
+    var inputs =document.getElementById("sortpanel").getElementsByTagName("input");
     var type = [];
     if (inputs[2].checked === true) {
         type.push("fp");
@@ -268,7 +269,7 @@ function recupressource() {
 }
 
 function recuptype() {
-    var inputs = document.getElementsByTagName("input");
+    var inputs =document.getElementById("sortpanel").getElementsByTagName("input");
     var type = [];
     if (inputs[7].checked === true) {
         type.push("pdf");
@@ -308,7 +309,7 @@ function recuptype() {
 }
 
 function recupniveau() {
-    var inputs = document.getElementsByTagName("input");
+    var inputs =document.getElementById("sortpanel").getElementsByTagName("input");
     var niv = [];
 
     if (inputs[14].checked === true) {
@@ -358,7 +359,7 @@ function displaysearch(json) {
 
     var data = JSON.parse(json);
     document.getElementById("h3doc").innerHTML = "<strong>" + data.length + "</strong> resultats " +
-        (query.length !== 0 ? "pour " + query : "");
+        (query.length !== 0 ? "pour " + (query===""?"votre recherche":query) : "");
 
 
     var uldoc = document.getElementById("docbar");
@@ -369,6 +370,7 @@ function displaysearch(json) {
         var a = document.createElement("a");
         a.setAttribute("href", "http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc=" + current.id_doc);
         a.setAttribute("target", "_blank");
+        a.setAttribute("class","btn btn-dark");
         a.innerHTML = "ouvrir";
 
 
@@ -463,7 +465,7 @@ function hidepan() {
 }
 
 function careful() {
-    if (document.getElementsByTagName("input")[0].checked === false) {
+    if (document.getElementById("sortpanel").getElementsByTagName("input")[0].checked === false) {
         var last = history[history.length - 1].name;
         alert("Attention vous allez faire une recherche dans le dossier "+last);
     } else {
