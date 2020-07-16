@@ -123,9 +123,9 @@ include("{$_SERVER['DOCUMENT_ROOT']}/ASL-Abbaye/data/template/header.php");
                 <form>
                     <div class="form-group">
                         <label for="tag">Nouvelle Etiquette</label>
-                        <input type="input" class="form-control" style="width:100px;" placeholder="Etiquette" name="tag" id="inputtag" required />
-                        <small class="form-text text-muted">30 caracteres maximum</small>
-                        <a class="btn btn-primary" style="margin-top:2em;" onclick="sendtag()">Ajouter</a>
+                        <input type="input" aria-describedby="help" class="form-control" style="width:100px;" placeholder="Etiquette" name="tag" id="inputtag" required />
+                        <small id="help" class="form-text text-muted">30 caracteres maximum</small>
+                        <a class="btn btn-primary"  onclick="sendtag()">Ajouter</a>
                     </div>
                 </form>
 
