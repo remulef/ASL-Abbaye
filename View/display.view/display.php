@@ -147,7 +147,7 @@
                             <label class="choice" for="element_4_4">Popularité décroissante</label>
 
                         </span>
-                        <hr>
+                        
                         <label class="description" for="element_6">Option </label>
                         <span>
                             <input id="element_6_1" name="element_6_1" class="element checkbox form-check-input" type="checkbox" oninput="search(this)" value="1" />
@@ -156,7 +156,7 @@
                             <label class="choice" for="element_6_2">Niveau ALPHA</label>
 
                         </span>
-                        <hr>
+                        
                         <input style="margin: 1%;width: 98%;" class="btn btn-primary" type="reset" value="Vider le formulaire">
                     </form>
                 </div>
