@@ -116,8 +116,8 @@ function affiche(json) {
         case "pdf":
             var pdf = document.createElement("embed");
             pdf.setAttribute("src", lien);
-            pdf.setAttribute("width", "800");
-            pdf.setAttribute("height", "500");
+            //pdf.setAttribute("height", "1000px");
+            pdf.setAttribute("style", "width:100%; height:35em;");
             pdf.setAttribute("type", "application/pdf");
             media.appendChild(pdf);
 

@@ -18,6 +18,7 @@ try {
 $data = $_POST['data'];
 $data = json_decode($data);
 
+($data->docname ==""? $name="":$name = sprintf('AND nom like "%%%s%%"',$data->docname));
 ((count($data->ressource)>0)?$ressource = "  AND nom like \"% %%-%".implode("%\" AND nom like \"% %%-%",$data->ressource)."%\"":$ressource="");
 ((count($data->tags)>0)?$tags = " AND id_doc IN (SELECT id_doc FROM TAGS WHERE tag like\"%".implode("%\" OR tag like \"%",$data->tags)."%\")":$tags="");
 //((count($data->ressource)>0)?$ressource = "  AND nom like \"%-%".implode("%\" AND nom like \"%-%",$data->ressource)."%\"":$ressource="");
@@ -39,7 +40,6 @@ $data = json_decode($data);
 $query = 'SELECT * FROM DOCUMENT WHERE 1 ';
 $query = $query.$name.$typedoc.$niveau.$ressource.$tags.$alpha.$tefanf.$nodesearch.$order; //.$node
 //echo $query;
-//AJOUTER TEF ANF 
 //https://codepen.io/stephengreig/pen/ogoPLv
 $sth = $db->query($query);
 $document = $sth->fetchAll(PDO::FETCH_ASSOC);

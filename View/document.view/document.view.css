@@ -2,6 +2,11 @@
     color: black;
 }
 
+
+main{
+margin-top: 200px;
+
+}
 * {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     letter-spacing: 0px;
@@ -435,8 +440,8 @@ a.button4:hover {
     top: 0;
     display: block;
     transition: 0.2s;
-    font-size: 1rem;
-    color: #9b9b9b;
+    font-size: 2rem;
+    color: white;
 }
 
 .form__field:focus {

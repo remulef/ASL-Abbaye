@@ -35,6 +35,9 @@ function load(json) {
             var a = document.createElement("a");
             a.setAttribute("onclick", "changedoc(" + id + ',"' + current.name + '",true,-1)');
             a.setAttribute("class", "button3");
+            //a.setAttribute("class", "btn btn-light");
+            //a.setAttribute("class", "button7");
+            
             a.innerHTML = current.name;
 
             li.appendChild(a);
@@ -46,6 +49,7 @@ function load(json) {
             var a = document.createElement("a");
             a.setAttribute("href", "http://www.les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc=" + current.id_doc);
             a.setAttribute("target", "_blank");
+            a.setAttribute("class","btn btn-dark");
             a.innerHTML = "ouvrir";
             //p
             var p = document.createElement("p");
@@ -204,7 +208,8 @@ function ajax_post_request(callback, url, async, data) {
 
 function search(elem) {
     //il faut faire de l'anti-injection
-    var inputs = document.getElementsByTagName("input");
+
+    var inputs = document.getElementById("sortpanel").getElementsByTagName("input");
 
     var param = ({
         nodesearch: (inputs[0].checked === true ? -1 : history[history.length - 1].id_node),
@@ -242,7 +247,7 @@ function log(params) {
 }
 
 function recupressource() {
-    var inputs = document.getElementsByTagName("input");
+    var inputs =document.getElementById("sortpanel").getElementsByTagName("input");
     var type = [];
     if (inputs[2].checked === true) {
         type.push("fp");
@@ -264,7 +269,7 @@ function recupressource() {
 }
 
 function recuptype() {
-    var inputs = document.getElementsByTagName("input");
+    var inputs =document.getElementById("sortpanel").getElementsByTagName("input");
     var type = [];
     if (inputs[7].checked === true) {
         type.push("pdf");
@@ -304,7 +309,7 @@ function recuptype() {
 }
 
 function recupniveau() {
-    var inputs = document.getElementsByTagName("input");
+    var inputs =document.getElementById("sortpanel").getElementsByTagName("input");
     var niv = [];
 
     if (inputs[14].checked === true) {
@@ -354,7 +359,7 @@ function displaysearch(json) {
 
     var data = JSON.parse(json);
     document.getElementById("h3doc").innerHTML = "<strong>" + data.length + "</strong> resultats " +
-        (query.length !== 0 ? "pour " + query : "");
+        (query.length !== 0 ? "pour " + (query===""?"votre recherche":query) : "");
 
 
     var uldoc = document.getElementById("docbar");
@@ -365,6 +370,7 @@ function displaysearch(json) {
         var a = document.createElement("a");
         a.setAttribute("href", "http://les-asl-abbaye.ovh/ASL-Abbaye/View/document.view/mitigeur.php?id_doc=" + current.id_doc);
         a.setAttribute("target", "_blank");
+        a.setAttribute("class","btn btn-dark");
         a.innerHTML = "ouvrir";
 
 
@@ -439,7 +445,7 @@ function recuporderby() {
     }
 }
 
-function hide() {
+function hidepan() {
     var sortpanel = document.getElementById("sortpanel");
     var hider = document.getElementById("hider");
     if (sortpanel.getAttribute("style") == "display: block;") {
@@ -447,18 +453,19 @@ function hide() {
         hider.innerHTML = "afficher le panel <br> de tri/recherche <br> <svg class=\"bi bi-arrow-bar-right\" width=\"1.33em\" height=\"1.33em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">"
             + "<path fill-rule=\"evenodd\" d=\"M10.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 8l-2.647-2.646a.5.5 0 0 1 0-.708z\"/>" +
             "<path fill-rule=\"evenodd\" d=\"M6 8a.5.5 0 0 1 .5-.5H13a.5.5 0 0 1 0 1H6.5A.5.5 0 0 1 6 8zm-2.5 6a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 1 0v11a.5.5 0 0 1-.5.5z\"/></svg>"
-    } else {
+            document.getElementById("content").setAttribute("class","content col-sm-12");
+        } else {
         sortpanel.setAttribute("style", "display: block;");
         hider.innerHTML =
             "cacher le panel <br> de tri/recherche <br> <svg class=\"bi bi-arrow-bar-left\" width=\"1.33em\" height=\"1.33em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">" +
             "<path fill-rule=\"evenodd\" d=\"M5.854 4.646a.5.5 0 0 0-.708 0l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L3.207 8l2.647-2.646a.5.5 0 0 0 0-.708z\" />" +
             "<path fill-rule=\"evenodd\" d=\"M10 8a.5.5 0 0 0-.5-.5H3a.5.5 0 0 0 0 1h6.5A.5.5 0 0 0 10 8zm2.5 6a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 1 0v11a.5.5 0 0 1-.5.5z\" /></svg>";
-
+        document.getElementById("content").setAttribute("class","content col-sm-9");
     };
 }
 
 function careful() {
-    if (document.getElementsByTagName("input")[0].checked === false) {
+    if (document.getElementById("sortpanel").getElementsByTagName("input")[0].checked === false) {
         var last = history[history.length - 1].name;
         alert("Attention vous allez faire une recherche dans le dossier "+last);
     } else {
