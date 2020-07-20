@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="view.css" media="all">
 	<link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/header.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/bootstrap-forms-button.css" />
+	<link rel="icon" type="image/png" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/logoasl.ico" />
 
 	<!--
 	<link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/template.css" />	

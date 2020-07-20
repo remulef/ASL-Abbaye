@@ -22,6 +22,8 @@ if (!isset($_SESSION['role'])) {
     <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/footer.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="bootstrap-forms.css" />
     <title>Document ASL Abbaye</title>
+    <link rel="icon" type="image/png" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/logoasl.ico" />
+
 </head>
 
 <?php
