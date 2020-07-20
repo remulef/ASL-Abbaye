@@ -50,7 +50,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<script> alert ('identifiant ou mdp vide 2') </script>";
     }
 }
-?>
+?>   <link rel="icon" type="image/png" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/logoasl.ico" />
+
 <header class="header-user-dropdown">
     <div class="header-limiter">
         <h1><a href="#">ASL<span> Abbaye</span></a></h1>
