@@ -17,6 +17,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == "ADMINISTRATEUR" || $_SESS
     <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/header.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/template/footer.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="bootstrap-forms.css" />
+    <link rel="icon" type="image/png" href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/img/logoasl.ico" />
 
     <title>Document ASL Abbaye</title>
 </head>
