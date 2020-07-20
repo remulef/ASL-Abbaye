@@ -23,7 +23,7 @@
       <h1><a>Nous contacter</a></h1>
       <form id="form_117718" class="appnitro" method="post" action="send.php">
         <div class="form_description">
-          <p>Nous avons hâte de vous lire
+          <p>Nous avons hâte de vous lire -
             Ce message sera envoyé à asl.abbaye@grenoble.fr</p>
         </div>
         <ul>
@@ -41,7 +41,7 @@
             <div>
               <input id="element_2" name="mail" class="element text medium form-control" type="text" maxlength="255" value="" />
             </div>
-            <p class="guidelines" id="guide_2"><small>Cette adresse mail nous permettrons de vous répondre si besoin</small></p>
+            <p class="guidelines" id="guide_2"><small>Cette adresse mail nous permettra de vous répondre si besoin</small></p>
           </li>
           <li id="li_3">
             <label class="description" for="element_3">Votre message </label>
