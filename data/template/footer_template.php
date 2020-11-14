@@ -22,6 +22,7 @@
               <li><a href="http://les-asl-abbaye.ovh/">Accueil</a></li>
               <li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/View/contact.view/contact.php">Nous contacter</a></li>
               <li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/RGPD.pdf">Règlement général sur la protection des données</a></li>
+              <li><a href="http://les-asl-abbaye.ovh/ASL-Abbaye/data/QSN.pdf">Qui sommes-nous ? </a></li>
             </ul>
           </div>
         </div>
@@ -31,7 +32,7 @@
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
             <p class="copyright-text">Copyright &copy; 2020 Developped by
-         <a href="https://codepen.io/scanfcode/pen/MEZPNd">Footer forked on Codepen/scanfcode </a>.
+         <a href="https://www.linkedin.com/in/fabien-r%C3%A9mule-aa47b719a/"> Fabien REMULE </a>.
             </p>
           </div>
 
