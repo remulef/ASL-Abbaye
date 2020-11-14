@@ -31,7 +31,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyright &copy; 2020 Developped by
+            <p class="copyright-text">Copyright &copy; 2020 Developped by Lucas ZAETTA and
          <a href="https://www.linkedin.com/in/fabien-r%C3%A9mule-aa47b719a/"> Fabien REMULE </a>.
             </p>
           </div>
