@@ -29,7 +29,7 @@ function load(json) {
     var uldoss = document.getElementById("dossbar");
     for (let index = 0; index < data.length; index++) {
         var current = data[index];
-        if (current.id_node !== undefined && current.name!=="Réalisation" && current.name!=="Comptes-rendus") {
+        if (current.id_node !== undefined) {
             var id = current.id_node;
             var li = document.createElement("li");
             var a = document.createElement("a");
