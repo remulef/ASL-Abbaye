@@ -193,7 +193,14 @@
 
 $allowed = array("ADMINISTRATEUR", "MODERATEUR", "BENEVOLE ABBAYE");
 
-(!in_array($_SESSION['role'], $allowed)?echo 'PAS ADMIN <script src="display.js"></script>': echo' ADMIN GIT<script src="display.admin.js"></script>') ?>
+if(in_array($_SESSION['role'], $allowed)){
+    echo' ADMIN GIT<script src="display.admin.js"></script>';
+}
+else {
+    echo 'PAS ADMIN <script src="display.js"></script>';
+}
+
+ ?>
 <script>
     $(document).keypress(function(e) {
         if (e.which == 13) {
