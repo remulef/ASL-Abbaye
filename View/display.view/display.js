@@ -29,7 +29,8 @@ function load(json) {
     var uldoss = document.getElementById("dossbar");
     for (let index = 0; index < data.length; index++) {
         var current = data[index];
-        if (current.id_node !== undefined && !(current.name==="Réalisations" || current.name==="Comptes-rendus")) {
+        if (current.id_node !== undefined) {
+            if (current.name!=="Réalisations" && current.name!=="Comptes-rendus"){
             var id = current.id_node;
             var li = document.createElement("li");
             var a = document.createElement("a");
@@ -42,7 +43,7 @@ function load(json) {
 
             li.appendChild(a);
             uldoss.appendChild(li);
-
+         }
         } else {
             nbdoc++;
             var li = document.createElement("li");
